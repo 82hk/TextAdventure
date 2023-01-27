@@ -7,19 +7,15 @@ public class Player {
     int cookies = 0;
     private static Player player = new Player();
 
-    private Player()
-    {
+    private Player() {
         //do
     }
 
-    public static Player getInstance()
-    {
+    public static Player getInstance() {
         return player;
     }
 
-
-    public void makeCookies()
-    {
+    public void makeCookies() {
         cookies += 12;
         //do nothing
     }

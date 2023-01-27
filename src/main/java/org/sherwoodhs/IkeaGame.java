@@ -11,22 +11,15 @@ public class IkeaGame {
     private static IkeaGame ikeaGame = new IkeaGame();
     public static Player player = Player.getInstance();
 
-    private IkeaGame()
-    {
+    private IkeaGame() {
         //do
     }
 
-    public static IkeaGame getInstance()
-    {
+    public static IkeaGame getInstance() {
         return ikeaGame;
     }
 
-    public void setSituation(Situation situation)
-    {
+    public void setSituation(Situation situation) {
         this.currentSituation = situation;
     }
-
-
-
-
 }
