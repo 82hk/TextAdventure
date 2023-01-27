@@ -6,7 +6,7 @@ public abstract interface Situation {
 
     public String[] getActions();
 
-    public Situation performAction(int index);
+    public void performAction(int index);
 
 }
 
