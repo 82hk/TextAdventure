@@ -8,6 +8,4 @@ public abstract interface Location {
 
     State getLocationState();
 
-
-
 }
