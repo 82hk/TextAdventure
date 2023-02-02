@@ -6,7 +6,7 @@ import org.sherwoodhs.situation.Situation;
 
 public class EntranceS implements Situation {
 
-    private Player player = IkeaGame.player;
+    private Player player = Player.getInstance();
 
     @Override
     public String getSituation() {
