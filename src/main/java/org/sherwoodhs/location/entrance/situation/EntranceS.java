@@ -1,6 +1,5 @@
 package org.sherwoodhs.location.entrance.situation;
 
-import org.sherwoodhs.IkeaGame;
 import org.sherwoodhs.inventory.Player;
 import org.sherwoodhs.situation.Situation;
 

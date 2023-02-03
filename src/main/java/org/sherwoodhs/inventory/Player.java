@@ -1,7 +1,5 @@
 package org.sherwoodhs.inventory;
 
-import org.sherwoodhs.IkeaGame;
-
 public class Player {
     //dummy class for now
     int cookies = 0;

@@ -4,18 +4,18 @@ import org.sherwoodhs.inventory.Player;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.situation.Situation;
 
-public class IkeaGame {
+public class AdvGame {
     private Location currentLocation;
     private Situation currentSituation;
 
-    private static IkeaGame ikeaGame = new IkeaGame();
+    private static AdvGame ikeaGame = new AdvGame();
     public static Player player = Player.getInstance();
 
-    private IkeaGame() {
+    private AdvGame() {
         //do
     }
 
-    public static IkeaGame getInstance() {
+    public static AdvGame getInstance() {
         return ikeaGame;
     }
 
