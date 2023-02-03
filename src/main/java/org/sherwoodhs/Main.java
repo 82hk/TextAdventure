@@ -7,7 +7,7 @@ import org.sherwoodhs.situation.Situation;
 
 public class Main {
     public static void main(String[] args) {
-        AdvGame ikeaGame = AdvGame.getInstance();
+        AdvGame game = AdvGame.getInstance();
         Location currentLocation = new Entrance();
         Situation currentSituation = currentLocation.getStartSituation();
         currentSituation.performAction(0);
