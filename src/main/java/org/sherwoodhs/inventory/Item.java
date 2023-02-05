@@ -1,6 +1,6 @@
 package org.sherwoodhs.inventory;
 
-public class Item {
+public abstract class Item {
     private String name;
     private String shortDescription;
     private String longDescription;

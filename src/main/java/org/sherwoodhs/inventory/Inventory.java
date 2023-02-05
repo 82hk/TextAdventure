@@ -4,6 +4,11 @@ import java.util.Collection;
 import java.util.HashMap;
 
 public class Inventory {
+    private static Inventory inventory = new Inventory();
+
+    private Inventory(){
+
+    }
     private HashMap<String, Item> inv = new HashMap<String, Item>();
 
     public int size() {
@@ -29,6 +34,10 @@ public class Inventory {
 
     public boolean checkInventory(String item) {
         return inv.containsKey(item);
+    }
+
+    public static Inventory getInstance(){
+        return inventory;
     }
 
 }

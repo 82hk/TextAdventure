@@ -1,8 +1,8 @@
 package org.sherwoodhs;
 
+import org.sherwoodhs.Locations.Location;
 import org.sherwoodhs.inventory.Player;
-import org.sherwoodhs.location.Location;
-import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.Situations.Situation;
 
 public class AdvGame {
     private Location currentLocation;

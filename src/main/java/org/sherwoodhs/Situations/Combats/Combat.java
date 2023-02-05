@@ -1,13 +1,21 @@
-package Situations.Combats;
+package org.sherwoodhs.Situations.Combats;
 
-import Situations.Situation;
 
-public class Combat extends Situation {
+import org.sherwoodhs.Locations.Location;
+import org.sherwoodhs.NPCS.NPC;
+import org.sherwoodhs.Situations.Situation;
+import org.sherwoodhs.inventory.Player;
+
+public abstract class Combat extends Situation {
+    //Calls in player singleton
     protected Player player = Player.getInstance();
+
+    //Enemy involved in combat
     protected NPC enemy;
 
-    protected Combat (NPC enemy){
+    protected Combat (String name, String text, String[] absButtonText, Location location, NPC enemy){
+        super(name, text, absButtonText,location);
         this.enemy = enemy;
     }
-    public void changeFrame(){}
+
 }
