@@ -1,9 +1,6 @@
 package org.sherwoodhs.inventory;
 
 public class Player {
-    //dummy class for now
-    int cookies = 0;
-
     int health;
     int stamina;
     String name;
@@ -30,13 +27,5 @@ public class Player {
         return player;
     }
 
-    public void makeCookies() {
-        cookies += 12;
-        //do nothing
-    }
-
-    public int getCookies() {
-        return cookies;
-    }
 }
 
