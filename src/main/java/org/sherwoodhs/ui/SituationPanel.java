@@ -23,7 +23,7 @@ public class SituationPanel extends JPanel {
      * @param text represents the text that the situationLabel will be set to
      */
     public void setSituationLabel(String text) {
-        situationLabel.setText(text);
+        situationLabel.setText(getBoldText(text));
     }
     private String getBoldText(JLabel label) {
         String s = label.getText();
