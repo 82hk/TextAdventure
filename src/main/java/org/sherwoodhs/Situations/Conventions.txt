@@ -1,0 +1,23 @@
+1) For every situation, please put all the NPCs, Items, Locations, etc, involved at the top of the class.
+2) Please make every situation a singleton with a private Scenario field, a private constructor, and a getInstance()
+   method.
+3) For the organization of situations :
+    a) Create a package for a group of scenarios based on "quest line", "conversation", "sequence", etc.
+        i)   Name this package with a very short description about this group. e.g. "MayorConversation" or
+             "FinalBossFight"
+        ii)  If there are multiple groups with similar names, add a number after package name. e.g. "MayorConversation3"
+             or "FinalBossFight1"
+    b) Put all scenarios involved in the package
+        i)   Name these scenarios after the package + "_" + # in chain(zero-based). e.g. "MayorConversation3_0" or
+             "FinalBossFight1_4"
+        ii)  If there are scenarios that branch off and are mutually exclusive, add an addition "_" + #.
+                1) For example, if a dialogue choice leads to two different responses. e.g. MayorConversation3_1_0
+                   and MayorConversation3_1_1
+        iii) Add a letter to the end denoting the type of situation. e.g. "MayorConversation3_1_0D" or
+             "FinalBossFight3_1C"
+                1) "D" represents Dialogue
+                2) "C" represents Combat
+                3) "I" represents Interaction
+                4) "E" represents Default Exploration
+4) This may be subject to change based on our # of classes.
+5) Please contact me, Derek, if you have any questions.

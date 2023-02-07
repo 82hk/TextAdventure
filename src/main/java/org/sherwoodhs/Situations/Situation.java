@@ -18,6 +18,7 @@ public interface Situation {
     public abstract String[] getOptions();
 
     public abstract void perform(String option);
+
 /*
 
     switch(i)

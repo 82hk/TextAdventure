@@ -1,13 +1,13 @@
-package org.sherwoodhs.Situations.Testing.TestConvo1;
+package org.sherwoodhs.Situations.Testing.TestConversation1;
 
 
 import org.sherwoodhs.Situations.Situation;
 
-public class TestingDialog implements Situation {
+public class TestConversation1_0D implements Situation {
 
     // desc
-    private static Situation dialog = new TestingDialog();
-    private TestingDialog() {
+    private static Situation dialog = new TestConversation1_0D();
+    private TestConversation1_0D() {
 
     }
 
