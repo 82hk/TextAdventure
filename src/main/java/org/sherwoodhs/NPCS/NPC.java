@@ -14,6 +14,8 @@ public abstract class NPC {
     protected boolean hostile;
     protected String name;
 
+    protected int happiness;
+
     protected NPC (String name, int relModifier, Location citizenship, boolean hostile){
         this.name = name;
         this.relModifier = relModifier;
@@ -50,4 +52,14 @@ public abstract class NPC {
     public String getName(){
         return name;
     }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public void changeHappiness(int amount)
+    {
+        happiness += amount;
+    }
+
 }
