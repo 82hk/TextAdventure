@@ -19,5 +19,6 @@
                 2) "C" represents Combat
                 3) "I" represents Interaction
                 4) "E" represents Default Exploration
-4) This may be subject to change based on our # of classes.
-5) Please contact me, Derek, if you have any questions.
+4) If you want categorize Scenario packages (from 3.a), there isn't anything fancy that needs to be done. Just put them in the bigger package.
+5) This may be subject to change based on our # of classes.
+6) Please contact me, Derek, if you have any questions.
