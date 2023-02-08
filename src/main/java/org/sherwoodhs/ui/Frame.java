@@ -15,6 +15,7 @@ public class Frame extends JFrame {
     private Frame(String s) {
         super(s);
         setSize(WIDTH, HEIGHT);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
