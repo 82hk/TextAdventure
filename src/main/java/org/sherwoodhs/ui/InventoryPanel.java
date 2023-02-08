@@ -14,6 +14,7 @@ public class InventoryPanel extends JPanel {
         setBorder(new TitledBorder("Inventory"));
 
         inventoryList = new JList<>(inventoryListModel);
+        inventoryList.setSelectionModel(new DisabledItemSelectionModel());
         add(inventoryList);
 
         initInventory(new String[]{"Item One", "Item Deux", "Item Three", "Item 4"});

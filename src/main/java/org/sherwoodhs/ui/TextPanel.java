@@ -3,6 +3,7 @@ package org.sherwoodhs.ui;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.util.regex.Pattern;
 
 public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
@@ -19,16 +20,31 @@ public class TextPanel extends JPanel {
         add(textList);
     }
     /**
-     * Adds one element to textList without clearing its contents
+     * Adds one element to textList without clearing its contents, can contain escape sequences
      * @param s one element to be added to TextList
      */
-    public void addText(String s) {
-        textListModel.addElement(s);
+    public void addText (String s) {
+        parseEscapeSequences(s);
+    }
+    private void parseEscapeSequences(String s) {
+        // split String s into a number of parts denoted by \
+        String[] parts = s.split(Pattern.quote("\\"), -1);
+        // if there are no escape sequences, return
+        if (parts.length == 0)
+            return;
+        textListModel.addElement(parts[0]);
+        // skip parts[0] since there will be no escape sequences there
+        for (int i = 1; i < parts.length; i++) {
+            // if the escape sequence is '\n', add that element on a separate line
+            if (parts[i].charAt(0) == 'n') {
+                textListModel.addElement(parts[i].substring(1));
+            }
+        }
     }
     /**
-     * Adds a blank line to textList, akin to the <br> tag in HTML
+     * Adds a blank line to textList, akin to two <br> tags in HTML
      */
-    public void addLine() {
+    public void addBlank() {
         textListModel.addElement("");
     }
     /**
@@ -36,13 +52,6 @@ public class TextPanel extends JPanel {
      */
     public void clearAllText() {
         textListModel.clear();
-    }
-}
-// disables selection of items in JList<String> textList
-class DisabledItemSelectionModel extends DefaultListSelectionModel {
-    @Override
-    public void setSelectionInterval(int index0, int index1) {
-        super.setSelectionInterval(-1, -1);
     }
 }
 // renders JList components as JTextAreas that can wrap lines
