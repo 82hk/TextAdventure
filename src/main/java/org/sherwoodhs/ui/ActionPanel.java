@@ -1,5 +1,7 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.AdvGame;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,11 +10,12 @@ import java.awt.event.ActionListener;
 
 public class ActionPanel extends JPanel {
     public static final ActionPanel actionPanel = new ActionPanel();
+    private AdvGame adv;
     private ActionPanel() {
         super(new GridLayout(2, 3));
         setPreferredSize(new Dimension(650, 170));
         setBorder(new TitledBorder("Actions"));
-
+        adv = AdvGame.getInstance();
         initActions(new String[]{"Option 1", "Option 2", "Option 3", "Option 4"});
     }
     /**
@@ -30,7 +33,8 @@ public class ActionPanel extends JPanel {
             action.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    // situation
+                    JButton b = (JButton) e.getSource();
+                    adv.getCurrentSituation().perform(b.getText());
                 }
             });
             add(action);
