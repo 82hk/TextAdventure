@@ -24,12 +24,13 @@ public class ActionPanel extends JPanel {
             return;
         if (texts.length > 6)
             return;
+        removeAllActions();
         for (String element : texts) {
             JButton action = new JButton(element);
             action.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
+                    // situation
                 }
             });
             add(action);
@@ -40,7 +41,7 @@ public class ActionPanel extends JPanel {
         }
     }
     /**
-     * Changes the content of one button that is present in the panel
+     * Changes the content and action of one button that is present in the panel
      * @param s represents the action that will be searched for to remove
      * @param text represents the text that will replace String s
      */
@@ -50,11 +51,45 @@ public class ActionPanel extends JPanel {
             if (element instanceof JButton) {
                 // if the text of JButton element is equivalent to String s
                 if (((JButton) element).getText().equals(s)) {
+                    // sets text of the button to be changed
                     ((JButton) element).setText(text);
+                    // sets actions of the button to be changed
+                    ((JButton) element).addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            // situation
+                        }
+                    });
                     return;
                 }
             }
         }
         // will not achieve anything if a JButton with the content String s cannot be found on the panel
+    }
+    /**
+     * Removes one button present in the panel
+     * @param s represents the action that will be searched for to remove
+     */
+    public void removeAction(String s) {
+        Component[] comp = getComponents();
+        for (Component element : comp) {
+            if (element instanceof JButton) {
+                if (((JButton) element).getText().equals(s)) {
+                    remove(element);
+                }
+            }
+        }
+        // will not achieve anything if a JButton with the content String s cannot be found on the panel
+    }
+    /**
+     * Removes all action buttons in the panel
+     */
+    public void removeAllActions() {
+        Component[] comp = getComponents();
+        for (Component element : comp) {
+            if (element instanceof JButton) {
+                remove(element);
+            }
+        }
     }
 }
