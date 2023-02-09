@@ -17,7 +17,7 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 public class AdvGame {
     private Situation currentSituation;
-    private static AdvGame ikeaGame = new AdvGame();
+    private static AdvGame advGame = new AdvGame();
     private AdvGame() {
     }
 
@@ -30,7 +30,7 @@ public class AdvGame {
     }
 
     public static AdvGame getInstance() {
-        return ikeaGame;
+        return advGame;
     }
 
     //Changes situation and updates frame
