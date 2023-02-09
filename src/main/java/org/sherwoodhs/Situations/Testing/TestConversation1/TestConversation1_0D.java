@@ -2,14 +2,13 @@ package org.sherwoodhs.Situations.Testing.TestConversation1;
 
 
 import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.ui.TextPanel;
 
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 public class TestConversation1_0D implements Situation {
 
     // desc
-    private static Situation dialog = new TestConversation1_0D();
+    private static Situation dialogue = new TestConversation1_0D();
     private TestConversation1_0D() {
 
     }
@@ -45,6 +44,6 @@ public class TestConversation1_0D implements Situation {
 
 
     public static Situation getInstance(){
-        return dialog;
+        return dialogue;
     }
 }
