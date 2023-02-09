@@ -16,7 +16,7 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 
 public class AdvGame {
-    private Situation currentSituation;
+    private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private AdvGame() {
     }
@@ -34,8 +34,8 @@ public class AdvGame {
     }
 
     //Changes situation and updates frame
-    public void setSituation(Situation situation) {
-        this.currentSituation = situation;
+    public static void setSituation(Situation situation) {
+        currentSituation = situation;
         updateFrame();
     }
     public Situation getCurrentSituation (){
@@ -43,7 +43,7 @@ public class AdvGame {
     }
 
     /* Updates the frame */
-    public void updateFrame() {
+    public static void updateFrame() {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
