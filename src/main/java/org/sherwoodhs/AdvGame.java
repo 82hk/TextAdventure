@@ -11,14 +11,13 @@ import java.awt.*;
 
 import static org.sherwoodhs.ui.ActionPanel.actionPanel;
 import static org.sherwoodhs.ui.Frame.FRAME;
+import static org.sherwoodhs.ui.SituationPanel.situationPanel;
+import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 
 public class AdvGame {
     private Situation currentSituation;
-
     private static AdvGame ikeaGame = new AdvGame();
-    private SituationPanel situationPanel = SituationPanel.situationPanel;
-    private TextPanel txt = TextPanel.textPanel;
     private AdvGame() {
     }
 
@@ -46,7 +45,7 @@ public class AdvGame {
     /* Updates the frame */
     public void updateFrame() {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
-        txt.addText(currentSituation.getDescription()); // Changes textfield description
+        textPanel.addText(currentSituation.getDescription()); // Changes textfield description
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
     }
 }
