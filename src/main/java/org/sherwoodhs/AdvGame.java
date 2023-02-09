@@ -45,6 +45,7 @@ public class AdvGame {
     /* Updates the frame */
     public static void updateFrame() {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
+        textPanel.clearAllText(); // Empties the textfield
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
     }
