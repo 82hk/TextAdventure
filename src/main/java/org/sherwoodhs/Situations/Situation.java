@@ -7,6 +7,7 @@ public interface Situation {
 
     public abstract String getTitle();
     public abstract String getDescription();
+    public  abstract  String getSitType();
 
     public abstract String[] getOptions();
 

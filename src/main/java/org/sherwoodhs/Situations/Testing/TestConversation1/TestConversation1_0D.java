@@ -11,14 +11,13 @@ public class TestConversation1_0D implements Situation {
 
     // desc
     private static Situation dialogue = new TestConversation1_0D();
-    private TestConversation1_0D() {
-
-    }
+    private TestConversation1_0D() {}
 
     @Override
-    public String getTitle() {
-        return "A Starting Conversation";
-    }
+    public String getSitType() {return "Dialogue";}
+
+    @Override
+    public String getTitle() {return "A Starting Conversation";}
 
     @Override
     public String getDescription() {

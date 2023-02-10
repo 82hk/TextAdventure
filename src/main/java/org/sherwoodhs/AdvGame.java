@@ -8,6 +8,7 @@ import org.sherwoodhs.ui.SituationPanel;
 import org.sherwoodhs.ui.TextPanel;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 import static org.sherwoodhs.ui.ActionPanel.actionPanel;
@@ -48,6 +49,7 @@ public class AdvGame {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
+        textPanel.setBorder(new TitledBorder(AdvGame.getInstance().getCurrentSituation().getSitType())); //setTitled border title
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
     }
 }

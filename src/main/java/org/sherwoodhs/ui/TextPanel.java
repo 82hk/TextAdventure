@@ -1,7 +1,6 @@
 package org.sherwoodhs.ui;
 
-import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.Situations.Testing.TestConversation1.TestConversation1_0D;
+import org.sherwoodhs.AdvGame;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -16,7 +15,6 @@ public class TextPanel extends JPanel {
     private TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(650,550));
-        setBorder(new TitledBorder(""));
 
         textList = new JList<>(textListModel);
         textList.setSelectionModel(new DisabledItemSelectionModel());
