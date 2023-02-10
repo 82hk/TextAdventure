@@ -1,4 +1,4 @@
-package org.sherwoodhs.NPCS;
+package org.sherwoodhs.NpcS;
 
 import org.sherwoodhs.Locations.Location;
 import org.sherwoodhs.Locations.TestingLocation;
