@@ -1,13 +1,8 @@
 package org.sherwoodhs;
 
-import org.sherwoodhs.Situations.Testing.TestCombat1.TestCombat1_0C;
-import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.Situations.Testing.TestConversation1.TestConversation1_0D;
-import org.sherwoodhs.ui.ActionPanel;
-import org.sherwoodhs.ui.SituationPanel;
-import org.sherwoodhs.ui.TextPanel;
+import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
 
-import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 

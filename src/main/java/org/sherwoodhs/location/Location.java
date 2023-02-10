@@ -1,4 +1,4 @@
-package org.sherwoodhs.Locations;
+package org.sherwoodhs.location;
 
 import org.sherwoodhs.World;
 

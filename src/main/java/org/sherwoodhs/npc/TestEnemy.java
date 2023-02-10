@@ -1,7 +1,6 @@
-package org.sherwoodhs.NpcS;
+package org.sherwoodhs.npc;
 
-import org.sherwoodhs.Locations.Location;
-import org.sherwoodhs.Locations.TestingLocation;
+import org.sherwoodhs.location.TestingLocation;
 
 public class TestEnemy extends NPC{
 

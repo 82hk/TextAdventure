@@ -1,9 +1,9 @@
-package org.sherwoodhs.Situations.LocationOptions;
+package org.sherwoodhs.situation.LocationOptions;
 
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.Situations.OtherSide1.OtherSide1_0_0E;
+import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.OtherSide1.OtherSide1_0_0E;
 
 
 public class HiddenAlcove1E implements Situation {
