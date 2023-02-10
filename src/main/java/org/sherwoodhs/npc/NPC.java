@@ -1,7 +1,7 @@
-package org.sherwoodhs.NpcS;
+package org.sherwoodhs.npc;
 
 
-import org.sherwoodhs.Locations.Location;
+import org.sherwoodhs.location.Location;
 
 // Do singleton stuff in each separate NPC
 public abstract class NPC {

@@ -1,9 +1,9 @@
-package org.sherwoodhs.Situations.Testing.TestConversation1;
+package org.sherwoodhs.situation.Testing.TestConversation1;
 
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.Situations.Testing.TestCombat1.TestCombat1_0C;
+import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.Testing.TestCombat1.TestCombat1_0C;
 
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 

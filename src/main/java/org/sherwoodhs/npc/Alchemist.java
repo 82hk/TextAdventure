@@ -1,6 +1,6 @@
-package org.sherwoodhs.NpcS;
+package org.sherwoodhs.npc;
 
-import org.sherwoodhs.Locations.HiddenAlcove;
+import org.sherwoodhs.location.HiddenAlcove;
 
 public class Alchemist extends NPC{
     private static NPC npc = new Alchemist();
