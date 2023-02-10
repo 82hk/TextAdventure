@@ -1,9 +1,6 @@
 package org.sherwoodhs.Situations;
 
-
-import org.sherwoodhs.Locations.Location;
 import org.sherwoodhs.NPCS.NPC;
-import org.sherwoodhs.Situations.Situation;
 import org.sherwoodhs.inventory.Player;
 
 public abstract class Combat implements Situation {

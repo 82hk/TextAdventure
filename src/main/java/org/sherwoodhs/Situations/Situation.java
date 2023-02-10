@@ -1,12 +1,5 @@
 package org.sherwoodhs.Situations;
 
-import org.sherwoodhs.Locations.Location;
-import org.sherwoodhs.World;
-import org.sherwoodhs.inventory.Inventory;
-
-import java.util.Arrays;
-import java.util.Objects;
-
 //Singleton stuff will be done in each separate singleton
 
 public interface Situation {

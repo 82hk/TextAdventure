@@ -1,5 +1,8 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.Situations.Situation;
+import org.sherwoodhs.Situations.Testing.TestConversation1.TestConversation1_0D;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,10 +11,12 @@ public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
+
+
     private TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(650,550));
-        setBorder(new TitledBorder("Dialogue"));
+        setBorder(new TitledBorder(""));
 
         textList = new JList<>(textListModel);
         textList.setSelectionModel(new DisabledItemSelectionModel());
@@ -62,4 +67,5 @@ class CellRenderer implements ListCellRenderer {
             textArea.setSize(width, Short.MAX_VALUE);
         return panel;
     }
+
 }
