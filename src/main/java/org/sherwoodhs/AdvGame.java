@@ -1,8 +1,10 @@
 package org.sherwoodhs;
 
+import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
 
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -16,6 +18,14 @@ public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private AdvGame() {
+        try {
+            UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
+            UIManager.put("ScrollBar.thumbArc", 999);
+            UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2 ));
+            UIManager.put("Component.arrowType", "triangle");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Starts game at TestConversation1_0D then makes frame visible
