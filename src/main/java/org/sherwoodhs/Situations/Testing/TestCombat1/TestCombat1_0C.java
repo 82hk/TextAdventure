@@ -1,7 +1,6 @@
 package org.sherwoodhs.Situations.Testing.TestCombat1;
 
-
-import org.sherwoodhs.NPCS.TestEnemy;
+import org.sherwoodhs.NpcS.TestEnemy;
 import org.sherwoodhs.Situations.Combat;
 import org.sherwoodhs.Situations.Situation;
 

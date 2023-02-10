@@ -2,8 +2,11 @@ package org.sherwoodhs.Situations.LocationOptions;
 
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.Locations.HiddenAlcove;
+import org.sherwoodhs.Locations.Location;
 import org.sherwoodhs.Situations.Situation;
 import org.sherwoodhs.Situations.OtherSide1.OtherSide1_0_0E;
+import org.sherwoodhs.World;
 
 
 public class HiddenAlcove1E implements Situation {
@@ -13,7 +16,7 @@ public class HiddenAlcove1E implements Situation {
     private static Situation dialogue = new HiddenAlcove1E();
     private boolean firstTime = true;
     private HiddenAlcove1E() {
-        World.setStateS("Location",location.getName)
+        World.setStateS("Location",location.getName());
     }
 
     @Override
@@ -24,8 +27,7 @@ public class HiddenAlcove1E implements Situation {
 
     @Override
     public String getDescription() {
-        return ("There's a large opening hidden behind the curtain. Up until this point, you never knew that this space existed.
-        If it weren't for the _______ telling you about the rumors, you would've passed this space everyday while ignorant.");
+        return ("There's a large opening hidden behind the curtain. Up until this point, you never knew that this space existed. If it weren't for the _______ telling you about the rumors, you would've passed this space everyday while ignorant.");
     }
 
     @Override
@@ -33,9 +35,9 @@ public class HiddenAlcove1E implements Situation {
         String[] options;
         if (firstTime){
             firstTime = false;
-            options = {"Something"};
+            options = new String[]{"Something"};
         } else {
-            options = {"Explore", "*Look*"};
+            options = new String[]{"Explore", "*Look*"};
         }
         return options;
     }

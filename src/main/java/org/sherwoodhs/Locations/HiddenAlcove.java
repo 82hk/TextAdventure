@@ -1,7 +1,7 @@
 package org.sherwoodhs.Locations;
 
 public class HiddenAlcove extends Location{
-    private static HiddenAlcove location = new TestingLocation();
+    private static HiddenAlcove location = new HiddenAlcove();
     private HiddenAlcove(){
         super("Hidden Alcove",0);
     }

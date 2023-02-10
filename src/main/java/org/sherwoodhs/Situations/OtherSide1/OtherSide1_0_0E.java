@@ -3,6 +3,7 @@ package org.sherwoodhs.Situations.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.Situations.Situation;
+import org.sherwoodhs.Situations.Testing.TestCombat1.TestCombat1_0C;
 
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 

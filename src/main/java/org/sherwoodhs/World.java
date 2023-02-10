@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class World {
     //Contains all State values
-    private HashMap<String, Integer> states = new HashMap(); //For int values
-    private HashMap<Strint, String> states2 = new HashMap(); //For String values
+    private static HashMap<String, Integer> states = new HashMap(); //For int values
+    private static HashMap<String, String> states2 = new HashMap(); //For String values
     //Singleton Stuff
     private static World world = new World();
     private World(){
