@@ -2,6 +2,9 @@ package org.sherwoodhs.situation.OtherSide1;
 
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.inventory.Player;
+import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestCombat1.TestCombat1_0C;
 
@@ -12,6 +15,8 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
     This only happens on your first entrance of the Hidden Alcove
 */
 public class OtherSide1_0_0E implements Situation {
+    Player player = Player.getInstance();
+    NPC alchemist = Alchemist.getInstance();
 
     // desc
     private static Situation exploration = new OtherSide1_0_0E();
@@ -21,28 +26,28 @@ public class OtherSide1_0_0E implements Situation {
     public String getSitType() {return "Exploration";}
 
     @Override
-    public String getTitle() {return "A Starting Conversation";}
+    public String getTitle() {return "An Unexpected Meeting";}
 
     @Override
     public String getDescription() {
-        return "You are in front of the building.";
+        return ("As soon as you enter the room, a figure jumps in front of you.\n\n" +
+                alchemist.getName() + ": Not one step closer! How did you find this place?\n\n" +
+                "The figure spoke with a strange voice. It was feminine, but you couldn't figure out more than that." +
+                "They are cloaked in a dark garment. In the dim light, you can't distinguish what specific color it is." +
+                "" +
+                player.getName() + ": Calm down. An Old Man told me about this place.\n\n");
     }
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Hello, traveler", "*Yell*"};
+        String[] options = { "*Yell*"};
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "*Yell*" :
-                textPanel.addText("LOLOL\nOLOLOL");
-                break;
-            case "Hello, traveler" :
-                AdvGame.setSituation(TestCombat1_0C.getInstance());
-                break;
+
         }
     }
 

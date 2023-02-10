@@ -27,7 +27,9 @@ public class HiddenAlcove1E implements Situation {
 
     @Override
     public String getDescription() {
-        return ("There's a large opening hidden behind the curtain. Up until this point, you never knew that this space existed. If it weren't for the _______ telling you about the rumors, you would've passed this space everyday while ignorant.");
+        return ("There's a large opening hidden behind the curtain.Up until this point, you never knew that this space existed." +
+                "If it weren't for that Old Man telling you about the rumors, you would've passed this space everyday while remaining ignorant.\n" +
+                "Hopefully, here you will find what you've been needing. Hopefully, you can find the exit to this stupid place.");
     }
 
     @Override
@@ -35,7 +37,7 @@ public class HiddenAlcove1E implements Situation {
         String[] options;
         if (firstTime){
             firstTime = false;
-            options = new String[]{"Something"};
+            options = new String[]{"Enter The Room"};
         } else {
             options = new String[]{"Explore", "*Look*"};
         }
@@ -45,7 +47,7 @@ public class HiddenAlcove1E implements Situation {
     @Override
     public void perform(String option) {
         switch (option){
-            case "Something" :
+            case "Enter The Room" :
                 AdvGame.setSituation(OtherSide1_0_0E.getInstance());
                 break;
         }
