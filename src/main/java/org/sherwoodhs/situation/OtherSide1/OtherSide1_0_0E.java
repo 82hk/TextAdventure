@@ -1,15 +1,9 @@
 package org.sherwoodhs.situation.OtherSide1;
 
-
-import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.inventory.Player;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.Testing.TestCombat1.TestCombat1_0C;
-
-import static org.sherwoodhs.ui.TextPanel.textPanel;
-
 /*
     This is where you first meet the mysterious Alchemist(At this point, known as ?????).
     This only happens on your first entrance of the Hidden Alcove

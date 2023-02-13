@@ -20,8 +20,6 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {this.name = name;} // Should only be used once (Unless you need to change the player's name???)
-
     public int getHealth() {
         return health;
     }
@@ -39,11 +37,11 @@ public class Player {
     public void setPlayerName() {
         Boolean b = true;
         do {
-            s = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", JOptionPane.QUESTION_MESSAGE);
+            s = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
             if (s == null || s.isEmpty() || nameHasNums() || nameHasSpCh()) {
-                JOptionPane.showMessageDialog(null, "Name cannot contain numbers, special characters, or be blank!", "Name", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Name cannot contain numbers, special characters, spaces, or be blank!", "Name", 0);
             } else {
-                Player.getInstance().setName(s);
+                name = s;
                 b = false;
             }
         } while(b);
@@ -61,7 +59,7 @@ public class Player {
 
     //check name string for special characters
     private boolean nameHasSpCh() {
-        Pattern p = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+        Pattern p = Pattern.compile("[^a-z]", 2);
         Matcher m = p.matcher(s);
         boolean b = m.find();
 
