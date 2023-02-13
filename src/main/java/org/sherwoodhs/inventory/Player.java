@@ -8,7 +8,6 @@ public class Player {
     int health;
     int stamina;
     String name;
-    String s;
 
     private static Player player = new Player();
 
@@ -37,11 +36,10 @@ public class Player {
     public void setPlayerName() {
         Boolean b = true;
         do {
-            s = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
-            if (s == null || s.isEmpty() || nameHasNums() || nameHasSpCh()) {
+            name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
+            if (name == null || name.isEmpty() || nameHasNums() || nameHasSpCh()) {
                 JOptionPane.showMessageDialog(null, "Name cannot contain numbers, special characters, spaces, or be blank!", "Name", 0);
             } else {
-                name = s;
                 b = false;
             }
         } while(b);
@@ -49,7 +47,7 @@ public class Player {
 
     //Check name string for numbers
     private boolean nameHasNums() {
-        for (char c : s.toCharArray()) {
+        for (char c : name.toCharArray()) {
             if (Character.isDigit(c)) {
                 return true;
             }
@@ -60,7 +58,7 @@ public class Player {
     //check name string for special characters
     private boolean nameHasSpCh() {
         Pattern p = Pattern.compile("[^a-z]", 2);
-        Matcher m = p.matcher(s);
+        Matcher m = p.matcher(name);
         boolean b = m.find();
 
         if (b) {
