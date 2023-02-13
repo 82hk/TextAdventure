@@ -1,4 +1,5 @@
 package org.sherwoodhs;
+import org.sherwoodhs.inventory.Player;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
 
@@ -20,7 +21,7 @@ public class AdvGame {
     }
 
     //Starts game at TestConversation1_0D then makes frame visible
-    public void startGame(){
+    public void startGame() {
         setSituation(TestConversation1_0D.getInstance());
         EventQueue.invokeLater(() -> {
             FRAME.setVisible(true);
