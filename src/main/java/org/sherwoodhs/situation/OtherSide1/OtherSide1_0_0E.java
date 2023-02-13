@@ -27,9 +27,9 @@ public class OtherSide1_0_0E implements Situation {
         return ("As soon as you enter the room, a figure jumps in front of you.\n\n" +
                 alchemist.getName() + ": Not one step closer! How did you find this place?\n\n" +
                 "The figure spoke with a strange voice. It was feminine, but you couldn't figure out more than that." +
-                "They are cloaked in a dark garment. In the dim light, you can't distinguish what specific color it is." +
-                "" +
-                player.getName() + ": Calm down. An Old Man told me about this place.\n\n");
+                "They are cloaked in a dark garment. In the dim light, you can't distinguish what specific color it is.\n\n" +
+                "You paused for a second before answering slowly.\n\n" +
+                player.getName() + ": Calm down. I come in peace. An Old Man told me about this place. Said I could find myself here.\n\n");
     }
 
     @Override
