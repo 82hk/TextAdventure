@@ -1,6 +1,4 @@
-package org.sherwoodhs.Locations;
-
-
+package org.sherwoodhs.location;
 
 public class TestingLocation extends Location{
     private static TestingLocation location= new TestingLocation();

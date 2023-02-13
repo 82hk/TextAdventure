@@ -1,7 +1,7 @@
-package org.sherwoodhs.NPCS;
+package org.sherwoodhs.npc;
 
 
-import org.sherwoodhs.Locations.Location;
+import org.sherwoodhs.location.Location;
 
 // Do singleton stuff in each separate NPC
 public abstract class NPC {
@@ -33,7 +33,13 @@ public abstract class NPC {
     protected void updateObRel(){
         int x = citizenship.getReputation();
         x += relModifier;
-        obRelation = x;
+        if (x > 100){
+            obRelation = 100;
+        } else if (x < 0){
+            obRelation = 0;
+        } else {
+            obRelation = x;
+        }
     }
 
     //Changes the RelModifier by a certain value
@@ -51,6 +57,9 @@ public abstract class NPC {
     }
     public String getName(){
         return name;
+    }
+    public void setName(String name){ //If you want to change to a Nickname, "?????", etc.
+        this.name = name;
     }
 
     public int getHappiness() {
