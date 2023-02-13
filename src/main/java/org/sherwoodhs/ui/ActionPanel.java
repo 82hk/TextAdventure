@@ -91,9 +91,7 @@ public class ActionPanel extends JPanel {
     public void removeAllActions() {
         Component[] comp = getComponents();
         for (Component element : comp) {
-            if (element instanceof JButton) {
-                remove(element);
-            }
+            remove(element);
         }
     }
 }

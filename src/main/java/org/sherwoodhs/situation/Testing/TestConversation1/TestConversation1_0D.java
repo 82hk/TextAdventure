@@ -1,23 +1,23 @@
-package org.sherwoodhs.Situations.Testing.TestConversation1;
+package org.sherwoodhs.situation.Testing.TestConversation1;
 
 
-import org.sherwoodhs.Situations.Situation;
-import org.sherwoodhs.ui.TextPanel;
+import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.Testing.TestCombat1.TestCombat1_0C;
 
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 public class TestConversation1_0D implements Situation {
 
     // desc
-    private static Situation dialog = new TestConversation1_0D();
-    private TestConversation1_0D() {
-
-    }
+    private static Situation dialogue = new TestConversation1_0D();
+    private TestConversation1_0D() {}
 
     @Override
-    public String getTitle() {
-        return "A Starting Conversation";
-    }
+    public String getSitType() {return "Dialogue";}
+
+    @Override
+    public String getTitle() {return "A Starting Conversation";}
 
     @Override
     public String getDescription() {
@@ -34,17 +34,16 @@ public class TestConversation1_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "*Yell*" :
-                System.out.println("no");
                 textPanel.addText("LOLOL\nOLOLOL");
                 break;
             case "Hello, traveler" :
-                System.out.println("lol");
+                AdvGame.setSituation(TestCombat1_0C.getInstance());
                 break;
         }
     }
 
 
     public static Situation getInstance(){
-        return dialog;
+        return dialogue;
     }
 }

@@ -1,15 +1,17 @@
-package org.sherwoodhs.Situations.Testing.TestCombat1;
+package org.sherwoodhs.situation.Testing.TestCombat1;
 
-
-import org.sherwoodhs.NPCS.TestEnemy;
-import org.sherwoodhs.Situations.Combat;
-import org.sherwoodhs.Situations.Situation;
+import org.sherwoodhs.npc.TestEnemy;
+import org.sherwoodhs.situation.Combat;
+import org.sherwoodhs.situation.Situation;
 
 public class TestCombat1_0C extends Combat {
     private static Situation combat = new TestCombat1_0C();
     protected TestCombat1_0C() {
         super(new TestEnemy());
     }
+
+    @Override
+    public String getSitType(){return "Combat";}
 
     @Override
     public String getTitle() {
@@ -49,6 +51,7 @@ public class TestCombat1_0C extends Combat {
 
         }
     }
+
 
     public static Situation getInstance(){
         return combat;

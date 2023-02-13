@@ -1,6 +1,7 @@
 package org.sherwoodhs.ui;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
@@ -15,6 +16,7 @@ public class SituationPanel extends JPanel {
 
         situationLabel = new JLabel("Situation Situation Situation");
         situationLabel.setText(getBoldText(situationLabel));
+        situationLabel.setBorder(new EmptyBorder(5, 5, 0, 0));
         add(situationLabel);
     }
 

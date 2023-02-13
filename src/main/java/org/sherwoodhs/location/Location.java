@@ -1,4 +1,4 @@
-package org.sherwoodhs.Locations;
+package org.sherwoodhs.location;
 
 import org.sherwoodhs.World;
 
@@ -30,7 +30,13 @@ public abstract class Location {
     private void updateReputation(){
         int x = world.getState("Renown");
         x += repModifier;
-        obsReputation = x;
+        if (x > 100){
+            obsReputation = 100;
+        } else if (x < 0){
+            obsReputation = 0;
+        } else {
+            obsReputation = x;
+        }
     }
 
     public void changeRepModifier(int change){

@@ -1,7 +1,9 @@
 1) For every situation, please put all the NPCs, Items, Locations, etc, involved at the top of the class.
 2) Please make every situation a singleton with a private Scenario field, a private constructor, and a getInstance()
    method.
-3) For the organization of situations :
+3) Above the class declaration, please give a brief description in comments denoting what the situation does, the
+   "requirements", and its place in the world timeline.
+4) For the organization of situations :
     a) Create a package for a group of scenarios based on "quest line", "conversation", "sequence", etc.
         i)   Name this package with a very short description about this group. e.g. "MayorConversation" or
              "FinalBossFight"
@@ -9,7 +11,7 @@
              or "FinalBossFight1"
     b) Put all scenarios involved in the package
         i)   Name these scenarios after the package + "_" + # in chain(zero-based). e.g. "MayorConversation3_0" or
-             "FinalBossFight1_4"
+             "FinalBossFight1_4". If there is only one scenario in the chain, you do not have to add this.
         ii)  If there are scenarios that branch off and are mutually exclusive, add an addition "_" + #.
                 1) For example, if a dialogue choice leads to two different responses. e.g. MayorConversation3_1_0
                    and MayorConversation3_1_1
@@ -19,7 +21,7 @@
                 2) "C" represents Combat
                 3) "I" represents Interaction
                 4) "E" represents Default Exploration
-4) If you want to categorize Scenario packages (from 3.a), there isn't anything fancy that needs to be done. Just put
+5) If you want to categorize Scenario packages (from 3.a), there isn't anything fancy that needs to be done. Just put
    them in the bigger package.
-5) This may be subject to change based on our # of classes.
-6) Please contact me, Derek, if you have any questions.
+6) This may be subject to change based on our # of classes.
+7) Please contact me, Derek, if you have any questions.

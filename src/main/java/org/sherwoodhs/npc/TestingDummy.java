@@ -1,6 +1,6 @@
-package org.sherwoodhs.NPCS;
+package org.sherwoodhs.npc;
 
-import org.sherwoodhs.Locations.TestingLocation;
+import org.sherwoodhs.location.TestingLocation;
 
 public class TestingDummy extends NPC{
     private static NPC npc = new TestingDummy();
