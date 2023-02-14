@@ -49,12 +49,14 @@ public class InventoryPanel extends JPanel {
     public void clearInventory() {
         inventoryListModel.clear();
     }
-
-    //Checks inventoryListModel for string, returns true if it does, else, false
-    public boolean containsItem(String item){
-        if(inventoryListModel.contains(item)){
+    /**
+     * Returns a boolean that determines whether an item is contained in the inventory
+     * @param item represents the item to be searched for in inventoryList
+     */
+    public boolean containsItem (String item){
+        if (inventoryListModel.contains(item)) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
