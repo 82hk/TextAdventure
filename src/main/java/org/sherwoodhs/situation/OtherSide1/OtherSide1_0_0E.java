@@ -1,6 +1,6 @@
 package org.sherwoodhs.situation.OtherSide1;
 
-import org.sherwoodhs.inventory.Player;
+import org.sherwoodhs.player.Player;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.situation.Situation;

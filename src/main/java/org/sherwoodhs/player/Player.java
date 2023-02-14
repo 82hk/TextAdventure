@@ -1,4 +1,4 @@
-package org.sherwoodhs.inventory;
+package org.sherwoodhs.player;
 
 import javax.swing.*;
 import java.util.regex.Matcher;

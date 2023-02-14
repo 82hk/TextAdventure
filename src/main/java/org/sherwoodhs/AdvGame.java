@@ -1,9 +1,7 @@
 package org.sherwoodhs;
-import org.sherwoodhs.inventory.Player;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
 
-import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
