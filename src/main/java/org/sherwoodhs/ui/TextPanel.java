@@ -1,9 +1,6 @@
 package org.sherwoodhs.ui;
 
-import org.sherwoodhs.AdvGame;
-
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class TextPanel extends JPanel {
@@ -25,10 +22,10 @@ public class TextPanel extends JPanel {
     }
     /**
      * Adds one element to textList without clearing its contents, can contain escape sequences
-     * @param s one element to be added to TextList
+     * @param text one element to be added to TextList
      */
-    public void addText(String... s) {
-        for (String element : s) {
+    public void addText(String... text) {
+        for (String element : text) {
             textListModel.addElement(element);
         }
     }

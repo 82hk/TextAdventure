@@ -31,17 +31,17 @@ public class InventoryPanel extends JPanel {
     }
     /**
      * Adds one element to inventoryList without clearing its contents
-     * @param s one element to be added to inventoryList
+     * @param item one element to be added to inventoryList
      */
-    public void addToInventory(String s) {
-        inventoryListModel.addElement(s);
+    public void addToInventory(String item) {
+        inventoryListModel.addElement(item);
     }
     /**
      * Removes one element to inventoryList without clearing its contents
-     * @param s one element to be removed from inventoryList; method will not work if the element cannot be found
+     * @param item one element to be removed from inventoryList; method will not work if the element cannot be found
      */
-    public void removeFromInventory(String s) {
-        inventoryListModel.removeElement(s);
+    public void removeFromInventory(String item) {
+        inventoryListModel.removeElement(item);
     }
     /**
      * Clears all content inside inventoryList
@@ -58,5 +58,4 @@ public class InventoryPanel extends JPanel {
             return false;
         }
     }
-
 }
