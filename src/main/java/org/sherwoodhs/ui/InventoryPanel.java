@@ -10,7 +10,7 @@ public class InventoryPanel extends JPanel {
     private JList<String> inventoryList;
     private InventoryPanel() {
         super(new BorderLayout());
-        setPreferredSize(new Dimension(250, 470));
+        setPreferredSize(new Dimension(250, 295));
         setBorder(new TitledBorder("Inventory"));
 
         inventoryList = new JList<>(inventoryListModel);
