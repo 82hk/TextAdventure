@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import static org.sherwoodhs.ui.ActionPanel.actionPanel;
+import static org.sherwoodhs.ui.BarPanel.barPanel;
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 import static org.sherwoodhs.ui.MapPanel.mapPanel;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
@@ -15,7 +16,6 @@ public class Frame extends JFrame {
     private Frame(String s) {
         super(s);
         setSize(WIDTH, HEIGHT);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
@@ -34,9 +34,9 @@ public class Frame extends JFrame {
         left.add(textPanel, BorderLayout.NORTH);
         left.add(actionPanel, BorderLayout.SOUTH);
         right.add(mapPanel, BorderLayout.NORTH);
-        right.add(inventoryPanel, BorderLayout.SOUTH);
+        right.add(inventoryPanel, BorderLayout.CENTER);
+        right.add(barPanel, BorderLayout.SOUTH);
 
         pack();
     }
 }
-

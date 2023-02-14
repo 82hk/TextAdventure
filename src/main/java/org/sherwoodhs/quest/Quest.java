@@ -1,4 +1,4 @@
-package org.sherwoodhs.Quests;
+package org.sherwoodhs.quest;
 
 public interface Quest {
 
