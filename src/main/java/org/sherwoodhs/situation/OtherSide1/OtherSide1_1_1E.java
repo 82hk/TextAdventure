@@ -7,9 +7,9 @@ import org.sherwoodhs.situation.Situation;
  You permanently block this questline.
 
  */
-public class OtherSide1_1_1D implements Situation {
-    private static Situation situation = new OtherSide1_1_1D();
-    private OtherSide1_1_1D(){
+public class OtherSide1_1_1E implements Situation {
+    private static Situation situation = new OtherSide1_1_1E();
+    private OtherSide1_1_1E(){
 
     }
     public static Situation getInstance() {

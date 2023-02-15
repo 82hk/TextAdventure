@@ -27,7 +27,7 @@ public class OtherSide1_0_0D implements Situation {
 
     @Override
     public String getDescription() {
-        return ("As soon as you enter the room, someon jumps in front of you.\n\n" +
+        return ("As soon as you enter the room, someone jumps in front of you.\n\n" +
                 alchemist.getName() + ": Not one step closer! How did you find this place?\n\n" +
                 "They spoke with a strange voice. It was feminine, but you couldn't figure out more than that. " +
                 "They were cloaked in a dark garment, but in the dim light, you couldn't determine what specific color it is.\n\n" +
@@ -37,7 +37,7 @@ public class OtherSide1_0_0D implements Situation {
                 alchemist.getName() + ": I don't what my grandpa said to you, but he's wrong. You'll find nothing here but forsaken dreams " +
                 "and lost happiness. Let me give you a piece of advice. Leave this place. Get involved with one of those factions out there. " +
                 "Make friends and enemies... Win the loot of victors... Maybe find true love... I don't know what you want. " +
-                "Just don't waste your time here. Lose yourself in the stimulations of this cursed place. " +
+                "Just don't waste your time here. Lose yourself in all the stimulations of this cursed place. " +
                 "The anarchy giving us the perceived freedom of choice is the only thing it's good for anyway. " +
                 "Too bad seeing behind the curtain ruins everything...\n\n" +
                 "Silence befalls you two. It permeates the room, until you say...");

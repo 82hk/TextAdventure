@@ -9,7 +9,7 @@ import org.sherwoodhs.situation.Situation;
  This event occurs when you select the "nothing to return to" option in OtherSide1_0_0D.
  This only is selectable when the world basically hates you.
  Adds 5 rel to the Alchemist.
- Returns to the normal questline options.
+ This is the only way to progress to the main storyline.
  */
 public class OtherSide1_1_0D implements Situation {
     private NPC alchemist = Alchemist.getInstance();
@@ -32,10 +32,12 @@ public class OtherSide1_1_0D implements Situation {
         return ("(+5 relationship with " + alchemist.getName() + ")\n\n" +
                 player.getName() + ": There's nothing for me to return to.\n\n" +
                 "There was no hesitation in your voice because there was no doubt that what you said was right. " +
-                "The statement took " + alchemist.getName() + " by suprise. They did not expect to hear that from you. " + 
+                "The statement took " + alchemist.getName() + " by surprise. They did not expect to hear that from you. " +
                 "Their demeanor relaxed, showing a moment of weakness.\n\n" +
                 alchemist.getName() + ": Huh, I guess... I guess we're the same in that aspect.\n\n" +
-                "But as sudden as the be"
+                alchemist.getName() + " took off their hood, revealing a green-eyed woman with shoulder-length brown hair.\n\n" +
+                alchemist.getName() + ": The name's Hecate." +
+                "But as sudden as it appeared, that"
                 );
     }
 
