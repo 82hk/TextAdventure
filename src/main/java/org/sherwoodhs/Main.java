@@ -1,6 +1,6 @@
 package org.sherwoodhs;
 
-import org.sherwoodhs.inventory.Player;
+import org.sherwoodhs.player.Player;
 
 public class Main {
     public static void main(String[] args) {

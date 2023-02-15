@@ -1,7 +1,7 @@
 package org.sherwoodhs.situation;
 
 import org.sherwoodhs.npc.NPC;
-import org.sherwoodhs.inventory.Player;
+import org.sherwoodhs.player.Player;
 
 public abstract class Combat implements Situation {
     //Calls in player singleton

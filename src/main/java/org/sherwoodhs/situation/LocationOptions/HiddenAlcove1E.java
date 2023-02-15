@@ -5,7 +5,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
-import org.sherwoodhs.situation.OtherSide1.OtherSide1_0_0E;
+import org.sherwoodhs.situation.OtherSide1.OtherSide1_0_0D;
 import org.sherwoodhs.situation.Situation;
 
 
@@ -29,7 +29,7 @@ public class HiddenAlcove1E implements Situation {
     public String getDescription() {
         return ("There's a large opening hidden behind the curtain.Up until this point, you never knew that this space existed." +
                 "If it weren't for that Old Man telling you about the rumors, you would've passed this space everyday while remaining ignorant.\n" +
-                "Hopefully, here you will find what you've been needing. Hopefully, you can find the exit to this stupid place.");
+                "Hopefully, here you will find what you've been needing. Hopefully, you can the meaning of your life.");
     }
 
     @Override
@@ -48,7 +48,7 @@ public class HiddenAlcove1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Enter The Room" :
-                AdvGame.setSituation(OtherSide1_0_0E.getInstance());
+                AdvGame.setSituation(OtherSide1_0_0D.getInstance());
                 break;
         }
     }

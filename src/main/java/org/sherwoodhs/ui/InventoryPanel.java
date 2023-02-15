@@ -10,7 +10,7 @@ public class InventoryPanel extends JPanel {
     private JList<String> inventoryList;
     private InventoryPanel() {
         super(new BorderLayout());
-        setPreferredSize(new Dimension(250, 470));
+        setPreferredSize(new Dimension(250, 295));
         setBorder(new TitledBorder("Inventory"));
 
         inventoryList = new JList<>(inventoryListModel);
@@ -31,22 +31,33 @@ public class InventoryPanel extends JPanel {
     }
     /**
      * Adds one element to inventoryList without clearing its contents
-     * @param s one element to be added to inventoryList
+     * @param item one element to be added to inventoryList
      */
-    public void addToInventory(String s) {
-        inventoryListModel.addElement(s);
+    public void addToInventory(String item) {
+        inventoryListModel.addElement(item);
     }
     /**
      * Removes one element to inventoryList without clearing its contents
-     * @param s one element to be removed from inventoryList; method will not work if the element cannot be found
+     * @param item one element to be removed from inventoryList; method will not work if the element cannot be found
      */
-    public void removeFromInventory(String s) {
-        inventoryListModel.removeElement(s);
+    public void removeFromInventory(String item) {
+        inventoryListModel.removeElement(item);
     }
     /**
      * Clears all content inside inventoryList
      */
     public void clearInventory() {
         inventoryListModel.clear();
+    }
+    /**
+     * Returns a boolean that determines whether an item is contained in the inventory
+     * @param item represents the item to be searched for in inventoryList
+     */
+    public boolean containsItem (String item){
+        if (inventoryListModel.contains(item)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

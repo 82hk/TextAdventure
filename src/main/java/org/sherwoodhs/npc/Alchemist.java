@@ -10,4 +10,13 @@ public class Alchemist extends NPC{
     public static NPC getInstance(){
         return npc;
     }
+    protected void updateObRel(){
+        if (relModifier > 175){
+            obRelation = 100;
+        } else if (relModifier < -25){
+            obRelation = -100;
+        } else {
+            obRelation = relModifier -75;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+Package effectively means folder.
 1) For every situation, please put all the NPCs, Items, Locations, etc, involved at the top of the class.
 2) Please make every situation a singleton with a private Scenario field, a private constructor, and a getInstance()
    method.
@@ -23,5 +24,7 @@
                 4) "E" represents Default Exploration
 5) If you want to categorize Scenario packages (from 3.a), there isn't anything fancy that needs to be done. Just put
    them in the bigger package.
-6) This may be subject to change based on our # of classes.
-7) Please contact me, Derek, if you have any questions.
+6) The LocationOptions Package is simply just the default scenario when moving between locations. These scenarios are
+   can branch off to other scenario options based on conditions.
+7) This may be subject to change based on our # of classes.
+8) Please contact me, Derek, if you have any questions.

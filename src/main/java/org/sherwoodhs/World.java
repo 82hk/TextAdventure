@@ -41,8 +41,8 @@ public class World {
                 //Checks for out of limits values
                 if (changed > 100) /* Current Max of 100 */ {
                     changed = 100;
-                } else if (changed < 0) /* Current Min of 0 */{
-                    changed = 0;
+                } else if (changed < -100) /* Current Min of -100 */{
+                    changed = -100;
                 }
                 states.replace("Renown",changed);
                 break;
