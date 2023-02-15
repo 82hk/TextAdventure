@@ -33,10 +33,10 @@ public abstract class NPC {
     protected void updateObRel(){
         int x = citizenship.getReputation();
         x += relModifier;
-        if (x > 100){
+        if (x >= 100){
             obRelation = 100;
-        } else if (x < 0){
-            obRelation = 0;
+        } else if (x <= -100){
+            obRelation = 100;
         } else {
             obRelation = x;
         }

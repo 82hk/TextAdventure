@@ -21,6 +21,8 @@ public class Frame extends JFrame {
 
         add(situationPanel, BorderLayout.NORTH);
 
+        setDefaultCloseOperation(3);
+
         // contains TextPanel, ActionPanel
         JPanel left = new JPanel();
         // contains MapPanel, InventoryPanel

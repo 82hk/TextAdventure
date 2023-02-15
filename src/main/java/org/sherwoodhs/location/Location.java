@@ -32,8 +32,8 @@ public abstract class Location {
         x += repModifier;
         if (x > 100){
             obsReputation = 100;
-        } else if (x < 0){
-            obsReputation = 0;
+        } else if (x < -100){
+            obsReputation = -100;
         } else {
             obsReputation = x;
         }
