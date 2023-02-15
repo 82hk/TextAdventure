@@ -28,19 +28,25 @@ public class ActionPanel extends JPanel {
         if (texts.length > 6)
             return;
         removeAllActions();
+        int blanks = 0;
         for (String element : texts) {
-            JButton action = new JButton(element);
-            action.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    JButton b = (JButton) e.getSource();
-                    adv.getCurrentSituation().perform(b.getText());
-                }
-            });
-            add(action);
+            // if the element  cycling through is not blank
+            if (!element.equals("")) {
+                JButton action = new JButton(element);
+                action.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JButton b = (JButton) e.getSource();
+                        adv.getCurrentSituation().perform(b.getText());
+                    }
+                });
+                add(action);
+            } else {
+                blanks++;
+            }
         }
         // adds empty space to non-existent cells
-        for (int i = 0; i < 6 - texts.length; i++) {
+        for (int i = 0; i < 6 - (texts.length - blanks); i++) {
             add(new JLabel());
         }
     }
