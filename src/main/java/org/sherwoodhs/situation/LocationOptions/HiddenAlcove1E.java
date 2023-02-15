@@ -28,12 +28,12 @@ public class HiddenAlcove1E implements Situation {
     @Override
     public String getDescription() {
         if (firstTime){
-            return ("There's a large opening hidden behind the curtain. Up until this point, you never knew that this space existed." +
+            return ("There's a large opening hidden behind the curtain. Up until this point, you never knew that this space existed. " +
                     "If it weren't for that Old Man telling you about the rumors, you would've passed this space everyday while remaining ignorant.\n\n" +
                     "Hopefully, here you will find what you've been needing. Hopefully, you can the meaning of your life.");
         }
         return("You arrive back at the hidden alcove. Ever since you first found this place, it has been calling out for you." + 
-        "You can't shake the feeling of interest you have for the room and its mysteries.")
+        "You can't shake the feeling of interest you have for the room and its mysteries.");
     }
 
     @Override

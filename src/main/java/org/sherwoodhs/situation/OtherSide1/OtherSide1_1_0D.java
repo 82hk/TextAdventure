@@ -33,7 +33,7 @@ public class OtherSide1_1_0D implements Situation {
                 player.getName() + ": There's nothing for me to return to.\n\n" +
                 "There was no hesitation in your voice because there was no doubt that what you said was right. " +
                 "The statement took " + alchemist.getName() + " by suprise. They did not expect to hear that from you. " + 
-                "Their demeanor relaxed, showing a moment of weakness.\n\n"
+                "Their demeanor relaxed, showing a moment of weakness.\n\n" +
                 alchemist.getName() + ": Huh, I guess... I guess we're the same in that aspect.\n\n" +
                 "But as sudden as the be"
                 );
