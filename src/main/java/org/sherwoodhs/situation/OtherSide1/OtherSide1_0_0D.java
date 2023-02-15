@@ -27,13 +27,13 @@ public class OtherSide1_0_0D implements Situation {
 
     @Override
     public String getDescription() {
-        return ("As soon as you enter the room, a figure jumps in front of you.\n\n" +
+        return ("As soon as you enter the room, someon jumps in front of you.\n\n" +
                 alchemist.getName() + ": Not one step closer! How did you find this place?\n\n" +
-                "The figure spoke with a strange voice. It was feminine, but you couldn't figure out more than that. " +
-                "They are cloaked in a dark garment. In the dim light, you can't distinguish what specific color it is.\n\n" +
+                "They spoke with a strange voice. It was feminine, but you couldn't figure out more than that. " +
+                "They were cloaked in a dark garment, but in the dim light, you couldn't determine what specific color it is.\n\n" +
                 "You paused for a second before answering slowly.\n\n" +
                 player.getName() + ": Calm down. I come in peace. An Old Man told me about this place. Said I could find ___________.\n\n" +
-                "The figure noticeably relaxes and sighs." +
+                alchemist.getName() + " noticeably relaxed and sighed." +
                 alchemist.getName() + ": I don't what my grandpa said to you, but he's wrong. You'll find nothing here but forsaken dreams " +
                 "and lost happiness. Let me give you a piece of advice. Leave this place. Get involved with one of those factions out there. " +
                 "Make friends and enemies... Win the loot of victors... Maybe find true love... I don't know what you want. " +
@@ -57,8 +57,12 @@ public class OtherSide1_0_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "\"There's nothing for me to return to.\"":
-                AdvGame.getInstance().setSituation(OtherSide1_1_0D.getInstance());
-                alchemist.changeRelModifier(5);
+                AdvGame.setSituation(OtherSide1_1_0D.getInstance());
+            break;
+            case "\"What curtain?\"":
+            break;
+            case "\"I'll take your advice and leave\"":
+            //Returns back to the road(temp) LocationOption and permanently removes the option to enter the Hidden Alcove.
             break;
 
         }
