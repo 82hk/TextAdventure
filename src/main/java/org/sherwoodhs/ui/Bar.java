@@ -28,7 +28,6 @@ public class Bar extends JPanel {
         add(label);
         add(bar);
     }
-    public void setvalue(int value) {
-        bar.setString(Integer.toString(value));
-    }
+    public void setValue(int value) {bar.setString(Integer.toString(value));}
+    public void setLabel(JLabel labelName){label = labelName;}
 }
