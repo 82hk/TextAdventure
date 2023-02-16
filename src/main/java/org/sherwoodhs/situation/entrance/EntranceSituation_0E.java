@@ -5,6 +5,7 @@ The very first situation, will contain nothing but a description and 2 options
  */
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.examples.ExampleSituation;
 
@@ -23,9 +24,7 @@ public class EntranceSituation_0E implements Situation {
     }
 
     @Override
-    public String getSitType() {
-        return "Exploration";
-    }
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {

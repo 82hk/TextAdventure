@@ -14,4 +14,6 @@ public abstract class Combat implements Situation {
         this.enemy = enemy;
     }
 
+    public SitType getSitType() {return SitType.Combat;}
+
 }

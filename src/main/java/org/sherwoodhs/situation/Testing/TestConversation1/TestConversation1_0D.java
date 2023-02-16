@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Testing.TestConversation1;
 
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestCombat1.TestCombat1_0C;
 
@@ -14,7 +15,7 @@ public class TestConversation1_0D implements Situation {
     private TestConversation1_0D() {}
 
     @Override
-    public String getSitType() {return "Dialogue";}
+    public SitType getSitType() {return SitType.Dialogue;}
 
     @Override
     public String getTitle() {return "A Starting Conversation";}
@@ -34,7 +35,7 @@ public class TestConversation1_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "*Yell*" :
-                textPanel.addText("LOLOL\nOLOLOL");
+                AdvGame.updateFrame("LOLOL\nOLOLOL");
                 break;
             case "Hello, traveler" :
                 AdvGame.setSituation(TestCombat1_0C.getInstance());

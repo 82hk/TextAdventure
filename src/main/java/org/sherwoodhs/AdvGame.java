@@ -45,7 +45,18 @@ public class AdvGame {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
-        textPanel.setBorder(new TitledBorder(currentSituation.getSitType())); //setTitled border title
+        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
+    }
+
+    public static void updateFrame(String newDesc, String[] options)
+    {
+        updateFrame(newDesc);
+        actionPanel.initActions(options);
+    }
+
+    public static void updateFrame(String newDesc)
+    {
+        textPanel.addText("\n" + newDesc);
     }
 }

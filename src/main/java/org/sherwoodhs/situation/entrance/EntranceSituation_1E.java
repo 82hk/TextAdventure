@@ -1,5 +1,6 @@
 package org.sherwoodhs.situation.entrance;
 
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*
 The first situation inside the ikea
@@ -19,9 +20,7 @@ public class EntranceSituation_1E implements Situation {
     }
 
     @Override
-    public String getSitType() {
-        return "Exploration";
-    }
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {

@@ -3,6 +3,7 @@ package org.sherwoodhs.situation.OtherSide1;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 /*
@@ -41,9 +42,7 @@ public class OtherSide1_1_0D implements Situation {
     }
 
     @Override
-    public String getSitType() {
-        return "Dialogue";
-    }
+    public SitType getSitType() {return SitType.Dialogue;}
 
     @Override
     public String[] getOptions() {

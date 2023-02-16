@@ -1,5 +1,6 @@
 package org.sherwoodhs.situation.OtherSide1;
 
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 /*
@@ -30,9 +31,7 @@ public class OtherSide1_1_1E implements Situation {
     }
 
     @Override
-    public String getSitType() {
-        return "Exploration";
-    }
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {

@@ -4,6 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*
     This is where you first meet the mysterious Alchemist(At this point, known as ?????).
@@ -21,7 +22,7 @@ public class OtherSide1_0_0D implements Situation {
 
     private boolean questionOption = true; //Decides if option 1 get shown as an option
     @Override
-    public String getSitType() {return "Dialogue";}
+    public SitType getSitType() {return SitType.Dialogue;}
 
     @Override
     public String getTitle() {return "An Unexpected Meeting";}
