@@ -23,10 +23,10 @@ public class OtherSide1_1_1E implements Situation {
 
     @Override
     public String getDescription() {
-        return ("You leave the Hidden Alcove. Never do you look back, but there's a nagging feeling that you " +
-        "made a bad decision. Your body tells you to turn back. Yet, you squash that feeling. That unnatural attraction " +
-        "is unhealthy. Finally, forever pushing away the thoughts of what you just experienced, you return to _________.\n\n" +
-        "You never look back");
+        return ("You left the Hidden Alcove. Never did you look back, but there was a nagging feeling that you " +
+        "made a bad decision. Your body told you to turn back. Yet, you squashed that feeling. That unnatural attraction " +
+        "was unhealthy. Finally, forever pushing away the thoughts of what you just experienced, you returned to _________.\n\n" +
+        "You never looked back");
     }
 
     @Override

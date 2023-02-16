@@ -1,7 +1,6 @@
 package org.sherwoodhs;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
-import org.sherwoodhs.situation.entrance.EntranceSituation_0E;
 import org.sherwoodhs.situation.examples.ExampleSituation;
 
 import javax.swing.border.TitledBorder;
