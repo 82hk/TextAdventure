@@ -1,6 +1,9 @@
 package org.sherwoodhs.situation.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.NPC;
+import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Situation;
 
 /*
@@ -9,6 +12,8 @@ import org.sherwoodhs.situation.Situation;
 
  */
 public class OtherSide1_1_2D implements Situation {
+    private Player player = Player.getInstance();
+    private NPC alchemist = Alchemist.getInstance();
     private static Situation situation = new OtherSide1_1_2D();
     private OtherSide1_1_2D(){
 
@@ -24,7 +29,10 @@ public class OtherSide1_1_2D implements Situation {
 
     @Override
     public String getDescription() {
-        return ("");
+        return (player.getName() + ": What curtain?\n\n" +
+                alchemist.getName() + ": Pretend you didn't hear that. That's not something you'd want to know right now.\n\n" +
+                player.getName() + ": But-\n\n" +
+                alchemist.getName() + ": I mean it. That is my greatest regret it life. If I hadn't, I would be living so much happier right now.");
     }
 
     @Override

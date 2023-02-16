@@ -1,7 +1,7 @@
 package org.sherwoodhs;
+import org.sherwoodhs.situation.LocationOptions.HiddenAlcove1E;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
-import org.sherwoodhs.situation.examples.ExampleSituation;
 
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class AdvGame {
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
-        setSituation(TestConversation1_0D.getInstance());
+        setSituation(HiddenAlcove1E.getInstance());
         EventQueue.invokeLater(() -> {
             FRAME.setVisible(true);
         });
