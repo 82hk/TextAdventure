@@ -37,7 +37,10 @@ public class ActionPanel extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JButton b = (JButton) e.getSource();
-                        adv.getCurrentSituation().perform(b.getText());
+                        String s = b.getText()
+                                .replace("<html><center>", "")
+                                .replace("</center></html>", "");
+                        adv.getCurrentSituation().perform(s);
                     }
                 });
                 add(action);
