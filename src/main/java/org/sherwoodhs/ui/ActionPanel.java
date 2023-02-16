@@ -32,7 +32,7 @@ public class ActionPanel extends JPanel {
         for (String element : texts) {
             // if the element  cycling through is not blank
             if (!element.equals("")) {
-                JButton action = new JButton(element);
+                JButton action = new JButton(getWrappedText(element));
                 action.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -99,5 +99,9 @@ public class ActionPanel extends JPanel {
         for (Component element : comp) {
             remove(element);
         }
+    }
+    private String getWrappedText(String s) {
+        s = "<html><center>" + s + "</center></html>";
+        return s;
     }
 }
