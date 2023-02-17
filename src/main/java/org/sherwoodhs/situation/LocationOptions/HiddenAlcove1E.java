@@ -6,6 +6,7 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.situation.OtherSide1.OtherSide1_0_0D;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 
@@ -20,7 +21,7 @@ public class HiddenAlcove1E implements Situation {
     }
 
     @Override
-    public String getSitType() {return "Exploration";}
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String getTitle() {return "The Hidden Alcove";}

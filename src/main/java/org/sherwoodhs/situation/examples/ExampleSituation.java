@@ -5,6 +5,7 @@ import org.sherwoodhs.location.examples.ExampleLocation;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.examples.ExampleNPC;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
@@ -44,9 +45,7 @@ public class ExampleSituation implements Situation {
     }
 
     @Override
-    public String getSitType() {
-        return "Exploration"; //This String is based off of what situation type you want, should be just s single word
-    }
+    public SitType getSitType() {return SitType.Exploration;}
 
 
     //These are the options you have in the certain situation, you can only have up to six, and there is a character limit, so make each option short and concise

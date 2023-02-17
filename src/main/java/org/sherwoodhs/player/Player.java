@@ -35,14 +35,18 @@ public class Player {
     //gets the sets the player name but only if it does NOT contain numbers and special characters
     public void setPlayerName() {
         Boolean b = true;
-        do {
-            name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
-            if (name == null || name.isEmpty() || nameHasNums() || nameHasSpCh()) {
-                JOptionPane.showMessageDialog(null, "Name cannot contain numbers, special characters, spaces, or be blank!", "Name", 0);
-            } else {
-                b = false;
-            }
-        } while(b);
+        try {
+            do {
+                name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
+                if (name.isEmpty() || nameHasNums() || nameHasSpCh() || charCap()) {
+                    JOptionPane.showMessageDialog(null, "Name cannot contain numbers,  special characters, spaces, be blank, or be longer than 16 characters!", "Name", 0);
+                } else {
+                    b = false;
+                }
+            } while (b);
+        }catch (NullPointerException e){
+            System.exit(0);
+        }
     }
 
     //Check name string for numbers
@@ -64,6 +68,15 @@ public class Player {
         if (b) {
             return true;
         } else {
+            return false;
+        }
+    }
+
+    private boolean charCap(){
+        char[] nameList = name.toCharArray();
+        if(nameList.length > 16) {
+            return true;
+        } else{
             return false;
         }
     }

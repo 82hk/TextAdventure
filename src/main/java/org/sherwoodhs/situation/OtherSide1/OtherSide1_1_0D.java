@@ -3,20 +3,20 @@ package org.sherwoodhs.situation.OtherSide1;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 /*
  This event occurs when you select the "nothing to return to" option in OtherSide1_0_0D.
  This only is selectable when the world basically hates you.
  Adds 5 rel to the Alchemist.
- This is the only way to progress to the main storyline.
+ This is one way to progress to the main storyline.
  */
 public class OtherSide1_1_0D implements Situation {
     private NPC alchemist = Alchemist.getInstance();
     private Player player = Player.getInstance();
     private static Situation situation = new OtherSide1_1_0D();
     private OtherSide1_1_0D(){
-        alchemist.changeRelModifier(5); // Possibly here works?
     }
     public static Situation getInstance() {
         return situation;
@@ -36,15 +36,13 @@ public class OtherSide1_1_0D implements Situation {
                 "Their demeanor relaxed, showing a moment of weakness.\n\n" +
                 alchemist.getName() + ": Huh, I guess... I guess we're the same in that aspect.\n\n" +
                 alchemist.getName() + " took off their hood, revealing a green-eyed woman with shoulder-length brown hair.\n\n" +
-                alchemist.getName() + ": The name's Hecate." +
+                alchemist.getName() + ": The name's Hecate.\n\n" +
                 "But as sudden as it appeared, that"
                 );
     }
 
     @Override
-    public String getSitType() {
-        return "Dialogue";
-    }
+    public SitType getSitType() {return SitType.Dialogue;}
 
     @Override
     public String[] getOptions() {

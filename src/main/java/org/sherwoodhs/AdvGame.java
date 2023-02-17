@@ -1,7 +1,7 @@
 package org.sherwoodhs;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.Testing.TestConversation1.TestConversation1_0D;
-import org.sherwoodhs.situation.examples.ExampleSituation;
+import org.sherwoodhs.situation.entrance.EntranceSituation_0E;
+
 
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class AdvGame {
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
-        setSituation(TestConversation1_0D.getInstance());
+        setSituation(EntranceSituation_0E.getInstance());
         EventQueue.invokeLater(() -> {
             FRAME.setVisible(true);
         });
@@ -45,7 +45,18 @@ public class AdvGame {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
-        textPanel.setBorder(new TitledBorder(currentSituation.getSitType())); //setTitled border title
+        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
+    }
+
+    public static void updateFrame(String newDesc, String[] options)
+    {
+        updateFrame(newDesc);
+        actionPanel.initActions(options);
+    }
+
+    public static void updateFrame(String newDesc)
+    {
+        textPanel.addText("\n" + newDesc);
     }
 }
