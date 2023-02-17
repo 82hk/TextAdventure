@@ -93,7 +93,6 @@ public class Bar extends JPanel {
                         curB += constB;
                     }
                     UIManager.put("ProgressBar.foreground", new Color(curR, curG, curB));
-                    System.out.println(value + " " + UIManager.get("ProgressBar.foreground"));
                 } else {
                     // if value is pos
                     // 90, 255, 155
