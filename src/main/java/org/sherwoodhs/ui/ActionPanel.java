@@ -13,10 +13,9 @@ public class ActionPanel extends JPanel {
     private AdvGame adv;
     private ActionPanel() {
         super(new GridLayout(2, 3));
-        setPreferredSize(new Dimension(650, 170));
+        setPreferredSize(new Dimension(750, 170));
         setBorder(new TitledBorder("Actions"));
         adv = AdvGame.getInstance();
-        initActions(new String[]{"Option 1", "Option 2", "Option 3", "Option 4"});
     }
     /**
      * Adds # number of JButtons that represents the actions the player can take

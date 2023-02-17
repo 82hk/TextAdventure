@@ -10,7 +10,7 @@ public class TextPanel extends JPanel {
     private JList<String> textList;
     private TextPanel() {
         super(new BorderLayout());
-        setPreferredSize(new Dimension(500,550));
+        setPreferredSize(new Dimension(600,550));
         setBorder(new TitledBorder("Dialogue"));
 
         textList = new JList<>(textListModel);
