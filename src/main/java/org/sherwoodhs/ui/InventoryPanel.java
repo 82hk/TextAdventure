@@ -1,5 +1,7 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,6 +10,7 @@ public class InventoryPanel extends JPanel {
     public static final InventoryPanel inventoryPanel = new InventoryPanel();
     private DefaultListModel<String> inventoryListModel = new DefaultListModel<>();
     private JList<String> inventoryList;
+
     private InventoryPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(250, 295));

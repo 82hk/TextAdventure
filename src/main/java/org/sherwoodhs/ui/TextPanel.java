@@ -1,5 +1,8 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.ui.util.CellRenderer;
+import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,6 +11,7 @@ public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
+
     private TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600,550));

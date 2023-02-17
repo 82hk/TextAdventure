@@ -1,7 +1,7 @@
 package org.sherwoodhs;
+
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.entrance.EntranceSituation_0E;
-
 
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -11,13 +11,10 @@ import static org.sherwoodhs.ui.Frame.FRAME;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 
-
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
-    private AdvGame() {
-
-    }
+    private AdvGame() {}
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {

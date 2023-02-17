@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class ActionPanel extends JPanel {
     public static final ActionPanel actionPanel = new ActionPanel();
     private AdvGame adv;
+
     private ActionPanel() {
         super(new GridLayout(2, 3));
         setPreferredSize(new Dimension(750, 170));

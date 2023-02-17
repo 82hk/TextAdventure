@@ -1,4 +1,4 @@
-package org.sherwoodhs.ui;
+package org.sherwoodhs.ui.util;
 
 import javax.swing.DefaultListSelectionModel;
 

@@ -1,5 +1,8 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.ui.util.CellRenderer;
+import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,6 +11,7 @@ public class QuestPanel extends JPanel {
     public static final QuestPanel questPanel = new QuestPanel();
     private DefaultListModel<String> questListModel = new DefaultListModel<>();
     private JList<String> questList;
+
     private QuestPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(150,550));

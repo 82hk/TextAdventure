@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class BarPanel extends JPanel {
     public static final BarPanel barPanel = new BarPanel();
+
     private BarPanel() {
         super(new FlowLayout(FlowLayout.CENTER));
         setPreferredSize(new Dimension(250, 170));

@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class MapPanel extends JPanel {
     public static final MapPanel mapPanel = new MapPanel();
+
     private MapPanel() {
         super();
         setPreferredSize(new Dimension(250, 250));

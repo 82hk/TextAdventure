@@ -14,6 +14,7 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
 public class Frame extends JFrame {
     public static final Frame FRAME = new Frame("Text Adventure");
     private final int WIDTH = 1000, HEIGHT = 720;
+
     private Frame(String s) {
         super(s);
         setSize(WIDTH, HEIGHT);

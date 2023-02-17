@@ -1,4 +1,4 @@
-package org.sherwoodhs.ui;
+package org.sherwoodhs.ui.util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,9 +6,10 @@ import java.awt.*;
 /**
  * Renders JList components as JTextAreas that can wrap lines
  */
-class CellRenderer implements ListCellRenderer {
+public class CellRenderer implements ListCellRenderer {
     private JPanel panel;
     private JTextArea textArea;
+
     public CellRenderer() {
         panel = new JPanel();
         panel.setLayout(new BorderLayout());

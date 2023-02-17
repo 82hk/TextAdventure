@@ -7,6 +7,7 @@ import java.awt.*;
 public class SituationPanel extends JPanel {
     public static SituationPanel situationPanel = new SituationPanel();
     private JLabel situationLabel, timeLabel, dayLabel;
+
     private SituationPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(900, 18));
@@ -25,7 +26,6 @@ public class SituationPanel extends JPanel {
         dayLabel.setBorder(new EmptyBorder(5, 0, 0, 15));
         add(dayLabel, BorderLayout.CENTER);
     }
-
     /**
      * Changes the text present in situationLabel to a String of choosing
      * @param text represents the text that the situationLabel will be set to
