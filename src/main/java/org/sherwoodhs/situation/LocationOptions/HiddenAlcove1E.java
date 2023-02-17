@@ -5,7 +5,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
-import org.sherwoodhs.situation.OtherSide1.OtherSide1_0_0D;
+import org.sherwoodhs.situation.OtherSide1.OtherSide1_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -53,7 +53,7 @@ public class HiddenAlcove1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Enter The Room" :
-                AdvGame.setSituation(OtherSide1_0_0D.getInstance());
+                AdvGame.setSituation(OtherSide1_0D.getInstance());
                 break;
         }
     }

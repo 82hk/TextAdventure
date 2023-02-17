@@ -12,11 +12,11 @@ import org.sherwoodhs.situation.Situation;
  Nothing much happens except for removing this option from OtherSide1_0_0D
 
  */
-public class OtherSide1_1_2D implements Situation {
+public class OtherSide1_2D implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide1_1_2D();
-    private OtherSide1_1_2D(){
+    private static Situation situation = new OtherSide1_2D();
+    private OtherSide1_2D(){
 
     }
     public static Situation getInstance() {
@@ -25,15 +25,12 @@ public class OtherSide1_1_2D implements Situation {
 
     @Override
     public String getTitle() {
-        return "Inquiry";
+        return "A Request";
     }
 
     @Override
     public String getDescription() {
-        return (player.getName() + ": What curtain?\n\n" +
-                alchemist.getName() + ": Pretend you didn't hear that. That's not something you'd want to know right now.\n\n" +
-                player.getName() + ": But-\n\n" +
-                alchemist.getName() + ": I mean it. That is my greatest regret it life. If I hadn't, I would be living so much happier right now.");
+        return (alchemist.getName() + ": If you really want to help,");
     }
 
     @Override
@@ -48,7 +45,7 @@ public class OtherSide1_1_2D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-                AdvGame.setSituation(OtherSide1_0D.getInstance());
+                // Continues on.
                 break;
         }
     }

@@ -11,12 +11,12 @@ public class Alchemist extends NPC{
         return npc;
     }
     protected void updateObRel(){
-        if (relModifier > 175){
+        if (relModifier > 125){
             obRelation = 100;
-        } else if (relModifier < -25){
+        } else if (relModifier < -75){
             obRelation = -100;
         } else {
-            obRelation = relModifier -75;
+            obRelation = relModifier -25;
         }
     }
 }

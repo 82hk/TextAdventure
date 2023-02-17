@@ -12,15 +12,17 @@ import org.sherwoodhs.situation.Situation;
     Really more like an introduction to questline before it is initiated.
     Leads to some options like the questline never starting or some early relationship boost.
 */
-public class OtherSide1_0_0D implements Situation {
+public class OtherSide1_0D implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
 
     // desc
-    private static Situation exploration = new OtherSide1_0_0D();
-    private OtherSide1_0_0D() {}
+    private static Situation exploration = new OtherSide1_0D();
+    private OtherSide1_0D() {}
 
-    private boolean questionOption = true; //Decides if option 1 get shown as an option
+    private boolean questionOption = true; //Decides if option 0 get shown as an option
+    //private boolean helpOption = true; //Decides if option 3 gets shown as an option
+    private boolean returned = false; //Boolean if this situation has been returned to by dialouge option
     @Override
     public SitType getSitType() {return SitType.Dialogue;}
 
@@ -29,6 +31,12 @@ public class OtherSide1_0_0D implements Situation {
 
     @Override
     public String getDescription() {
+        //Basically, you can choose from options
+        if (returned){
+            return ("You are in a conversation with " + alchemist.getName() + ".");
+        }
+        // Returned when starting the dialogue
+        returned = true;
         return ("As soon as you enter the room, someone jumped in front of you.\n\n" +
                 alchemist.getName() + ": Not one step closer! How did you find this place?\n\n" +
                 "They spoke with a strange voice. It was feminine, but you couldn't figure out more than that. " +
@@ -55,6 +63,9 @@ public class OtherSide1_0_0D implements Situation {
         if (questionOption){
             options[0] = "\"What curtain?\"";
         }
+        //if (helpOption){
+            options[3] = "\"Is there anything I can do?\"";
+       // }
         return options;
     }
 
@@ -72,6 +83,9 @@ public class OtherSide1_0_0D implements Situation {
             case "\"I'll take your advice and leave\"":
             //Returns back to the road(temp) LocationOption and permanently removes the option to enter the Hidden Alcove.
             break;
+            case "\"Is there anything I can do?\"":
+                AdvGame.setSituation(OtherSide1_2D.getInstance());
+                break;
 
         }
     }

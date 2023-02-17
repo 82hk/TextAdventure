@@ -27,7 +27,7 @@ public class OtherSide1_1_1E implements Situation {
         return ("You left the Hidden Alcove. Never did you look back, but there was a nagging feeling that you " +
         "made a bad decision. Your body told you to turn back. Yet, you squashed that feeling. That unnatural attraction " +
         "was unhealthy. Finally, forever pushing away the thoughts of what you just experienced, you returned to _________.\n\n" +
-        "You never looked back");
+        "You never looked back.");
     }
 
     @Override

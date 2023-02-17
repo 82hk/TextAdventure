@@ -1,5 +1,6 @@
 package org.sherwoodhs.situation.OtherSide1;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
@@ -29,15 +30,21 @@ public class OtherSide1_1_0D implements Situation {
 
     @Override
     public String getDescription() {
-        return ("(+5 relationship with " + alchemist.getName() + ")\n\n" +
+        return ("(+15 relationship with " + alchemist.getName() + ")\n\n" +
                 player.getName() + ": There's nothing for me to return to.\n\n" +
                 "There was no hesitation in your voice because there was no doubt that what you said was right. " +
                 "The statement took " + alchemist.getName() + " by surprise. They did not expect to hear that from you. " +
                 "Their demeanor relaxed, showing a moment of weakness.\n\n" +
                 alchemist.getName() + ": Huh, I guess... I guess we're the same in that aspect.\n\n" +
                 alchemist.getName() + " took off their hood, revealing a green-eyed woman with shoulder-length brown hair.\n\n" +
-                alchemist.getName() + ": The name's Hecate.\n\n" +
-                "But as sudden as it appeared, that"
+                alchemist.getName() + ": The name's Hecate. Nice to meet a fellow loner...?\n\n" +
+                player.getName() + ": " + player.getName() + ". The feeling is mutual. How did you end up here?\n\n" +
+                "She became immediately serious.\n\n" +
+                "Hecate: It's a long story, full of some pain. Maybe time will let it heal, but that story isn't one for now." +
+                "At least, not until I complete my goal...\n\n" +
+                "A look of inspiration flashed across her face before being quickly replaced by doubt.\n\n" +
+                "Hecate: I can't force you to do anything, but... would you be willing to help me out with something?\n\n" +
+                "You couldn't help but feel empathy. So much that you agreed, without thinking too much."
                 );
     }
 
@@ -53,7 +60,7 @@ public class OtherSide1_1_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-                //AdvGame.setSituation(OtherSide1_2_0D.getInstance());
+                AdvGame.setSituation(OtherSide1_2D.getInstance());
                 break;
         }
     }
