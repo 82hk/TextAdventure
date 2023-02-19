@@ -1,2 +1,2 @@
 # TextAdventure
-A text adventure game made in JAVA.
+A text adventure game made in JAVA. 
