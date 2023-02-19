@@ -10,6 +10,7 @@ import static org.sherwoodhs.ui.ActionPanel.actionPanel;
 import static org.sherwoodhs.ui.Frame.FRAME;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
+import static org.sherwoodhs.ui.QuestPanel.questPanel;
 
 public class AdvGame {
     private static Situation currentSituation;
@@ -56,4 +57,10 @@ public class AdvGame {
     {
         textPanel.addText("\n" + newDesc);
     }
+
+    public static void addQuest(String quest)
+    {
+        questPanel.addQuest(quest);
+    }
+
 }

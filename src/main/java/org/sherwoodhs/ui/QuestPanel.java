@@ -21,8 +21,6 @@ public class QuestPanel extends JPanel {
         questList.setSelectionModel(new DisabledItemSelectionModel());
         questList.setCellRenderer(new CellRenderer());
         add(questList);
-
-        addQuest("A quest.");
     }
     /**
      * Adds one element to questList without clearing its contents after adding "> " to the beginning of the string
