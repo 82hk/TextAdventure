@@ -8,7 +8,7 @@ Example location
 
 public class ExampleLocation extends Location {
 
-    //To create a custom location first you must properly name teh file and package it correctly for organizational purposes
+    //To create a custom location first you must properly name the file and package it correctly for organizational purposes
     //The second thing you should do is create a SINGLE instance of the location:
     private static ExampleLocation location = new ExampleLocation(); //ONE INSTANCE, make sure it is both PRIVATE and STATIC
 
