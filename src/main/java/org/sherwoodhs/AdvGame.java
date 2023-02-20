@@ -1,7 +1,7 @@
 package org.sherwoodhs;
 
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.entrance.EntranceSituation_0E;
+import org.sherwoodhs.situation.EntranceSituation.EntranceSituation_0E;
 
 import javax.swing.border.TitledBorder;
 import java.awt.*;

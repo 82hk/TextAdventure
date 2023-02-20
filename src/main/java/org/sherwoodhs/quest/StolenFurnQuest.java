@@ -1,7 +1,6 @@
-package org.sherwoodhs.situation.entrance;
+package org.sherwoodhs.quest;
 
 import org.sherwoodhs.quest.Quest;
-import org.sherwoodhs.ui.QuestPanel;
 
 public class StolenFurnQuest implements Quest {
 

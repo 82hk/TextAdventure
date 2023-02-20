@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.entrance;
+package org.sherwoodhs.situation.EntranceSituation;
 
 /*
 The very first situation, introduces the character and motivation. Starts the get furniture quest.

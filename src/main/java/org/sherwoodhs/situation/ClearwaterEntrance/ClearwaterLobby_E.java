@@ -1,53 +1,52 @@
-package org.sherwoodhs.situation.entrance;
+package org.sherwoodhs.situation.ClearwaterEntrance;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.EntranceSituation.EntranceSituation_0E;
+import org.sherwoodhs.situation.EntranceSituation.EntranceSituation_2E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-/*
-The first situation inside the ikea. Moves the player towards the bedroom section.
- */
 
-public class EntranceSituation_1E implements Situation {
-    private static Situation situation = new EntranceSituation_1E();
+public class ClearwaterLobby_E implements Situation {
+
+    private static Situation situation = new ClearwaterLobby_E();
 
     @Override
     public String getTitle() {
-        return "Inside IKEA";
+        return "Clearwater Lobby";
     }
 
     @Override
     public String getDescription() {
-        return "You always realise that you hate doing something the moment it's too late to turn back. Ikea is such a maze. You need to find a bed and leave ASAP, before they close.";
+        return "Lobby of the Clearwater Collective";
     }
 
     @Override
-    public SitType getSitType() {return SitType.Exploration;}
+    public SitType getSitType() {
+        return SitType.Exploration;
+    }
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Food Court", "Bedrooms", "Kitchens", "Staff only"};
+        String[] options = {"1", "2", "3"};
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Food Court":
+            case "1":
                 AdvGame.updateFrame("The meatballs are good, but I don't have the time.");
                 break;
-            case "Bedrooms":
+            case "2":
                 AdvGame.setSituation(EntranceSituation_2E.getInstance());
                 break;
-            case "Kitchens":
+            case "3":
                 AdvGame.updateFrame("Thankfully all my appliances are hard to remove. I don't need to replace any of them.");
                 break;
-            case "Staff only":
-                AdvGame.updateFrame("I would never want to work here.");
         }
     }
 
     public static Situation getInstance(){
         return situation;
     }
-
 }

@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.entrance;
+package org.sherwoodhs.situation.EntranceSituation;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Dialogue;
