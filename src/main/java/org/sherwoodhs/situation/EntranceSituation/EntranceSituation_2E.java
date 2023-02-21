@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.EntranceSituation;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Dialogue;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -30,7 +31,7 @@ public class EntranceSituation_2E extends Dialogue {
     public String getDescription() {
         return "Most of the beds seem to be missing from the display models. Dressers, curtains, nightstands, lamps, everything else you could want in a bedroom is here, except beds. Great. \n" +
                 "You notice a door labeled 'Extra furniture' it doesn't say customers aren't allowed, so you head inside. \n\n" +
-                "A woman on the other side of the door cries out when she sees you: 'What are you doing?! How did you get to the other side of the door! You know it's not safe out there!'";
+                "A woman on the other side of the door cries out when she sees you: \n\n'What are you doing?! How did you get to the other side of the door! You know it's not safe out there!'";
     }
 
     @Override
@@ -41,7 +42,14 @@ public class EntranceSituation_2E extends Dialogue {
     protected String playerStatements(String option) {
         switch (option) {
             case "Apologetic":
-                return "I'm so sorry, I thought you might have more beds in here. I can just leave.";
+                return Player.getInstance().getName() +  ": I'm so sorry, I thought you might have more beds in here. I can just leave.";
+            case "Confused":
+                if(tracker==0) {
+                    return Player.getInstance().getName() + ": 'What? Out there? Not safe? I'm just looking for beds...'";
+                }
+                if(tracker==1){
+                    AdvGame.setSituation(null);
+                }
             default:
                 throw new IllegalArgumentException();
         }
@@ -55,9 +63,15 @@ public class EntranceSituation_2E extends Dialogue {
                 if (tracker == 0) {
                     currentOptions = new String[]{"Confused", "Hostile"};
                     tracker = 1;
-                    AdvGame.updateFrame("Beds? What are you talking about? Are you some sort of wandering Separatist?", currentOptions);
+                    AdvGame.updateFrame("'Beds? What are you talking about? Are you some sort of wandering Separatist?'", currentOptions);
                 }
                 break;
+            case "Confused":
+                if(tracker==0){
+                    currentOptions = new String[]{"Follow", "Leave"};
+                    tracker = 1;
+                    AdvGame.updateFrame("'Get in here!' She beckons you towards the door. \n\n 'It's not safe out there in the beyond.'", currentOptions);
+                }
         }
     }
 
