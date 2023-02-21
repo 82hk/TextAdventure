@@ -8,46 +8,47 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class ClearwaterKiosk1_D implements Situation {
+public class ClearwaterKiosk1_1E implements Situation {
+
+    // The player decides whether to approach the Clearwater kiosk.
 
     Player player = Player.getInstance();
     NPC distributor = TheDistributor.getInstance();
     Location location = ClearwaterKiosk.getInstance();
 
-    private static Situation exploration = new ClearwaterKiosk1_D();
+    private static Situation situation = new ClearwaterKiosk1_1E();
 
     @Override
     public String getTitle() {
-        return "title";
+        return "Kiosk Line";
     }
 
     @Override
     public String getDescription() {
-        return "description";
+        return "";
     }
 
     @Override
-    public SitType getSitType() {return SitType.Dialogue;}
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Example Option", "Example Option 2", "Make NPC hostile"}; // limit 6
+        String[] options = {"Approach the booth","Leave"}; // limit 6
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "":
+            case "Approach the booth":
                 break;
-            case " ":
+            case "Leave":
                 break;
-            case "  ":
         }
     }
 
     public static Situation getInstance(){
-        return dialogue;
+        return situation;
     }
 
 }

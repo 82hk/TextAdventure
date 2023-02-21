@@ -5,6 +5,7 @@ The very first situation, introduces the character and motivation. Starts the ge
  */
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.Clearwater.ClearwaterKiosk1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -32,7 +33,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Enter the IKEA"};
+        String[] options = {"Enter the IKEA","Skip to Clearwater"};
         return options;
     }
 
@@ -42,6 +43,8 @@ public class EntranceSituation_0E implements Situation {
             case "Enter the IKEA":
                 AdvGame.setSituation(EntranceSituation_1E.getInstance());
                 break;
+            case "Skip to Clearwater":
+                AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
         }
     }
 
