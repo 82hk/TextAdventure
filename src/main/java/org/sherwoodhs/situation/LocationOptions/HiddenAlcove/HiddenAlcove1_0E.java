@@ -1,23 +1,24 @@
-package org.sherwoodhs.situation.LocationOptions;
+package org.sherwoodhs.situation.LocationOptions.HiddenAlcove;
 
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
+import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.situation.OtherSide1.OtherSide1_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 
-public class HiddenAlcove1E implements Situation {
+public class HiddenAlcove1_0E implements Situation {
     Location location = HiddenAlcove.getInstance();
 
     // desc
-    private static Situation dialogue = new HiddenAlcove1E(); 
+    private static Situation situation = new HiddenAlcove1_0E();
     private boolean firstTime = true;
-    private HiddenAlcove1E() {
-        World.setStateS("Location",location.getName());
+    private HiddenAlcove1_0E() {
+        World.setStateS("Location",location.getName()); // temp for now
     }
 
     @Override
@@ -41,10 +42,10 @@ public class HiddenAlcove1E implements Situation {
     public String[] getOptions() {
         String[] options;
         if (firstTime){
-            firstTime = false;
-            options = new String[]{"Enter The Room"};
+
+            options = new String[]{"Enter The Room", "Leave"};
         } else {
-            options = new String[]{"Explore", "*Look*"};
+            options = new String[]{"Explore", "Leave", "Talk to " + Alchemist.getInstance().getName()};
         }
         return options;
     }
@@ -53,13 +54,21 @@ public class HiddenAlcove1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Enter The Room" :
+                firstTime = false;
                 AdvGame.setSituation(OtherSide1_0D.getInstance());
                 break;
+            case "Leave" :
+                //AdvGame.setSituation(Location.getInstance());
+                break;
+            case "Explore" :
+                AdvGame.setSituation(HiddenAlcove1_1_1E.getInstance());
+                break;
+
         }
     }
 
 
     public static Situation getInstance(){
-        return dialogue;
+        return situation;
     }
 }
