@@ -40,7 +40,7 @@ public class InventoryPanel extends JPanel {
         inventoryListModel.addElement(item);
     }
     /**
-     * Removes one element to inventoryList without clearing its contents
+     * Removes one element from inventoryList without clearing its contents
      * @param item one element to be removed from inventoryList; method will not work if the element cannot be found
      */
     public void removeFromInventory(String item) {

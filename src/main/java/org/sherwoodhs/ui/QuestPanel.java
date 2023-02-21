@@ -33,7 +33,7 @@ public class QuestPanel extends JPanel {
         return "> " + s;
     }
     /**
-     * Removes one element to questList without clearing its contents
+     * Removes one element from questList without clearing its contents
      * @param s one element to be removed from questList; method will not work if the element cannot be found
      */
     public void removeQuest(String s) {
