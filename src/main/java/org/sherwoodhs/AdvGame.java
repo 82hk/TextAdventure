@@ -27,6 +27,7 @@ public class AdvGame {
             UIManager.put("ProgressBar.foreground", new Color(69, 64, 92));
             UIManager.put("ProgressBar.selectionForeground", new Color(180, 180, 200));
             UIManager.put("ProgressBar.selectionBackground", new Color(180, 180, 200));
+            UIManager.put("TextArea.background", new Color(44, 44, 59));
         } catch (Exception e) {
             e.printStackTrace();
         }
