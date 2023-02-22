@@ -27,14 +27,15 @@ public class QuestPanel extends JPanel {
      * Adds one element to questList without clearing its contents after adding "> " to the beginning of the string
      * @param quest one element to be added to questList
      */
-    public void addQuest(Quest quest) {questListModel.addElement(setQuestConvention(quest.getName()));}
+    public void addQuest(Quest quest) { questListModel.addElement(setQuestConvention(quest.getName())); }
     private String setQuestConvention(String s) {return "> " + s;}
     /**
      * Removes one element from questList without clearing its contents
      * @param quest one element to be removed from questList; method will not work if the element cannot be found
      */
     public void removeQuest(Quest quest) {
-        questListModel.removeElement(quest.getName());
+        String s = quest.getName().replaceAll("> ", "");
+        questListModel.removeElement(s);
     }
 
 }
