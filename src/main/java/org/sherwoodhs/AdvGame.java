@@ -4,6 +4,7 @@ import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.IkeaEntrance.EntranceSituation_0E;
 
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 

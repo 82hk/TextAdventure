@@ -1,5 +1,7 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.World;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -17,11 +19,11 @@ public class SituationPanel extends JPanel {
         situationLabel.setBorder(new EmptyBorder(5, 5, 0, 0));
         add(situationLabel, BorderLayout.WEST);
 
-        timeLabel = new JLabel("1:00");
+        timeLabel = new JLabel(World.getInstance().getState("Time") + ":00");
         timeLabel.setBorder(new EmptyBorder(5, 0, 0, 5));
         add(timeLabel, BorderLayout.EAST);
 
-        dayLabel = new JLabel("Day 1");
+        dayLabel = new JLabel("Day " + World.getInstance().getState("Day"));
         dayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         dayLabel.setBorder(new EmptyBorder(5, 0, 0, 15));
         add(dayLabel, BorderLayout.CENTER);

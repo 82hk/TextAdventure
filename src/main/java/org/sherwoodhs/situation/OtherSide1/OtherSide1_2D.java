@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
@@ -48,6 +49,7 @@ public class OtherSide1_2D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
+                World.changeStateI("Time",1);
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
                 break;
         }
