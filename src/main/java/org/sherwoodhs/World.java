@@ -2,6 +2,8 @@ package org.sherwoodhs;
 
 import java.util.HashMap;
 
+import static org.sherwoodhs.ui.SituationPanel.situationPanel;
+
 public class World {
     //Contains all State values
     private static HashMap<String, Integer> states = new HashMap(); //For int values
@@ -32,9 +34,11 @@ public class World {
                 if (changed / 24 > 0)/* Integer Division to check if day is over */{
                     changed %= 24; // Current Day cycle of 24 hours
                     states.replace("Day",states.get("Day") + 1); // Adds to the day counter
+                    situationPanel.setTimeLabel("Day " + states.get("Day")); //Updates Day Label
                     // Could add something to happen during Midnight
                 }
                 states.replace("Time", changed);
+                situationPanel.setTimeLabel(states.get("Time") + ":00"); //Updates Time Label
                 break;
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 changed = states.get("Renown" + value);
