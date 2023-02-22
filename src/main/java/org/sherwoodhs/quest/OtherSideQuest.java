@@ -21,7 +21,7 @@ public class OtherSideQuest implements Quest {
 
     @Override
     public String getName() {
-        return "The Other Side";
+        return "The Other Side pt." + progress;
     }
 
     @Override
@@ -49,7 +49,9 @@ public class OtherSideQuest implements Quest {
             status = true;
         }
     }
-
+    public static int getProgress (){
+        return progress;
+    }
     public static Quest getInstance() {
         return quest;
     }

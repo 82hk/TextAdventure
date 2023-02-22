@@ -6,7 +6,9 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.quest.OtherSideQuest;
 import org.sherwoodhs.situation.OtherSide1.OtherSide1_0D;
+import org.sherwoodhs.situation.OtherSide3.OtherSide3_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -64,6 +66,11 @@ public class HiddenAlcove1_0E implements Situation {
                 AdvGame.setSituation(HiddenAlcove1_1_1E.getInstance());
                 break;
 
+        }
+        if (option.equals("Talk to " + Alchemist.getInstance().getName())){
+            //AdvGame.setSituation(AdvGame.setSituation(OtherSide3_0D.getInstance()));
+        } else {
+            //Some random interaction
         }
     }
 

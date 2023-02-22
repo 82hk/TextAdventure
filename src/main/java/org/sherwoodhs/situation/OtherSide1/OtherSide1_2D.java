@@ -5,6 +5,7 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.quest.OtherSideQuest;
 import org.sherwoodhs.situation.LocationOptions.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -32,6 +33,7 @@ public class OtherSide1_2D implements Situation {
 
     @Override
     public String getDescription() {
+        AdvGame.addQuest(OtherSideQuest.getInstance());
         return (alchemist.getName() + ": If you really want to help, there is something you can do...\n\n" +
                 "Can you grab me ___________ from _____________. There is \n\n" +
                 "(Quest Log Updated!)");
