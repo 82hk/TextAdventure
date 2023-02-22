@@ -12,6 +12,7 @@ import org.sherwoodhs.situation.Situation;
 */
 public class EntranceSituation_2E extends Dialogue {
     private static Situation situation = new EntranceSituation_2E();
+    String name = Player.getInstance().getName();
 
 
     private String selectedOption;
@@ -42,14 +43,19 @@ public class EntranceSituation_2E extends Dialogue {
     protected String playerStatements(String option) {
         switch (option) {
             case "Apologetic":
-                return Player.getInstance().getName() +  ": I'm so sorry, I thought you might have more beds in here. I can just leave.";
+                return name +  ": I'm so sorry, I thought you might have more beds in here. I can just leave.";
             case "Confused":
                 if(tracker==0) {
-                    return Player.getInstance().getName() + ": 'What? Out there? Not safe? I'm just looking for beds...'";
+                    return name + ": What? Out there? Not safe? Where is all the furniture?";
                 }
                 if(tracker==1){
-                    AdvGame.setSituation(null);
+                    return name + ": Separatists? What on Earth are you talking about? And where is all the furniture?";
                 }
+            case "Follow":
+                //AdvGame.setSituation();
+
+            case "Leave":
+                //AdvGame.setSituation();
             default:
                 throw new IllegalArgumentException();
         }
@@ -70,7 +76,15 @@ public class EntranceSituation_2E extends Dialogue {
                 if(tracker==0){
                     currentOptions = new String[]{"Follow", "Leave"};
                     tracker = 1;
-                    AdvGame.updateFrame("'Get in here!' She beckons you towards the door. \n\n 'It's not safe out there in the beyond.'", currentOptions);
+                    AdvGame.updateFrame("'Close the door!' She beckons you closer. 'It's not safe out there in the beyond.'", currentOptions);
+                }
+            case "Hostile":
+                if(tracker==0){
+                    //Do
+                }
+            case "Vulnerable":
+                if(tracker==0){
+                    //Do
                 }
         }
     }

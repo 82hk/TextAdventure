@@ -5,6 +5,7 @@ The very first situation, introduces the character and motivation. Starts the ge
  */
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.quest.StolenFurnQuest;
 import org.sherwoodhs.situation.Clearwater.ClearwaterKiosk1_0E;
 import org.sherwoodhs.situation.LocationOptions.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
@@ -13,7 +14,6 @@ import org.sherwoodhs.situation.Situation;
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();
 
-
     @Override
     public String getTitle() {
         return "The Entrance";
@@ -21,7 +21,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String getDescription() {
-        AdvGame.addQuest("Retrieve furniture");
+        AdvGame.addQuest(StolenFurnQuest.getInstance());
         return "Ugh. It's been a long day. \n\n" +
                 "The police finally figured out what happened in your apartment, apparently there's been a series of furniture-related crimes recently. You'll need to replace your bed at least before tonight. " +
                 "You made your way to the local IKEA, you don't wanna waste too much money after all that stuff was stolen, and besides, you could use the practice assembling anyway. " +

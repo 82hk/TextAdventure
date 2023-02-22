@@ -1,5 +1,6 @@
 package org.sherwoodhs;
 
+import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.IkeaEntrance.EntranceSituation_0E;
 
@@ -47,20 +48,16 @@ public class AdvGame {
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
     }
 
-    public static void updateFrame(String newDesc, String[] options)
-    {
+    public static void updateFrame(String newDesc, String[] options) {
         updateFrame(newDesc);
         actionPanel.initActions(options);
     }
 
-    public static void updateFrame(String newDesc)
-    {
+    public static void updateFrame(String newDesc) {
         textPanel.addText("\n" + newDesc);
     }
 
-    public static void addQuest(String quest)
-    {
-        questPanel.addQuest(quest);
-    }
+    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+    public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 
 }

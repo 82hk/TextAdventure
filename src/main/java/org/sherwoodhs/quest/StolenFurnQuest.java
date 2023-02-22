@@ -1,9 +1,8 @@
 package org.sherwoodhs.quest;
 
-import org.sherwoodhs.quest.Quest;
-
 public class StolenFurnQuest implements Quest {
 
+    private static Quest quest = new StolenFurnQuest();
     private String description;
     private boolean status;
 
@@ -19,7 +18,7 @@ public class StolenFurnQuest implements Quest {
 
     @Override
     public String getName() {
-        return "Replacement Bed";
+        return "Furniture retrieval";
     }
 
     @Override
@@ -40,5 +39,9 @@ public class StolenFurnQuest implements Quest {
     @Override
     public void complete() {
         status = true;
+    }
+
+    public static Quest getInstance(){
+        return quest;
     }
 }

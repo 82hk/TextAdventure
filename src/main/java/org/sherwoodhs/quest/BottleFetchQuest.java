@@ -1,8 +1,7 @@
 package org.sherwoodhs.quest;
 
-import org.sherwoodhs.quest.Quest;
-
 public class BottleFetchQuest implements Quest {
+    private static Quest quest = new BottleFetchQuest();
 
     private String description;
     private boolean status;
@@ -40,5 +39,9 @@ public class BottleFetchQuest implements Quest {
     @Override
     public void complete() {
         status = true;
+    }
+
+    public static Quest getInstance(){
+        return quest;
     }
 }

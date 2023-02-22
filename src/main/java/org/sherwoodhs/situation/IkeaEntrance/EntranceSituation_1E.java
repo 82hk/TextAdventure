@@ -17,7 +17,9 @@ public class EntranceSituation_1E implements Situation {
 
     @Override
     public String getDescription() {
-        return "You always realise that you hate doing something the moment it's too late to turn back. Ikea is such a maze. You need to find a bed and leave ASAP, before they close.";
+        return "You always realise that you hate doing something the moment it's too late to turn back." +
+                " Ikea is such a maze. You need to find a bed and leave ASAP, before they close. "+
+                "You also realize that the place is completely empty, not a single person or employee to be found.";
     }
 
     @Override
@@ -33,16 +35,16 @@ public class EntranceSituation_1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Food Court":
-                AdvGame.updateFrame("The meatballs are good, but I don't have the time.");
+                AdvGame.updateFrame("The meatballs are good, but you don't have the time.");
                 break;
             case "Bedrooms":
                 AdvGame.setSituation(EntranceSituation_2E.getInstance());
                 break;
             case "Kitchens":
-                AdvGame.updateFrame("Thankfully all my appliances are hard to remove. I don't need to replace any of them.");
+                AdvGame.updateFrame("Thankfully all your appliances are hard to remove. You don't need to replace any of them.");
                 break;
             case "Staff only":
-                AdvGame.updateFrame("I would never want to work here.");
+                AdvGame.updateFrame("You realize you would never want to work here.");
         }
     }
 
