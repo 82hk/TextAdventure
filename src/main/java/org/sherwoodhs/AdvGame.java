@@ -1,9 +1,12 @@
 package org.sherwoodhs;
 
+import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
+
 import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.IkeaEntrance.EntranceSituation_0E;
 
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -16,7 +19,19 @@ import static org.sherwoodhs.ui.QuestPanel.questPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
-    private AdvGame() {}
+    private AdvGame() {
+        try {
+            UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
+            UIManager.put("ScrollBar.thumbArc", 999);
+            UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2));
+            UIManager.put("Component.arrowType", "triangle");
+            UIManager.put("ProgressBar.foreground", new Color(69, 64, 92));
+            UIManager.put("ProgressBar.selectionForeground", new Color(180, 180, 200));
+            UIManager.put("ProgressBar.selectionBackground", new Color(180, 180, 200));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
