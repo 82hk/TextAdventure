@@ -1,5 +1,6 @@
 package org.sherwoodhs.situation.OtherSide1;
 
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -42,6 +43,7 @@ public class OtherSide1_1_1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
+                World.changeStateI("Time",1);
                 //AdvGame.setSituation(LocationOption.Path.getInstance());
                 break;
         }
