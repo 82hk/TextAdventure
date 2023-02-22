@@ -11,7 +11,7 @@ public class BarPanel extends JPanel {
         super(new FlowLayout(FlowLayout.CENTER));
         setPreferredSize(new Dimension(250, 170));
         setBorder(new TitledBorder("Reputation"));
-        add(new Bar("Haven", 100));
+        add(new Bar("Haven", -50));
         add(new Bar("Foundation", 75));
         add(new Bar("Clearwater", 50));
         add(new Bar("Separatists", 25));

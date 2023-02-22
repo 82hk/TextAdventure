@@ -6,7 +6,7 @@ import java.awt.*;
 public class Bar extends JPanel {
     private JProgressBar bar;
     private JLabel label;
-    private final int r = 100, g = 100, b = 100;
+    private final int r = 69, g = 64, b = 92;
     private int curR = r, curG = g, curB = b;
 
     /**
