@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.IkeaEntrance;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.quest.StolenFurnQuest;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*
