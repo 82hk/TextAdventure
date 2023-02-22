@@ -34,7 +34,8 @@ public class QuestPanel extends JPanel {
      * @param quest one element to be removed from questList; method will not work if the element cannot be found
      */
     public void removeQuest(Quest quest) {
-        String s = quest.getName().replaceAll("> ", "");
+        String s = setQuestConvention(quest.getName());
+        System.out.println(s);
         questListModel.removeElement(s);
     }
 
