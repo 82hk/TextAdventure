@@ -7,6 +7,8 @@ The very first situation, introduces the character and motivation. Starts the ge
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.StolenFurnQuest;
 import org.sherwoodhs.situation.Clearwater.ClearwaterKiosk1_0E;
+import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
+import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.LocationOptions.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -34,7 +36,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Enter the IKEA","Skip to Clearwater", "Skip to Hidden Alcove"};
+        String[] options = {"Enter the IKEA","Skip to Clearwater", "Skip to Hidden Alcove", "Skip to Haven"};
         return options;
     }
 
@@ -49,6 +51,9 @@ public class EntranceSituation_0E implements Situation {
                 break;
             case "Skip to Hidden Alcove":
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
+                break;
+            case "Skip to Haven":
+                AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
     }
