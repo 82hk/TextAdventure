@@ -1,6 +1,13 @@
 package org.sherwoodhs.player;
 
+import com.sun.corba.se.impl.encoding.BufferManagerWriteCollect;
+
 import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,6 +15,7 @@ public class Player {
     int health;
     int stamina;
     String name;
+    File savedName = new File("src/main/java/org/sherwoodhs/player/name.txt");
 
     private static Player player = new Player();
 
@@ -37,11 +45,17 @@ public class Player {
         Boolean b = true;
         try {
             do {
-                name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
-                if (name.isEmpty() || nameHasNums() || nameHasSpCh() || charCap()) {
-                    JOptionPane.showMessageDialog(null, "Name cannot contain numbers,  special characters, spaces, be blank, or be longer than 16 characters!", "Name", 0);
+                if(savedName.exists()){
+                    name = readSavedName();
+                     b = false;
                 } else {
-                    b = false;
+                    name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
+                    if (name.isEmpty() || nameHasNums() || nameHasSpCh() || charCap()) {
+                        JOptionPane.showMessageDialog(null, "Name cannot contain numbers,  special characters, spaces, be blank, or be longer than 16 characters!", "Name", 0);
+                    } else {
+                        setSavedName();
+                        b = false;
+                    }
                 }
             } while (b);
         }catch (NullPointerException e){
@@ -79,6 +93,33 @@ public class Player {
         } else{
             return false;
         }
+    }
+
+    //Writes input name in text file
+    private void setSavedName() {
+        try {
+            FileWriter fileWriter = new FileWriter(savedName);
+            fileWriter.write(name);
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("Something broke");
+            e.printStackTrace();
+        }
+    }
+
+    //returns name inside text file
+    public String readSavedName() {
+        String data;
+        try {
+            Scanner scanner = new Scanner(savedName);
+            data = scanner.nextLine();
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Something broke");
+            e.printStackTrace();
+            return null;
+        }
+        return data;
     }
 }
 
