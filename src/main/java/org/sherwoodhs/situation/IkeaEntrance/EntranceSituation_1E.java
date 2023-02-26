@@ -1,7 +1,6 @@
 package org.sherwoodhs.situation.IkeaEntrance;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.quest.StolenFurnQuest;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*
@@ -28,7 +27,7 @@ public class EntranceSituation_1E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Food Court", "Bedrooms", "Kitchens", "Staff only"};
+        String[] options = {"Food Court", "Bedrooms", "Kitchens", "Staff only", "Exit"};
         return options;
     }
 
@@ -38,8 +37,8 @@ public class EntranceSituation_1E implements Situation {
             case "Food Court":
                 AdvGame.updateFrame("The meatballs are good, but you don't have the time.");
                 break;
-            case "Bedrooms":
-                AdvGame.setSituation(EntranceSituation_2E.getInstance());
+            case "Exit":
+                AdvGame.setSituation(EntranceSituation_4D.getInstance());
                 break;
             case "Kitchens":
                 AdvGame.updateFrame("Thankfully all your appliances are hard to remove. You don't need to replace any of them.");

@@ -35,14 +35,17 @@ public abstract class Dialogue implements Situation{
                 selectedOption = null;
                 break;
             default:
-                AdvGame.updateFrame(playerStatements(option), new String[]{"Confirm", "Cancel"});
-                selectedOption = option;
+                if (playerStatements(option)) {
+                    AdvGame.updateFrame(new String[]{"Confirm", "Cancel"});
+                    selectedOption = option;
+
+                }
                 break;
         }
     }
 
-    //Place the text for what the player says in the case of each option here.
-    protected abstract String playerStatements(String option);
+    //Set the text for what the player has the option to say. Return true if it's a conversation and false if it ends the conversation
+    protected abstract boolean playerStatements(String option);
 
     //equivalent of the perform method for normal situations. Switch case for each option.
     protected abstract void Confirm(String option);

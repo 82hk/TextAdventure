@@ -65,6 +65,10 @@ public class AdvGame {
 
     public static void updateFrame(String newDesc, String[] options) {
         updateFrame(newDesc);
+        updateFrame(options);
+    }
+
+    public static void updateFrame(String[] options) {
         actionPanel.initActions(options);
     }
 
