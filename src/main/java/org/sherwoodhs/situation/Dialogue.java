@@ -9,7 +9,8 @@ import org.sherwoodhs.AdvGame;
 public abstract class Dialogue implements Situation{
 
     //set in constructor to the correct values instead of overriding getOptions(). Keep this updated as you change the available options.
-    protected String[] currentOptions;
+    private String[] currentOptions;
+    private String currentDescription;
 
     //Use to track what state the conversation is in. You can set values arbitrarily.
     protected int tracker = 0;
@@ -30,7 +31,7 @@ public abstract class Dialogue implements Situation{
                 Confirm(selectedOption);
                 break;
             case "Cancel":
-                AdvGame.updateFrame("You decide not to say that.", currentOptions);
+                setDescription(currentDescription, currentOptions);
                 selectedOption = null;
                 break;
             default:
@@ -45,4 +46,24 @@ public abstract class Dialogue implements Situation{
 
     //equivalent of the perform method for normal situations. Switch case for each option.
     protected abstract void Confirm(String option);
+
+
+    //use these methods instead of interacting with the variables directly
+    protected void setDescription(String description)
+    {
+        currentDescription = description;
+        AdvGame.clearFrame(description);
+    }
+
+    protected void resetConversation()
+    {
+        AdvGame.clearFrame(currentDescription);
+    }
+
+    protected void setDescription(String description, String[] options)
+    {
+        currentOptions = options;
+        currentDescription = description;
+        AdvGame.clearFrame(currentDescription, currentOptions);
+    }
 }

@@ -19,7 +19,10 @@ public class EntranceSituation_2E extends Dialogue {
 
     private EntranceSituation_2E()
     {
-        currentOptions = new String[]{"Apologetic", "Confused", "Hostile", "Vulnerable"};
+        setDescription("Most of the beds seem to be missing from the display models. Dressers, curtains, nightstands, lamps, everything else you could want in a bedroom is here, except beds. Great. \n" +
+                "You notice a door labeled 'Extra furniture' it doesn't say customers aren't allowed, so you head inside. \n\n" +
+                "A woman on the other side of the door cries out when she sees you: \n\n'What are you doing?! How did you get to the other side of the door! You know it's not safe out there!'",
+                new String[]{"Apologetic", "Confused", "Hostile", "Vulnerable"}) ;
         tracker = 0;
     }
 
@@ -67,23 +70,23 @@ public class EntranceSituation_2E extends Dialogue {
         switch (option) {
             case "Apologetic":
                 if (tracker == 0) {
-                    currentOptions = new String[]{"Confused", "Hostile"};
+                    String[] options = new String[]{"Confused", "Hostile"};
                     tracker = 1;
-                    AdvGame.updateFrame("'Beds? What are you talking about? Are you some sort of wandering Separatist?'", currentOptions);
+                    setDescription("'Beds? What are you talking about? Are you some sort of wandering Separatist?'", options);
                 }
                 break;
             case "Confused":
                 if(tracker==0){
-                    currentOptions = new String[]{"Follow", "Leave"};
+                    String[] options = new String[]{"Follow", "Leave"};
                     tracker = 1;
-                    AdvGame.updateFrame("'Close the door!' She beckons you closer. 'It's not safe out there in the beyond.'", currentOptions);
+                    setDescription("'Close the door!' She beckons you closer. 'It's not safe out there in the beyond.'", options);
                 }
             case "Hostile":
-                if(tracker==0){
+                if(tracker==0) {
                     //Do
                 }
             case "Vulnerable":
-                if(tracker==0){
+                if(tracker==0) {
                     //Do
                 }
         }

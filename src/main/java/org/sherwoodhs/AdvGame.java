@@ -72,7 +72,13 @@ public class AdvGame {
         textPanel.addText("\n" + newDesc);
     }
 
+    public static void clearFrame() {textPanel.clearAllText();}
+
     public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+
+    public static void clearFrame(String newDesc) {clearFrame(); updateFrame(newDesc);}
+
+    public static void clearFrame(String newDesc, String[] options) {clearFrame(); updateFrame(newDesc, options);}
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 
 }
