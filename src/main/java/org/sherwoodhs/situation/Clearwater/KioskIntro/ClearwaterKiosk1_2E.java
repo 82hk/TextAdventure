@@ -38,14 +38,14 @@ public class ClearwaterKiosk1_2E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach the booth","Leave"}; // limit 6
+        String[] options = {"Approach","Leave"}; // limit 6
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Approach the booth":
+            case "Approach":
                 AdvGame.setSituation(ClearwaterKiosk1_3D.getInstance());
                 break;
             case "Leave":
