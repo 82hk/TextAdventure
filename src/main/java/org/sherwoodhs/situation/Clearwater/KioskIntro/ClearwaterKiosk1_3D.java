@@ -23,7 +23,7 @@ public class ClearwaterKiosk1_3D extends Dialogue implements Situation {
             case 1:
             case 2:
             case 3:
-        return options;
+        //return options;
         }
         return null;
     }
