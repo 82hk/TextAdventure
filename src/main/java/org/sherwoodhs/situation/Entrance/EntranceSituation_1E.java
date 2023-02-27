@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.IkeaEntrance;
+package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;

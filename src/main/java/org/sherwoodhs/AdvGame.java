@@ -3,7 +3,7 @@ package org.sherwoodhs;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.IkeaEntrance.EntranceSituation_0E;
+import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

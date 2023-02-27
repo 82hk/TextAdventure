@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.IkeaEntrance;
+package org.sherwoodhs.situation.Entrance;
 
 
 // this is where the player looks at the bedroom displays

@@ -1,7 +1,8 @@
-package org.sherwoodhs.situation.Clearwater;
+package org.sherwoodhs.situation.Clearwater.KioskIntro;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.location.Clearwater.ClearwaterKiosk;
+import org.sherwoodhs.location.HavenCenter;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.TheDistributor;
@@ -14,23 +15,23 @@ public class ClearwaterKiosk1_0E implements Situation {
 
     Player player = Player.getInstance();
     NPC distributor = TheDistributor.getInstance();
-    Location location = ClearwaterKiosk.getInstance();
-    private boolean firstTime = true;
+    Location location = HavenCenter.getInstance();
+    private static boolean firstTime = true;
 
     private static Situation situation = new ClearwaterKiosk1_0E();
 
     @Override
     public String getTitle() {
-        return "Kiosk Line";
+        return "Kiosk";
     }
 
     @Override
     public String getDescription() {
         if (firstTime == true) {
-            return "You step into the line.\n\nIn front of you, a man wrings his hands nervously. \"I hope there's enough this time,\" he mumbles to himself. " +
-                    "Ahead, a woman and her daughter walk away from the kiosk, each carrying a small plastic jug of water.\n\nThe line shuffles forward.\n\n";
+            return "Inside the circle of pillars, an old man sits at a booth. Behind him are dozens of packages of plastic water bottles, stacked high up to the domed ceiling."+
+                    "\n\nMore security guards patrol the kiosk, guarding the bottled water pile and distributing individual bottles to the line of people at the old man's orders.";
         } else {
-            return "You step into the line.";
+            return "Placeholder";
         }
     }
 
@@ -39,17 +40,17 @@ public class ClearwaterKiosk1_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Keep waiting","Leave"}; // limit 6
+        String[] options = {"Get in line","Go elsewhere"}; // limit 6
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Keep waiting":
+            case "Get in line":
                 AdvGame.setSituation(ClearwaterKiosk1_1E.getInstance());
                 break;
-            case "Leave":
+            case "Go elsewhere":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }

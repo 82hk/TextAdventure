@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.IkeaEntrance;
+package org.sherwoodhs.situation.Entrance;
 
 /*
 The very first situation, introduces the character and motivation. Starts the get furniture quest.
@@ -6,10 +6,9 @@ The very first situation, introduces the character and motivation. Starts the ge
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.StolenFurnQuest;
-import org.sherwoodhs.situation.Clearwater.ClearwaterKiosk1_0E;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
+import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
-import org.sherwoodhs.situation.LocationOptions.HiddenAlcove.HiddenAlcove1_0E;
+import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.Clearwater;
+package org.sherwoodhs.situation.Clearwater.KioskIntro;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.location.Clearwater.ClearwaterKiosk;
@@ -11,6 +11,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class ClearwaterKiosk1_1E implements Situation {
+
+    private static boolean firstTime = true;
 
     Player player = Player.getInstance();
     NPC distributor = TheDistributor.getInstance();
@@ -25,7 +27,13 @@ public class ClearwaterKiosk1_1E implements Situation {
 
     @Override
     public String getDescription() {
-        return "You keep waiting in line.\n\nEventually it's your turn, and the man looks at you expectantly.\n\n";
+        if (firstTime) {
+            firstTime = false;
+            return "You step into the back of the line.\n\nIn front of you, a woman clutches her daughter's hand, muttering to herself and glancing ahead nervously,"+
+                    " while the little girl waves at you with an empty bottle.\n\nThe line shuffles forward.";
+        } else {
+            return "You get in line.";
+        }
     }
 
     @Override
@@ -33,15 +41,15 @@ public class ClearwaterKiosk1_1E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach the booth","Leave"}; // limit 6
+        String[] options = {"Wait","Leave"}; // limit 6
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Approach the booth":
-                AdvGame.setSituation(ClearwaterKiosk1_2D.getInstance());
+            case "Wait":
+                AdvGame.setSituation(ClearwaterKiosk1_2E.getInstance());
                 break;
             case "Leave":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
