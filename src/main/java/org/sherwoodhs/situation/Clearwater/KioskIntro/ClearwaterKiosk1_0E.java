@@ -12,6 +12,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class ClearwaterKiosk1_0E implements Situation {
+    
+    // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
 
     Player player = Player.getInstance();
     NPC distributor = TheDistributor.getInstance();
