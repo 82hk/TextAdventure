@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.OtherSide1;
+package org.sherwoodhs.situation.OtherSide.OtherSide1;
 
 import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;

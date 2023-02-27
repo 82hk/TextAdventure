@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.OtherSide1;
+package org.sherwoodhs.situation.OtherSide.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
