@@ -22,19 +22,15 @@ public class BarPanel extends JPanel {
         add(foundationBar);
         add(separatistBar);
     }
-
     public Bar getFoundationBar() {
         return foundationBar;
     }
-
     public Bar getClearWaterBar() {
         return clearWaterBar;
     }
-
     public Bar getHavenBar() {
         return havenBar;
     }
-
     public Bar getSeparatistBar() {
         return separatistBar;
     }
