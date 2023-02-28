@@ -63,8 +63,6 @@ public class OtherSide1_1_0D implements Situation {
             case "Continue" :
                 Alchemist.getInstance().setName("Hecate");
                 AdvGame.setSituation(OtherSide1_2D.getInstance());
-                //Create otherside Quest
-                OtherSideQuest.advanceQuest();
                 break;
         }
     }
