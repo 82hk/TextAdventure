@@ -12,7 +12,7 @@ import org.sherwoodhs.situation.Situation;
 
 /*
    You talk to the Alchemist before you obtain the item required.
-    It's just a little dialouge interaction
+    It's just a little dialogue interaction
  */
 public class OtherSide1_3D implements Situation {
     private Player player = Player.getInstance();
