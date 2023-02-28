@@ -1,12 +1,6 @@
 package org.sherwoodhs.situation.Clearwater.KioskIntro;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.location.Clearwater.ClearwaterKiosk;
-import org.sherwoodhs.location.HavenCenter;
-import org.sherwoodhs.location.Location;
-import org.sherwoodhs.npc.NPC;
-import org.sherwoodhs.npc.TheDistributor;
-import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -15,7 +9,7 @@ public class ClearwaterKiosk1_0E implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
     private static boolean firstTime = true;
-    private static Situation situation = new ClearwaterKiosk1_0E();
+    private static final Situation situation = new ClearwaterKiosk1_0E();
 
     @Override
     public String getTitle() {
@@ -24,7 +18,7 @@ public class ClearwaterKiosk1_0E implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "Inside the circle of pillars, an old man sits at a booth. Behind him are dozens of packages of plastic water bottles, stacked high up to the domed ceiling."+
                     "\n\nMore security guards patrol the kiosk, guarding the bottled water pile and distributing individual bottles to the line of people at the old man's orders.";
         } else {
@@ -37,8 +31,7 @@ public class ClearwaterKiosk1_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Get in line","Leave"}; // limit 6
-        return options;
+        return new String[]{"Get in line","Leave"}; // limit 6
     }
 
     @Override
@@ -63,6 +56,11 @@ public class ClearwaterKiosk1_0E implements Situation {
                     AdvGame.updateFrame("The line shuffles forward, until finally it's your turn.\n\nThe old man gestures to you.",
                             new String[]{"Approach","Leave"});
                 }
+                break;
+
+            case "Approach":
+                AdvGame.setSituation(ClearwaterKiosk1_1D.getInstance());
+                break;
 
             // EXIT POINT
             case "Leave":
