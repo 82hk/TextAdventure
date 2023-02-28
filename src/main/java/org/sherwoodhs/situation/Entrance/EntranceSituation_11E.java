@@ -1,5 +1,3 @@
-
-
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
