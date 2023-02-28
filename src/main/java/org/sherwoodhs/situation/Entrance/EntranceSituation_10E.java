@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.Haven.HavenCenter;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -34,7 +35,7 @@ public class EntranceSituation_10E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Explore":
-                //AdvGame.setSituation(EntranceSituation_12E.getInstance());
+                AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
             case "Go back":
                 AdvGame.setSituation(EntranceSituation_11E.getInstance());
