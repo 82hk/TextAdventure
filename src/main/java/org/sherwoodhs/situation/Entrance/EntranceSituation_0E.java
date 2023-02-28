@@ -1,12 +1,11 @@
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.quest.StolenFurnQuest;
-import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.BarPanel;
 
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();

@@ -4,8 +4,8 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class EntranceSituation_7E implements Situation {
-    private static Situation situation = new EntranceSituation_7E();
+public class EntranceSituation_Ending2 implements Situation {
+    private static Situation situation = new EntranceSituation_Ending2();
 
     @Override
     public String getTitle() {
@@ -31,10 +31,10 @@ public class EntranceSituation_7E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Exit":
-                // Exit game
+                System.exit(0);
                 break;
             case "Restart":
-                // Restart game
+                AdvGame.setSituation(EntranceSituation_0E.getInstance());
                 break;
         }
     }

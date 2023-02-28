@@ -32,7 +32,7 @@ public class EntranceSituation_6E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Keep going":
-                AdvGame.setSituation(EntranceSituation_7E.getInstance());
+                AdvGame.setSituation(EntranceSituation_Ending2.getInstance());
                 break;
             case "Open the door":
                 AdvGame.setSituation(EntranceSituation_8E.getInstance());

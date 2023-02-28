@@ -30,7 +30,7 @@ public class EntranceSituation_8E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Enter":
-                //AdvGame.setSituation(EntranceSituation_9E.getInstance());
+                AdvGame.setSituation(EntranceSituation_9E.getInstance());
                 break;
         }
     }
