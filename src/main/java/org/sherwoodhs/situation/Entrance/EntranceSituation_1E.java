@@ -44,7 +44,7 @@ public class EntranceSituation_1E implements Situation {
                         new String[] {" Keep going ","Open the door"});
                 break;
             case "Open the door":
-                AdvGame.updateFrame("---\n\nYou step forward and cautiously try the doorknob.\n\nWith a shrill squeak, it turns.",
+                AdvGame.updateFrame("---\n\nYou step forward and cautiously try the doorknob.\n\nWith a rusty squeak, it turns.",
                         new String[] {"Enter"});
                 break;
             case "Enter":
