@@ -4,7 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class EntranceSituation_1E implements Situation {
+public class EntranceSituation_Ending implements Situation {
     private static Situation situation = new EntranceSituation_1E();
 
     @Override
@@ -16,7 +16,7 @@ public class EntranceSituation_1E implements Situation {
     public String getDescription() {
         return "Unnerved by the absence of any sign of life, you decide to try your luck at the nearby Home Depot instead.\n\n"+
           "Getting back in your car, you pull out of the parking lot and drive away, leaving the Ikea—and the entire point of the game—behind you."+
-          "\n\nThe End."
+          "\n\nThe End.";
     }
 
     @Override

@@ -4,8 +4,8 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class EntranceSituation_1E implements Situation {
-    private static Situation situation = new EntranceSituation_1E();
+public class EntranceSituation_2E implements Situation {
+    private static Situation situation = new EntranceSituation_2E();
 
     @Override
     public String getTitle() {
@@ -37,7 +37,7 @@ public class EntranceSituation_1E implements Situation {
                 AdvGame.setSituation(EntranceSituation_4E.getInstance());
                 break;
             case "Go to Home Depot":
-                AdvGame.setSituation(EntranceSituation_3E.getInstance());
+                AdvGame.setSituation(EntranceSituation_Ending.getInstance());
                 break;
         }
     }

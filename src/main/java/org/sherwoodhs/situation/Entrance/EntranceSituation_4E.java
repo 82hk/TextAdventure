@@ -19,7 +19,6 @@ public class EntranceSituation_4E implements Situation {
             "Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\n"+
             "Food court.\n\nOr at least, this is where the food court had always been. Instead there’s only more furniture: "+
             "a few mattress displays and bins of assorted blankets.\n\nHave they remodeled?";
-;
     }
 
     @Override

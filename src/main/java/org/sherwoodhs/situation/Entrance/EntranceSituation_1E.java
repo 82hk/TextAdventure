@@ -16,7 +16,6 @@ public class EntranceSituation_1E implements Situation {
     public String getDescription() {
         return "The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights flood through display "+
             "windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.";
-";
     }
 
     @Override
@@ -35,7 +34,7 @@ public class EntranceSituation_1E implements Situation {
                 AdvGame.setSituation(EntranceSituation_2E.getInstance());
                 break;
             case "Go to Home Depot":
-                AdvGame.setSituation(EntranceSituation_3E.getInstance());
+                AdvGame.setSituation(EntranceSituation_Ending.getInstance());
                 break;
         }
     }
