@@ -36,11 +36,11 @@ public class EntranceSituation_1E implements Situation {
                         new String[] {"Keep going","Turn back"});
                 break;
             case "Turn back":
-                AdvGame.updateFrame("---\n\nYou search for an exit, wandering aimlessly down more aisles lined with home decor through the labyrinthian twists and turns of the Ikea.\n\nEventually, you turn the corner to see a door on the far wall. It's a small gray utility door, quietly placed between two ornately decorated showroom displays.",
+                AdvGame.updateFrame("---\n\nYou search for an exit, wandering aimlessly down more aisles through the labyrinthian twists and turns of the Ikea.\n\nEventually, you turn a corner to see a door on the far wall. It's a small gray utility door, quietly placed between two ornately decorated showroom displays.",
                         new String[] {" Keep going ","Open the door"});
                 break;
             case "Keep going":
-                AdvGame.updateFrame("---\n\nYou press on, wandering aimlessly down more aisles lined with display rooms, through the labyrinthian twists and turns of the Ikea.\n\nEventually, you turn the corner to see a door on the far wall. It's a small gray utility door, quietly placed between two ornately decorated showroom displays.",
+                AdvGame.updateFrame("---\n\nYou press on, wandering aimlessly down more aisles through the labyrinthian twists and turns of the Ikea.\n\nEventually, you turn a corner to see a door on the far wall. It's a small gray utility door, quietly placed between two colorfully decorated couch displays.",
                         new String[] {" Keep going ","Open the door"});
                 break;
             case "Open the door":

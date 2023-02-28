@@ -15,10 +15,7 @@ public class EntranceSituation_10E implements Situation {
 
     @Override
     public String getDescription() {
-        return "Everything in sight bears the familiar look and feel of an Ikea department store but there are no employees to be seen, only this vast crowd interspersed by scattered groups of mall security guards roaming about."+
-              "\n\nStepping forward, you see this vast chamber is actually created by the joining of four enormous halls in the shape of an 'X', each as tall as the room itself and with just as many floors, stretching far into the distance and out of sight."+
-              "\n\nYou are on the ground floor."+
-              "\n\nYou feel rather small.";
+        return "";
 
     }
 
