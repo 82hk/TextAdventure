@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -48,6 +49,7 @@ public class EntranceSituation_1E implements Situation {
                         new String[] {"Enter"});
                 break;
             case "Enter":
+                World.changeStateI("Time",1);
                 AdvGame.setSituation(EntranceSituation_2E.getInstance());
                 break;
 

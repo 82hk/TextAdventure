@@ -32,7 +32,7 @@ public class OtherSide3_0D implements Situation {
                 " looked very surprised." +
                 alchemist.getName() + ": You- you actually got it!\n\n";
         if (alchemist.getName().equals("Hecate")){
-            string += "";
+            string += alchemist.getName() + " was so surprised that that she";
         } else {
             string += "";
         }

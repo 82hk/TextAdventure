@@ -40,7 +40,7 @@ public class HiddenAlcove1_0E implements Situation {
         if (OtherSideQuest.getProgress() == 2){
             return ("");
         }
-        return("You arrive back at the hidden alcove. Ever since you first found this place, it has been calling out for you." + 
+        return("You're in the hidden alcove. Ever since you first found this place, it has been calling out for you." +
         "You can't shake the feeling of interest you have for the room and its mysteries.");
     }
 
@@ -77,7 +77,7 @@ public class HiddenAlcove1_0E implements Situation {
             } if (OtherSideQuest.getProgress() == 2){
                 AdvGame.setSituation(OtherSide3_0D.getInstance());
             } else {
-                System.out.println("broken");
+
             }
 
         }
