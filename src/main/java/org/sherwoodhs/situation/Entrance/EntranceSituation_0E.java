@@ -1,9 +1,5 @@
 package org.sherwoodhs.situation.Entrance;
 
-/*
-The very first situation, introduces the character and motivation. Starts the get furniture quest.
- */
-
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.StolenFurnQuest;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
@@ -17,17 +13,15 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String getTitle() {
-        return "The Entrance";
+        return "The Ikea - Parking Lot";
     }
 
     @Override
     public String getDescription() {
-        AdvGame.addQuest(StolenFurnQuest.getInstance());
-        return "Ugh. It's been a long day. \n\n" +
-                "The police finally figured out what happened in your apartment, apparently there's been a series of furniture-related crimes recently. You'll need to replace your bed at least before tonight. " +
-                "You made your way to the local IKEA, you don't wanna waste too much money after all that stuff was stolen, and besides, you could use the practice assembling anyway. " +
-                "The parking lot is mostly empty. It's strange they keep the place open this late.\n\n" +
-                "It would be nice if I could find a couch too, but it's pretty late already, I might just grab one if I see it.";
+        //AdvGame.addQuest(StolenFurnQuest.getInstance());
+        return "There it is—the Ikea furniture and home improvement store.\n\nThe blue and yellow of the concrete building stretches from end to end across "
+            "the huge lot. Despite the size of the retail store, there’s not a single person in sight. The parking lot is similarly deserted, with nothing "
+            "but rows of empty spaces illuminated by the occasional streetlamp.";
     }
 
     @Override
@@ -35,20 +29,20 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Enter the IKEA", "Skip to Hidden Alcove", "Skip to Haven"};
+        String[] options = {"Approach", "Test: Hidden Alcove", "Test: Haven"};
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Enter the IKEA":
+            case "Approach":
                 AdvGame.setSituation(EntranceSituation_1E.getInstance());
                 break;
-            case "Skip to Hidden Alcove":
+            case "Test: Hidden Alcove":
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
                 break;
-            case "Skip to Haven":
+            case "Test: Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
