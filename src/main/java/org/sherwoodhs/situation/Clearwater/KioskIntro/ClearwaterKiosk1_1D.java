@@ -7,16 +7,15 @@ import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.TheDistributor;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Dialogue;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class ClearwaterKiosk1_3D extends Dialogue implements Situation {
+public class ClearwaterKiosk1_1D extends Dialogue implements Situation {
 
     Player player = Player.getInstance();
     NPC distributor = TheDistributor.getInstance();
     Location location = ClearwaterKiosk.getInstance();
-    private static Situation situation = new ClearwaterKiosk1_3D();
+    private static Situation situation = new ClearwaterKiosk1_1D();
     public String[] getOptions() {
         switch (tracker){
             case 0: String [] options = new String[]{"\"What?\"", "Lie"}; // limit 6
@@ -28,7 +27,7 @@ public class ClearwaterKiosk1_3D extends Dialogue implements Situation {
         return null;
     }
 
-    private ClearwaterKiosk1_3D() {
+    private ClearwaterKiosk1_1D() {
         setDescription("You step up to the booth.\n\nUp close, you can see the old man is wearing a gray suit with a gray bowler hat. He has a thin face with a long beard"+
         " and a mustache, curled at the tips.\n\n\"Water card please.\"\n\nHe looks at you expectantly.");
         String[] options = {"\"What?\"", "Lie"};
