@@ -17,7 +17,7 @@ public class EntranceSituation_11E implements Situation {
     @Override
     public String getDescription() {
         return "You turn around, but see that the door you entered through has vanished. In its place is a small note taped to the wall. It reads:\n\n"+
-            "\"'No'\n     - The Dev Team\"; 
+            "\"'No'\n     - The Dev Team\"";
 
     }
 
@@ -34,7 +34,7 @@ public class EntranceSituation_11E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Explore":
-                AdvGame.setSituation(EntranceSituation_12E.getInstance());
+                //AdvGame.setSituation(EntranceSituation_12E.getInstance());
                 break;
         }
     }
