@@ -19,8 +19,8 @@ public class EntranceSituation_0E implements Situation {
     @Override
     public String getDescription() {
         //AdvGame.addQuest(StolenFurnQuest.getInstance());
-        return "There it is—the Ikea furniture and home improvement store.\n\nThe blue and yellow of the concrete building stretches from end to end across "
-            "the huge lot. Despite the size of the retail store, there’s not a single person in sight. The parking lot is similarly deserted, with nothing "
+        return "There it is—the Ikea furniture and home improvement store.\n\nThe blue and yellow of the concrete building stretches from end to end across "+
+            "the huge lot. Despite the size of the retail store, there’s not a single person in sight. The parking lot is similarly deserted, with nothing "+
             "but rows of empty spaces illuminated by the occasional streetlamp.";
     }
 
