@@ -35,7 +35,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Enter the IKEA","Skip to Clearwater", "Skip to Hidden Alcove", "Skip to Haven"};
+        String[] options = {"Enter the IKEA", "Skip to Hidden Alcove", "Skip to Haven"};
         return options;
     }
 
@@ -44,9 +44,6 @@ public class EntranceSituation_0E implements Situation {
         switch (option){
             case "Enter the IKEA":
                 AdvGame.setSituation(EntranceSituation_1E.getInstance());
-                break;
-            case "Skip to Clearwater":
-                AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
                 break;
             case "Skip to Hidden Alcove":
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
