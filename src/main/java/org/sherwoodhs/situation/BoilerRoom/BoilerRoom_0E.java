@@ -27,7 +27,7 @@ public class BoilerRoom_0E implements Situation {
                     "As you wipe condensation off your face, you peer into the darkness.";
         }
         return "The boiler room is just as humid as it was before... it's stifling. " +
-                "As you stand alone surrounded by rusty pipes, the darkness wraps around you like a blanket.";
+                "As you stand alone surrounded by rusty pipes and the hiss of steam escaping from their confines, the darkness wraps around you like a blanket.";
 
     }
     @Override
