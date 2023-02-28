@@ -1,100 +1,47 @@
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.player.Player;
-import org.sherwoodhs.situation.Dialogue;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-
-/*
-    This is where the player confirms something is up, meeting someone who guards the edge of the haven in the neutral zone
-    needs to be rewritten to match new entrance plot, will do later.
-*/
-public class EntranceSituation_4D extends Dialogue {
-    private static Situation situation = new EntranceSituation_4D();
-    String name = Player.getInstance().getName();
-
-
-    private String selectedOption;
-
-    private EntranceSituation_4D()
-    {
-        setDescription("Most of the beds seem to be missing from the display models. Dressers, curtains, nightstands, lamps, everything else you could want in a bedroom is here, except beds. Great. \n" +
-                "You notice a door labeled 'Extra furniture' it doesn't say customers aren't allowed, so you head inside. \n\n" +
-                "A woman on the other side of the door cries out when she sees you: \n\n'What are you doing?! How did you get to the other side of the door! You know it's not safe out there!'",
-                new String[]{"Apologetic", "Confused"}) ;
-        tracker = 0;
-    }
+public class EntranceSituation_4E implements Situation {
+    private static Situation situation = new EntranceSituation_4E();
 
     @Override
     public String getTitle() {
-        return "Bedrooms Section";
+        return "The Ikea - Food Court...?";
     }
 
     @Override
     public String getDescription() {
-        return "Most of the beds seem to be missing from the display models. Dressers, curtains, nightstands, lamps, everything else you could want in a bedroom is here, except beds. Great. \n" +
-                "You notice a door labeled 'Extra furniture' it doesn't say customers aren't allowed, so you head inside. \n\n" +
-                "A woman on the other side of the door cries out when she sees you: \n\n'What are you doing?! How did you get to the other side of the door! You know it's not safe out there!'";
+        return "You go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. "+
+            "Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. "+
+            "Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\n"+
+            "Food court.\n\nOr at least, this is where the food court had always been. Instead there’s only more furniture: "+
+            "a few mattress displays and bins of assorted blankets.\n\nHave they remodeled?";
+;
     }
 
     @Override
-    public SitType getSitType() {return SitType.Dialogue;}
-
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
-    protected boolean playerStatements(String option) {
-        switch (option) {
-            case "Apologetic":
-                AdvGame.updateFrame(name +  ": I'm sorry, I thought you might have more beds in here. I'll leave.");
-                return true;
-            case "Confused":
-                if(tracker==0) {
-                    AdvGame.updateFrame(name + ": What? Out there? Not safe? Where is all the furniture?");
-                    return true;
-                }
-                if(tracker==1){
-                    AdvGame.updateFrame(name + ": Separatists? What on Earth are you talking about? And where is all the furniture?");
-                    return true;
-                }
-                break;
-            case "Hostile":
-                AdvGame.updateFrame(name + ": I said I was leaving, you clearly don't have what I want anyway.");
-                return true;
-            case "Follow":
-                //AdvGame.setSituation();
-                return false;
-        }
-        return false;
+    public String[] getOptions() {
+        String[] options = {"Keep going"};
+        return options;
     }
 
     @Override
-    protected void Confirm(String option) {
-        //0: "Apologetic"[1], "Confused"[2]
-        //1: "Confused"[2], "Hostile"[2], follow
-        //2: follow
-
-        switch (option) {
-            case "Apologetic": {
-                String[] options = new String[]{"Confused", "Hostile"};
-                tracker = 1;
-                setDescription("'Beds? What are you talking about? Are you some sort of wandering Separatist?'", options);
+    public void perform(String option) {
+        switch (option){
+            case "Keep going":
+                AdvGame.setSituation(EntranceSituation_5E.getInstance());
                 break;
-            }
-            case "Confused":
-            case "Hostile":
-            {
-                String[] options = new String[]{"Follow"};
-                tracker = 2;
-                setDescription("'Just close the door!' She beckons you closer. 'It's not safe out there in the beyond.'", options);
-                break;
-            }
         }
     }
-
 
     public static Situation getInstance(){
         return situation;
     }
+
 }
