@@ -12,7 +12,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String getTitle() {
-        return "The Ikea - Parking Lot";
+        return "The Ikea";
     }
 
     @Override
@@ -27,22 +27,50 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach", "Test: Hidden Alcove", "Test: Haven"};
+        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven"};
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
+
+            // MAIN BRANCH
             case "Approach":
+                AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
+                        new String[] {"Enter","Go to Home Depot"});
+                break;
+            case "Enter":
+                AdvGame.updateFrame("---\n\nOn cue, the automatic doors slide open. A warm breeze wafts out, mixing with the cool evening air.\n\nYou step into the store and survey your surroundings.\n\nSofas, recliners, ottomans, and every kind of furniture piece imaginable cover the floor in a carefully structured manner, flanked by an innumerable variety of mini-display rooms. Decorative light fixtures cast soft shadows from the low exposed ceiling above, while in the distance air conditioning fans hum quietly.\n\nThe only thing missing is people.",
+                        new String[] {"Keep going","Go to Home Depot"});
+                break;
+            case "Keep going":
+                AdvGame.updateFrame("---\n\nYou go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\nFood court.",
+                        new String[] {"Continue"});
+                break;
+            case "Continue":
                 AdvGame.setSituation(EntranceSituation_1E.getInstance());
                 break;
-            case "Test: Hidden Alcove":
+
+            // EXIT POINT
+            case "Go to Home Depot":
+                AdvGame.updateFrame("---\n\nUnnerved by the absence of any sign of life, you decide to try your luck at the nearby Home Depot instead.\n\nGetting back in your car, you pull out of the parking lot and drive away, leaving the Ikea—and the entire point of the game—behind you.\n\nThe End.",
+                        new String[] {"Restart","Exit"});
+                break;
+            case "Restart":
+                AdvGame.setSituation(EntranceSituation_0E.getInstance());
+                break;
+            case "Exit":
+                System.exit(0);
+
+            // DEBUGGING (to remove)
+            case "Test - Hidden Alcove":
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
                 break;
-            case "Test: Haven":
+            case "Test - Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
+
         }
     }
 
