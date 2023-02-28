@@ -1,6 +1,7 @@
 package org.sherwoodhs;
 
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
+
 import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
@@ -14,7 +15,6 @@ import static org.sherwoodhs.ui.Frame.FRAME;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 import static org.sherwoodhs.ui.QuestPanel.questPanel;
-import static org.sherwoodhs.ui.BarPanel.barPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
@@ -27,7 +27,7 @@ public class AdvGame {
             UIManager.put("ProgressBar.foreground", new Color(69, 64, 92));
             UIManager.put("ProgressBar.selectionForeground", new Color(180, 180, 200));
             UIManager.put("ProgressBar.selectionBackground", new Color(180, 180, 200));
-            UIManager.put("TextArea.background", new Color(44, 44, 59));
+            //UIManager.put("TextArea.background", new Color(44, 44, 59));
         } catch (Exception e) {
             e.printStackTrace();
         }
