@@ -5,11 +5,11 @@ import org.sherwoodhs.location.Location;
 Example location
  */
 
-public class SeparatistHome extends Location {
+public class SeparatistBase extends Location {
 
-    private static SeparatistHome location = new SeparatistHome();
+    private static SeparatistBase location = new SeparatistBase();
 
-    private SeparatistHome(){super("This is the separatist meeting location", 0);}
+    private SeparatistBase(){super("This is the separatist central area", 0);}
 
     public static Location getInstance(){return(location);}
 
