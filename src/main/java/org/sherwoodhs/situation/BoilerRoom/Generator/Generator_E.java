@@ -26,7 +26,7 @@ public class Generator_E implements Situation {
         if (firstTime) {
             return "After a bit of climbing across pipes, you find that you are in front of a massive vibrating green container. It's extremely loud.\n\n" +
                     "You strain your eyes and see that in faded paint, it is the IKEA's \"generator\". " +
-                    "You then turn, seeing that the red light you saw before was actually a flashing light on the generator's side.\n\n" +
+                    "You then turn, seeing that the red light you saw before was actually a flashing light on the generator's side. It's as large as your head.\n\n" +
                     "You listen for any other people that could be near, but your attempts are drowned out by the generator's sound.";
         }
         if (openedGenerator) {
@@ -76,7 +76,8 @@ public class Generator_E implements Situation {
                 // You come to the conclusion that the panel might be able to detect liquid. You pull out the pipe shard you collected earlier, and lightly jab at your finger.
                 // A small bead of dark blood oozes out from the small cut you made, and you place your finger on the panel. As you pull it away, you see the blood quickly disappear into the panel.
                 // The screen flashes a bright green and a quiet grinding sound begins to emanate from the generator. As the grinding sound grows louder and louder, you notice a small passage opening up on the side of the generator.
-                // You think, maybe it wasn't a generator after all.
+                // Looking at the red light that was flashing before, you notice that it has now turned off. Perhaps the passage is a vent, and the generator was telling you to open it?
+                // You look back at the passage, and you get an odd feeling... like a dull headache. You think again. Maybe it wasn't a generator after all.
                 break;
             case "Enter the passage":
                 // first time:
