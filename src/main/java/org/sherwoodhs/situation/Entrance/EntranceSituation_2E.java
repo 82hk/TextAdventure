@@ -34,7 +34,7 @@ public class EntranceSituation_1E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Keep going":
-                AdvGame.setSituation(EntranceSituation_4D.getInstance());
+                AdvGame.setSituation(EntranceSituation_4E.getInstance());
                 break;
             case "Go to Home Depot":
                 AdvGame.setSituation(EntranceSituation_3E.getInstance());
