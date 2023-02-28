@@ -1,12 +1,6 @@
 package org.sherwoodhs.situation.Clearwater.KioskIntro;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.location.Clearwater.ClearwaterKiosk;
-import org.sherwoodhs.location.HavenCenter;
-import org.sherwoodhs.location.Location;
-import org.sherwoodhs.npc.NPC;
-import org.sherwoodhs.npc.TheDistributor;
-import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -63,6 +57,10 @@ public class ClearwaterKiosk1_0E implements Situation {
                     AdvGame.updateFrame("The line shuffles forward, until finally it's your turn.\n\nThe old man gestures to you.",
                             new String[]{"Approach","Leave"});
                 }
+                break;
+
+            case "Approach":
+                AdvGame.setSituation(ClearwaterKiosk1_1D.getInstance());
 
             // EXIT POINT
             case "Leave":
