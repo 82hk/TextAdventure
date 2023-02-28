@@ -21,7 +21,7 @@ public class OtherSide1_0D implements Situation {
     private OtherSide1_0D() {}
 
     private boolean questionOption = true; //Decides if option 0 get shown as an option
-    //private boolean helpOption = true; //Decides if option 3 gets shown as an option
+    private boolean awkwardOption = true; //Decides if option 4 gets shown as an option
     private boolean returned = false; //Boolean if this situation has been returned to by dialouge option
     @Override
     public SitType getSitType() {return SitType.Dialogue;}
@@ -55,7 +55,7 @@ public class OtherSide1_0D implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = { "", "\"I'll take your advice and leave\"", "", ""};
+        String[] options = { "", "\"I'll take your advice and leave\"", "", "\"Is there anything I can do?\"", ""};
         if ( true /*Some kind of really-bad reputation with everyone*/){
             options[2] = "\"There's nothing for me to return to.\"";
 
@@ -63,9 +63,9 @@ public class OtherSide1_0D implements Situation {
         if (questionOption){
             options[0] = "\"What curtain?\"";
         }
-        //if (helpOption){
-            options[3] = "\"Is there anything I can do?\"";
-       // }
+        if (awkwardOption){
+            options[4] = "\"Nice to meet you too?\"";
+        }
         return options;
     }
 
@@ -81,12 +81,16 @@ public class OtherSide1_0D implements Situation {
                 AdvGame.setSituation(OtherSide1_1_2D.getInstance());
             break;
             case "\"I'll take your advice and leave\"":
-            //Returns back to the road(temp) LocationOption and permanently removes the option to enter the Hidden Alcove.
+                AdvGame.setSituation(OtherSide1_1_1E.getInstance());
             break;
             case "\"Is there anything I can do?\"":
                 AdvGame.setSituation(OtherSide1_2D.getInstance());
                 break;
-
+            case "\"Nice to meet you too?\"":
+                awkwardOption = false;
+                alchemist.changeRelModifier(-1);
+                AdvGame.setSituation(OtherSide1_1_3D.getInstance());
+                break;
         }
     }
 

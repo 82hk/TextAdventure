@@ -77,7 +77,7 @@ public class HiddenAlcove1_0E implements Situation {
             } if (OtherSideQuest.getProgress() == 2){
                 AdvGame.setSituation(OtherSide3_0D.getInstance());
             } else {
-                System.out.println("broken");
+
             }
 
         }
