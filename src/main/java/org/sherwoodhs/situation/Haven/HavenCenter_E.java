@@ -1,9 +1,8 @@
 package org.sherwoodhs.situation.Haven;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.location.Clearwater.ClearwaterKiosk;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
+import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -33,8 +32,7 @@ public class HavenCenter_E implements Situation {
                     "\n" +
                     "You are on the ground floor.\n" +
                     "\n" +
-                    "You feel rather small." +
-                    "\n\n"+ "ClearwaterKiosk.getName()";
+                    "You feel rather small.";
         } else {
             return "You are in the Center of the Haven";
         }
@@ -47,7 +45,7 @@ public class HavenCenter_E implements Situation {
 
     @Override
     public String[] getOptions() {
-        if (firstTime) {
+        if(firstTime) {
             String[] options = {"Booth", "Kiosk"};
             firstTime = false;
             return options;
@@ -62,7 +60,7 @@ public class HavenCenter_E implements Situation {
         switch (option){
             case "Foundation Booth":
             case "Booth":
-                AdvGame.setSituation(FoundationIntro_1D.getInstance());
+                AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
             case "Clearwater Kiosk":
             case "Kiosk":

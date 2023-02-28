@@ -1,7 +1,7 @@
 package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter;
+import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
