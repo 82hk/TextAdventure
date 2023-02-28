@@ -72,12 +72,12 @@ public class HiddenAlcove1_0E implements Situation {
 
         }
         if (option.equals("Talk to " + Alchemist.getInstance().getName())){
-            if (OtherSideQuest.getProgress() == 1){
+            if (OtherSideQuest.getProgress() == 0){
                 AdvGame.setSituation(OtherSide1_3D.getInstance());
             } if (OtherSideQuest.getProgress() == 2){
                 AdvGame.setSituation(OtherSide3_0D.getInstance());
             } else {
-
+                System.out.println("broken");
             }
 
         }
