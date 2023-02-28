@@ -14,7 +14,7 @@ import static org.sherwoodhs.ui.Frame.FRAME;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 import static org.sherwoodhs.ui.QuestPanel.questPanel;
-
+import static org.sherwoodhs.ui.BarPanel.barPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();

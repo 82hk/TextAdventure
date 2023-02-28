@@ -15,6 +15,10 @@ public class World {
         states.put("Day", 0); // # of Days spent in game
         states.put("Renown", 0); // Total renown in world
         states2.put("Location","Entry Room"); // The current location of the player
+        states.put("Foundation Rep", 0);
+        states.put("Haven Rep", 0);
+        states.put("Clearwater Rep", 0);
+        states.put("Separatists Rep", 0);
     }
     public static World getInstance(){
         return world;

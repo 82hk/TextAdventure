@@ -25,12 +25,7 @@ public class ClearwaterKiosk1_2E implements Situation {
 
     @Override
     public String getDescription() {
-        return "You wait as the line of people slowly moves closer to the kiosk.\n\nOnly ten people to go.\n\nThen seven.\n\nThen five.\n\nThen two.\n\n"+
-                "The woman steps up to the booth, pulling along her daughter. The old man greets them warmly and takes a small card from the woman. "+
-                "He marks something on a desk behind the booth and turns to one of the guards, who in turn hands a package of water bottles to the woman."+
-                " She looks at the stack of bottled water behind the booth then turns to look at the old man, seeming to grow agitated. "+
-                "The old man shakes his head solemnly, while the guard steps in between to escort her away from the kiosk."+
-                "\n\nThe old man sighs and sits back down, then gestures to you.";
+        return "You wait as the line of people slowly moves closer to the kiosk.\n\nOnly ten people to go.\n\nThen seven.\n\nThen five.\n\nThen two.\n\nThe woman steps up to the booth, pulling along her daughter. The old man greets them warmly and takes a small card from the woman. He marks something on a desk behind the booth and turns to one of the guards, who in turn hands a package of water bottles to the woman. She looks at the stack of bottled water behind the booth then turns to look at the old man, seeming to grow agitated. The old man shakes his head solemnly, while the guard steps in between to escort her away from the kiosk.\n\nThe old man sighs and sits back down, then gestures to you.";
     }
 
     @Override
@@ -38,14 +33,14 @@ public class ClearwaterKiosk1_2E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach the booth","Leave"}; // limit 6
+        String[] options = {"Approach","Leave"}; // limit 6
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Approach the booth":
+            case "Approach":
                 AdvGame.setSituation(ClearwaterKiosk1_3D.getInstance());
                 break;
             case "Leave":
