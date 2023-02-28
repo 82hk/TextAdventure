@@ -63,6 +63,10 @@ public class ClearwaterKiosk1_0E implements Situation {
                     AdvGame.updateFrame("The line shuffles forward, until finally it's your turn.\n\nThe old man gestures to you.",
                             new String[]{"Approach","Leave"});
                 }
+                break;
+
+            case "Approach":
+                AdvGame.setSituation(ClearwaterKiosk1_3D.getInstance());
 
             // EXIT POINT
             case "Leave":
