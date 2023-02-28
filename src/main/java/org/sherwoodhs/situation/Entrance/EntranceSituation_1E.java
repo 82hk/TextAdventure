@@ -3,23 +3,20 @@ package org.sherwoodhs.situation.Entrance;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-/*
-The first situation inside the ikea. Moves the player towards the bedroom section.
- */
 
 public class EntranceSituation_1E implements Situation {
     private static Situation situation = new EntranceSituation_1E();
 
     @Override
     public String getTitle() {
-        return "Inside IKEA";
+        return "The Ikea - Entrance";
     }
 
     @Override
     public String getDescription() {
-        return "You always realise that you hate doing something the moment it's too late to turn back." +
-                " Ikea is such a maze. You need to find a bed and leave ASAP, before they close. "+
-                "You also realize that the place is completely empty, not a single person or employee to be found.";
+        return "The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights flood through display "+
+            "windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.";
+";
     }
 
     @Override
@@ -27,24 +24,19 @@ public class EntranceSituation_1E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Food Court", "Bedrooms", "Kitchens", "Staff only", "Exit"};
+        String[] options = {"Enter","Go to Home Depot"};
         return options;
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Food Court":
-                AdvGame.updateFrame("The meatballs are good, but you don't have the time.");
+            case "Enter":
+                AdvGame.setSituation(EntranceSituation_2E.getInstance());
                 break;
-            case "Exit":
-                AdvGame.setSituation(EntranceSituation_4D.getInstance());
+            case "Go to Home Depot":
+                AdvGame.setSituation(EntranceSituation_3E.getInstance());
                 break;
-            case "Kitchens":
-                AdvGame.updateFrame("Thankfully all your appliances are hard to remove. You don't need to replace any of them.");
-                break;
-            case "Staff only":
-                AdvGame.updateFrame("You realize you would never want to work here.");
         }
     }
 
