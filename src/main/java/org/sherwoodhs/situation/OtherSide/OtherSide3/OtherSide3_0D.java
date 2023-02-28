@@ -29,10 +29,11 @@ public class OtherSide3_0D implements Situation {
     @Override
     public String getDescription() {
         String string = "You returned back to the Hidden Alcove with the ______ in hand. When you entered, " + alchemist.getName() +
-                " looked very surprised." +
+                " was sitting at a table with some glassware on top.\n\n" +
+                player.getName() + ": Ahem, I got the ____ you wanted." +
                 alchemist.getName() + ": You- you actually got it!\n\n";
         if (alchemist.getName().equals("Hecate")){
-            string += alchemist.getName() + " was so surprised that that she";
+            string += alchemist.getName() + " was so surprised that that she jumped up from her chair";
         } else {
             string += "";
         }
