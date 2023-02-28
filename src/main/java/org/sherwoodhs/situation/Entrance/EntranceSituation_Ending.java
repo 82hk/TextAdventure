@@ -32,7 +32,7 @@ public class EntranceSituation_Ending implements Situation {
     public void perform(String option) {
         switch (option){
             case "Exit":
-                // End the game.
+                // End the game
                 break;
             case "Restart":
                 // Restart game.
