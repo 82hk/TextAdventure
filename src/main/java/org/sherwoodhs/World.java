@@ -18,7 +18,6 @@ public class World {
         states.put("Foundation Rep", 0);
         states.put("Haven Rep", 0);
         states.put("Clearwater Rep", 0);
-        states.put("Separatists Rep", 0);
     }
     public static World getInstance(){
         return world;

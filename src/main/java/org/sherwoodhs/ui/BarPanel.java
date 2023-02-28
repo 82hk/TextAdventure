@@ -9,7 +9,6 @@ import java.awt.*;
 public class BarPanel extends JPanel {
     public static final BarPanel barPanel = new BarPanel();
     private Bar foundationBar = new Bar("Foundation", World.getInstance().getState("Foundation Rep"));
-    private Bar separatistBar = new Bar("Separatist", World.getInstance().getState("Separatists Rep"));
     private Bar havenBar = new Bar("Haven", World.getInstance().getState("Haven Rep"));
     private Bar clearWaterBar = new Bar("Clearwater", World.getInstance().getState("Clearwater Rep"));
 
@@ -20,7 +19,6 @@ public class BarPanel extends JPanel {
         add(havenBar);
         add(clearWaterBar);
         add(foundationBar);
-        add(separatistBar);
     }
     public Bar getFoundationBar() {
         return foundationBar;
@@ -30,8 +28,5 @@ public class BarPanel extends JPanel {
     }
     public Bar getHavenBar() {
         return havenBar;
-    }
-    public Bar getSeparatistBar() {
-        return separatistBar;
     }
 }

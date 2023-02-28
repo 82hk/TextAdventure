@@ -55,10 +55,14 @@ public class HavenCenter_E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Foundation Booth":
+                AdvGame.setSituation(FoundationIntro_0D.getInstance());
+                break;
             case "Booth":
                 AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
             case "Clearwater Kiosk":
+                AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
+                break;
             case "Approach the kiosk":
                 AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
                 break;
