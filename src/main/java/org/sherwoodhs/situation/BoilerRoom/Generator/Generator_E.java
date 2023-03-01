@@ -8,9 +8,15 @@ import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_1E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import java.util.ArrayList;
+
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
+
 public class Generator_E implements Situation {
     private boolean firstTime = true;
     private boolean inspectedGenerator = false;
+    private boolean inspectedRedLight = false;
+    private boolean inspectedPanel = false;
     private boolean openedGenerator = false;
     private static Situation situation = new Generator_E();
     Location location = BoilerRoom.getInstance();
@@ -30,8 +36,8 @@ public class Generator_E implements Situation {
                     "You listen for any other people that could be near, but your attempts are drowned out by the generator's sound.";
         }
         if (openedGenerator) {
-            return "You adeptly scale a stack of pipes, and the green generator comes into your view. The vibrations almost feel comforting, now that the red light has turned off... perhaps permanently. " +
-                    "As you wipe condensated steam off your face, you stare into the passage you uncovered. It leads into an unfathomable darkness.";
+            return "You adeptly scale a stack of pipes, and the green generator comes into your view. The vibrations almost feel comforting... you've gotten used to the eerie red light, now that it has stopped flashing. " +
+                    "As you wipe steam condensation off your face, you stare into the passage you uncovered. It leads into an unfathomable darkness.";
         }
         if (inspectedGenerator) {
             return "After climbing around some pipes, the massive generator comes into view. The red light eerily illuminates the steam around you. " +
@@ -48,35 +54,58 @@ public class Generator_E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        return new String[]{"Inspect the generator", "Inspect the red light", "Leave"};
-        // Inspect the panel
-        // Nick your finger with the pipe shard
-        // Enter the passage
+        ArrayList<String> options = new ArrayList<>();
+        if (openedGenerator) {
+            options.add("Enter the passage");
+        } else {
+            if (inspectedGenerator) {
+                if (inspectedPanel) {
+                    if (inventoryPanel.containsItem("A shard of a rusty pipe")) {
+                        options.add("Prick your finger");
+                    }
+                    // will not add any option if panel has been inspected, but the player does not own a shard
+                } else {
+                    options.add("Inspect the panel");
+                }
+            } else {
+                options.add("Inspect the generator");
+            }
+            // the option to inspect the red light will disappear once the generator has opened
+            if (!inspectedRedLight) {
+                options.add("Inspect the red light");
+            }
+        }
+        options.add("Leave");
+        return options.toArray(new String[0]);
     }
     @Override
     public void perform(String option) {
         firstTime = false;
         switch (option) {
             case "Inspect the generator":
+                inspectedGenerator = true;
                 // You take a closer look at the generator, and you notice a loose metal panel to the right of the flashing red light. 
                 // It looks distinct from the dark green metal surrounding it. You slowly pry it off, and you discover a small panel with a blank screen under it.
                 break;
             case "Inspect the red light":
+                inspectedRedLight = true;
                 // You take a closer look at the red light. At this distance, it's almost blinding. You touch the glass, and it's scorching hot.
                 // You quickly pull your hand away from the glass... it doesn't look like there's anything special with the light. You do wonder why it's flashing, however.
                 // It's almost like if it's... warning you about something.
                 break;
             case "Inspect the panel":
+                inspectedPanel = true;
                 // You place your hand on the panel, to see if it activates anything. As you feel the panel, you notice that panel is slightly textured, as if it's meant to absorb something...
                 // Suddenly to your surprise, the blank screen flashes on, illuminating your face with a dull green glow.
-                // The screen displays one ominous sentence: "To truly descend into the depths, one must sacrifice a sliver of their life."
+                // The screen displays one ominous sentence: "To descend into the depths, one must sacrifice a sliver of precious life."
                 // It doesn't quite make sense to you. Is this device really a generator? Or is it something more sinister?
                 break;
-            case "Nick your finger with the pipe shard":
+            case "Prick your finger":
+                openedGenerator = true;
                 // You come to the conclusion that the panel might be able to detect liquid. You pull out the pipe shard you collected earlier, and lightly jab at your finger.
                 // A small bead of dark blood oozes out from the small cut you made, and you place your finger on the panel. As you pull it away, you see the blood quickly disappear into the panel.
                 // The screen flashes a bright green and a quiet grinding sound begins to emanate from the generator. As the grinding sound grows louder and louder, you notice a small passage opening up on the side of the generator.
-                // Looking at the red light that was flashing before, you notice that it has now turned off. Perhaps the passage is a vent, and the generator was telling you to open it?
+                // Looking at the red light that was flashing before, you notice that it has stopped flashing. Perhaps the passage is a vent, and the generator was telling you to open it?
                 // You look back at the passage, and you get an odd feeling... like a dull headache. You think again. Maybe it wasn't a generator after all.
                 break;
             case "Enter the passage":
@@ -90,7 +119,7 @@ public class Generator_E implements Situation {
                 // You carefully make your way forward.
                 break;
             case "Leave":
-                // leave
+                AdvGame.setSituation(BoilerRoom_1E.getInstance());
                 break;
         }
     }

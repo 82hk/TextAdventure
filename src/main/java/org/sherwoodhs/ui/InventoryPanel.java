@@ -56,5 +56,11 @@ public class InventoryPanel extends JPanel {
      * Returns a boolean that determines whether an item is contained in the inventory
      * @param item represents the item to be searched for in inventoryList
      */
-    public boolean containsItem (String item){if (inventoryListModel.contains(item)) {return true;} else {return false;}}
+    public boolean containsItem (String item){
+        if (inventoryListModel.contains(item)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
