@@ -42,7 +42,7 @@ public class BoilerRoom_1E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        if (collectedPipe) {
+        if (!collectedPipe) {
             return new String[]{"Travel towards the light", "Grab one of the pipe shards", "Turn back"};
         }
         return new String[]{"Travel towards the light", "Turn back"};
