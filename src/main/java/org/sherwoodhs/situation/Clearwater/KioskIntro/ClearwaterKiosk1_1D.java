@@ -32,31 +32,35 @@ public class ClearwaterKiosk1_1D implements Situation {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"What??", "Lie"};
+        return new String[]{"What?", "Lie"};
     }
 
     @Override
     public void perform(String option) {
         switch (option) {
-            case "What??":
+            case "What?":
                 AdvGame.updateFrame("\"Your water card. Per Foundation orders, Clearwater can't distribute water rations to Haven citizens unless they're regulated "+
                         "with a card. Surely you've heard about this by now. Clearwater announced it to every nook, cranny, and corner "+
                         "of the Haven weeks ago, and it's been posted here in the Center ever since.\"\n\nHe points to a poster on one of the nearby pillars.\n\n"+
                         "\"So come now, what're you playing it? Trying to tell me you don't have it?\"\n\nThe old man raises a gray eyebrow.",
-                        new String[]{"\"Clearwater??\"", "\"The Foundation??\"", "\"The Haven??\""});
+                        new String[]{"What??", "Lie"});
                 break;
             case "Lie":
                 AdvGame.updateFrame("\"I-I must have lost it. Can I get a replacement?\" You stammer.\n\nHe shakes his head.\n\n"+
                         "\"Sorry son, but you ought to know to be more careful with those things. Can't be handing out water off the books now, "+
                         "or the Boss would have a fit. All cards have to be registered with the Foundation at their office over yonder—\""+
                         "\n\nHe points to a [ get description ].\n\n\"—and only then am I allowed to give you water.\"",
+                        new String[]{"The Boss?", "The Foundation?", "Leave"});
+                break;
+            case "What??":
+                AdvGame.clearFrame();
+                AdvGame.updateFrame("\"What?? What are you talking about?? I just wanted to buy a [ ] but no one was in the Ikea "+
+                        "and when I started looking around the store just stretched on and on like some kind of maze and none of this "+
+                        "should be physically possible so WHERE ARE WE??\"\n\nYou pause to take a breath. The man's eyes are now wide open."+
+                        "\n\n\"You-you're not...\"\n\nIn an instant the man is up and on the other side of the booth, pulling you along "+
+                        "as he steps out from the kiosk.\n\n\"Hey! Where are you--.\" One of the the guards takes a step."+
+                        "\n\n\"Relax, Alex,\" the man says. \"We just need to sort out some business with this fellow's card.\"",
                         new String[]{"Placeholder"});
-                break;
-            case "\"Clearwater??\"":
-                break;
-            case "\"The Foundation??\"":
-                break;
-            case "\"The Haven??\"":
                 break;
         }
     }
