@@ -42,7 +42,7 @@ public class Door_E implements Situation {
             case "Open the door":
                 doorIsOpen = true;
                 break;
-            case "Return to the generator":
+            case "Return to the passage":
                 AdvGame.setSituation(Passage_E.getInstance());
                 break;
         }
