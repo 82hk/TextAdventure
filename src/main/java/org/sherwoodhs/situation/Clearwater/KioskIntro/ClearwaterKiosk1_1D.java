@@ -46,7 +46,7 @@ public class ClearwaterKiosk1_1D implements Situation {
                         new String[]{"What??", "Lie"});
                 break;
             case "Lie":
-                AdvGame.updateFrame(player.getName() + ": I-I must have lost it. Can I get a replacement?\n\nHe shakes his head.\n\n"+
+                AdvGame.updateFrame("You: I-I must have lost it. Can I get a replacement?\n\nHe shakes his head.\n\n"+
                         distributor.getName() + ": Sorry son, but you ought to know to be more careful with those things. Can't be handing out water off the books now, "+
                         "or the Boss would have a fit. All cards have to be registered with the Foundation at their office over yonder—"+
                         "\n\nHe points to a [ get description ].\n\n" + distributor.getName() + ": —and only then am I allowed to give you water.",
@@ -54,7 +54,7 @@ public class ClearwaterKiosk1_1D implements Situation {
                 break;
             case "What??":
                 AdvGame.clearFrame();
-                AdvGame.updateFrame( player.getName() + ": What?? What are you talking about?? I just wanted to buy a [ ] but no one was in the Ikea "+
+                AdvGame.updateFrame("You: What?? What are you talking about?? I just wanted to buy a [ ] but no one was in the Ikea "+
                         "and when I started looking around the store just stretched on and on like some kind of maze and none of this "+
                         "should be physically possible so WHERE ARE WE??\n\nYou pause to take a breath. The man's eyes are now wide open.\n\n"+
                         distributor.getName() + ": You-you're not...\n\nIn an instant the man is up and on the other side of the booth, pulling you along "+

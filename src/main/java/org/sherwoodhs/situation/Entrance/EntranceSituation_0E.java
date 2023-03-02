@@ -47,7 +47,7 @@ public class EntranceSituation_0E implements Situation {
                         new String[] {"Keep going","Go to Lowe's"});
                 break;
             case "Keep going":
-                AdvGame.updateFrame("---\n\nYou go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\nFood court.",
+                AdvGame.updateFrame("---\n\nYou go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\nFood court.\n",
                         new String[] {"Continue"});
                 break;
             case "Continue":

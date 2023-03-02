@@ -44,7 +44,7 @@ public class EntranceSituation_2E implements Situation {
                         new String[]{"Explore","Go back"});
                 break;
             case "Go back":
-                AdvGame.updateFrame("You turn around, but see that the door you entered through has vanished. In its place is a small note taped to the wall. It reads:\n\n\"No\n\n     - The Dev Team\"",
+                AdvGame.clearFrame("You turn around, but see that the door you entered through has vanished. In its place is a small note taped to the wall. It reads:\n\n\"No\n\n     - The Dev Team\"",
                         new String[]{"Explore"});
                 break;
             case "Explore":
