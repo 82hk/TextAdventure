@@ -13,6 +13,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class BoilerRoom_1E implements Situation {
     private boolean firstTime = true;
     private boolean collectedPipe = false;
+    private boolean clickedContinue = false;
     private static Situation situation = new BoilerRoom_1E();
     Location location = BoilerRoom.getInstance();
     private BoilerRoom_1E() {
@@ -30,7 +31,11 @@ public class BoilerRoom_1E implements Situation {
                     "You can't really make out where the light is coming from, but it seems to be colored red.";
         }
         if (collectedPipe) {
-            return "You travel forward through the humid darkness. A hulking silhouette of something looms in the distance, and a flashing red light.";
+            if (clickedContinue) {
+                clickedContinue = false;
+                return "You stand in the darkness, staring at the red light off in the distance.";
+            }
+            return "You travel forward through the humid darkness. A hulking silhouette of the generator looms in the distance, and a bright red light.";
         }
         return "You travel forward through the humid darkness. " +
                 "You climb over the shards of a shattered pipe on the ground... carefully, so you don't cut yourself on accident. " +
@@ -49,14 +54,22 @@ public class BoilerRoom_1E implements Situation {
     }
     @Override
     public void perform(String option) {
-        firstTime = false;
         switch (option) {
             case "Travel towards the light":
+                firstTime = false;
                 AdvGame.setSituation(Generator_E.getInstance());
                 break;
+            case "Continue":
+                clickedContinue = true;
+                AdvGame.setSituation(getInstance());
+                break;
             case "Grab one of the pipe shards":
+                firstTime = false;
                 inventoryPanel.addToInventory("A shard of a rusty pipe");
                 collectedPipe = true;
+                AdvGame.updateFrame(
+                        "You carefully grab one of the shards off the ground, so you don't cut yourself.",
+                        new String[]{"Continue"});
                 break;
             case "Turn back":
                 AdvGame.setSituation(BoilerRoom_0E.getInstance());
