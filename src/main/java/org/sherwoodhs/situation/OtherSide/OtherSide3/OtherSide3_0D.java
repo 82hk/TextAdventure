@@ -33,9 +33,14 @@ public class OtherSide3_0D implements Situation {
                 player.getName() + ": Ahem, I got the ____ you wanted." +
                 alchemist.getName() + ": You- you actually got it!\n\n";
         if (alchemist.getName().equals("Hecate")){
-            string += alchemist.getName() + " was so surprised that that she jumped up from her chair";
+            alchemist.changeRelModifier(5);
+            string += alchemist.getName() + " was so surprised that that she jumped up from her chair, knocking off her hood." +
+                    "You could see the sheer surprise in her eyes. She did not expect someone like you to accomplish her task." +
+                    "There was also the faintest smile smile on her face.\n\n" +
+                    "(+5 relationship with " + alchemist.getName() + ")\n\n" +
+                    "";
         } else {
-            string += "";
+            string += alchemist.getName() + "";
         }
         return (string);
     }
