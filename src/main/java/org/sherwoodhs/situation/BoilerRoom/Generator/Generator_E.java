@@ -22,7 +22,6 @@ public class Generator_E implements Situation {
     private static Situation situation = new Generator_E();
     Location location = BoilerRoom.getInstance();
     private Generator_E() {
-        World.setStateS("Location", location.getName());
     }
     @Override
     public String getTitle() {
