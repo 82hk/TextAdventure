@@ -30,7 +30,8 @@ public class OtherSide3_0D implements Situation {
     public String getDescription() {
         String string = "You returned back to the Hidden Alcove with the ______ in hand. When you entered, " + alchemist.getName() +
                 " was sitting at a table with some glassware on top.\n\n" +
-                player.getName() + ": Ahem, I got the ____ you wanted." +
+                player.getName() + ": Ahem, I got the ____ you wanted.\n\n" +
+                alchemist.getName() + " turned around to see you.\n\n" +
                 alchemist.getName() + ": You- you actually got it!\n\n";
         if (alchemist.getName().equals("Hecate")){
             alchemist.changeRelModifier(5);
@@ -38,10 +39,11 @@ public class OtherSide3_0D implements Situation {
                     "You could see the sheer surprise in her eyes. She did not expect someone like you to accomplish her task." +
                     "There was also the faintest smile smile on her face.\n\n" +
                     "(+5 relationship with " + alchemist.getName() + ")\n\n" +
-                    "";
+                    alchemist.getName() + ": Thank you.\n\n";
         } else {
-            string += alchemist.getName() + "";
+            string += alchemist.getName() + " was so surprised ";
         }
+        string += alchemist.getName() + ": Can you please hand over that _____?";
         return (string);
     }
 
