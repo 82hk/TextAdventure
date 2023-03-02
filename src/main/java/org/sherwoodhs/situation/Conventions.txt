@@ -22,6 +22,7 @@ Package effectively means folder.
                 2) "C" represents Combat
                 3) "I" represents Interaction
                 4) "E" represents Default Exploration
+                5) "End" represents Ending.
 5) If you want to categorize Scenario packages (from 3.a), there isn't anything fancy that needs to be done. Just put
    them in the bigger package.
 6) The LocationOptions Package is simply just the default scenario when moving between locations. These scenarios are
