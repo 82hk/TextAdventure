@@ -44,7 +44,9 @@ public class OtherSide1_1_0D implements Situation {
                 "Hecate: It's a long story, full of some pain. Maybe time will let it heal, but that story isn't one for now." +
                 "At least, not until I complete my goal...\n\n" +
                 "A look of inspiration flashed across her face before being quickly replaced by doubt.\n\n" +
-                "Hecate: I can't force you to do anything, but... would you be willing to help me out with something?\n\n" +
+                "Hecate: I can't force you to do anything, but...\n\n" +
+                "She put back on her hood.\n\n" +
+                "Hecate: ...would you be willing to help me out with something?\n\n" +
                 "You couldn't help but feel empathy. So much that you agreed, without thinking too much."
                 );
     }

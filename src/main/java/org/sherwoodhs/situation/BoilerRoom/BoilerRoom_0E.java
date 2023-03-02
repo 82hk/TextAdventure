@@ -13,7 +13,6 @@ public class BoilerRoom_0E implements Situation {
     private static Situation situation = new BoilerRoom_0E();
     Location location = BoilerRoom.getInstance();
     private BoilerRoom_0E() {
-        World.setStateS("Location", location.getName());
     }
     @Override
     public String getTitle() {
