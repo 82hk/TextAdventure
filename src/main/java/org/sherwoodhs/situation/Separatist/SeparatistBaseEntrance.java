@@ -1,7 +1,6 @@
 package org.sherwoodhs.situation.Separatist;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -19,8 +18,10 @@ public class SeparatistBaseEntrance implements Situation {
     @Override
     public String getDescription() {
         if (firstTime == true) {
-            return "";
+            return "You approach the separatist base where the separatists live. You want to explore, but a person " +
+                    "comes up to you and initiates a conversation.";
         } else {
+            // if not enough reputation, chief tells you to still go away
             return "temp";
         }
     }
@@ -30,7 +31,7 @@ public class SeparatistBaseEntrance implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to the Chief","Leave"}; // limit 6
+        String[] options = {"Talk to the person","Leave"}; // limit 6
         return options;
     }
 
@@ -39,21 +40,22 @@ public class SeparatistBaseEntrance implements Situation {
         switch (option){
 
             // MAIN BRANCH
-            case "Talk to the Chief":
+            case "Talk to the person":
                 if (firstTime) {
-                    AdvGame.updateFrame("Chief talk dialogue",
-                            new String[]{"temp","temp"});
+                    AdvGame.updateFrame("The person introduces himself as the chief of the separatist village. Using his local power, he " +
+                                    "tells you that you are not wanted, unless you can do him a favor.",
+                            new String[]{"Talk to the Chief","Leave"});
                 } else {
                     // if reputation is not enough
                     AdvGame.updateFrame("You are still not wanted",
-                            new String[]{"temp","temp"});
+                            new String[]{"Talk to the Chief","Leave"});
                 }
                 break;
 
             // EXIT POINT
             case "Leave":
                 firstTime = false;
-                AdvGame.setSituation(HavenCenter_E.getInstance());
+                AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }
     }
