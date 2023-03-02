@@ -6,6 +6,7 @@ import org.sherwoodhs.location.Location;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.TheDistributor;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -61,6 +62,29 @@ public class ClearwaterKiosk1_1D implements Situation {
                         "as he steps out from the kiosk.\n\n" + "Guard: Hey! Where are you--\n\n" + "One of the the guards takes a step. \n\n"+
                         distributor.getName() + ": Relax, Alex, We just need to sort out some business with this fellow's card.",
                         new String[]{"Placeholder"});
+                break;
+            case "The Boss?":
+                AdvGame.updateFrame(distributor.getName() + ": Clearwater Collective's one and only warehouse manager. Not a "+
+                        "particularly nice man. Now go on, get. Plenty of other Haven citizens needing water here today.",
+                        new String[]{"Clearwater?", "Haven?", "Leave"});
+                break;
+            case "The Foundation?":
+                AdvGame.updateFrame(distributor.getName() + ": Yknow, the Haven's government and security force."+
+                        "\n\nHe nods to the guards standing around the water pile and kiosk pillars.\n\n"+
+                        distributor.getName() + ": Those guys. Now go on, get. Plenty of other citizens need Clearwater service today.",
+                        new String[]{"Clearwater?", "Haven?", "Leave"});
+                break;
+            case "Clearwater?":
+            case "Haven?":
+                AdvGame.clearFrame();
+                AdvGame.updateFrame("The old man chuckles to himself.\n\n" + distributor.getName() +
+                        ": C'mon kid, you're acting like you just got here or something. Now—\n\nHe gestures to a family "+
+                        "standing behind you.\n\n" + distributor.getName() + ": —next!\n\nYou step away from the booth and "+
+                        "walk back out into the plaza.",
+                        new String[]{"Leave"});
+                break;
+            case "Leave":
+                AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
     }

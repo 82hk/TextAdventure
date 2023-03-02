@@ -26,7 +26,7 @@ public class SeparatistHub implements Situation {
     }
 
     @Override
-    public SitType getSitType() {return SitType.Interaction;}
+    public SitType getSitType() {return SitType.Hub;}
 
     @Override
     public String[] getOptions() {
@@ -42,8 +42,7 @@ public class SeparatistHub implements Situation {
             case "Go to the base entrance":
                 if (firstTime) {
                     //base entrance situation
-                    AdvGame.updateFrame("Chief talk dialogue",
-                            new String[]{"temp","temp"});
+                    AdvGame.setSituation(SeparatistBaseEntrance.getInstance());
                 } else {
                     // doesn't matter
                     AdvGame.updateFrame("temp",
@@ -64,15 +63,8 @@ public class SeparatistHub implements Situation {
                 break;
 
             case "Go to McDonald's":
-                if (firstTime) {
-                    //go to McDonald's
-                    AdvGame.updateFrame("mcdonalds",
-                            new String[]{"temp","temp"});
-                } else {
-                    // doesn't matter
-                    AdvGame.updateFrame("temp",
-                            new String[]{"temp","temp"});
-                }
+                //Situation to WorkPlace
+                AdvGame.setSituation(WorkPlace.getInstance());
                 break;
 
             // EXIT POINT

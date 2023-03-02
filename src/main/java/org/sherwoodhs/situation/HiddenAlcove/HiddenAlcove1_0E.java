@@ -21,7 +21,6 @@ public class HiddenAlcove1_0E implements Situation {
     private static Situation situation = new HiddenAlcove1_0E();
     private boolean firstTime = true;
     private HiddenAlcove1_0E() {
-        World.setStateS("Location",location.getName()); // temp for now
     }
 
     @Override

@@ -9,10 +9,10 @@ import org.sherwoodhs.situation.Situation;
 
 public class BoilerRoom_0E implements Situation {
     private boolean firstTime = true;
+    private boolean inspectedPipe = false;
     private static Situation situation = new BoilerRoom_0E();
     Location location = BoilerRoom.getInstance();
     private BoilerRoom_0E() {
-        World.setStateS("Location", location.getName());
     }
     @Override
     public String getTitle() {
@@ -36,7 +36,10 @@ public class BoilerRoom_0E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        return new String[]{"Enter the darkness", "Inspect one of the pipes", "Leave"};
+        if (!inspectedPipe) {
+            return new String[]{"Enter the darkness", "Inspect one of the pipes", "Leave"};
+        }
+        return new String[]{"Enter the darkness", "Leave"};
     }
     @Override
     public void perform(String option) {
@@ -46,7 +49,8 @@ public class BoilerRoom_0E implements Situation {
                 AdvGame.setSituation(BoilerRoom_1E.getInstance());
                 break;
             case "Inspect one of the pipes":
-
+                inspectedPipe = true;
+                AdvGame.setSituation(InspectPipe_E.getInstance());
                 break;
             case "Leave":
                 // leave

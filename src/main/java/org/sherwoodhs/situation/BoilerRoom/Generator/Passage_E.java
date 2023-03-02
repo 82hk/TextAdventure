@@ -5,13 +5,23 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class Passage_E implements Situation {
+    private boolean firstTime = false;
+    private static Situation situation = new Passage_E();
     @Override
     public String getTitle() {
         return "A Dark Passage";
     }
     @Override
     public String getDescription() {
-        return "You are inside a dark passage. You can't really tell what the walls are made out of. " +
+        if (firstTime) {
+            return "Before you enter the narrow entrance, you strain your eyes to see if there is anything to warn you of any dangers lying ahead. " +
+                    "However, the passage is so dark that you can't see anything.\n\n" +
+                    "You carefully step into the passage. It's cool... it offers a bit of a reprieve from the humid steam of the boiler room.\n\n" +
+                    "Feeling more confident, you inspect the wall closest to you, even though it's quite dark. " +
+                    "However, you can't really tell what the walls are made out of. There seems to be water dripping somewhere off in the distance. " +
+                    "Its sound is amplified by the narrow tunnel.";
+        }
+        return "You are inside a dark passage, now warm due to the exposure to the boiler room. Again, you can't really tell what the walls are made out of. " +
                 "There seems to be water dripping somewhere off in the distance. Its sound is amplified by the narrow tunnel.";
     }
     @Override
@@ -31,5 +41,8 @@ public class Passage_E implements Situation {
                 AdvGame.setSituation(Generator_E.getInstance());
                 break;
         }
+    }
+    public static Situation getInstance() {
+        return situation;
     }
 }
