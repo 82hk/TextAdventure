@@ -58,7 +58,7 @@ public class HavenCenter_E implements Situation {
             case "Foundation Booth":
                 AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
-            case "Booth":
+            case "Approach the booth":
                 AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
             case "Clearwater Kiosk":
