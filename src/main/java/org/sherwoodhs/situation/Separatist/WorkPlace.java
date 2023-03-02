@@ -13,15 +13,15 @@ public class WorkPlace implements Situation {
 
     @Override
     public String getTitle() {
-        return "Part time McDonalds";
+        return "Food Court";
     }
 
     @Override
     public String getDescription() {
         if (firstTime == true) {
-            return "You are in McDonalds...";
+            return "You are in the Food Court. You wonder if you can get a job for some money...";
         } else {
-            return "temp";
+            return "You need money find a job";
         }
     }
 
@@ -42,7 +42,7 @@ public class WorkPlace implements Situation {
             case "Go to Kitchen":
                 if (firstTime) {
                     //base entrance situation
-                    AdvGame.updateFrame("Work for money to gamble",
+                    AdvGame.updateFrame("Work for money",
                             new String[]{"temp","temp"});
                 } else {
                     // doesn't matter
