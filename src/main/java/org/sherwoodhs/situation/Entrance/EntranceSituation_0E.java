@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
+import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
@@ -28,7 +29,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven"};
+        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven", "Test - Boiler Room"};
         return options;
     }
 
@@ -72,7 +73,8 @@ public class EntranceSituation_0E implements Situation {
             case "Test - Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
-
+            case "Test - Boiler Room":
+                AdvGame.setSituation(BoilerRoom_0E.getInstance());
         }
     }
 
