@@ -14,7 +14,7 @@ public class Door_E implements Situation {
     }
     @Override
     public String getDescription() {
-        return "You carefully climb across a small ridge, and you find in front of you an extremely ornate door embedded into the blue-tinged rock. Where does it lead? Why is it here? " +
+        return "You carefully climb across a small ridge, and you find in front of you an extremely ornate door embedded into the blue-tinged rock. Where does it lead? Why is it here?\n\n" +
                 "The door's border is encrusted with softly glowing yellow and blue crystals... the facets of the gems are cut at extremely unconventional angles. " +
                 "The door itself is made out of a mysterious swirled gold metal. There are also carvings of... something. You can't quite make out what they are. " +
                 "The shapes in the carvings are very abstract, and staring at them gives you a headache. On the other hand, there is a polished wooden handle that you could use to open the door.\n\n" +
