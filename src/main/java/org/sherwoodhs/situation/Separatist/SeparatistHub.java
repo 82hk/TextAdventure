@@ -30,7 +30,7 @@ public class SeparatistHub implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Go to the base entrance", "Go to McDonald's", "Casino" , "Leave"}; // limit 6
+        String[] options = {"Go to the base entrance", "Go to the Workplace", "Casino" , "Leave"}; // limit 6
         return options;
     }
 
@@ -53,8 +53,7 @@ public class SeparatistHub implements Situation {
             case "Casino":
                 if (firstTime) {
                     //go to casino situation
-                    AdvGame.updateFrame("Casino stuff",
-                            new String[]{"temp","temp"});
+                    AdvGame.setSituation(Casino.getInstance());
                 } else {
                     // doesn't matter
                     AdvGame.updateFrame("temp",
@@ -62,7 +61,7 @@ public class SeparatistHub implements Situation {
                 }
                 break;
 
-            case "Go to McDonald's":
+            case "Go to the Workplace":
                 //Situation to WorkPlace
                 AdvGame.setSituation(WorkPlace.getInstance());
                 break;
