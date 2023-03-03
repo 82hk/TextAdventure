@@ -14,7 +14,6 @@ public class FoundationIntro_0D implements Situation {
     NPC guard = FoundationGuard.getInstance();
     Player player = Player.getInstance();
     private static boolean firstTime = true;
-
     public static Situation getInstance() {
         return situation;
     }
