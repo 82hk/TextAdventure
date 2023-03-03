@@ -1,11 +1,12 @@
 package org.sherwoodhs.situation.BoilerRoom.Generator;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Outcropping_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class Passage_E implements Situation {
-    private boolean firstTime = false;
+    private boolean firstTime = true;
     private static Situation situation = new Passage_E();
     @Override
     public String getTitle() {
@@ -34,8 +35,10 @@ public class Passage_E implements Situation {
     }
     @Override
     public void perform(String option) {
+        firstTime = false;
         switch (option) {
             case "Move into the darkness":
+                AdvGame.setSituation(Outcropping_E.getInstance());
                 break;
             case "Return to the generator":
                 AdvGame.setSituation(Generator_E.getInstance());
