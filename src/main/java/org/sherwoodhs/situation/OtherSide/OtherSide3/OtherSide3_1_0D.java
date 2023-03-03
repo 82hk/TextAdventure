@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.OtherSide.OtherSide1;
+package org.sherwoodhs.situation.OtherSide.OtherSide3;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
@@ -11,15 +11,14 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 /*
- You, in some fashion, agree to help out with the alchemist.
- Displays information about a new quest when you first enter.
-
+   You talk to the Alchemist before you obtain the item required.
+    It's just a little dialogue interaction
  */
-public class OtherSide1_2D implements Situation {
+public class OtherSide3_1_0D implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide1_2D();
-    private OtherSide1_2D(){
+    private static Situation situation = new OtherSide3_1_0D();
+    private OtherSide3_1_0D(){
 
     }
     public static Situation getInstance() {
@@ -28,16 +27,12 @@ public class OtherSide1_2D implements Situation {
 
     @Override
     public String getTitle() {
-        return "A Request";
+        return "Wish Granted";
     }
 
     @Override
     public String getDescription() {
-        AdvGame.addQuest(OtherSideQuest.getInstance());
-        return (alchemist.getName() + ": If you really want to help, there is something you can do...\n\n" +
-                "Can you grab me a USB from Clearwater's warehouse. There is an area in the back called Irolla where you can find a one-armed man named Janus." +
-                "You'll know when you meet him. No one stands out as much as he does.\n\n" +
-                "(Quest Log Updated!)");
+        return ("You hand over the USB to " + alchemist.getName());
     }
 
     @Override
@@ -52,8 +47,7 @@ public class OtherSide1_2D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-                World.changeStateI("Time",1);
-                AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
+
                 break;
         }
     }

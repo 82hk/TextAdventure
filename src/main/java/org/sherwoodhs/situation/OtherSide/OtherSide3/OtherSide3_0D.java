@@ -9,7 +9,7 @@ import org.sherwoodhs.situation.Situation;
 
 /*
  This event only occurs have fulfilled part II of the questline and return to the hidden alcove.
- You get to decide whether or not you give the ______ to the alchemist.
+ You get to decide whether or not you give the USB to the alchemist.
  */
 public class OtherSide3_0D implements Situation {
     private NPC alchemist = Alchemist.getInstance();
@@ -28,9 +28,9 @@ public class OtherSide3_0D implements Situation {
 
     @Override
     public String getDescription() {
-        String string = "You returned back to the Hidden Alcove with the ______ in hand. When you entered, " + alchemist.getName() +
+        String string = "You returned back to the Hidden Alcove with the USB in hand. When you entered, " + alchemist.getName() +
                 " was sitting at a table with some glassware on top.\n\n" +
-                player.getName() + ": Ahem, I got the ____ you wanted.\n\n" +
+                player.getName() + ": Ahem, I got the USB you wanted.\n\n" +
                 alchemist.getName() + " turned around to see you.\n\n" +
                 alchemist.getName() + ": You- you actually got it!\n\n";
         if (alchemist.getName().equals("Hecate")){
@@ -39,11 +39,18 @@ public class OtherSide3_0D implements Situation {
                     "You could see the sheer surprise in her eyes. She did not expect someone like you to accomplish her task." +
                     "There was also the faintest smile smile on her face.\n\n" +
                     "(+5 relationship with " + alchemist.getName() + ")\n\n" +
-                    alchemist.getName() + ": Thank you.\n\n";
+                    alchemist.getName() + ": Thank you.\n\n" +
+                    "You could tell she was being truly grateful right now.\n\n";
         } else {
-            string += alchemist.getName() + " was so surprised ";
+            alchemist.changeRelModifier(3);
+            string += alchemist.getName() + " was so surprised that she was stunned for a second before standing up." +
+                    "You could catch a quick glimpse of glowing green eyes from underneath the hood.\n\n" +
+                    alchemist.getName() + ": I didn't think you would be able to get that, if I'm going to be honest." +
+                    "You didn't give me the best first impression.\n\n" +
+                    "(+3 relationship with " + alchemist.getName() + ")\n\n" +
+                    "You could tell she was truly impressed with you right now.\n\n";
         }
-        string += alchemist.getName() + ": Can you please hand over that _____?";
+        string += alchemist.getName() + ": Can you please hand over that USB?";
         return (string);
     }
 
@@ -59,11 +66,15 @@ public class OtherSide3_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Hand the item over" :
-                //AdvGame.setSituation(.getInstance());
+                AdvGame.setSituation(OtherSide3_1_0D.getInstance());
                 break;
             case "Refuse to hand the item over":
-                //AdvGame.setSituation(.getInstance());
-                break;
+                if (alchemist.getObRel() == -5){
+
+                } else { //Death
+                    //AdvGame.setSituation(.getInstance());
+                    break;
+                }
         }
 
     }
