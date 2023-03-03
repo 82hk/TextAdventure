@@ -66,7 +66,7 @@ public class FoundationHub_0E implements Situation {
                         " If you do good they might even move you up the ranks. Some of our finest members have started in your exact position\n", new String[]{"Sure"});
                 break;
             case "Sure":
-                AdvGame.updateFrame( player.getName() + ":Sure \n\n" +
+                AdvGame.updateFrame( player.getName() + ": Sure \n\n" +
                         "Foundation Employee: Next up is our Headquarters." +
                         "This is where you can find information on SCP objects, reports, and other important documents." +
                         "You can also communicate with your supervisors and fellow staff members here." +

@@ -4,7 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
 import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_0D;
 import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_3D;
+import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_2D;
 import org.sherwoodhs.situation.Separatist.SeparatistHub;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -78,7 +78,7 @@ public class HavenCenter_E implements Situation {
                 AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
             case "Abandoned displays":
-                AdvGame.setSituation(FoundationIntro_3D.getInstance());
+                AdvGame.setSituation(FoundationIntro_2D.getInstance());
                 break;
         }
     }

@@ -6,12 +6,11 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class FoundationIntro_3D implements Situation {
-    private static Situation situation = new FoundationIntro_3D();
+public class FoundationIntro_2D implements Situation {
+    private static Situation situation = new FoundationIntro_2D();
     private static boolean unlocked = false;
 
     @Override

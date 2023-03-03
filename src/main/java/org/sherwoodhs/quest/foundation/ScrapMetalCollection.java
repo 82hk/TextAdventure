@@ -8,12 +8,11 @@ public class ScrapMetalCollection implements Quest {
     private static int tracker = 0;
     String description;
     private static boolean status = false;
-    String name = "Foundation Initiation\nCollected scrap: " + tracker;
 
 
     @Override
     public String getName() {
-        return name;
+        return "Foundation Initiation\n    Collected scrap: " + tracker;
     }
 
     public static int getTracker() {
