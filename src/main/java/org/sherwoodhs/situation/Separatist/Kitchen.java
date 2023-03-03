@@ -5,21 +5,21 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class WorkPlace implements Situation {
+public class Kitchen implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
     private static boolean firstTime = true;
-    private static Situation situation = new WorkPlace();
+    private static Situation situation = new Kitchen();
 
     @Override
     public String getTitle() {
-        return "Food Court";
+        return "You are in the Ikea Kitchen";
     }
 
     @Override
     public String getDescription() {
         if (firstTime == true) {
-            return "You are in the Food Court. You wonder if you can get a job for some money...";
+            return "You walk into the kitchen and you see a lady.";
         } else {
             return "You need money. Go find a job";
         }
@@ -30,7 +30,7 @@ public class WorkPlace implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Go to Kitchen", "Leave"}; // limit 6
+        String[] options = {"Go to Kitchen", "Talk to lady","Leave"}; // limit 6
         return options;
     }
 
@@ -50,6 +50,11 @@ public class WorkPlace implements Situation {
                             new String[]{"temp","temp"});
                 }
                 break;
+
+            case "Talk to Lady":
+                if (firstTime) {
+                    
+                }
 
                 
             // EXIT POINT

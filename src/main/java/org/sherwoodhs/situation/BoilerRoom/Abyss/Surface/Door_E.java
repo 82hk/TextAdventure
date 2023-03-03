@@ -1,7 +1,6 @@
-package org.sherwoodhs.situation.BoilerRoom.Abyss;
+package org.sherwoodhs.situation.BoilerRoom.Abyss.Surface;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
