@@ -32,9 +32,9 @@ public class OtherSide1_3D implements Situation {
 
     @Override
     public String getDescription() {
-        return (alchemist.getName() + ": So, have you gotten the ____ yet?\n\n" +
+        return (alchemist.getName() + ": So, have you gotten the USB yet?\n\n" +
                 player.getName() + ": Uhhh, not yet...\n\n" +
-                alchemist.getName() + ": Just a reminder, you need to get _______ from _______.\n\n" +
+                alchemist.getName() + ": Just a reminder, you need to get USB from Clearwater.\n\n" +
                 "You walk away, presumably to get the requested item.");
     }
 

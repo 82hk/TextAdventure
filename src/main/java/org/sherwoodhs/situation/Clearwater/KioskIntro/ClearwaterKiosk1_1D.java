@@ -61,7 +61,10 @@ public class ClearwaterKiosk1_1D implements Situation {
                         distributor.getName() + ": You-you're not...\n\nIn an instant the man is up and on the other side of the booth, pulling you along "+
                         "as he steps out from the kiosk.\n\n" + "Guard: Hey! Where are you--\n\n" + "One of the the guards takes a step. \n\n"+
                         distributor.getName() + ": Relax, Alex, We just need to sort out some business with this fellow's card.",
-                        new String[]{"Placeholder"});
+                        new String[]{"Continue"});
+                break;
+            case "Continue":
+                AdvGame.setSituation(ClearwaterKiosk1_2D.getInstance());
                 break;
             case "The Boss?":
                 AdvGame.updateFrame(distributor.getName() + ": Clearwater Collective's one and only warehouse manager. Not a "+
