@@ -1,7 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Generator;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.BoilerRoom.Abyss.Outcropping_E;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Surface.Outcropping_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
