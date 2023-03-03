@@ -29,7 +29,6 @@ public class SeparatistBaseEntrance implements Situation {
                 //new situation unlock
                 return "";
             } else {
-                AdvGame.updateFrame(new String[]{"Leave"});
                 return "You are still not wanted. You haven't completed the quest yet.";
             }
         }
@@ -40,7 +39,8 @@ public class SeparatistBaseEntrance implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to the person","Leave"}; // limit 6
+        String[] options;
+        options = new String[]{"Talk to the person", "Leave"};
         return options;
     }
 
@@ -54,6 +54,9 @@ public class SeparatistBaseEntrance implements Situation {
                     AdvGame.updateFrame("The person introduces himself as the chief of the separatist village. Using his local power, he " +
                                     "tells you that you are not wanted, unless you can do him a favor.",
                             new String[]{"Talk to the Chief","Leave"});
+                } else {
+                    AdvGame.updateFrame("\"Go away\", the chief says.",
+                            new String[]{"Leave"});
                 }
                 break;
 
