@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.BoilerRoom.Abyss;
+package org.sherwoodhs.situation.BoilerRoom.Abyss.Surface;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
@@ -42,8 +42,9 @@ public class Outcropping_E implements Situation {
                 AdvGame.setSituation(Door_E.getInstance());
                 break;
             case "Move towards the ledge on the right":
+                AdvGame.setSituation(LanternRope_E.getInstance());
                 break;
-            case "Return to the generator":
+            case "Return to the passage":
                 AdvGame.setSituation(Passage_E.getInstance());
                 break;
         }
