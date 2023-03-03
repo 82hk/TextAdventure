@@ -6,7 +6,7 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class Outcropping_E implements Situation {
-    private boolean firstTime = false;
+    private boolean firstTime = true;
     private static Situation situation = new Outcropping_E();
     @Override
     public String getTitle() {
@@ -23,7 +23,7 @@ public class Outcropping_E implements Situation {
                     "You then look down, and see that you almost fell into a massive hole leading into an infinite darkness. If you fell, you might have fell for infinity... who knows?\n\n" +
                     "Being more careful this time, you see that there are two small ledges you might be able to jump across to your left and right.";
         }
-        return "You find yourself in a massive blue-tinged cavern, surrounding by massive sharp ridges and softly luminescent crystals. It's quite a beautiful sight.\n\n" +
+        return "You find yourself in a massive blue-tinged cavern, surrounded by massive sharp ridges and softly luminescent crystals. It's quite a beautiful sight.\n\n" +
                 "Below you is a massive abyss... who knows where it leads? To your left and right are two small ledges you should be able to jump across.";
     }
     @Override
@@ -36,8 +36,10 @@ public class Outcropping_E implements Situation {
     }
     @Override
     public void perform(String option) {
+        firstTime = false;
         switch (option) {
             case "Move towards the ledge on the left":
+                AdvGame.setSituation(Door_E.getInstance());
                 break;
             case "Move towards the ledge on the right":
                 break;
