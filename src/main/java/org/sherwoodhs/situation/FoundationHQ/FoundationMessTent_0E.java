@@ -10,7 +10,7 @@ public class FoundationMessTent_0E implements Situation {
 
     @Override
     public String getTitle() {
-        return "The Foundation HQ";
+        return "The Foundation mess hall";
     }
 
     @Override

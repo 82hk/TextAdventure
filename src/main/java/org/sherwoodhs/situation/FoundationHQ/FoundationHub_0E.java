@@ -19,11 +19,12 @@ public class FoundationHub_0E implements Situation {
     public String getDescription() {
         if (firstTime) {
 
-            return "Foundation Employee: Seems your the new guy. " +
-                    "This place is a hell hole but dont worry though we have established some safe zones for our staff. " +
+            return "Foundation Employee: Seems you're the new guy. " +
+                    "This place is a hellhole but, don't worry though, we have established some safe zones for our staff. " +
                     "I'll show you around.";
         } else{
-            return "Foundation employees wander around";
+            return "Foundation employees wander around. The hub is bustling with activity and Foundation personnel. You see 3 distinct large tents with plenty of small tents " +
+                    "around them.";
         }
     }
 
@@ -36,10 +37,10 @@ public class FoundationHub_0E implements Situation {
     public String[] getOptions() {
         if (firstTime) {
             firstTime = false;
-            String[] options = {"Sounds Good"};
+            String[] options = {"Sounds Good."};
             return options;
         } else {
-            String[] options = {"Go to armory tent", "Go to command tent", "Go to mess tent", "Go back to The Haven"};
+            String[] options = {"Go to armory tent", "Go to command tent", "Go to mess tent", "Go to quest tent", "Go back to The Haven"};
             return options;
         }
     }
@@ -48,7 +49,6 @@ public class FoundationHub_0E implements Situation {
     public void perform(String option) {
         switch(option) {
             case "Go to armory tent":
-
                 break;
             case "Go back to The Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
@@ -56,27 +56,31 @@ public class FoundationHub_0E implements Situation {
             case "Go to command tent":
                 break;
             case "Go to mess tent":
+                AdvGame.setSituation(FoundationMessTent_0E.getInstance());
                 break;
-            case "Sounds Good":
-                AdvGame.updateFrame( player.getName() + ": Sounds Good \n\n" +
-                        "Foundation Employee: This way please. Our first stop is the Assignment tent." +
+            case "Go to quest tent":
+                break;
+            //TOUR
+            case "Sounds Good.":
+                AdvGame.updateFrame( player.getName() + ": Sounds Good. \n\n" +
+                        "Foundation Employee: This way please. Our first stop is the Quest tent." +
                         " Here, you will be given tasks to help us maintain order in the store." +
-                        " Some of these tasks will involve exploration, retrieval of SCP objects, and maintenance." +
+                        " Some of these tasks will involve exploration, retrieval of objects, and maintenance." +
                         " It's important that you follow the instructions given to you by your supervisor and be on the lookout for any anomalous activity." +
-                        " If you do good they might even move you up the ranks. Some of our finest members have started in your exact position\n", new String[]{"Sure"});
+                        " If you do good they might even move you up the ranks. Some of our finest members have started in your exact position.", new String[]{"Sure."});
                 break;
-            case "Sure":
-                AdvGame.updateFrame( player.getName() + ": Sure \n\n" +
-                        "Foundation Employee: Next up is our Headquarters." +
-                        "This is where you can find information on SCP objects, reports, and other important documents." +
-                        "You can also communicate with your supervisors and fellow staff members here." +
-                        "Just remember to keep the information confidential." +
-                        "Our final stop is the Mess Hall." +
-                        "This is where we take our breaks and have our meals." +
-                        "It's important to take breaks and rest, as working in SCP-3008 can be mentally exhausting." +
-                        "We also have some entertainment options here, like books and board games, to help you pass the time.\n", new String[]{"Thanks for the tour"});
+            case "Sure.":
+                AdvGame.updateFrame( player.getName() + ": Sure.\n\n" +
+                        "Foundation Employee: Next up is our Command tent." +
+                        " This is where you can find information on SCP objects, reports, and other important documents." +
+                        " You can also communicate with your supervisors and fellow staff members here." +
+                        " Just remember to keep the information confidential, and there will be consequences for leaking it." +
+                        " Our final stop is the Mess Hall." +
+                        " This is where we take our breaks and have our meals." +
+                        " It's important to take breaks and rest, as working in SCP-3008 can be mentally exhausting." +
+                        " We also have some entertainment options here, like books and board games, to help you pass the time.", new String[]{"Thanks for the tour."});
                 break;
-            case "Thanks for the tour":
+            case "Thanks for the tour.":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
         }

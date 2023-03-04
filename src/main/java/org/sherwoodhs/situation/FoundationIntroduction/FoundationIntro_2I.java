@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
+import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -9,9 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class FoundationIntro_2D implements Situation {
-    private static Situation situation = new FoundationIntro_2D();
-    private static boolean unlocked = false;
+public class FoundationIntro_2I implements Situation {
+    private static Situation situation = new FoundationIntro_2I();
 
     @Override
     public String getTitle() {
@@ -26,7 +26,7 @@ public class FoundationIntro_2D implements Situation {
 
     @Override
     public SitType getSitType() {
-        return SitType.Dialogue;
+        return SitType.Interaction;
     }
 
     @Override
@@ -55,6 +55,9 @@ public class FoundationIntro_2D implements Situation {
             case "Get scrap metal":
                 AdvGame.clearFrame("You sit down and break up some of the furniture, you grab a decently sized metal part.", shuffledOptions());
                 ScrapMetalCollection.advanceQuest();
+                if(ScrapMetalCollection.getTracker() == 10){
+                    AdvGame.updateFrame("You have enough metal, you should leave and return to the booth. Hopefully you can be accepted into their ranks.", new String[]{"Head back to Haven"});
+                }
                 break;
             case "Burn some time":
                 AdvGame.clearFrame("You pace back and fourth across the display room wondering about the secrets of the Ikea.", shuffledOptions());
@@ -65,11 +68,11 @@ public class FoundationIntro_2D implements Situation {
             case "Goof off":
                 AdvGame.clearFrame("You jump on one of the display beds, and realize they arent that bouncy.", shuffledOptions());
                 break;
+            case "Head back to Haven":
+                FoundationIntro_1D.setLocked();
+                AdvGame.setSituation(HavenCenter_E.getInstance());
+                break;
         }
-    }
-
-    public static boolean isUnlocked() {
-        return unlocked;
     }
 
     public static Situation getInstance(){

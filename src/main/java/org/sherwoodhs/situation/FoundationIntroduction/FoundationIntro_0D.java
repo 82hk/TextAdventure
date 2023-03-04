@@ -5,9 +5,12 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.foundation.FoundationGuard;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.quest.Quest;
+import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.QuestPanel;
 
 public class FoundationIntro_0D implements Situation {
     private static Situation situation = new FoundationIntro_0D();
@@ -31,7 +34,12 @@ public class FoundationIntro_0D implements Situation {
                     "milling around. A guard stands next to the booth, scanning the crowd for any signs of trouble. " +
                     "The ambient noise from the haven seems to dissipate as you walk closer to the foundation tents and the guard greets you with a nod." +
                     "\n\nGuard: You there. You look new around here you looking to join the foundation?";
-        } else{
+        } else if(ScrapMetalCollection.getInstance().isCompleted()){
+            AdvGame.setSituation(FoundationIntro_3D.getInstance());
+            return null;
+        } else if(QuestPanel.questPanel.containsQuest(ScrapMetalCollection.getInstance())) {
+            return "You should probably go get the metal and complete the quest before returning to the guard.";
+        } else {
             return "As you approach the booth, you can see a makeshift tent set up behind it with a few guards dressed in worn-down uniforms " +
                     "milling around. A guard stands next to the booth, scanning the crowd for any signs of trouble. " +
                     "The ambient noise from the haven seems to dissipate as you walk closer to the foundation tents and the guard greets you with a nod." +
@@ -47,8 +55,13 @@ public class FoundationIntro_0D implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to guard", "Go back to The Haven"};
-        return options;
+        if(QuestPanel.questPanel.containsQuest(ScrapMetalCollection.getInstance())) {
+            String[] options = {"Go back to The Haven"};
+            return options;
+        } else{
+            String[] options = {"Talk to guard", "Go back to The Haven"};
+            return options;
+        }
     }
 
     @Override

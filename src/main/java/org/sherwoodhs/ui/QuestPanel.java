@@ -35,8 +35,19 @@ public class QuestPanel extends JPanel {
      */
     public void removeQuest(Quest quest) {
         String s = setQuestConvention(quest.getName());
-        System.out.println(s);
         questListModel.removeElement(s);
+    }
+    /**
+     * Checks questList for quest
+     * @param quest quest to be checked
+     */
+    public boolean containsQuest(Quest quest){
+        String s = setQuestConvention(quest.getName());
+        if(questListModel.contains(s)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

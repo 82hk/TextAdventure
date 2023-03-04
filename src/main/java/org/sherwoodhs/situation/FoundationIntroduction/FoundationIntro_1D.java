@@ -39,7 +39,7 @@ public class FoundationIntro_1D implements Situation {
             case "Where do I look?":
                 AdvGame.updateFrame(player.getName() + ": Where do I look? \n\n" +
                         "Guard: There's this part of The Haven that was abandoned some time ago. They left some metal furniture there that can be dismantled and repurposed for scrap." +
-                        "Barely anyone goes there, you shouldn't have a hard time gathering it. \n\n (You are now aware of the abandoned area)", new String[]{"Go back to The Haven"});
+                        " Barely anyone goes there, you shouldn't have a hard time gathering it. \n\n (You are now aware of the abandoned area)", new String[]{"Go back to The Haven"});
                 unlocked = true;
                 break;
             case "Go back to The Haven":
@@ -49,6 +49,9 @@ public class FoundationIntro_1D implements Situation {
 
     public static boolean isUnlocked() {
         return unlocked;
+    }
+    public static void setLocked(){
+        unlocked = !unlocked;
     }
 
     public static Situation getInstance(){

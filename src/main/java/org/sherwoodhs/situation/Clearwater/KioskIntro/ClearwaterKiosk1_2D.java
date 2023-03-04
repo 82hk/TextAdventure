@@ -56,7 +56,7 @@ public class ClearwaterKiosk1_2D implements Situation {
                 AdvGame.clearFrame();
                 AdvGame.updateFrame(distributor.getName() + ": Right sorry. This is The Haven, our small island "+
                         "of safety in the middle of all that.\n\n" + distributor.getName() + ": Each of those halls "+
-                        "you see stretches for about a mile adn a half. Floors 2-7 are for residential living, "+
+                        "you see stretches for about a mile and a half. Floors 2-7 are for residential living, "+
                         "while the ground floor is for shops and general purpose. It's quite handy being stuck "+
                         "in an Ikea, you see. We have all the chairs, beds, sofas, kitchens, and bathrooms you could "+
                         "ever need, conveniently already fashionable arrangements.\n\n" + distributor.getName() +

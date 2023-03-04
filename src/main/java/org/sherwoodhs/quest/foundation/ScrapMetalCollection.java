@@ -1,5 +1,6 @@
 package org.sherwoodhs.quest.foundation;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Quest;
 
 public class ScrapMetalCollection implements Quest {
@@ -20,8 +21,10 @@ public class ScrapMetalCollection implements Quest {
     }
 
     public static void advanceQuest(){
+        AdvGame.removeQuest(ScrapMetalCollection.getInstance());
         tracker++;
-        if(tracker == 5){
+        AdvGame.addQuest(ScrapMetalCollection.getInstance());
+        if(tracker == 10){
             status = true;
         }
     }
@@ -39,11 +42,9 @@ public class ScrapMetalCollection implements Quest {
 
     @Override
     public boolean isCompleted() {
-        if(tracker == 5){
-            status = true;
+        if(status){
             return true;
-        } else {
-            status = false;
+        } else{
             return false;
         }
     }
