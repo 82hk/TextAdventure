@@ -54,11 +54,13 @@ public class FoundationHub_0E implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
             case "Go to command tent":
+                AdvGame.setSituation(FoundationCommandTent_0E.getInstance());
                 break;
             case "Go to mess tent":
                 AdvGame.setSituation(FoundationMessTent_0E.getInstance());
                 break;
             case "Go to quest tent":
+                AdvGame.setSituation(FoundationQuestTent_0E.getInstance());
                 break;
             //TOUR
             case "Sounds Good.":
