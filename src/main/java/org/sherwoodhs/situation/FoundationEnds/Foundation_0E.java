@@ -58,7 +58,7 @@ public class Foundation_0E implements Situation {
                 AdvGame.setSituation(Foundation_1E.getInstance());
                 break;
             case "Ask them":
-                AdvGame.updateFrame("Are yo sure? You won't get this opportunity again.",
+                AdvGame.updateFrame("You ask them about their conversation, they look to each-other with a worried expression.",
                         new String[]{"I'm not sure", "I'm sure"});
                 break;
         }
