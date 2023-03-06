@@ -78,7 +78,7 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc) {
-        textPanel.addText("\n" + newDesc);
+        textPanel.addText(newDesc);
     }
 
     public static void clearFrame() {textPanel.clearAllText();}
