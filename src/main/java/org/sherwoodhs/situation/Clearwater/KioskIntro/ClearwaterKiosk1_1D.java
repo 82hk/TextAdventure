@@ -57,10 +57,10 @@ public class ClearwaterKiosk1_1D implements Situation {
                 AdvGame.clearFrame();
                 AdvGame.updateFrame("You: What?? What are you talking about?? I just wanted to buy a [ ] but no one was in the Ikea "+
                         "and when I started looking around the store just stretched on and on like some kind of maze and none of this "+
-                        "should be physically possible so WHERE ARE WE??\n\nYou pause to take a breath. The man's eyes are now wide open.\n\n"+
+                        "should be physically possible so WHERE ARE WE??\n\nYou pause to take a breath. The man's other eyebrow is now raised too.\n\n"+
                         distributor.getName() + ": You-you're not...\n\nIn an instant the man is up and on the other side of the booth, pulling you along "+
                         "as he steps out from the kiosk.\n\n" + "Guard: Hey! Where are you--\n\n" + "One of the the guards takes a step. \n\n"+
-                        distributor.getName() + ": Relax, Alex, We just need to sort out some business with this fellow's card.",
+                        distributor.getName() + ": Relax, we just need to sort out some business with this fellow's card.",
                         new String[]{"Continue"});
                 break;
             case "Continue":
