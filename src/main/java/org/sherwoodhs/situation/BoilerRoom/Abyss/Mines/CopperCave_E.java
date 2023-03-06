@@ -39,7 +39,7 @@ public class CopperCave_E implements Situation {
         if (fromPuzzle && clickedContinue) {
             clickedContinue = false;
             fromPuzzle = false;
-            return "The orange ore glints at your cheerfully as you pace around the cave. There must be something else you can do.";
+            return "The orange ore glints at you cheerfully as you pace around the cave. There must be something else you can do.\nRespectively, the ores have [" + copper1arr[copper1] + "] - [" + copper2arr[copper2] + "] - [" + copper3arr[copper3] + "] - [" + copper4arr[copper4] + "] slashes on them.";
         }
         if (amountOfNoteInspections != 0 && clickedContinue) {
             clickedContinue = false;
@@ -180,6 +180,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper1arr[copper1] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the first ore now has [" + copper1arr[copper1] + "] slash on it.",
@@ -200,6 +201,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper1arr[copper1] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper1arr[copper1] + "] slash on it.",
@@ -233,6 +235,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper2arr[copper2] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the second ore now has [" + copper2arr[copper2] + "] slash on it.",
@@ -253,6 +256,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper2arr[copper2] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the second ore now has [" + copper2arr[copper2] + "] slash on it.",
@@ -286,6 +290,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper3arr[copper3] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the third ore now has [" + copper3arr[copper3] + "] slash on it.",
@@ -306,6 +311,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper3arr[copper3] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the third ore now has [" + copper3arr[copper3] + "] slash on it.",
@@ -339,6 +345,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                    break;
                 }
                 if (copper4arr[copper4] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slash on it.",
@@ -359,6 +366,7 @@ public class CopperCave_E implements Situation {
                     AdvGame.clearFrame(
                         "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
+                        break;
                 }
                 if (copper4arr[copper4] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slash on it.",
