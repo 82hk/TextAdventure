@@ -108,7 +108,7 @@ public class CopperCave_E implements Situation {
                         text += "The note reads:\n";
                         break;
                     default:
-                        text = "";
+                        text += "";
                         break;
                 }
                 text += "Welcome!\nYou are currently in: Mine 1600-4C\n" +
@@ -323,8 +323,8 @@ public class CopperCave_E implements Situation {
                     );
                 } else {
                     AdvGame.clearFrame(
-                            "The second ore currently has [" + copper4arr[copper4] + "] slashes on it.",
-                            new String[]{"Spin the second ore clockwise", "Spin the second ore counterclockwise", "Stop"}
+                            "The fourth ore currently has [" + copper4arr[copper4] + "] slashes on it.",
+                            new String[]{"Spin the fourth ore clockwise", "Spin the fourth ore counterclockwise", "Stop"}
                     );
                 }
                 break;
@@ -375,6 +375,7 @@ public class CopperCave_E implements Situation {
                                     "You might be missing the blue lanterns’ light for a while if you go in. " + 
                                     "You’ve come to rely on its dim but reassuring light.",
                                     new String[]{"Drop down into the hole"});
+                break;
             case "Drop down into the hole":
                 break;
             case "Stop":
