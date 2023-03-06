@@ -39,7 +39,7 @@ public class World {
                 if (changed / 24 > 0)/* Integer Division to check if day is over */{
                     changed %= 24; // Current Day cycle of 24 hours
                     states.replace("Day",states.get("Day") + 1); // Adds to the day counter
-                    situationPanel.setTimeLabel("Day " + states.get("Day")); //Updates Day Label
+                    situationPanel.setDayLabel(states.get("Day")); //Updates Day Label
                     // Could add something to happen during Midnight
                 }
                 if (destructEnd) {

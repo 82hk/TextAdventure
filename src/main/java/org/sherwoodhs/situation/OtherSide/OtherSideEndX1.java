@@ -1,8 +1,9 @@
-package org.sherwoodhs.situation.OtherSide.OtherSide3;
+package org.sherwoodhs.situation.OtherSide;
 
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
+import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
@@ -36,16 +37,22 @@ public class OtherSideEndX1 implements Situation {
     public String getDescription() {
         World.changeStateI("Deaths", 1);
         return ("Before you could do whatever you were planning to do next, the world begins to shake. " +
-        "All the ________, ________, ________, _______, and _________ were shaking. The lights began flickering." +
-        "\n\n4" +
-        "After a minute of shaking - that was when the real chaos started. It was Armageddon.\n\n" +
-        "Reality began to fold upon itself. Words couldn't fully capture the warping of reality. " +
-        "Gone was the euclidean geometry of your 3D world. Gone was the normal color palate you were used to. " +
-        "A discordant, sharp, loud noise pierced your ears.\n\n" +
-        "You took a step forward to escape this madness, but when you did, your foot appeared 10 feet in front of you, disconected from your body. " +
-        "It hurt. It made you hurt so badly that you fell over. That caused your body to fall apart, hurting so badly. " +
-        "But although it really hurt, you didn't die from that. However, you couldn't move anymore. " +
-        "You were forced to "
+                "All the ________, ________, ________, _______, and _________ were shaking. The lights began flickering." +
+                "\n\n4" +
+                "After a minute of shaking - that was when the real chaos started. It was Armageddon.\n\n" +
+                "Reality began to fold upon itself. Words couldn't fully capture the warping of reality. " +
+                "Gone was the euclidean geometry of your 3D world. Gone was the normal color palate you were used to. " +
+                "A discordant, sharp, loud noise pierced your ears.\n\n" +
+                "You took a step forward to escape this madness, but when you did, your foot appeared 10 feet in front of you, disconnected from your body. " +
+                "It hurt. It made you hurt so badly that you fell over. That caused your body to fall apart, hurting so badly. " +
+                "But although it really hurt, you didn't die from that. However, you couldn't move anymore. " +
+                "You were forced to watch as everything around you broke down.\n\n" +
+                "As you watched, you were left thinking: \"What could've caused this chaos?\" " +
+                "You then realized that it was <b>you</b>, " + player.getName() + ", that brought this upon the IKEA.\n\n" +
+                "If only you hadn't turned the world against you. If only you hadn't entered the " + HiddenAlcove.getInstance().getName() + ". " +
+                "If only you hadn't given in to " + alchemist.getName() + "'s requests. If only... you had been a better person, a better friend.\n\n" +
+                "There were so many what ifs, but that didn't matter now. It was all going to end. Maybe in your next life, you could do something else...\n\n" +
+                "As the world finally began to corrupt to the point of complete incoherency, you let out one last sigh before it overtook you."
         );
     }
 
