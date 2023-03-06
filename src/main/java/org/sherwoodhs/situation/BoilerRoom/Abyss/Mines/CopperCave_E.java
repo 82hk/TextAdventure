@@ -107,9 +107,11 @@ public class CopperCave_E implements Situation {
                     case 5:
                         text += "The note reads:\n";
                         break;
+                    default:
+                        text = "";
+                        break;
                 }
-                AdvGame.updateFrame(
-                        text + "Welcome!\nYou are currently in: Mine 1600-4C\n" +
+                text += "Welcome!\nYou are currently in: Mine 1600-4C\n" +
                                 "Thank you for your participation in this world-changing, innovative, and impactful project. " +
                                 "To aid with [our] efforts, please mine the orange ore that you can find commonly on this layer of the abyss daily, " +
                                 "ensuring that you meet the daily quota that was assigned to you at the beginning of the day. " +
@@ -117,12 +119,14 @@ public class CopperCave_E implements Situation {
                                 "This ore will begin to regenerate over time, considering its unique properties, " +
                                 "so please take [note] of each location on the map that we have given you.\n\n" +
                                 "In addition, make sure to stay in areas of the mine you have been assigned to. " +
-                                "The naming convention for the mine is as follows:\nDepth, in meters - Branch, Cave",
+                                "The naming convention for the mine is as follows:\nDepth, in meters - Branch, Cave";
+                AdvGame.updateFrame(
+                        text,
                         new String[]{"Continue reading"});
                 break;
             case "Continue reading":
                 AdvGame.updateFrame(
-                        text + "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n" +
+                        "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n" +
                                 "The areas of the mine that you have been assigned to is stated on the ticket you should have received at the beginning of the day, " +
                                 "which is the same ticket that contains your daily ore quota. " +
                                 "After completing your mining excursion for the day, " +
