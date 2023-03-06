@@ -47,7 +47,11 @@ public class AdvGame {
 
     //Changes situation and updates frame
     public static void setSituation(Situation situation) {
-        currentSituation = situation;
+        if (World.destructEnd){
+            currentSituation = 
+        } else {
+            currentSituation = situation;
+        }
         updateFrame();
     }
     public Situation getCurrentSituation (){

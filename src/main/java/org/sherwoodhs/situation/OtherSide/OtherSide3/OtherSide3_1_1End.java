@@ -35,6 +35,7 @@ public class OtherSide3_1_1End implements Situation {
     public String getDescription() {
         alchemist.changeRelModifier(-95);
         alchemist.setHostility(true);
+        World.changeStateI("Deaths", 1);
         return ("You just stood there. You didn't hand over the USB to " + alchemist.getName() + ". The room immediately became tense." +
                 player.getName()) + ": I'm not handing this over. There's definitely something suspicious stored in here." +
                 "I can't, in good conscious, give this to you without knowing what this might do. I might not like the people here," +
@@ -45,9 +46,10 @@ public class OtherSide3_1_1End implements Situation {
                 "Why can you guys never think about the truth before accepting everything that comes your way.\n\n" +
                 "Her voice was choking up. At this point, her hood had fallen off. You could see tears streaming down her face.\n\n" +
                 "It... never goes right for me. Goodbye " + player.getName() +
-                "And with that, she pulled the trigger. A bullet went through your heart. You went down hard, bleeding out." +
+                "She pulled the trigger. A bullet went through your heart. You went down hard, bleeding out." +
                 "In the last minutes before you claimed by the Grim Reaper, you could barely make out some words.\n\n" +
-                alchemist.getName()+ ": I'm sorry. Perhaps we could've had a better ending, if things turned out differently.";
+                alchemist.getName()+ ": I'm sorry. Perhaps we could've had a better ending, if things turned out differently.\n\n" + 
+                "And with that, your world finally faded to black.";
     }
 
     @Override
@@ -55,13 +57,13 @@ public class OtherSide3_1_1End implements Situation {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Restart", "Exit"};
+        return new String[]{"Try Again?", "Exit"};
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Restart":
+            case "Try Again?":
                 AdvGame.setSituation(EntranceSituation_0E.getInstance());
                 break;
             case "Exit":
