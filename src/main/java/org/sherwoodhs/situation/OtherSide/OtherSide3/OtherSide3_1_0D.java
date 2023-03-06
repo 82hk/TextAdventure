@@ -47,7 +47,7 @@ public class OtherSide3_1_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-
+                World.changeStateI("Deaths", 1);
                 break;
         }
     }

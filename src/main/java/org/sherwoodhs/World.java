@@ -11,7 +11,7 @@ public class World {
     private static World world = new World();
 
     //Check if countdown is active
-    private static boolean destructEnd = false;
+    public static boolean destructEnd = false;
     private World(){
         states.put("Time", 0); // Time of Day
         states.put("Day", 0); // # of Days spent in game
