@@ -41,7 +41,7 @@ public class SmallCavern_0E implements Situation {
             return "You carefully make your way down the rope. Landing in the small navy-tinted cavern, you marvel at your skill in discovering the passage behind the cracks in the rock.";
         }
         if (collectedPickaxe && inspectedWalls) {
-            return "You observe the small navy-tinted cavern. The crack you saw in the walls looks back at you.";
+            return "You observe the small navy-tinted cavern. The cracks you saw in the wall looks back at you.";
         }
         if (collectedPickaxe) {
             if (clickedContinue) {
@@ -149,6 +149,7 @@ public class SmallCavern_0E implements Situation {
                         new String[]{"Continue"});
                 break;
             case "Move forward":
+                AdvGame.setSituation(SmallCavern_1E.getInstance());
                 break;
         }
     }
