@@ -14,7 +14,7 @@ public class FoundationQuestTent_0E implements Situation {
 
     @Override
     public String getDescription() {
-        return "The assignment center buzzes around you. Foundation gaurds ";
+        return "The assignment center buzzes around you. Foundation guards ";
     }
 
     @Override
@@ -24,7 +24,7 @@ public class FoundationQuestTent_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to assignment manager", "Leave"};
+        String[] options = {"Talk to assignment manager", "Back to HQ"};
         return options;
     }
 
@@ -35,7 +35,7 @@ public class FoundationQuestTent_0E implements Situation {
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
             case "Talk to assignment manager":
-                AdvGame.updateFrame();
+                AdvGame.setSituation(FoundationQuestTent_1E.getInstance());
         }
     }
 
