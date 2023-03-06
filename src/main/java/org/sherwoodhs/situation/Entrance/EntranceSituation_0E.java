@@ -4,6 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.FoundationHQ.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
@@ -78,7 +79,7 @@ public class EntranceSituation_0E implements Situation {
                 AdvGame.setSituation(BoilerRoom_0E.getInstance());
                 break;
             case "Test FHub":
-                AdvGame.setSituation(FoundationHub_0E.getInstance());
+                AdvGame.setSituation(FoundationQuestTent_0E.getInstance());
                 break;
 
         }
