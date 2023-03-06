@@ -20,30 +20,31 @@ public class CopperCave_E implements Situation {
     private static Situation situation = new CopperCave_E();
     @Override
     public String getTitle() {
-        return "Cave of Copper-like Ore";
+        return "A Cave of Copper-like Ore";
     }
     @Override
     public String getDescription() {
         if (firstTime) {
             return "You enter a beautiful cavern. " +
-                    "A blue lantern’s light softly shines onto the orange glints, which upon closer inspection turns out to be some kind of ore ore. " +
+                    "A blue lantern’s light softly shines onto the orange glints, which upon closer inspection turns out to be some kind of ore embedded in the navy stone. " +
                     "Some of the ore reflects the lantern’s light onto the ground, creating some kind of abstract image.\n\n" +
                     "You decide to call this area the “copper cave” just because it seems quite distinct from the boring navy-tinted stone of the previous cavern.\n\n" +
                     "You look around, and you realize that you are at a dead end. Perhaps there is nowhere to go from here.";
         }
         if (solvedPuzzle) {
-            return "You enter the beautiful copper cave. " +
-                    "The hole that appeared once you moved around the orientations of the copper ore stares back at you ominously. " +
+            return "You enter the beautiful copper cave. The copper-like ore twinkles at you like stars.\n\n" +
+                    "The hole that appeared once you moved around the orientations of the copper ore stares back at you ominously.\n\n" +
                     "The hole leads into an infinite darkness…";
         }
         if (fromPuzzle && clickedContinue) {
             clickedContinue = false;
             fromPuzzle = false;
-            return "The orange ore glints at you cheerfully as you pace around the cave. There must be something else you can do.\nRespectively, the ores have [" + copper1arr[copper1] + "] - [" + copper2arr[copper2] + "] - [" + copper3arr[copper3] + "] - [" + copper4arr[copper4] + "] slashes on them.";
+            return "The orange ore glints at you cheerfully as you pace around the cave. There must be something else you can do.\nYou look again at the ores. Respectively, the ores have [" + copper1arr[copper1] + "] - [" + copper2arr[copper2] + "] - [" + copper3arr[copper3] + "] - [" + copper4arr[copper4] + "] slashes on them.";
         }
         if (amountOfNoteInspections != 0 && clickedContinue) {
             clickedContinue = false;
-            return "You think about the note you just read. It seems to just be an instructional poster, but maybe there's something else hidden within it.";
+            return "You think about the note you just read. It seems to just be an instructional poster, but maybe there's something else hidden within it.\n\nYour attention is drawn to the messily drawn brackets around some of the words... it doesn't really match the clean printed text. " + 
+                    "You come to the conclusion that the brackets may have been from someone who was not from the time period of the note's printing...";
         }
         if (clickedContinue) {
             clickedContinue = false;
@@ -75,9 +76,9 @@ public class CopperCave_E implements Situation {
             case "Inspect the walls":
                 inspectedWalls = true;
                 AdvGame.updateFrame(
-                        "You walk around the perimeter of the copper cave, and you make a couple of new discoveries. " +
+                        "You walk around the perimeter of the copper cave, and you make a couple of new discoveries.\n\n" +
                                 "There is a yellowing note pinned to the wall with a thin metal spike, " +
-                                "and on the opposite wall, there are four curiously shaped “copper” ores with slashes in them. " +
+                                "and on the opposite wall, there are four curiously shaped “copper” ores with slashes in them. You don't see any similar looking slashes in the other pieces of ore around the cave. " +
                                 "In order, the copper ores have [1] - [2] - [5] - [7] slashes on them respectively.",
                         new String[]{"Continue"});
                 break;
@@ -91,13 +92,13 @@ public class CopperCave_E implements Situation {
                 switch (amountOfNoteInspections) {
                     case 1:
                         text += "You prop the note up with your hand so that it’s facing the light of the lantern. " +
-                                "It makes a crackling sound, like it’s been a while since it has been written. " +
+                                "It makes a crackling sound, like it’s been a while since it has been written... printed. The text looks like it's been printed; you'd be very surprised if someone was able to write so geometrically and precise. " +
                                 "The corners crumble into dust. It reads:\n";
                         break;
                     case 2:
                         text += "The way the instructions are written seems a little odd. " +
                                 "Perhaps the brackets contain a clue? You take a closer look, being careful not to disturb the note too much, lest it disintegrates. " +
-                                "The note reads:\n";
+                                "You notice that the brackets don't match the font that the note is printed in... it looks like someone wrote them down in a rush. The note reads:\n";
                         break;
                     case 3:
                         text += "You think to yourself, maybe you should look at the first letter of each bracketed word. " +
@@ -144,7 +145,7 @@ public class CopperCave_E implements Situation {
                 break;
             case "Inspect the slashed ores":
                 AdvGame.clearFrame(
-                        "You inspect the ores with the slashes on them. As you saw before, there are just 4. " +
+                        "You inspect the ores with the slashes on them. As you saw before, there are just four pieces of ore in the cave with the special slashes. " +
                                 "The ore forms some reflections on the ground, making some odd abstract shape. You touch one, and feel it rotate a bit.\n\n" +
                                 "After some more inspection, you discover that you can freely spin each piece of ore around. Maybe it's a puzzle of sorts?\n" +
                                 "Respectively, the ore pieces each have [" + copper1arr[copper1] + "] - [" + copper2arr[copper2] + "] - [" + copper3arr[copper3] + "] - [" + copper4arr[copper4] + "] slashes.",
