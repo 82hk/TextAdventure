@@ -37,7 +37,7 @@ public class OtherSideEndX1 implements Situation {
     public String getDescription() {
         World.changeStateI("Deaths", 1);
         return ("Before you could do whatever you were planning to do next, the world begins to shake. " +
-                "All the ________, ________, ________, _______, and _________ were shaking. The lights began flickering." +
+                "All the furniture, walls, ceiling panels, floor tiles, and doors were shaking. The lights began flickering." +
                 "\n\n4" +
                 "After a minute of shaking - that was when the real chaos started. It was Armageddon.\n\n" +
                 "Reality began to fold upon itself. Words couldn't fully capture the warping of reality. " +
