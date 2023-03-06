@@ -42,7 +42,7 @@ public class Casino implements Situation {
 
             // MAIN BRANCH
             case "Go to Slots Machine":
-               //slots machine situation
+               AdvGame.setSituation(SlotsMachine.getInstance());
                 break;
 
             case "Have a drink":
