@@ -3,6 +3,7 @@ package org.sherwoodhs.situation.Entrance;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
+import org.sherwoodhs.situation.FoundationEnds.Foundation_0E;
 import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
@@ -41,7 +42,7 @@ public class EntranceSituation_0E implements Situation {
             // MAIN BRANCH
             case "Approach":
                 AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
-                        new String[] {"Enter","Go to Lowe's"});
+                        new String[] {"Enter","Go to Lowe's", "Test - Foundation endings"});
                 break;
             case "Enter":
                 AdvGame.updateFrame("---\n\nOn cue, the automatic doors slide open. A warm breeze wafts out, mixing with the cool evening air.\n\nYou step into the store and survey your surroundings.\n\nSofas, recliners, ottomans, and every kind of furniture piece imaginable cover the floor in a carefully structured manner, flanked by an innumerable variety of mini-display rooms. Decorative light fixtures cast soft shadows from the low exposed ceiling above, while in the distance air conditioning fans hum quietly.\n\nThe only thing missing is people.",
@@ -79,6 +80,9 @@ public class EntranceSituation_0E implements Situation {
                 break;
             case "Test FHub":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+            case "Test - Foundation endings":
+                AdvGame.setSituation(Foundation_0E.getInstance());
                 break;
 
         }
