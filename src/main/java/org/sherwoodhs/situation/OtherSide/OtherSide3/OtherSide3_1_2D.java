@@ -14,11 +14,11 @@ import org.sherwoodhs.situation.Situation;
    You talk to the Alchemist before you obtain the item required.
     It's just a little dialogue interaction
  */
-public class OtherSide3_1_0D implements Situation {
+public class OtherSide3_1_2D implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide3_1_0D();
-    private OtherSide3_1_0D(){
+    private static Situation situation = new OtherSide3_1_2D();
+    private OtherSide3_1_2D(){
 
     }
     public static Situation getInstance() {
@@ -27,12 +27,12 @@ public class OtherSide3_1_0D implements Situation {
 
     @Override
     public String getTitle() {
-        return "Wish Granted";
+        return "Don't Regret Your Decision";
     }
 
     @Override
     public String getDescription() {
-        return ("You hand over the USB to " + alchemist.getName());
+        return ("");
     }
 
     @Override
@@ -47,7 +47,8 @@ public class OtherSide3_1_0D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-                World.changeStateI("Deaths", 1);
+                //Leave Hidden Alcove
+                //You can Never Come back.
                 break;
         }
     }

@@ -9,6 +9,9 @@ public class World {
     private static HashMap<String, Integer> states = new HashMap(); //For int values
     //Singleton Stuff
     private static World world = new World();
+
+    //Check if countdown is active
+    public static boolean destructEnd = false;
     private World(){
         states.put("Time", 0); // Time of Day
         states.put("Day", 0); // # of Days spent in game
@@ -17,6 +20,7 @@ public class World {
         states.put("Haven Rep", 0);
         states.put("Clearwater Rep", 0);
         states.put("Deaths", 0);
+        states.put("Destruction End Counter", 24); // 1 day counter
     }
     public static World getInstance(){
         return world;
@@ -37,6 +41,10 @@ public class World {
                     states.replace("Day",states.get("Day") + 1); // Adds to the day counter
                     situationPanel.setTimeLabel("Day " + states.get("Day")); //Updates Day Label
                     // Could add something to happen during Midnight
+                }
+                if (destructEnd) {
+                    int val = states.get("Destruction End Counter") - 1;
+                    states.replace("Destruction End Counter", val);
                 }
                 break;
             case "Foundation Rep":
@@ -59,11 +67,12 @@ public class World {
     }
 
     public static void resetStates(){
-        states.put("Time", 0); // Time of Day
-        states.put("Day", 0); // # of Days spent in game
-        states.put("Renown", 0); // Total renown in world
-        states.put("Foundation Rep", 0);
-        states.put("Haven Rep", 0);
-        states.put("Clearwater Rep", 0);
+        states.replace("Time", 0); // Time of Day
+        states.replace("Day", 0); // # of Days spent in game
+        states.replace("Renown", 0); // Total renown in world
+        states.replace("Foundation Rep", 0);
+        states.replace("Haven Rep", 0);
+        states.replace("Clearwater Rep", 0);
+        states.replace("Destruction End Counter", 24); // 1 day counter
     }
 }
