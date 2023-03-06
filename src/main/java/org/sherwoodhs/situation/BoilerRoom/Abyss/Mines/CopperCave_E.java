@@ -109,7 +109,7 @@ public class CopperCave_E implements Situation {
                         break;
                 }
                 AdvGame.updateFrame(
-                        "Welcome!\nYou are currently in: Mine 1600-4C\n" +
+                        text + "Welcome!\nYou are currently in: Mine 1600-4C\n" +
                                 "Thank you for your participation in this world-changing, innovative, and impactful project. " +
                                 "To aid with [our] efforts, please mine the orange ore that you can find commonly on this layer of the abyss daily, " +
                                 "ensuring that you meet the daily quota that was assigned to you at the beginning of the day. " +
@@ -122,7 +122,7 @@ public class CopperCave_E implements Situation {
                 break;
             case "Continue reading":
                 AdvGame.updateFrame(
-                        "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n" +
+                        text + "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n" +
                                 "The areas of the mine that you have been assigned to is stated on the ticket you should have received at the beginning of the day, " +
                                 "which is the same ticket that contains your daily ore quota. " +
                                 "After completing your mining excursion for the day, " +
