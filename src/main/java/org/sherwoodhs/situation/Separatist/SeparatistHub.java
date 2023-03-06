@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Separatist;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
+import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -69,7 +70,7 @@ public class SeparatistHub implements Situation {
             // EXIT POINT
             case "Leave":
                 firstTime = false;
-                AdvGame.setSituation(HavenCenter_E.getInstance());
+                AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
         }
     }
