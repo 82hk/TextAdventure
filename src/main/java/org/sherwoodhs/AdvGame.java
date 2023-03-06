@@ -3,8 +3,7 @@ package org.sherwoodhs;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 
 import org.sherwoodhs.quest.Quest;
-import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSide3_1_2D;
-import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSideEndX1;
+import org.sherwoodhs.situation.OtherSide.OtherSideEndX1;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 
