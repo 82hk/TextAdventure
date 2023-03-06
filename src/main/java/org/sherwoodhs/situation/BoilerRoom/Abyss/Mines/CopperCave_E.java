@@ -172,6 +172,11 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper1++;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper1arr[copper1] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the first ore now has [" + copper1arr[copper1] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
@@ -186,6 +191,11 @@ public class CopperCave_E implements Situation {
                     copper1 = copper1arr.length - 1;
                 } else {
                     copper1--;
+                }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
                 }
                 if (copper1arr[copper1] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper1arr[copper1] + "] slash on it.",
@@ -215,6 +225,11 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper2++;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper2arr[copper2] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the second ore now has [" + copper2arr[copper2] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
@@ -230,11 +245,16 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper2--;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper2arr[copper2] == 1) {
-                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper2arr[copper2] + "] slash on it.",
+                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the second ore now has [" + copper2arr[copper2] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
                 } else {
-                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper2arr[copper2] + "] slashes on it.",
+                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the second ore now has [" + copper2arr[copper2] + "] slashes on it.",
                             new String[]{"Keep going", "Stop"});
                 }
                 break;
@@ -258,6 +278,11 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper3++;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper3arr[copper3] == 1) {
                     AdvGame.updateFrame("You spin the ore around clockwise, and the third ore now has [" + copper3arr[copper3] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
@@ -272,6 +297,11 @@ public class CopperCave_E implements Situation {
                     copper3 = copper3arr.length - 1;
                 } else {
                     copper3--;
+                }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
                 }
                 if (copper3arr[copper3] == 1) {
                     AdvGame.updateFrame("You spin the ore around counterclockwise, and the third ore now has [" + copper3arr[copper3] + "] slash on it.",
@@ -301,11 +331,16 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper4++;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper4arr[copper4] == 1) {
-                    AdvGame.updateFrame("You spin the ore around clockwise, and the second ore now has [" + copper4arr[copper4] + "] slash on it.",
+                    AdvGame.updateFrame("You spin the ore around clockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
                 } else {
-                    AdvGame.updateFrame("You spin the ore around clockwise, and the second ore now has [" + copper4arr[copper4] + "] slashes on it.",
+                    AdvGame.updateFrame("You spin the ore around clockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slashes on it.",
                             new String[]{"Keep going", "Stop"});
                 }
                 break;
@@ -316,14 +351,26 @@ public class CopperCave_E implements Situation {
                 } else {
                     copper4--;
                 }
+                if (isSolved()) {
+                    AdvGame.clearFrame(
+                        "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
+                        new String[]{"Wait in suspense"});
+                }
                 if (copper4arr[copper4] == 1) {
-                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper4arr[copper4] + "] slash on it.",
+                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slash on it.",
                             new String[]{"Keep going", "Stop"});
                 } else {
-                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the first ore now has [" + copper4arr[copper4] + "] slashes on it.",
+                    AdvGame.updateFrame("You spin the ore around counterclockwise, and the fourth ore now has [" + copper4arr[copper4] + "] slashes on it.",
                             new String[]{"Keep going", "Stop"});
                 }
                 break;
+            case "Wait in suspense":
+                AdvGame.updateFrame("You wait for a bit. Suddenly, the reflections of the light made by the ore begin to glow brighter and brighter. " +  
+                                    "You shield yourself from the light… and once your eyes readjust, you see that a massive hole has mysteriously opened up in the cave floor.\n\n" + 
+                                    "The hole seems to be radiating a kind of eerie chilliness you have never experienced before in these caves… it looks extremely dark in there. " +
+                                    "You might be missing the blue lanterns’ light for a while if you go in. " + 
+                                    "You’ve come to rely on its dim but reassuring light.",
+                                    new String[]{"Drop down into the hole"});
             case "Drop down into the hole":
                 break;
             case "Stop":
@@ -335,6 +382,12 @@ public class CopperCave_E implements Situation {
                 AdvGame.setSituation(SmallCavern_0E.getInstance());
                 break;
         }
+    }
+    private boolean isSolved() {
+        if (copper1 == 0 && copper2 == 5 && copper3 == 2 && copper4 == 3) {
+            return true;
+        }
+        return false;
     }
     public static Situation getInstance() {
         return situation;
