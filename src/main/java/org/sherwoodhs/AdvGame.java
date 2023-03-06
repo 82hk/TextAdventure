@@ -78,16 +78,29 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc) {
+        textPanel.addText("\n" + newDesc);
+    }
+    
+    public static void updateFrameWithoutSpacing(String newDesc) {
         textPanel.addText(newDesc);
+    }
+    public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
+        updateFrameWithoutSpacing(newDesc);
+        updateFrame(options);
     }
 
     public static void clearFrame() {textPanel.clearAllText();}
 
-    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
-
     public static void clearFrame(String newDesc) {clearFrame(); updateFrame(newDesc);}
 
     public static void clearFrame(String newDesc, String[] options) {clearFrame(); updateFrame(newDesc, options);}
+    
+    public static void clearFrameWithoutSpacing(String newDesc) {clearFrame(); updateFrameWithoutSpacing(newDesc);}
+    
+    public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
+    
+    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+    
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 
 }
