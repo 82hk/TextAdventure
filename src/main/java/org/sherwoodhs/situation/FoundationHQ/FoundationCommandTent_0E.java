@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

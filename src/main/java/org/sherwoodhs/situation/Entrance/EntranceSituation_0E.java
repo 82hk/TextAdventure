@@ -4,13 +4,11 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.FoundationEnds.Foundation_0E;
-import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
-import org.sherwoodhs.situation.FoundationHQ.FoundationQuestTent_0E;
+import org.sherwoodhs.situation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.ui.BarPanel;
 
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();

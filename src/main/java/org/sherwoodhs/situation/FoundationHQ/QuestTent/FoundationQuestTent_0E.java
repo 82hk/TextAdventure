@@ -1,6 +1,7 @@
-package org.sherwoodhs.situation.FoundationHQ;
+package org.sherwoodhs.situation.FoundationHQ.QuestTent;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -36,6 +37,7 @@ public class FoundationQuestTent_0E implements Situation {
                 break;
             case "Talk to assignment manager":
                 AdvGame.setSituation(FoundationQuestTent_1E.getInstance());
+                break;
         }
     }
 
