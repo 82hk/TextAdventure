@@ -3,6 +3,7 @@ package org.sherwoodhs.situation.Clearwater.KioskIntro;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.TheDistributor;
+import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -72,8 +73,52 @@ public class ClearwaterKiosk1_2D implements Situation {
                         "rumors spread, but officially? There is no Outside. There is only the Haven, ruled by our "+
                         "\"benevolent protectors\",\n\n" + "He rolls his eyes.\n\n" + distributor.getName() + ": the Foundation. "+
                         "Police, government, and security, with a healthy dose of paranoid secrecy. They cut off all the "+
-                        "entrance points to the Beyond—the rest of the Ikea—years ago, so if they find out about you...",
-                        new String[]{"[]"});
+                        "entrance points to the Beyond—the rest of the Ikea—years ago, so if they find out about you...\n\n"+
+                        distributor.getName() + ": Just stay away from them. And keep your mouth shut. As far as anyone here’s ,"+
+                        "concerned, you live in a modern, minimalist study room of some forgotten corner of the Haven, "+
+                        "and you don’t mean to cause any trouble.\n\nHe gives you a look.\n\n" + distributor.getName() +
+                        ": Now, any other questions?",
+                        new String[]{"Water?", "Exit?"});
+                break;
+            case "Water?":
+                AdvGame.clearFrame();
+                AdvGame.updateFrame(distributor.getName() + ": Oh, of course! We’ll need to get you a water card, won’t we. " +
+                        "Now, the Foundation is technically supposed to have sole dominion over these cards, but us Clearwater " +
+                        "employees each get our own company-issued ones too, straight from the Collective.\n\n" +
+                        distributor.getName() + ": You can take your chance with the Foundation, or you can come work for us.",
+                        new String[]{"Foundation", "Clearwater", "Exit?"});
+                break;
+            case "Exit?":
+                AdvGame.clearFrame();
+                AdvGame.updateFrame("You: Can’t I just slip out the way I came? I’ve got to find my way out, if I don’t " +
+                        "get back home I [ motive. note: rewrite lore later ]... and the door is just right over there in the corner—" +
+                        "\n\nYou glance over at the door, only to see it’s now wide open and leads to a...bathroom?" +
+                        "\n\nThe old man shakes his head solemnly.\n\n" + distributor.getName() + ": No, my friend. I’m afraid there’s " +
+                        "no way back now—neither to the Outside or the Beyond. Whatever path brought you here was cut, soon as you " +
+                        "stepped through to the Haven. This here building’s not in the business of losing its catch. But don’t fret, " +
+                        "you won’t mind it here. It’s rather a nice arrangement, once you get used to it.",
+                        new String[]{"Foundation", "Clearwater", "Water?"});
+                break;
+            case "Foundation":
+                AdvGame.updateFrame("You: I’ll try my luck with the Foundation.\n\nThe old man looks hard at you with a stern, " +
+                        "almost sad, expression and then nods slowly.\n\n" + distributor.getName() + ": Well good luck.\n\n" +
+                        "He turns abruptly, and begins to walk back to the kiosk with the giant water bottle.\n\n" +
+                        distributor.getName() + ": Cya' round kid.",
+                        new String[]{"Leave"});
+                break;
+            case "Clearwater":
+                AdvGame.updateFrame(distributor.getName() + ": Wonderful!\n\nThe old man's eyes light up.\n\n" +
+                        distributor.getName() + ": Head on over to the Warehouse—\n\nHe points to a large bay door on the " +
+                        "far side of the plaza, partially hidden under the shadow of an overhanging floor balcony.\n\n" +
+                        distributor.getName() + ": —and ask to see The Boss. Tell ‘em the Distributor sent you, they’ll " +
+                        "let you right in. And don’t be afraid to ask questions about the job once you’re there. Not too many " +
+                        "people know what us Clearwater Collective folk actually do, so you won’t seem too suspicious.\n\n" +
+                        "He shakes your hand warmly and grins, before beginning to walk back to the kiosk.\n\n" + distributor.getName() +
+                        ": Cya' round kid.",
+                        new String[]{"Leave"});
+                break;
+            case "Leave":
+                AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
     }
