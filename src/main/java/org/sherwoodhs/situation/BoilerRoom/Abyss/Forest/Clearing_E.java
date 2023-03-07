@@ -41,6 +41,7 @@ public class Clearing_E implements Situation {
     }
     @Override
     public void perform(String option) {
+        firstTime = false;
         switch (option) {
             case "Move forward":
                 break;
