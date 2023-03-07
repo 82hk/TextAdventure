@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
@@ -45,7 +46,7 @@ public class FoundationIntro_3D implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
             case "Complete quest":
-                BarPanel.barPanel.getFoundationBar().setValue(5);
+                World.changeStateI("Foundation Rep", 5);
                 InventoryPanel.inventoryPanel.addToInventory("Foundation ID Card");
                 AdvGame.removeQuest(ScrapMetalCollection.getInstance());
                 AdvGame.updateFrame("You show him the metal you collected from the abandon section. He takes a piece and inspects it," +
