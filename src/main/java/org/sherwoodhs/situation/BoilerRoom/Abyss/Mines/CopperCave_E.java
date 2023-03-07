@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Mines;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.Aquifer_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -17,6 +18,7 @@ public class CopperCave_E implements Situation {
     private int[] copper2arr = new int[]{2, 19, 1, 4, 15, 7, 3};
     private int[] copper3arr = new int[]{5, 1, 9, 12, 7, 0, 8};
     private int[] copper4arr = new int[]{7, 12, 5, 1, 3, 9, 13};
+    boolean cameFromAquifer = false;
     private static Situation situation = new CopperCave_E();
     @Override
     public String getTitle() {
@@ -30,6 +32,10 @@ public class CopperCave_E implements Situation {
                     "Some of the ore reflects the lantern’s light onto the ground, creating some kind of abstract image.\n\n" +
                     "You decide to call this area the “copper cave” just because it seems quite distinct from the boring navy-tinted stone of the previous cavern.\n\n" +
                     "You look around, and you realize that you are at a dead end. Perhaps there is nowhere to go from here.";
+        }
+        if (cameFromAquifer) {
+            cameFromAquifer = false;
+            return "You climb up from the hole into the beautiful copper cave. The copper-like ore glints at your cheerfully, like it knows a secret...";
         }
         if (solvedPuzzle) {
             return "You enter the beautiful copper cave. The copper-like ore twinkles at you like stars.\n\n" +
@@ -378,6 +384,7 @@ public class CopperCave_E implements Situation {
                 }
                 break;
             case "Wait in suspense":
+                solvedPuzzle = true;
                 AdvGame.updateFrame("You wait for a bit. Suddenly, the reflections of the light made by the ore begin to glow brighter and brighter. " +  
                                     "You shield yourself from the light… and once your eyes readjust, you see that a massive hole has mysteriously opened up in the cave floor.\n\n" + 
                                     "The hole seems to be radiating a kind of eerie chilliness you have never experienced before in these caves… it looks extremely dark in there. " +
@@ -386,6 +393,8 @@ public class CopperCave_E implements Situation {
                                     new String[]{"Drop down into the hole"});
                 break;
             case "Drop down into the hole":
+                cameFromAquifer = true;
+                AdvGame.setSituation(Aquifer_E.getInstance());
                 break;
             case "Stop":
                 fromPuzzle = true;
