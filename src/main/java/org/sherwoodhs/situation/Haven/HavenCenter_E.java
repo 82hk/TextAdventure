@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Haven;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
+import org.sherwoodhs.situation.Clearwater.Wharehouse.ClearwaterWarehouseEntrance_0D;
 import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_0D;
 import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
@@ -53,13 +54,13 @@ public class HavenCenter_E implements Situation {
             return options;
         } else {
             if(FoundationIntro_1D.isUnlocked()) {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Abandoned displays"};
+                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse", "Abandoned displays"};
                 return options;
             } if(FoundationIntro_3D.lock()) {
-                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub"};
+                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse"};
                 return options;
             } else {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub"};
+                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse"};
                 return options;
             }
         }
@@ -82,6 +83,9 @@ public class HavenCenter_E implements Situation {
                 break;
             case "Separatist Hub":
                 AdvGame.setSituation(HavenHubHallway.getInstance());
+                break;
+            case "Clearwater Warehouse":
+                AdvGame.setSituation(ClearwaterWarehouseEntrance_0D.getInstance());
                 break;
             case "Abandoned displays":
                 AdvGame.setSituation(FoundationIntro_2I.getInstance());
