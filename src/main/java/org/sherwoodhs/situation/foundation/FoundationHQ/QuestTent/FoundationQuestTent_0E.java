@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
@@ -38,7 +39,7 @@ public class FoundationQuestTent_0E implements Situation {
             String[] options = {"Hi."};
             return options;
         } else {
-            String[] options = {"Scrap Collection", "Guard Duty", "Courier", "Leave"};
+            String[] options = {"Talk to assignment manager", "Leave"};
             return options;
         }
     }
@@ -46,11 +47,20 @@ public class FoundationQuestTent_0E implements Situation {
     @Override
     public void perform(String option) {
         switch(option){
+            case "Back":
+                AdvGame.setSituation(FoundationQuestTent_0E.getInstance());
+                break;
             case "Leave":
-                firstTime = false;
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
             case "Talk to assignment manager":
+                if(World.getState("Foundation Rep") <= 30) {
+                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 1 Quests"});
+                } else if(World.getState("Foundation Rep") > 30 && World.getState("Foundation Rep") < 90){
+                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 2 Quests"});
+                } else if(World.getState("Foundation Rep") >= 90){
+                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 3 Quests"});
+                }
                 break;
 
             //FIRSTTIME
@@ -70,18 +80,36 @@ public class FoundationQuestTent_0E implements Situation {
                                 " but we can't monitor every courier at once so we have to trust you to not read it.", new String[]{" ..."});
                 break;
             case " ...":
+                firstTime = false;
                 AdvGame.clearFrameWithoutSpacing("He finishes by offering a reward for each completed quest, promising a warm bed, shelter, and even a promotion in the foundation.\n\n" +
                         "Assignment Manager: The Foundation looks after it's members and in return you'll need to have the back of you fellow recruits and remember," +
                         " even if you don't like or prefer what we do, it's your duty to follow orders to the letter.. " +
-                        "So, what do you say? You looking' to make a living in this hellhole?", new String[]{"Scrap Collection", "Guard Duty", "Courier", "Leave"});
+                        "So, what do you say? You looking' to make a living in this hellhole?", new String[]{"Level 1 Quests", "Leave"});
                 break;
 
             //QUESTS (lvl 1 <30 rep)
+            case "Level 1 Quests":
+                AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?",new String[]{"Scrap Collection", "Guard Duty", "Courier", "Back"});
+                break;
             case "Scrap Collection":
                 break;
             case "Guard Duty":
                 break;
             case "Courier":
+                break;
+            //LEVEL 2 >30 <90
+            case "Level 2 Quests":
+                AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Armed guard", "Bullet assembly", "Back"});
+                break;
+            case "Armed guard":
+                break;
+            case "Bullet assembly":
+                break;
+            //LEVEL 3 90+
+            case "Level 3 Quests":
+                AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"SRA Operation", "Back"});
+                break;
+            case "SRA Operation":
                 break;
         }
     }

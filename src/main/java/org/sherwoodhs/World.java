@@ -55,14 +55,17 @@ public class World {
                 temp = getState("Foundation Rep");
                 temp += value;
                 BarPanel.barPanel.getFoundationBar().setValue(temp);
+                break;
             case "Haven Rep":
                 temp = getState("Haven Rep");
                 temp += value;
                 BarPanel.barPanel.getHavenBar().setValue(temp);
+                break;
             case "Clearwater Rep":
                 temp = getState("Clearwater Rep");
                 temp += value;
                 BarPanel.barPanel.getClearWaterBar().setValue(temp);
+                break;
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 //Checks for out of limits values
                 if (changed > 100) /* Current Max of 100 */ {
