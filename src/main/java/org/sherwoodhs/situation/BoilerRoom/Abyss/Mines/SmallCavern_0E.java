@@ -16,6 +16,7 @@ public class SmallCavern_0E implements Situation {
     private boolean collectedPickaxe = false;
     private boolean inspectedCart = false, inspectedRails = false, inspectedWalls = false;
     private boolean openedCrack = false;
+    private boolean cameFromPassage = false;
     private static Situation situation = new SmallCavern_0E();
     @Override
     public String getTitle() {
@@ -32,6 +33,10 @@ public class SmallCavern_0E implements Situation {
                     "There’s also a small pickaxe propped up next to the metal cart.\n\n" +
                     "It’s the first sign of civilization you’ve seen in a while. You think to yourself, perhaps there are people down here?\n\n" +
                     "There is a small passage that leads towards the front, probably towards another cavern like this one.";
+        }
+        if (cameFromPassage) {
+            cameFromPassage = false;
+            return "You emerge from the passageway you uncovered. The rope leading up to the surface is in front of you.";
         }
         if (openedCrack) {
             if (clickedContinue) {
@@ -149,6 +154,7 @@ public class SmallCavern_0E implements Situation {
                         new String[]{"Continue"});
                 break;
             case "Move forward":
+                cameFromPassage = true;
                 AdvGame.setSituation(SmallCavern_1E.getInstance());
                 break;
         }
