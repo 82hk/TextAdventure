@@ -6,6 +6,7 @@ import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.OtherSideQuest;
+import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -47,8 +48,8 @@ public class OtherSide3_1_2D implements Situation {
     public void perform(String option) {
         switch (option){
             case "Continue" :
-                //Leave Hidden Alcove
-                //You can Never Come back.
+                World.alcoveAccessible = false;
+                AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
         }
     }

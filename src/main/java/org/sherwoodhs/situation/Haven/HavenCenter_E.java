@@ -16,6 +16,7 @@ public class HavenCenter_E implements Situation {
     private static Situation situation = new HavenCenter_E();
     private static boolean firstTime = true;
 
+    public static boolean oldManGone = false;
     @Override
     public String getTitle() {
         if (firstTime) {
@@ -32,7 +33,7 @@ public class HavenCenter_E implements Situation {
                     "\n\n[ Foundation description ]"+
                     "\n\n[ Misc. ]";
         } else {
-            return "You return to the Center of the Haven. There is an Old Man sitting on a chair in the corner of the haven."+
+            return "You return to the Center of the Haven."+
                     "\n\n[ Foundation ]"+
                     "\n\n[ Clearwater ]"+
                     "\n\n[ Misc. ]";
@@ -51,16 +52,18 @@ public class HavenCenter_E implements Situation {
             firstTime = false;
             return options;
         } else {
+            String[] options = new String[]{"Foundation Booth","Clearwater Kiosk", "Separatist Hub", "", "Talk to an Old Man"};
             if(FoundationIntro_1D.isUnlocked()) {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Abandoned displays", "Talk to the Old Man"};
+                options[3] = "Abandoned displays";
                 return options;
             } if(FoundationIntro_3D.lock()) {
-                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub", "Talk to the Old Man"};
-                return options;
-            } else {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Talk to the Old Man"};
+                options[0] = "Foundation HQ";
                 return options;
             }
+            if (oldManGone){
+                options[4] = "";
+            }
+            return options;
         }
     }
 
@@ -68,14 +71,10 @@ public class HavenCenter_E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Foundation Booth":
-                AdvGame.setSituation(FoundationIntro_0D.getInstance());
-                break;
             case "Approach the booth":
                 AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
             case "Clearwater Kiosk":
-                AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
-                break;
             case "Approach the kiosk":
                 AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
                 break;
@@ -88,7 +87,7 @@ public class HavenCenter_E implements Situation {
             case "Foundation HQ":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
-            case "Talk to Old Man":
+            case "Talk to an Old Man":
                 AdvGame.setSituation(OldMan_D.getInstance());
                 break;
         }
