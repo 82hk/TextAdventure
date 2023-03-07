@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.FoundationIntroduction;
+package org.sherwoodhs.situation.foundation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;

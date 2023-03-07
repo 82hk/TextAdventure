@@ -3,7 +3,7 @@ package org.sherwoodhs.situation.Entrance;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
-import org.sherwoodhs.situation.FoundationEnds.Foundation_0E;
+import org.sherwoodhs.situation.foundation.endings.Foundation_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;

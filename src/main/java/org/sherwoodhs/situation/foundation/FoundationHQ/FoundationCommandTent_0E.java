@@ -1,26 +1,25 @@
-package org.sherwoodhs.situation.FoundationHQ;
+package org.sherwoodhs.situation.foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
+import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class FoundationMessTent_0E implements Situation {
-    private static Situation situation = new FoundationMessTent_0E();
-
+public class FoundationCommandTent_0E implements Situation {
+    private static Situation situation = new FoundationQuestTent_0E();
     @Override
     public String getTitle() {
-        return "The Foundation mess hall";
+        return "The Foundation command tent";
     }
 
     @Override
     public String getDescription() {
-        return "do";
+        return "";
     }
 
     @Override
     public SitType getSitType() {
-        return SitType.Exploration;
+        return SitType.Interaction;
     }
 
     @Override
@@ -31,9 +30,11 @@ public class FoundationMessTent_0E implements Situation {
 
     @Override
     public void perform(String option) {
-        switch(option) {
+        switch(option){
             case "Leave":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+
         }
     }
 
