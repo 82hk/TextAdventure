@@ -93,41 +93,41 @@ public class CopperCave_E implements Situation {
                     case 1:
                         text += "You prop the note up with your hand so that it’s facing the light of the lantern. " +
                                 "It makes a crackling sound, like it’s been a while since it has been written... printed. The text looks like it's been printed; you'd be very surprised if someone was able to write so geometrically and precise. " +
-                                "The corners crumble into dust. It reads:\n";
+                                "The corners crumble into dust. It reads:";
                         break;
                     case 2:
                         text += "The way the instructions are written seems a little odd. " +
                                 "Perhaps the brackets contain a clue? You take a closer look, being careful not to disturb the note too much, lest it disintegrates. " +
-                                "You notice that the brackets don't match the font that the note is printed in... it looks like someone wrote them down in a rush. The note reads:\n";
+                                "You notice that the brackets don't match the font that the note is printed in... it looks like someone wrote them down in a rush. The note reads:";
                         break;
                     case 3:
                         text += "You think to yourself, maybe you should look at the first letter of each bracketed word. " +
                                 "There seems to be some significance… perhaps they correlate with the amount of slashes on the four pieces of ore? " +
-                                "The note reads:\n";
+                                "The note reads:";
                         break;
                     case 5:
-                        text += "The note reads:\n";
+                        text += "The note reads:";
                         break;
                     default:
                         text += "";
                         break;
                 }
-                text += "Welcome!\nYou are currently in: Mine 1600-4C\n" +
-                                "Thank you for your participation in this world-changing, innovative, and impactful project. " +
-                                "To aid with [our] efforts, please mine the orange ore that you can find commonly on this layer of the abyss daily, " +
-                                "ensuring that you meet the daily quota that was assigned to you at the beginning of the day. " +
-                                "[Similar] examples of the ore you must mine can be found in this cave. " +
-                                "This ore will begin to regenerate over time, considering its unique properties, " +
-                                "so please take [note] of each location on the map that we have given you.\n\n" +
-                                "In addition, make sure to stay in areas of the mine you have been assigned to. " +
-                                "The naming convention for the mine is as follows:\nDepth, in meters - Branch, Cave";
                 AdvGame.updateFrame(
                         text,
                         new String[]{"Continue reading"});
                 break;
             case "Continue reading":
-                AdvGame.updateFrame(
-                        "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n" +
+                AdvGame.clearFrameWithoutSpacing(
+                        "Welcome!\nYou are currently in: Mine 1600-4C\n\n" +
+                        "Thank you for your participation in this world-changing, innovative, and impactful project. " +
+                        "To aid with [our] efforts, please mine the orange ore that you can find commonly on this layer of the abyss daily, " +
+                        "ensuring that you meet the daily quota that was assigned to you at the beginning of the day. " +
+                        "[Similar] examples of the ore you must mine can be found in this cave. " +
+                        "This ore will begin to regenerate over time, considering its unique properties, " +
+                        "so please take [note] of each location on the map that we have given you.\n\n" +
+                        "In addition, make sure to stay in areas of the mine you have been assigned to. " +
+                        "The naming convention for the mine is as follows:\nDepth, in meters - Branch, Cave\n" +
+                        "As of now,\nThe topmost cave is: 780-1A\nThe bottommost cave is: 7900-5L\n\n" +
                                 "The areas of the mine that you have been assigned to is stated on the ticket you should have received at the beginning of the day, " +
                                 "which is the same ticket that contains your daily ore quota. " +
                                 "After completing your mining excursion for the day, " +
@@ -144,7 +144,7 @@ public class CopperCave_E implements Situation {
                 AdvGame.setSituation(getInstance());
                 break;
             case "Inspect the slashed ores":
-                AdvGame.clearFrame(
+                AdvGame.clearFrameWithoutSpacing(
                         "You inspect the ores with the slashes on them. As you saw before, there are just four pieces of ore in the cave with the special slashes. " +
                                 "The ore forms some reflections on the ground, making some odd abstract shape. You touch one, and feel it rotate a bit.\n\n" +
                                 "After some more inspection, you discover that you can freely spin each piece of ore around. Maybe it's a puzzle of sorts?\n" +
@@ -152,19 +152,19 @@ public class CopperCave_E implements Situation {
                         new String[]{"Spin the first ore", "Spin the second ore", "Spin the third ore", "Spin the fourth ore", "Stop"});
                 break;
             case "Keep going":
-                AdvGame.clearFrame(
+                AdvGame.clearFrameWithoutSpacing(
                         "Respectively, the ore pieces each have [" + copper1arr[copper1] + "] - [" + copper2arr[copper2] + "] - [" + copper3arr[copper3] + "] - [" + copper4arr[copper4] + "] slashes.",
                         new String[]{"Spin the first ore", "Spin the second ore", "Spin the third ore", "Spin the fourth ore", "Stop"}
                 );
                 break;
             case "Spin the first ore":
                 if (copper1arr[copper1] == 1) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The first ore currently has [" + copper1arr[copper1] + "] slash on it.",
                             new String[]{"Spin the first ore clockwise", "Spin the first ore counterclockwise", "Stop"}
                     );
                 } else {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The first ore currently has [" + copper1arr[copper1] + "] slashes on it.",
                             new String[]{"Spin the first ore clockwise", "Spin the first ore counterclockwise", "Stop"}
                     );
@@ -178,7 +178,7 @@ public class CopperCave_E implements Situation {
                     copper1++;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -199,7 +199,7 @@ public class CopperCave_E implements Situation {
                     copper1--;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the first ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -214,12 +214,12 @@ public class CopperCave_E implements Situation {
                 break;
             case "Spin the second ore":
                 if (copper2arr[copper2] == 1) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The second ore currently has [" + copper2arr[copper2] + "] slash on it.",
                             new String[]{"Spin the second ore clockwise", "Spin the second ore counterclockwise", "Stop"}
                     );
                 } else {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The second ore currently has [" + copper2arr[copper2] + "] slashes on it.",
                             new String[]{"Spin the second ore clockwise", "Spin the second ore counterclockwise", "Stop"}
                     );
@@ -233,7 +233,7 @@ public class CopperCave_E implements Situation {
                     copper2++;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -254,7 +254,7 @@ public class CopperCave_E implements Situation {
                     copper2--;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the second ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -269,12 +269,12 @@ public class CopperCave_E implements Situation {
                 break;
             case "Spin the third ore":
                 if (copper3arr[copper3] == 1) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The third ore currently has [" + copper3arr[copper3] + "] slash on it.",
                             new String[]{"Spin the third ore clockwise", "Spin the third ore counterclockwise", "Stop"}
                     );
                 } else {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The third ore currently has [" + copper3arr[copper3] + "] slashes on it.",
                             new String[]{"Spin the third ore clockwise", "Spin the third ore counterclockwise", "Stop"}
                     );
@@ -288,7 +288,7 @@ public class CopperCave_E implements Situation {
                     copper3++;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -309,7 +309,7 @@ public class CopperCave_E implements Situation {
                     copper3--;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the third ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -324,12 +324,12 @@ public class CopperCave_E implements Situation {
                 break;
             case "Spin the fourth ore":
                 if (copper4arr[copper4] == 1) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The fourth ore currently has [" + copper4arr[copper4] + "] slash on it.",
                             new String[]{"Spin the fourth ore clockwise", "Spin the fourth ore counterclockwise", "Stop"}
                     );
                 } else {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                             "The fourth ore currently has [" + copper4arr[copper4] + "] slashes on it.",
                             new String[]{"Spin the fourth ore clockwise", "Spin the fourth ore counterclockwise", "Stop"}
                     );
@@ -343,7 +343,7 @@ public class CopperCave_E implements Situation {
                     copper4++;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                     break;
@@ -364,7 +364,7 @@ public class CopperCave_E implements Situation {
                     copper4--;
                 }
                 if (isSolved()) {
-                    AdvGame.clearFrame(
+                    AdvGame.clearFrameWithoutSpacing(
                         "After you spin the fourth ore, something quietly clicks into place. Perhaps a mechanism of sorts?",
                         new String[]{"Wait in suspense"});
                         break;
