@@ -1,6 +1,5 @@
 package org.sherwoodhs.situation.FoundationIntroduction;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.foundation.FoundationGuard;
