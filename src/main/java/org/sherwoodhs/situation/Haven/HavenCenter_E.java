@@ -33,7 +33,7 @@ public class HavenCenter_E implements Situation {
                     "\n\n[ Foundation description ]"+
                     "\n\n[ Misc. ]";
         } else {
-            return "You return to the Center of the Haven."+
+            return "You return to the Center of the Haven. There is an Old Man sitting on a chair in the corner of the haven."+
                     "\n\n[ Foundation ]"+
                     "\n\n[ Clearwater ]"+
                     "\n\n[ Misc. ]";
@@ -53,13 +53,13 @@ public class HavenCenter_E implements Situation {
             return options;
         } else {
             if(FoundationIntro_1D.isUnlocked()) {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Abandoned displays"};
+                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Abandoned displays", "Talk to the Old Man"};
                 return options;
             } if(FoundationIntro_3D.lock()) {
-                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub"};
+                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub", "Talk to the Old Man"};
                 return options;
             } else {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub"};
+                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Talk to the Old Man"};
                 return options;
             }
         }
@@ -88,6 +88,9 @@ public class HavenCenter_E implements Situation {
                 break;
             case "Foundation HQ":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+            case "Talk to Old Man":
+                AdvGame.setSituation(OldMan_D.getInstance())
                 break;
         }
     }

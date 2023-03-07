@@ -13,6 +13,9 @@ import org.sherwoodhs.situation.Situation;
 public class Foundation_0E implements Situation {
     private static Situation situation = new Foundation_0E();
 
+    private Foundation_0E () {
+        
+    }
     @Override
     public String getTitle() {
         return "Guard duty";

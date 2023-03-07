@@ -6,7 +6,7 @@ import org.sherwoodhs.location.HiddenAlcove;
 public class OldMan extends NPC{
     private static NPC npc = new OldMan();
     private OldMan(){
-        super("The Old Man", 0, ClearwaterHeadquarters.getInstance() /*Some city*/, false);
+        super("Old Man", 0, ClearwaterHeadquarters.getInstance() /*Some city*/, false);
     }
     public static NPC getInstance(){
         return npc;
