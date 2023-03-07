@@ -1,10 +1,9 @@
-package org.sherwoodhs.situation.FoundationIntroduction;
+package org.sherwoodhs.situation.foundation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.foundation.FoundationGuard;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;

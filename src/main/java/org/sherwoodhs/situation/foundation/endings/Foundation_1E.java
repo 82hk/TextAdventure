@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.FoundationEnds;
+package org.sherwoodhs.situation.foundation.endings;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
