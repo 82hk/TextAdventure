@@ -1,11 +1,9 @@
 package org.sherwoodhs.situation.foundation.FoundationHQ;
 
-
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class FoundationBlacksmith_0E implements Situation {
-    private static Situation situation = new FoundationBlacksmith_0E();
+public class FoundationBulletMaking implements Situation {
     @Override
     public String getTitle() {
         return "The Armory";
@@ -13,7 +11,9 @@ public class FoundationBlacksmith_0E implements Situation {
 
     @Override
     public String getDescription() {
-        return null;
+        return "As you work on the makeshift kiln you add scrap pieces to the furnace, carefully watching as they melt down into liquid metal." +
+                "With a pair of tongs, you remove the molten metal from the furnace and pour it into poorly made bullet molds." +
+                "Why is the foundation working with such poor equipment you think to yourself but suddenly you hear footsteps approaching behind you\n";
     }
 
     @Override
@@ -30,8 +30,4 @@ public class FoundationBlacksmith_0E implements Situation {
     public void perform(String option) {
 
     }
-    public static Situation getInstance(){
-        return situation;
-    }
 }
-

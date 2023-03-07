@@ -1,11 +1,10 @@
-package org.sherwoodhs.situation.FoundationHQ;
+package org.sherwoodhs.situation.foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 
-import static org.sherwoodhs.World.getState;
 
 public class FoundationArmory_0E implements Situation {
 
@@ -14,7 +13,7 @@ public class FoundationArmory_0E implements Situation {
 
     @Override
     public String getTitle() {
-        return null;
+        return "The Armory";
     }
 
     @Override
@@ -24,7 +23,7 @@ public class FoundationArmory_0E implements Situation {
 
     @Override
     public SitType getSitType() {
-        return null;
+        return SitType.Interaction;
     }
 
     @Override
@@ -39,17 +38,17 @@ public class FoundationArmory_0E implements Situation {
     @Override
     public void perform(String option) {
 
-            switch(option){
-                case "Go back  to HQ":
-                    AdvGame.setSituation(FoundationHub_0E.getInstance());
-                    break;
-                case "Talk to Blacksmith":
-                    AdvGame.setSituation(FoundationBlacksmith_0E.getInstance());
-                case "Go to quest tent":
-                    AdvGame.setSituation(FoundationQuestTent_0E.getInstance());
+        switch(option){
+            case "Go back  to HQ":
+                AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+            case "Talk to Blacksmith":
+                AdvGame.setSituation(FoundationBlacksmith_0E.getInstance());
+            case "Go to quest tent":
+                AdvGame.setSituation(FoundationQuestTent_0E.getInstance());
 
-            }
         }
+    }
     public static Situation getInstance(){
         return situation;
     }
