@@ -90,7 +90,7 @@ public class HavenCenter_E implements Situation {
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
             case "Talk to Old Man":
-                AdvGame.setSituation(OldMan_D.getInstance())
+                AdvGame.setSituation(OldMan_D.getInstance());
                 break;
         }
     }

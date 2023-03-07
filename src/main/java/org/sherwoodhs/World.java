@@ -28,7 +28,7 @@ public class World {
     }
 
     //Gets a specific value based on state String key
-    public int getState(String key){
+    public static int getState(String key){
         return(states.get(key));
     }
 
