@@ -55,11 +55,11 @@ public class FoundationQuestTent_0E implements Situation {
                 break;
             case "Talk to assignment manager":
                 if(World.getState("Foundation Rep") <= 30) {
-                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 1 Quests"});
+                    AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 1 Quests", "Back"});
                 } else if(World.getState("Foundation Rep") > 30 && World.getState("Foundation Rep") < 90){
-                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 2 Quests"});
+                    AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 1 Quests", "Level 2 Quests", "Back"});
                 } else if(World.getState("Foundation Rep") >= 90){
-                    AdvGame.updateFrame("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 3 Quests"});
+                    AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?", new String[]{"Level 1 Quests", "Level 2 Quests", "Level 3 Quests", "Back"});
                 }
                 break;
 
