@@ -59,7 +59,7 @@ public class FoundationIntro_0D implements Situation {
             String[] options = {"Go back to The Haven"};
             return options;
         } else{
-            String[] options = {"Talk to guard", "Go back to The Haven"};
+            String[] options = {"Talk to guard", "Go back to The Haven", "Test - Skip 2 HQ"};
             return options;
         }
     }
@@ -82,6 +82,10 @@ public class FoundationIntro_0D implements Situation {
                 break;
             case "Continue":
                 AdvGame.setSituation(FoundationIntro_1D.getInstance());
+                break;
+            case "Test - Skip 2 HQ":
+                ScrapMetalCollection.getInstance().complete();
+                AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
     }
