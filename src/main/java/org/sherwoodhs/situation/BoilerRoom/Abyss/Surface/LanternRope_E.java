@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Surface;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Forest.Clearing_E;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Mines.SmallCavern_0E;
 import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
 import org.sherwoodhs.situation.SitType;
@@ -48,7 +49,7 @@ public class LanternRope_E implements Situation {
                 AdvGame.setSituation(SmallCavern_0E.getInstance());
                 break;
             case "Climb the rope ladder":
-                AdvGame.setSituation(Passage_E.getInstance());
+                AdvGame.setSituation(Clearing_E.getInstance());
                 break;
             case "Inspect the lantern":
                 inspectedLantern = true;

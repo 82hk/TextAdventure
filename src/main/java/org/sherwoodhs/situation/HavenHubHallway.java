@@ -52,7 +52,7 @@ public class HavenHubHallway implements Situation {
     @Override
     public void perform(String option) {
         switch (option){
-            case "Go to Haven" :
+            case "Go to the Haven Center" :
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
             case "Go to the Hall":

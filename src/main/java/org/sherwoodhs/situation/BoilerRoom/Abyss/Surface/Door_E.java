@@ -46,20 +46,20 @@ public class Door_E implements Situation {
         switch (option) {
             case "Close the door":
                 doorIsOpen = false;
-                AdvGame.clearFrame(
+                AdvGame.clearFrameWithoutSpacing(
                         "You close the door, and it closes with a resounding thud.",
                         new String[]{"Open the door", "Return to the outcropping"}
                 );
                 break;
             case "Open the door":
                 doorIsOpen = true;
-                AdvGame.clearFrame(
-                        "You open the door, and you can see only darkness inside.",
+                AdvGame.clearFrameWithoutSpacing(
+                        "You open the door, and it creaks. You can see only darkness inside.",
                         new String[]{"Close the door", "Enter", "Return to the outcropping"}
                 );
                 break;
             case "Enter":
-                AdvGame.clearFrame("You try go inside, but a sudden migraine shoots through your head. It might be a good idea not to enter.");
+                AdvGame.clearFrameWithoutSpacing("You try to go inside, but a sudden migraine shoots through your head. It might be a good idea not to enter.");
                 break;
             case "Return to the outcropping":
                 AdvGame.setSituation(Outcropping_E.getInstance());
