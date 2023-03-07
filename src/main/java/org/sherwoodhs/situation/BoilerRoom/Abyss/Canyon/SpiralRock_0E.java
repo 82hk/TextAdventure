@@ -27,7 +27,7 @@ public class SpiralRock_0E implements Situation {
     @Override
     public void perform(String option) {
         switch (option) {
-            case "Move forward":
+            case "Study the rocks further":
                 AdvGame.setSituation(SpiralRock_1E.getInstance());
                 break;
             case "Return to the lake":

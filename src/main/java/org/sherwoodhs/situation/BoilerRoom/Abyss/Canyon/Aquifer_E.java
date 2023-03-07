@@ -68,7 +68,7 @@ public class Aquifer_E implements Situation {
                             "You spot a clear boulder in the distance that you might be able to climb. " +
                                     "You slosh through the water, which you see now it is not completely clear. " +
                                     "The water is contaminated with some kind of ash or dust.\n\n" +
-                                    "You hoist yourself up the boulder, and you look around you.\n\n" +
+                                    "You hoist yourself up the boulder, and you look around.\n\n" +
                                     "To the left, you see some interesting rock formations, like spirals emanating from the ground. " +
                                     "Directly forwards, you see some kind of dark shape that looks like a mound of rotten fabric. " +
                                     "To your right, you see what seems to be a massive crevasse hulking ominously in the shadows.",
