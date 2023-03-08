@@ -26,7 +26,7 @@ public class TextPanel extends JPanel {
      * Adds one element to textList without clearing its contents, can contain escape sequences
      * @param s one element to be added to TextList
      */
-    public void addText (String... s) {
+    public void addText(String... s) {
         for (String element : s) {
             textListModel.addElement(element);
         }

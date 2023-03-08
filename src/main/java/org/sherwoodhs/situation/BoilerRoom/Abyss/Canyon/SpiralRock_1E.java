@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -8,6 +9,9 @@ public class SpiralRock_1E implements Situation {
     private static Situation situation = new SpiralRock_1E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Canyon of Ashes";
+        }
         return "???";
     }
     @Override

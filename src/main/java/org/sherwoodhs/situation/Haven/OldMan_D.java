@@ -33,7 +33,7 @@ public class OldMan_D implements Situation {
                     "You nod.\n\n" +
                     oldMan.getName() + ": Well, that's unfortunate. I hope you enjoy your stay here. It's a nice place once you get used to it."
             );
-        } else if (World.getState("Renown") <= -10 && !revealed) {
+        } else if (World.getState("Renown") <= -5 && !revealed) {
             revealed = true;
             HavenCenter_E.oldManGone = true;
             return (oldMan.getName() + ": Oh, hello there " + player.getName() + ". It's nice to see you again.\n\n" +
@@ -48,7 +48,7 @@ public class OldMan_D implements Situation {
                     "The old man walks away, leaving you alone with your thoughts.");
         } else {
             Random r = new Random();
-            int rand = r.nextInt(10);
+            int rand = r.nextInt(5);
             switch (rand){
                 case 0:
                     return (oldMan.getName() + ": Hello again. How are you doing today?\n\n" +
@@ -57,11 +57,26 @@ public class OldMan_D implements Situation {
                 case 1:
                     return (oldMan.getName() + ": The weather's amazing today, isn't it?\n\n" +
                             player.getName() + ": Umm, sir. We're inside an IKEA. There's no sky here. Only a roof and lights\n\n" +
-                            oldMan.getName() + ": I know that. But we have to think about the positive things in life." +
-                            "We can't get rain here, so every day is a nice day. No outside force can bring unhappiness to us." +
-                            "It's acknowledging that simple fact that makes our day so much better. It's just that people don't want to step" +
+                            oldMan.getName() + ": I know that. But we have to think about the positive things in life. " +
+                            "We can't get rain here, so every day is a nice day. No outside force can bring unhappiness to us. " +
+                            "It's acknowledging that simple fact that makes our day so much better. It's just that people don't want to step " +
                             "back and think about these things. They're always looking for more.\n\n" +
                             player.getName()+ ": O-kay?");
+                case 2:
+                    return ("You found the old man humming a song that sounded familiar. You listened closely, and you identified it to be... " +
+                            oldMan.getName() + ": ");
+                case 3:
+                    return (oldMan.getName() + ": You seem free today, talking to an inconsequential old man like me.\n\n" +
+                            player.getName() + ": I wouldn't call you inconsequential. It's nice to talk to someone in this chaotic place.\n\n" +
+                            "The old man just shook his head.\n\n" +
+                            oldMan.getName() + ": You might think that, but I'm just here - just an observer. You on the other hand, you have " +
+                            "the potential to change everything. My words can only do so much. Your actions are the determining factor to the future. " +
+                            "Choosing to talk to me might be the thing that changes everything.\n\n" +
+                            player.getName() + ": Come on, I'm not that arrogant.\n\n" +
+                            "The old man just gave a knowing smile.\n\n" +
+                            oldMan.getName() + ": You'll find out in good time...");
+                case 4:
+                    return ("");
             }
 
             return "";

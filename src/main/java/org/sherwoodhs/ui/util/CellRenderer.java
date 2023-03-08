@@ -9,7 +9,6 @@ import java.awt.*;
 public class CellRenderer implements ListCellRenderer {
     private JPanel panel;
     private JTextArea textArea;
-
     public CellRenderer() {
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
