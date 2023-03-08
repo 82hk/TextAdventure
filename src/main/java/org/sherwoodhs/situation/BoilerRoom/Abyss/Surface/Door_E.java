@@ -56,9 +56,10 @@ public class Door_E implements Situation {
                 );
                 break;
             case "Open the door":
+                World.changeStateI("Renown", -1);
                 doorIsOpen = true;
                 AdvGame.clearFrameWithoutSpacing(
-                        "You open the door, and it creaks. You can see only darkness inside.",
+                        "You open the door, and it creaks. You can see only darkness inside. You can sense that you're losing something by wasting your time here...",
                         new String[]{"Close the door", "Enter", "Return to the outcropping"}
                 );
                 break;

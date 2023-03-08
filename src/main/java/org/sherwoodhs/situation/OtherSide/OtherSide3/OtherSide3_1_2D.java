@@ -31,7 +31,7 @@ public class OtherSide3_1_2D implements Situation {
 
     @Override
     public String getDescription() {
-        return ("");
+        return (player.getName() + ": I can't hand this over to you right now. ");
     }
 
     @Override

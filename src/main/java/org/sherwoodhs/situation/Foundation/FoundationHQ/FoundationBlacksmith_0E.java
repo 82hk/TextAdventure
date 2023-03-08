@@ -21,7 +21,7 @@ public class FoundationBlacksmith_0E implements Situation {
                 "He's wearing a leather apron and gloves working over a hot forge." +
                 "The heat from the forge causes sweat to glisten on his forehead and arms, and his face is smudged with soot." +
                 "As you make your way closer he turns to you and says" +
-                "Blacksmith: You looking for a job to do?";
+                "Blacksmith: Are you the guy sent over to help?";
     }
 
     @Override

@@ -117,7 +117,7 @@ public class Tent_E implements Situation {
                 break;
             case "Read the third page":
                 AdvGame.updateFrame(
-                        "There are some scribbles on the page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
+                        "There are some scribbles on the third page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
                         new String[]{"Read the first page", "Read the second page", "Read the fourth page", "Stop reading"}
                 );
                 break;
