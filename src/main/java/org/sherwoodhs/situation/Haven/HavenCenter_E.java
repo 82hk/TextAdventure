@@ -2,14 +2,12 @@ package org.sherwoodhs.situation.Haven;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
-import org.sherwoodhs.situation.Clearwater.Wharehouse.ClearwaterWarehouseEntrance_0D;
-import org.sherwoodhs.situation.FoundationHQ.FoundationHub_0E;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_0D;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_1D;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_2I;
-import org.sherwoodhs.situation.FoundationIntroduction.FoundationIntro_3D;
+import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_0D;
+import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_1D;
+import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_2I;
+import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_3D;
 import org.sherwoodhs.situation.HavenHubHallway;
-import org.sherwoodhs.situation.Separatist.SeparatistHub;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -18,6 +16,7 @@ public class HavenCenter_E implements Situation {
     private static Situation situation = new HavenCenter_E();
     private static boolean firstTime = true;
 
+    public static boolean oldManGone = false;
     @Override
     public String getTitle() {
         if (firstTime) {
@@ -53,16 +52,18 @@ public class HavenCenter_E implements Situation {
             firstTime = false;
             return options;
         } else {
+            String[] options = new String[]{"Foundation Booth","Clearwater Kiosk", "Separatist Hub", "", "Talk to an Old Man"};
             if(FoundationIntro_1D.isUnlocked()) {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse", "Abandoned displays"};
+                options[3] = "Abandoned displays";
                 return options;
             } if(FoundationIntro_3D.lock()) {
-                String[] options = {"Foundation HQ", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse"};
-                return options;
-            } else {
-                String[] options = {"Foundation Booth", "Clearwater Kiosk", "Separatist Hub", "Clearwater Warehouse"};
+                options[0] = "Foundation HQ";
                 return options;
             }
+            if (oldManGone){
+                options[4] = "";
+            }
+            return options;
         }
     }
 
@@ -70,28 +71,24 @@ public class HavenCenter_E implements Situation {
     public void perform(String option) {
         switch (option){
             case "Foundation Booth":
-                AdvGame.setSituation(FoundationIntro_0D.getInstance());
-                break;
             case "Approach the booth":
                 AdvGame.setSituation(FoundationIntro_0D.getInstance());
                 break;
             case "Clearwater Kiosk":
-                AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
-                break;
             case "Approach the kiosk":
                 AdvGame.setSituation(ClearwaterKiosk1_0E.getInstance());
                 break;
             case "Separatist Hub":
                 AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
-            case "Clearwater Warehouse":
-                AdvGame.setSituation(ClearwaterWarehouseEntrance_0D.getInstance());
-                break;
             case "Abandoned displays":
                 AdvGame.setSituation(FoundationIntro_2I.getInstance());
                 break;
             case "Foundation HQ":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+            case "Talk to an Old Man":
+                AdvGame.setSituation(OldMan_D.getInstance());
                 break;
         }
     }

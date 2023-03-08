@@ -40,22 +40,14 @@ public class WorkPlace implements Situation {
 
             // MAIN BRANCH
             case "Go to Kitchen":
-                if (firstTime) {
-                    //base entrance situation
-                    AdvGame.updateFrame("Work for money",
-                            new String[]{"temp","temp"});
-                } else {
-                    // doesn't matter
-                    AdvGame.updateFrame("temp",
-                            new String[]{"temp","temp"});
-                }
+                AdvGame.setSituation(Kitchen.getInstance());
                 break;
 
                 
             // EXIT POINT
             case "Leave":
                 firstTime = false;
-                AdvGame.setSituation(HavenCenter_E.getInstance());
+                AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }
     }

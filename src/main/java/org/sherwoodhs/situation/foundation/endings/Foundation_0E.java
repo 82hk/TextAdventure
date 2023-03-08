@@ -1,18 +1,16 @@
-package org.sherwoodhs.situation.FoundationEnds;
+package org.sherwoodhs.situation.foundation.endings;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.World;
-import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
-import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
-import org.sherwoodhs.situation.Entrance.EntranceSituation_1E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
-import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 public class Foundation_0E implements Situation {
     private static Situation situation = new Foundation_0E();
 
+    private Foundation_0E () {
+        
+    }
     @Override
     public String getTitle() {
         return "Guard duty";

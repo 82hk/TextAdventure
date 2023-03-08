@@ -7,6 +7,7 @@ import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.quest.OtherSideQuest;
+import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.OtherSide.OtherSide1.OtherSide1_0D;
 import org.sherwoodhs.situation.OtherSide.OtherSide1.OtherSide1_3D;
 import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSide3_0D;
@@ -63,7 +64,7 @@ public class HiddenAlcove1_0E implements Situation {
                 AdvGame.setSituation(OtherSide1_0D.getInstance());
                 break;
             case "Leave" :
-                //AdvGame.setSituation(Location.getInstance());
+                AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
             case "Explore" :
                 AdvGame.setSituation(HiddenAlcove1_1_1E.getInstance());

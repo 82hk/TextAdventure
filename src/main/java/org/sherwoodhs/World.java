@@ -1,5 +1,7 @@
 package org.sherwoodhs;
 
+import org.sherwoodhs.ui.BarPanel;
+
 import java.util.HashMap;
 
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
@@ -28,13 +30,14 @@ public class World {
     }
 
     //Gets a specific value based on state String key
-    public int getState(String key){
+    public static int getState(String key){
         return(states.get(key));
     }
 
     //Changes a specific state in a specific way (using an int) depending on the state.
     public static void changeStateI(String key, int value){
         int changed = states.get(key) + value; // Default just adds upon a value;
+        int temp;
         switch (key){
             case "Time" : //Adds value to current Time then undergoes modulus before updating
                 if (changed / 24 > 0)/* Integer Division to check if day is over */{
@@ -49,8 +52,17 @@ public class World {
                 }
                 break;
             case "Foundation Rep":
+                temp = getState("Foundation Rep");
+                temp += value;
+                BarPanel.barPanel.getFoundationBar().setValue(temp);
             case "Haven Rep":
+                temp = getState("Haven Rep");
+                temp += value;
+                BarPanel.barPanel.getHavenBar().setValue(temp);
             case "Clearwater Rep":
+                temp = getState("Clearwater Rep");
+                temp += value;
+                BarPanel.barPanel.getClearWaterBar().setValue(temp);
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 //Checks for out of limits values
                 if (changed > 100) /* Current Max of 100 */ {

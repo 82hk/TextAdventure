@@ -30,7 +30,7 @@ public class Kitchen implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Go to Kitchen", "Talk to lady","Leave"}; // limit 6
+        String[] options = {"Talk to lady","Leave"}; // limit 6
         return options;
     }
 
@@ -39,28 +39,20 @@ public class Kitchen implements Situation {
         switch (option){
 
             // MAIN BRANCH
-            case "Go to Kitchen":
-                if (firstTime) {
-                    //base entrance situation
-                    AdvGame.updateFrame("Work for money",
-                            new String[]{"temp","temp"});
-                } else {
-                    // doesn't matter
-                    AdvGame.updateFrame("temp",
-                            new String[]{"temp","temp"});
-                }
-                break;
 
-            case "Talk to Lady":
+            case "Talk to lady":
                 if (firstTime) {
-                    
-                }
+                    AdvGame.updateFrame("The person introduces herself as the Kitchen Lady. She tells you that they are in rush" +
+                            "hour. She says \" we need someone to work part time and get payed 2 money per order.\"",
+                            new String[]{"Leave"});
+                } break;
+
 
                 
             // EXIT POINT
             case "Leave":
                 firstTime = false;
-                AdvGame.setSituation(HavenCenter_E.getInstance());
+                AdvGame.setSituation(WorkPlace.getInstance());
                 break;
         }
     }
