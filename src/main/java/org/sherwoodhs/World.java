@@ -74,10 +74,18 @@ public class World {
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 //Checks for out of limits values
                 if (changed > 100) /* Current Max of 100 */ {
+                    value = Math.abs(changed-100);
                     changed = 100;
                 } else if (changed < -100) /* Current Min of -100 */{
+                    value = - Math.abs(changed-100);
                     changed = -100;
                 }
+                states.replace("Foundation Rep", states.get("Foundation Rep") + value);
+                states.replace("Clearwater Rep", states.get("Clearwater Rep") + value);
+                states.replace("Haven Rep", states.get("Haven Rep") + value);
+                BarPanel.barPanel.getFoundationBar().setValue(states.get("Foundation Rep"));
+                BarPanel.barPanel.getClearWaterBar().setValue(states.get("Clearwater Rep"));
+                BarPanel.barPanel.getHavenBar().setValue(states.get("Haven Rep"));
                 break;
 
         }
