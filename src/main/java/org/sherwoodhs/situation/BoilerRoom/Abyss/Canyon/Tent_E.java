@@ -71,7 +71,7 @@ public class Tent_E implements Situation {
                         "You crack open the journal, and you notice that the paper is stiff. " +
                                 "It must have been a while since anyone has written anything in it. " +
                                 "There are only a couple of pages in the journal that have writing on it, " +
-                                "which are the first three pages.",
+                                "which are the first four pages.",
                         new String[]{"Read the first page", "Read the second page", "Read the third page", "Read the fourth page"}
                 );
                 break;
