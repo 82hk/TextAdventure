@@ -21,9 +21,9 @@ public class BulletBuildingQuest implements Quest {
     }
 
     public static void advanceQuest(){
-        AdvGame.removeQuest(GuardQuest.getInstance());
+        AdvGame.removeQuest(BulletBuildingQuest.getInstance());
         tracker++;
-        AdvGame.addQuest(GuardQuest.getInstance());
+        AdvGame.addQuest(BulletBuildingQuest.getInstance());
         if(tracker == 13){ // should this be '>='?
             completed = true;
         }
@@ -58,7 +58,7 @@ public class BulletBuildingQuest implements Quest {
     public void reset() {
         completed = false;
         tracker = 0;
-        description = "Guard Foundation interests and \"secure\" The Haven.";
+        description = "Make bullets for the Foundation.";
     }
 
 

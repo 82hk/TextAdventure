@@ -50,4 +50,8 @@ public class QuestPanel extends JPanel {
         }
     }
 
+    public void clearQuestList(){
+        questListModel.clear();
+    }
+
 }

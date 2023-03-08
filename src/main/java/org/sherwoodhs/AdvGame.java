@@ -10,7 +10,6 @@ import org.sherwoodhs.quest.Separatist.*;
 import org.sherwoodhs.situation.OtherSide.OtherSideEndX1;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
-import org.sherwoodhs.ui.QuestPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -63,31 +62,14 @@ public class AdvGame {
         GuardQuest.getInstance().reset(); // Foundation
         ScrapMetalCollection.getInstance().reset();
         ScrapMetalRepeatable.getInstance().reset();
+        BulletBuildingQuest.getInstance().reset();
 
         OtherSideQuest.getInstance().reset(); // Misc
         StolenFurnQuest.getInstance().reset();
 
         SparklingWaterQuest.getInstance().reset(); // Separatist
 
-
-        // remove quests from quest panel
-        clearQuestPanel(BottleFetchQuest.getInstance()); // Clearwater
-
-        clearQuestPanel(GuardQuest.getInstance()); // Foundation
-        clearQuestPanel(ScrapMetalCollection.getInstance());
-        clearQuestPanel(ScrapMetalRepeatable.getInstance());
-
-        clearQuestPanel(OtherSideQuest.getInstance()); // Misc
-        clearQuestPanel(StolenFurnQuest.getInstance());
-
-        clearQuestPanel(SparklingWaterQuest.getInstance()); // Separatist
-
-    }
-
-    public void clearQuestPanel(Quest q) {
-        if (questPanel.containsQuest(q)) {
-            questPanel.removeQuest(q);
-        }
+        questPanel.clearQuestList();
     }
 
     public static AdvGame getInstance() {
