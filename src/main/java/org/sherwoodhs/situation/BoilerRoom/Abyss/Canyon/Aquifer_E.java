@@ -23,7 +23,8 @@ public class Aquifer_E implements Situation {
     public String getDescription() {
         if (cameBack) {
             cameBack = false;
-            return "You come back to the ash-contaminated lake. You dip your fingers in experimentally, and when you take them out, they're covered in wet gray dust.";
+            return "You come back to the ash-contaminated lake. You dip your fingers in experimentally, and when you take them out, they're covered in wet gray dust.\n" +
+                    "There's a rope ladder in front of you that you can climb up to get back to the copper-ore cave.";
         }
         if (wentBack) {
             wentBack = false;
@@ -101,7 +102,7 @@ public class Aquifer_E implements Situation {
                 break;
             case "Inspect the crevasse":
                 cameBack = true;
-                AdvGame.setSituation(Crevasse_E.getInstance());
+                AdvGame.setSituation(Crevasse_0E.getInstance());
                 break;
             case "Go back":
                 wentBack = true;
