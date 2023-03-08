@@ -60,7 +60,8 @@ public class Tent_E implements Situation {
                 AdvGame.updateFrame(
                     "You try to pick up one of the wrappers, but they crumble into fine dust as you do so.",
                     new String[]{"Continue"}
-                    );
+                );
+                break;
             case "Read the journal":
                 AdvGame.clearFrameWithoutSpacing(
                         "You crack open the journal, and you notice that the paper is stiff. " +
