@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Mines;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Surface.Outcropping_E;
 import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
 import org.sherwoodhs.situation.SitType;
@@ -11,6 +12,9 @@ public class SmallCavern_1E implements Situation {
     private boolean cameReverse = false;
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Abyss Mines";
+        }
         return "???";
     }
     @Override

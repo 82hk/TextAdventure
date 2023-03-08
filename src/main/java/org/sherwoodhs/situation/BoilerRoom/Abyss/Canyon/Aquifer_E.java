@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Mines.CopperCave_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -13,6 +14,9 @@ public class Aquifer_E implements Situation {
     private static Situation situation = new Aquifer_E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Canyon of Ashes";
+        }
         return "???";
     }
     @Override
