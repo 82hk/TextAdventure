@@ -27,6 +27,7 @@ public class FoundationQuestTent_0E implements Situation {
     public static boolean isSraOperation() {return sraOperation;}
 
     public static void setScrapQuest(boolean scrapQuest) {FoundationQuestTent_0E.scrapQuest = scrapQuest;}
+    public static void setGuardQuest(boolean guardQuest) {FoundationQuestTent_0E.guardQuest = guardQuest;}
 
     @Override
     public String getTitle() {

@@ -22,7 +22,7 @@ public class FoundationArmory_0E implements Situation {
 
     @Override
     public String getDescription() {
-        return "You see scrap metal and makeshift kilns that seem to have been overused";
+        return "You see scrap metal and makeshift kilns that seem to have been overused.";
     }
 
     @Override

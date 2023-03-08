@@ -6,6 +6,7 @@ import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQues
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.foundation.quests.GuardDuty;
 import org.sherwoodhs.situation.foundation.quests.ScrapCollection;
 
 public class FoundationHub_0E implements Situation {
@@ -105,7 +106,8 @@ public class FoundationHub_0E implements Situation {
                 FoundationQuestTent_0E.setScrapQuest(false);
                 break;
             case "Go on guard duty":
-                //AdvGame.setSituation();
+                AdvGame.setSituation(GuardDuty.getInstance());
+                FoundationQuestTent_0E.setGuardQuest(false);
                 break;
             case "Deliver message":
                 //AdvGame.setSituation();

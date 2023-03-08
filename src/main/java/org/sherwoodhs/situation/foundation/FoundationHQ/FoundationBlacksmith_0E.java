@@ -5,7 +5,6 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 
 public class FoundationBlacksmith_0E implements Situation {
     private static Situation situation = new FoundationBlacksmith_0E();
@@ -21,7 +20,7 @@ public class FoundationBlacksmith_0E implements Situation {
                 "the sound of hammer striking metal echoing through the tent" +
                 "He's wearing a leather apron and gloves working over a hot forge." +
                 "The heat from the forge causes sweat to glisten on his forehead and arms, and his face is smudged with soot." +
-                "As you make your way closer he turnes to you and says" +
+                "As you make your way closer he turns to you and says" +
                 "Blacksmith: You looking for a job to do?";
     }
 
