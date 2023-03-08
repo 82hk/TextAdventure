@@ -1,24 +1,25 @@
-package org.sherwoodhs.quest;
+package org.sherwoodhs.quest.Misc;
 
-public class BottleFetchQuest implements Quest {
-    private static Quest quest = new BottleFetchQuest();
+import org.sherwoodhs.quest.Quest;
 
+public class StolenFurnQuest implements Quest {
+
+    private static Quest quest = new StolenFurnQuest();
     private String description;
-    private boolean status;
+    private boolean completed;
 
-    public BottleFetchQuest() {
-        description = "The man at the Clearwater kiosk told you to return with 10 plastic bottles in exchange for a water card.";
-        status = false;
+    public StolenFurnQuest() {
+        completed = false;
     }
 
     public void create()
     {
-        //
+        //QuestPanel.
     }
 
     @Override
     public String getName() {
-        return "Plastic Bottles";
+        return "Furniture retrieval";
     }
 
     @Override
@@ -33,12 +34,18 @@ public class BottleFetchQuest implements Quest {
 
     @Override
     public boolean isCompleted() {
-        return status;
+        return completed;
     }
 
     @Override
     public void complete() {
-        status = true;
+        completed = true;
+    }
+
+    @Override
+    public void reset() {
+        completed = false;
+        description = "Get the furniture back";
     }
 
     public static Quest getInstance(){

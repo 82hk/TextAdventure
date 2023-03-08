@@ -5,9 +5,7 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.quest.OtherSideQuest;
 import org.sherwoodhs.situation.HavenHubHallway;
-import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

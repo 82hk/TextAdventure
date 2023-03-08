@@ -3,9 +3,14 @@ package org.sherwoodhs;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 
 import org.sherwoodhs.quest.Quest;
+import org.sherwoodhs.quest.Clearwater.*;
+import org.sherwoodhs.quest.Foundation.*;
+import org.sherwoodhs.quest.Misc.*;
+import org.sherwoodhs.quest.Separatist.*;
 import org.sherwoodhs.situation.OtherSide.OtherSideEndX1;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
+import org.sherwoodhs.ui.QuestPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -40,6 +45,49 @@ public class AdvGame {
         EventQueue.invokeLater(() -> {
             FRAME.setVisible(true);
         });
+    }
+
+    public void restartGame() {
+        setSituation(EntranceSituation_0E.getInstance());
+        World.resetStates();
+        resetQuestProgression();
+
+    }
+
+    private void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
+
+
+        // reset quest progression
+        BottleFetchQuest.getInstance().reset(); // Clearwater
+
+        GuardQuest.getInstance().reset(); // Foundation
+        ScrapMetalCollection.getInstance().reset();
+        ScrapMetalRepeatable.getInstance().reset();
+
+        OtherSideQuest.getInstance().reset(); // Misc
+        StolenFurnQuest.getInstance().reset();
+
+        SparklingWaterQuest.getInstance().reset(); // Separatist
+
+
+        // remove quests from quest panel
+        clearQuestPanel(BottleFetchQuest.getInstance()); // Clearwater
+
+        clearQuestPanel(GuardQuest.getInstance()); // Foundation
+        clearQuestPanel(ScrapMetalCollection.getInstance());
+        clearQuestPanel(ScrapMetalRepeatable.getInstance());
+
+        clearQuestPanel(OtherSideQuest.getInstance()); // Misc
+        clearQuestPanel(StolenFurnQuest.getInstance());
+
+        clearQuestPanel(SparklingWaterQuest.getInstance()); // Separatist
+
+    }
+
+    private void clearQuestPanel(Quest q) {
+        if (questPanel.containsQuest(q)) {
+            questPanel.removeQuest(q);
+        }
     }
 
     public static AdvGame getInstance() {

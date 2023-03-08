@@ -2,11 +2,10 @@ package org.sherwoodhs.situation.HiddenAlcove;
 
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.World;
 import org.sherwoodhs.location.HiddenAlcove;
 import org.sherwoodhs.location.Location;
 import org.sherwoodhs.npc.Alchemist;
-import org.sherwoodhs.quest.OtherSideQuest;
+import org.sherwoodhs.quest.Misc.OtherSideQuest;
 import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.OtherSide.OtherSide1.OtherSide1_0D;
 import org.sherwoodhs.situation.OtherSide.OtherSide1.OtherSide1_3D;

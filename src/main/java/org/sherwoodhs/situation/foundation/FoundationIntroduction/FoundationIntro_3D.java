@@ -3,7 +3,7 @@ package org.sherwoodhs.situation.foundation.FoundationIntroduction;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
+import org.sherwoodhs.quest.Foundation.ScrapMetalCollection;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;

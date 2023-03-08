@@ -5,13 +5,9 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.quest.OtherSideQuest;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
-import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_1_1E;
 import org.sherwoodhs.situation.Separatist.SeparatistHub;
-import org.sherwoodhs.situation.SitType;
-import org.sherwoodhs.situation.Situation;
 
 /*
    This is a hallway between the Hall and the Haven Center.

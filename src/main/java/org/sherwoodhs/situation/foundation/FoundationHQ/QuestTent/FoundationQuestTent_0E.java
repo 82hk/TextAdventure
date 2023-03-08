@@ -3,11 +3,10 @@ package org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.quest.foundation.ScrapMetalRepeatable;
+import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.ui.QuestPanel;
 
 public class FoundationQuestTent_0E implements Situation {
     private static Situation situation = new FoundationQuestTent_0E();

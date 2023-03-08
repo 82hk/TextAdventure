@@ -12,4 +12,6 @@ public interface Quest {
 
     public void complete();
 
+    public void reset();
+
 }

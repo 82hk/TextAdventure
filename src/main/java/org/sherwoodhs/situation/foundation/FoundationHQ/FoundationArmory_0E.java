@@ -2,10 +2,9 @@ package org.sherwoodhs.situation.foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.quest.foundation.ScrapMetalRepeatable;
+import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.foundation.quests.ScrapCollection;
 import org.sherwoodhs.ui.QuestPanel;
 

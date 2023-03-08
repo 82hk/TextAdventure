@@ -1,4 +1,4 @@
-package org.sherwoodhs.quest.foundation;
+package org.sherwoodhs.quest.Foundation;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Quest;
@@ -8,7 +8,7 @@ public class GuardQuest implements Quest {
 
     private static int tracker = 0;
     String description;
-    private static boolean status = false;
+    private static boolean completed = false;
 
 
     @Override
@@ -24,8 +24,8 @@ public class GuardQuest implements Quest {
         AdvGame.removeQuest(GuardQuest.getInstance());
         tracker++;
         AdvGame.addQuest(GuardQuest.getInstance());
-        if(tracker == 6){
-            status = true;
+        if(tracker == 6){ // should this be '>='?
+            completed = true;
         }
     }
 
@@ -42,7 +42,7 @@ public class GuardQuest implements Quest {
 
     @Override
     public boolean isCompleted() {
-        if(status){
+        if(completed){
             return true;
         } else{
             return false;
@@ -51,9 +51,15 @@ public class GuardQuest implements Quest {
 
     @Override
     public void complete() {
-        status = true;
+        completed = true;
     }
 
+    @Override
+    public void reset() {
+        completed = false;
+        tracker = 0;
+        description = "Guard Foundation interests and \"secure\" The Haven.";
+    }
 
 
     public static Quest getInstance(){

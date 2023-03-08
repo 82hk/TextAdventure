@@ -43,6 +43,12 @@ public class SparklingWaterQuest implements Quest {
         status = true;
     }
 
+    @Override
+    public void reset() {
+        status = false;
+        description = "The Chief's daughter is very sick and requires 3 cans of sparkling water to cure her sickness.";
+    }
+
     public static Quest getInstance(){
         return quest;
     }
