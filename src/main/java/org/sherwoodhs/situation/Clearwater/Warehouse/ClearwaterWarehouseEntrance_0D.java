@@ -56,8 +56,8 @@ public class ClearwaterWarehouseEntrance_0D implements Situation {
                 break;
             case "Enter ":
                 AdvGame.updateFrame("You step across the threshold and into the passageway. It’s poorly lit and has a greasy, mechanical look." +
-                        "\n\nThere is also a gray utility door off to your right.",
-                        new String[]{"Continue", "Go through door"});
+                        "\n\nThere is a gray utility door off to your right with a small sign. The sign states, with red text, \"Boiler Room\".",
+                        new String[]{"Continue", "Go into the boiler room"});
                 break;
             case "Go through door":
                 AdvGame.setSituation(BoilerRoom_0E.getInstance());
