@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Surface;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -10,6 +11,9 @@ public class Outcropping_E implements Situation {
     private static Situation situation = new Outcropping_E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "The Surface";
+        }
         return "???";
     }
     @Override

@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.Aquifer_E;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.Foundation.endings.Foundation_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
@@ -29,7 +30,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven", "Test - Boiler Room"};
+        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven", "Test - Boiler Room", "Test - Abyss"};
         return options;
     }
 
@@ -78,6 +79,9 @@ public class EntranceSituation_0E implements Situation {
                 break;
             case "Test - Foundation endings":
                 AdvGame.setSituation(Foundation_0E.getInstance());
+                break;
+            case "Test - Abyss":
+                AdvGame.setSituation(Aquifer_E.getInstance());
                 break;
 
         }

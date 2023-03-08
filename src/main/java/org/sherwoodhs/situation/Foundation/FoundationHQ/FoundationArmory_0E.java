@@ -14,6 +14,7 @@ public class FoundationArmory_0E implements Situation {
     private static Situation situation = new FoundationArmory_0E();
 
 
+
     @Override
     public String getTitle() {
         return "The Armory";

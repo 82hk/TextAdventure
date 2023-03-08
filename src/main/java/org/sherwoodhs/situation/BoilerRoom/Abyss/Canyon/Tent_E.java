@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -12,6 +13,9 @@ public class Tent_E implements Situation {
     private boolean inspectedWrappers = false;
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Canyon of Ashes";
+        }
         return "???";
     }
     @Override
@@ -30,7 +34,7 @@ public class Tent_E implements Situation {
                 "held up by a rotting wooden pole, and locked into place by a " +
                 "couple of metal bolts hammered into the rock. " +
                 "It must be more porous than it looks. " +
-                "It doesn’t look like anyone has lived in the tent for a while…\n" +
+                "It doesn’t look like anyone has lived in the tent for a while…\n\n" +
                 "You duck inside, and you find one leather-bound journal inside. " +
                 "There doesn’t seem to be anything else notable in the tent, " +
                 "save for some ash-dusted wrappers on the ground.";
@@ -86,12 +90,18 @@ public class Tent_E implements Situation {
                 );
                 break;
             case "Read the second page":
+                World.discoveredAbyssInfo = true;
                 AdvGame.clearFrameWithoutSpacing(
-                        "I’ve learned many things from my mini excursions into the ruins of Praffit. They’ve developed their own terminology for what this place is. I’ll just write this down for future reference:\n\n" +
+                        "I’ve learned many things from my mini excursions into the ruins of Praffit. They’ve developed their own terminology for what this place is. I’ll just write this down for future reference:\n" +
                                 "This massive cave system is the “abyss”. It is essentially one massive pit that is surrounded by smaller cave systems… and as far as I know, stretches down to the bottom of the earth.\n" +
                                 "They have designated distinct areas of the abyss as “layers”. Seemingly, the inhabitants of the settlement have discovered four distinct layers. \n" +
-                                "“They” is referring to the inhabitants of Praffit.\n\n" +
-                                "The topmost layer is a forest, a forest that is both upside down and the right way up. It is covered with abandoned returns, likely from this IKEA. It seems that the inhabitants of Praffit went up often to get lumber, fruits, and vegetables, until they descended farther into the abyss.\n\n" +
+                                "“They” is referring to the inhabitants of Praffit.",
+                        new String[]{"Continue reading the second page"}
+                );
+                break;
+            case "Continue reading the second page":
+                AdvGame.clearFrameWithoutSpacing(
+                        "The topmost layer is a forest, a forest that is both upside down and the right way up. It is covered with abandoned returns, likely from this IKEA. It seems that the inhabitants of Praffit went up often to get lumber, fruits, and vegetables, until they descended farther into the abyss.\n\n" +
                                 "The next layer was known as “the surface”. I entered this layer by swimming through an underground river, and surfacing in a small lake… however there may be more entrances. I didn’t check. The surface is made up of light blue rock, and surrounded by massive sharp ridges and small lakes. " +
                                 "The entrance to the abyss (at least, the massive pit), is located on this layer.\n\n" +
                                 "As deemed the “Abyss Mines” in the past, this next layer is mostly the product of human intervention. However, the stone in this area does become much darker than the stone found on the surface. There is an abundance of a mysterious copper-like ore in this area, " +
@@ -107,11 +117,12 @@ public class Tent_E implements Situation {
                 break;
             case "Read the third page":
                 AdvGame.updateFrame(
-                        "There are some scribbles on the page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
+                        "There are some scribbles on the third page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
                         new String[]{"Read the first page", "Read the second page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the fourth page":
+                World.discoveredAbyssInfo = true;
                 AdvGame.updateFrame(
                         "On the fourth page, you find a magnificent hand-drawn map of the abyss. The map looks shakily drawn, like it's been copied from something else... It's basically vertical, and massive.\n\n" + 
                         "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n" +
