@@ -42,7 +42,7 @@ public class EntranceSituation_1E implements Situation {
                 break;
             case "Keep going":
                 AdvGame.updateFrame("---\n\nYou press on, wandering aimlessly down more aisles through the labyrinthian twists and turns of the Ikea.\n\nEventually, you turn a corner to see a door on the far wall. It's a small gray utility door, quietly placed between two colorfully decorated couch displays.",
-                        new String[] {" Keep going ","Open the door"});
+                        new String[] {" Ignore and keep going ","Open the door"});
                 break;
             case "Open the door":
                 AdvGame.updateFrame("---\n\nYou step forward and cautiously try the doorknob.\n\nWith a rusty squeak, it turns.",
@@ -59,7 +59,7 @@ public class EntranceSituation_1E implements Situation {
                         new String[] {"Restart","Exit"});
                 break;
             case "Restart":
-                AdvGame.setSituation(EntranceSituation_0E.getInstance());
+                AdvGame.getInstance().restartGame();
                 break;
             case "Exit":
                 System.exit(0);

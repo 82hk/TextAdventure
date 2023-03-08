@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.foundation.FoundationIntroduction;
+package org.sherwoodhs.situation.Foundation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.NPC;

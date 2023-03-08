@@ -54,7 +54,7 @@ public class AdvGame {
 
     }
 
-    private void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
+    public void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
 
 
         // reset quest progression
@@ -84,7 +84,7 @@ public class AdvGame {
 
     }
 
-    private void clearQuestPanel(Quest q) {
+    public void clearQuestPanel(Quest q) {
         if (questPanel.containsQuest(q)) {
             questPanel.removeQuest(q);
         }
