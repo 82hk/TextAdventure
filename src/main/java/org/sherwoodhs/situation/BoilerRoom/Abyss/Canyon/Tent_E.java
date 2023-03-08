@@ -68,7 +68,7 @@ public class Tent_E implements Situation {
                                 "It must have been a while since anyone has written anything in it. " +
                                 "There are only a couple of pages in the journal that have writing on it, " +
                                 "which are the first three pages.",
-                        new String[]{"Read the first page", "Read the second page", "Read the third page"}
+                        new String[]{"Read the first page", "Read the second page", "Read the third page", "Read the fourth page"}
                 );
                 break;
             case "Read the first page":
@@ -82,7 +82,7 @@ public class Tent_E implements Situation {
                                 "The settlement was built with a hodge-podge of bricks the inhabitants must have built with the weak stone " +
                                 "found in this area… well, used to be built. " +
                                 "Most of the structures have now crumbled into dust at this point. ",
-                        new String[]{"Read the second page", "Read the third page", "Stop reading"}
+                        new String[]{"Read the second page", "Read the third page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the second page":
@@ -102,13 +102,24 @@ public class Tent_E implements Situation {
                                 "There must be more information down there.\n\n" +
                                 "On that note, I don’t know if there are still people alive in the depths… how could they get food or water if they were unable to ascend? " +
                                 "I assume whatever rations they had brought from the IKEA would have run out by then…",
-                        new String[]{"Read the first page", "Read the third page", "Stop reading"}
+                        new String[]{"Read the first page", "Read the third page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the third page":
                 AdvGame.updateFrame(
                         "There are some scribbles on the page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
-                        new String[]{"Read the first page", "Read the second page", "Stop reading"}
+                        new String[]{"Read the first page", "Read the second page", "Read the fourth page", "Stop reading"}
+                );
+                break;
+            case "Read the fourth page":
+                AdvGame.updateFrame(
+                        "On the fourth page, you find a magnificent hand-drawn map of the abyss. The map looks shakily drawn, like it's been copied from something else... It's basically vertical, and massive.\n\n" + 
+                        "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n" +
+                        "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n" +
+                        "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n" +
+                        "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n" +
+                        "There is a large pit with completely vertical walls stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
+                        new String[]{"Read the first page", "Read the second page", "Read the third page", "Stop reading"}
                 );
                 break;
             case "Stop reading":
