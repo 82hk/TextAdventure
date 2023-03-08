@@ -48,7 +48,7 @@ public class Tent_E implements Situation {
             return new String[]{"Return to the lake"};
         }
         if (inspectedWrappers) {
-            return new String[]{"Read the journal", "Return to the lake"}
+            return new String[]{"Read the journal", "Return to the lake"};
         }
         return new String[]{"Read the journal", "Inspect the wrappers", "Return to the lake"};
     }
