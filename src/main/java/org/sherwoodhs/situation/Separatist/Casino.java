@@ -1,9 +1,11 @@
 package org.sherwoodhs.situation.Separatist;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.InventoryPanel;
+
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 public class Casino implements Situation {
     
@@ -19,6 +21,7 @@ public class Casino implements Situation {
     @Override
     public String getDescription() {
         if (firstTime == true) {
+            //moneyTime();
             return "You have reached the Separatist Casino. This is where the supposed Sparkling Water" +
                     "is retrieved. Go play the Casino";
         } else {
@@ -61,4 +64,14 @@ public class Casino implements Situation {
         return situation;
     }
 
+    /*public static void moneyTime() {
+        inventoryPanel.addToInventory("Money (x1)");
+        for (int i = 1; i < 100; i++) {
+            if (inventoryPanel.containsItem("Money (x" + i + ")")) {
+                inventoryPanel.removeFromInventory("Money (x" + i + ")");
+                int g = i+1;
+                inventoryPanel.addToInventory("Money (x" + g + ")");
+            }
+        }
+    }*/
 }

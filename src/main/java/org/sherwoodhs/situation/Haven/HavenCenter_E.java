@@ -2,11 +2,11 @@ package org.sherwoodhs.situation.Haven;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_0E;
-import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
-import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_0D;
-import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_1D;
-import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_2I;
-import org.sherwoodhs.situation.foundation.FoundationIntroduction.FoundationIntro_3D;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.Foundation.FoundationIntroduction.FoundationIntro_0D;
+import org.sherwoodhs.situation.Foundation.FoundationIntroduction.FoundationIntro_1D;
+import org.sherwoodhs.situation.Foundation.FoundationIntroduction.FoundationIntro_2I;
+import org.sherwoodhs.situation.Foundation.FoundationIntroduction.FoundationIntro_3D;
 import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;

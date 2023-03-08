@@ -1,11 +1,13 @@
-package org.sherwoodhs.situation.foundation.FoundationHQ;
+package org.sherwoodhs.situation.Foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.Foundation.quests.GuardDuty;
+import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
 
 public class FoundationHub_0E implements Situation {
     private static Situation situation = new FoundationHub_0E();
@@ -36,20 +38,31 @@ public class FoundationHub_0E implements Situation {
 
     @Override
     public String[] getOptions() {
+        String[] options;
         if (firstTime) {
             firstTime = false;
-            String[] options = {"Sounds Good."};
-            return options;
+            options = new String[]{"Sounds Good."};
         } else {
-            String[] options = {"Go to armory tent", "Go to command tent", "Go to mess tent", "Go to quest tent", "Go back to The Haven"};
-            return options;
+            options = new String[]{"Go to armory tent", "Go to command tent", "Go to mess tent", "Go to quest tent", "Go back to The Haven", ""};
+            if(FoundationQuestTent_0E.isScrapQuest()){
+                options[5] = "Go on scrap quest";
+            }
+            if(FoundationQuestTent_0E.isGuardQuest()){
+                options[5] = "Go on guard duty";
+            }
+            if(FoundationQuestTent_0E.isMessageQuest()){
+                options[5] = "Deliver message";
+            }
         }
+        return options;
     }
+
 
     @Override
     public void perform(String option) {
         switch(option) {
             case "Go to armory tent":
+                AdvGame.setSituation(FoundationArmory_0E.getInstance());
                 break;
             case "Go back to The Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
@@ -85,6 +98,19 @@ public class FoundationHub_0E implements Situation {
                 break;
             case "Thanks for the tour.":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
+                break;
+
+        //QUESTS
+            case "Go on scrap quest":
+                AdvGame.setSituation(ScrapCollection.getInstance());
+                FoundationQuestTent_0E.setScrapQuest(false);
+                break;
+            case "Go on guard duty":
+                AdvGame.setSituation(GuardDuty.getInstance());
+                FoundationQuestTent_0E.setGuardQuest(false);
+                break;
+            case "Deliver message":
+                //AdvGame.setSituation();
                 break;
         }
     }

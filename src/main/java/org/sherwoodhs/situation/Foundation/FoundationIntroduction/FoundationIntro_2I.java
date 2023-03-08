@@ -1,8 +1,8 @@
-package org.sherwoodhs.situation.foundation.FoundationIntroduction;
+package org.sherwoodhs.situation.Foundation.FoundationIntroduction;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.quest.foundation.ScrapMetalCollection;
+import org.sherwoodhs.quest.Foundation.ScrapMetalCollection;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -48,15 +48,15 @@ public class FoundationIntro_2I implements Situation {
     public void perform(String option) {
         switch (option){
             case "Nap":
-                AdvGame.clearFrame("You feel tired and lay on one of the display beds, you doze off and awake not long after.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You feel tired and lay on one of the display beds, you doze off and awake not long after.", shuffledOptions());
                 World.changeStateI("Time", 1);
                 break;
             case "Procrastinate":
-                AdvGame.clearFrame("You decide to sit down and not do some work, it can wait.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You decide to sit down and not do some work, it can wait.", shuffledOptions());
                 World.changeStateI("Time", 1);
                 break;
             case "Get scrap metal":
-                AdvGame.clearFrame("You sit down and break up some of the furniture, you grab a decently sized metal part.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You sit down and break up some of the furniture, you grab a decently sized metal part.", shuffledOptions());
                 World.changeStateI("Time", 1);
 
                 ScrapMetalCollection.advanceQuest();
@@ -65,17 +65,17 @@ public class FoundationIntro_2I implements Situation {
                 }
                 break;
             case "Burn some time":
-                AdvGame.clearFrame("You pace back and fourth across the display room wondering about the secrets of the Ikea.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You pace back and fourth across the display room wondering about the secrets of the Ikea.", shuffledOptions());
                 World.changeStateI("Time", 1);
 
                 break;
             case "Fiddle about":
-                AdvGame.clearFrame("You sit down in a chair and twiddle your thumbs.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You sit down in a chair and twiddle your thumbs.", shuffledOptions());
                 World.changeStateI("Time", 1);
 
                 break;
             case "Goof off":
-                AdvGame.clearFrame("You jump on one of the display beds, and realize they arent that bouncy.", shuffledOptions());
+                AdvGame.clearFrameWithoutSpacing("You jump on one of the display beds, and realize they arent that bouncy.", shuffledOptions());
                 World.changeStateI("Time", 1);
 
                 break;

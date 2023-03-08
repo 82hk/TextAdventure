@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.foundation.endings;
+package org.sherwoodhs.situation.Foundation.endings;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;

@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import java.util.Random;
 
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
+
 public class SlotsMachine implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
@@ -19,7 +21,7 @@ public class SlotsMachine implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "Welcome to the Slot Machine! To win, you must get 3 sparkling waters in a row." +
                     "This is what the winning situation looks like. \n\n" +
                     "[S] [S] [S] \n\n" +
@@ -94,6 +96,7 @@ public class SlotsMachine implements Situation {
             if (!casinoWin) {
                 AdvGame.updateFrame("You won the fabled casino! You have been awarded 3 sparkling waters as a result. " +
                         "You may use it how you wish.", new String[]{"Leave"});
+                inventoryPanel.addToInventory("Sparkling Water (x3)");
             }
             casinoWin = true;
         } else {

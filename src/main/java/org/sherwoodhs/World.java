@@ -15,6 +15,11 @@ public class World {
     //Check if countdown is active
     public static boolean destructEnd = false;
     public static boolean alcoveAccessible = false;
+    /*
+    * "Boiler Room" side-quest
+    */
+    public static boolean discoveredAbyssInfo = false;
+        
     private World(){
         states.put("Time", 0); // Time of Day
         states.put("Day", 0); // # of Days spent in game
@@ -55,14 +60,17 @@ public class World {
                 temp = getState("Foundation Rep");
                 temp += value;
                 BarPanel.barPanel.getFoundationBar().setValue(temp);
+                break;
             case "Haven Rep":
                 temp = getState("Haven Rep");
                 temp += value;
                 BarPanel.barPanel.getHavenBar().setValue(temp);
+                break;
             case "Clearwater Rep":
                 temp = getState("Clearwater Rep");
                 temp += value;
                 BarPanel.barPanel.getClearWaterBar().setValue(temp);
+                break;
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 //Checks for out of limits values
                 if (changed > 100) /* Current Max of 100 */ {

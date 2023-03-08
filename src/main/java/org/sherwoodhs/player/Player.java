@@ -102,10 +102,19 @@ public class Player {
             fileWriter.write(name);
             fileWriter.close();
         } catch (IOException e) {
-            System.out.println("Something broke");
+            System.out.println("Something broke while saving.");
             e.printStackTrace();
         }
     }
+
+    /* private void resetSavedName() {
+        try {
+            savedName.delete();
+            setPlayerName();
+        } catch (Exception e) {
+            System.out.println("Something broke while resetting.");
+        }
+    } */
 
     //returns name inside text file
     public String readSavedName() {

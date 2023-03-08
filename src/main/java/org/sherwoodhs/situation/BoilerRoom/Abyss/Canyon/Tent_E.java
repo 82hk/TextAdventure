@@ -9,6 +9,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class Tent_E implements Situation {
     private static Situation situation = new Tent_E();
     boolean clickedContinue = false;
+    private boolean inspectedWrappers = false;
     @Override
     public String getTitle() {
         return "???";
@@ -40,24 +41,40 @@ public class Tent_E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        return new String[]{"Read the journal", "Return to the lake"};
+        if (inventoryPanel.containsItem("A small journal")) {
+            if (inspectedWrappers) {
+                return new String[]{"Inspect the wrappers", "Return to the lake"};
+            }
+            return new String[]{"Return to the lake"};
+        }
+        if (inspectedWrappers) {
+            return new String[]{"Read the journal", "Return to the lake"}
+        }
+        return new String[]{"Read the journal", "Inspect the wrappers", "Return to the lake"};
     }
     @Override
     public void perform(String option) {
         switch (option) {
+            case "Inspect the wrappers":
+                inspectedWrappers = true;
+                AdvGame.updateFrame(
+                    "You try to pick up one of the wrappers, but they crumble into fine dust as you do so.",
+                    new String[]{"Continue"}
+                );
+                break;
             case "Read the journal":
                 AdvGame.clearFrameWithoutSpacing(
                         "You crack open the journal, and you notice that the paper is stiff. " +
                                 "It must have been a while since anyone has written anything in it. " +
                                 "There are only a couple of pages in the journal that have writing on it, " +
                                 "which are the first three pages.",
-                        new String[]{"Read the first page", "Read the second page", "Read the third page"}
+                        new String[]{"Read the first page", "Read the second page", "Read the third page", "Read the fourth page"}
                 );
                 break;
             case "Read the first page":
                 AdvGame.clearFrameWithoutSpacing(
                         "I’ve found it. I’ve found what I’ve been searching for ten years. " +
-                                "There is indeed a secret settlement down in these caves. It was called Praffit. " +
+                                "There is indeed a secret settlement down in these caves... previously named Praffit.\n\n" +
                                 "After finding those hidden documents… reports of a sealed mine filled with mysterious ore… " +
                                 "discovering that there was some project that they were working on… I’ve done it.\n\n" +
                                 "Sadly, the remains of Praffit are now crumbling, making it difficult to truly explore what lies within it. " +
@@ -65,7 +82,7 @@ public class Tent_E implements Situation {
                                 "The settlement was built with a hodge-podge of bricks the inhabitants must have built with the weak stone " +
                                 "found in this area… well, used to be built. " +
                                 "Most of the structures have now crumbled into dust at this point. ",
-                        new String[]{"Read the second page", "Read the third page", "Stop reading"}
+                        new String[]{"Read the second page", "Read the third page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the second page":
@@ -80,18 +97,29 @@ public class Tent_E implements Situation {
                                 "As deemed the “Abyss Mines” in the past, this next layer is mostly the product of human intervention. However, the stone in this area does become much darker than the stone found on the surface. There is an abundance of a mysterious copper-like ore in this area, " +
                                 "which seemed to have been used for the secret project the inhabitants of the settlement were creating.\n\n" +
                                 "The layer where Praffit is located (and currently where I am) was known as the “Canyon of Ashes”, due to its abundance of volcanic rock formations, and ash. I believe that the settlement they built down here was meant to be temporary, and they moved onto what they stated was the “bottommost layer”.\n\n" +
-                                "The bottommost layer is still a mystery to me… it seems that they hosted excursions into the unknown but never created actual reports, like they were in a rush. " +
+                                "The bottommost layer is still a mystery to me… only accessible through a massive hole with completely vertical walls. It seems that they hosted excursions into the unknown but never created actual reports, like they were in a rush. " +
                                 "There seemed to be some kind of reaction from ascending from this layer as well, according to my analysis of the reports found in the abandoned settlement. Due to this, it seemed that the inhabitants of Praffit moved down to this layer and stayed there, including their project. " +
                                 "There must be more information down there.\n\n" +
                                 "On that note, I don’t know if there are still people alive in the depths… how could they get food or water if they were unable to ascend? " +
                                 "I assume whatever rations they had brought from the IKEA would have run out by then…",
-                        new String[]{"Read the first page", "Read the third page", "Stop reading"}
+                        new String[]{"Read the first page", "Read the third page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the third page":
                 AdvGame.updateFrame(
                         "There are some scribbles on the page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
-                        new String[]{"Read the first page", "Read the second page", "Stop reading"}
+                        new String[]{"Read the first page", "Read the second page", "Read the fourth page", "Stop reading"}
+                );
+                break;
+            case "Read the fourth page":
+                AdvGame.updateFrame(
+                        "On the fourth page, you find a magnificent hand-drawn map of the abyss. The map looks shakily drawn, like it's been copied from something else... It's basically vertical, and massive.\n\n" + 
+                        "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n" +
+                        "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n" +
+                        "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n" +
+                        "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n" +
+                        "There is a large pit with completely vertical walls stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
+                        new String[]{"Read the first page", "Read the second page", "Read the third page", "Stop reading"}
                 );
                 break;
             case "Stop reading":

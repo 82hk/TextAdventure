@@ -1,4 +1,4 @@
-package org.sherwoodhs.quest.foundation;
+package org.sherwoodhs.quest.Foundation;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Quest;
@@ -8,7 +8,7 @@ public class ScrapMetalCollection implements Quest {
 
     private static int tracker = 0;
     String description;
-    private static boolean status = false;
+    private static boolean completed = false;
 
 
     @Override
@@ -24,8 +24,8 @@ public class ScrapMetalCollection implements Quest {
         AdvGame.removeQuest(ScrapMetalCollection.getInstance());
         tracker++;
         AdvGame.addQuest(ScrapMetalCollection.getInstance());
-        if(tracker == 10){
-            status = true;
+        if(tracker == 10){ // >= ?
+            completed = true;
         }
     }
 
@@ -42,7 +42,7 @@ public class ScrapMetalCollection implements Quest {
 
     @Override
     public boolean isCompleted() {
-        if(status){
+        if(completed){
             return true;
         } else{
             return false;
@@ -51,9 +51,15 @@ public class ScrapMetalCollection implements Quest {
 
     @Override
     public void complete() {
-        status = true;
+        completed = true;
     }
 
+    @Override
+    public void reset() {
+        completed = false;
+        tracker = 0;
+        description = "Collect scrap metal for the Foundation";
+    }
 
 
     public static Quest getInstance(){
