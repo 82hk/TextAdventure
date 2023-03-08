@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Surface;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Forest.Clearing_E;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Mines.SmallCavern_0E;
 import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
@@ -13,6 +14,9 @@ public class LanternRope_E implements Situation {
     private static Situation situation = new LanternRope_E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "The Surface";
+        }
         return "???";
     }
     @Override

@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Mines;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -10,6 +11,9 @@ public class SmallCavern_2E implements Situation {
     private static Situation situation = new SmallCavern_2E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Abyss Mines";
+        }
         return "???";
     }
     @Override

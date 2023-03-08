@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -10,6 +11,9 @@ public class Crevasse_E implements Situation {
     private static Situation situation = new Crevasse_E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Canyon of Ashes";
+        }
         return "???";
     }
     @Override
@@ -38,7 +42,7 @@ public class Crevasse_E implements Situation {
         switch (option) {
             case "Inspect the tent behind you":
             case "Inspect the mound of fabric":
-                AdvGame.setSituation(SpiralRock_1E.getInstance());
+                AdvGame.setSituation(Tent_E.getInstance());
                 break;
             case "Cross the rope bridge":
                 break;

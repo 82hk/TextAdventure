@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.BoilerRoom.Abyss.Forest;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Surface.LanternRope_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -10,6 +11,9 @@ public class Clearing_E implements Situation {
     private static Situation situation = new Clearing_E();
     @Override
     public String getTitle() {
+        if (World.discoveredAbyssInfo) {
+            return "Forest of Returns";
+        }
         return "???";
     }
     @Override
@@ -44,6 +48,7 @@ public class Clearing_E implements Situation {
         firstTime = false;
         switch (option) {
             case "Move forward":
+                System.out.println("This place isn't available yet.");
                 break;
             case "Climb down the ladder":
                 AdvGame.setSituation(LanternRope_E.getInstance());
