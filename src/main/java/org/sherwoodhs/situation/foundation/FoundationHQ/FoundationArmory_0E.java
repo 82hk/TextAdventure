@@ -32,10 +32,13 @@ public class FoundationArmory_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to Blacksmith", "Go to quest tent", "Go back to HQ"};
-        return options;
-
-
+        if (QuestPanel.questPanel.containsQuest(ScrapMetalRepeatable.getInstance())) {
+            String[] options = {"Talk to Blacksmith", "Go back to HQ", "Complete quest"};
+            return options;
+        } else {
+            String[] options = {"Talk to Blacksmith", "Go back to HQ"};
+            return options;
+        }
     }
 
 
@@ -43,7 +46,7 @@ public class FoundationArmory_0E implements Situation {
     public void perform(String option) {
 
         switch(option){
-            case "Go back  to HQ":
+            case "Go back to HQ":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
                 break;
             case "Talk to Blacksmith":
