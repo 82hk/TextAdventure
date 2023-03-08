@@ -1,7 +1,7 @@
-package org.sherwoodhs.situation.Separatist;
+package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
+import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -13,7 +13,7 @@ public class Kitchen implements Situation {
 
     @Override
     public String getTitle() {
-        return "You are in the Ikea Kitchen";
+        return "You are in the Food Court Kitchen";
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Kitchen implements Situation {
         if (firstTime == true) {
             return "You walk into the kitchen and you see a lady.";
         } else {
-            return "You need money. Go find a job";
+            return "You should probably work part time for some money.";
         }
     }
 
@@ -44,11 +44,30 @@ public class Kitchen implements Situation {
                 if (firstTime) {
                     AdvGame.updateFrame("The person introduces herself as the Kitchen Lady. She tells you that they are in rush" +
                             "hour. She says \" we need someone to work part time and get payed 2 money per order.\"",
-                            new String[]{"Leave"});
+                            new String[]{"Go to Kitchen", "Leave"});
+                }
+                break;
+
+            case "Go to Kitchen":
+                if (firstTime) {
+                    AdvGame.updateFrame("You are in the kitchen as customers begin rolling into the food court. You hurriedly " +
+                                    "put on your apron and get to work.",
+                            new String[]{"Go to fryer", "Go to soda machine","Go to burger station","Back to Food Court"});
                 } break;
 
+            case "Go to fryer":
+                AdvGame.setSituation(Fryer.getInstance());
+                break;
 
-                
+            case "Go to soda machine":
+                AdvGame.setSituation(SodaMachine.getInstance());
+                break;
+
+            case "Go to burger station":
+                AdvGame.setSituation(BurgerStation.getInstance());
+                break;
+
+
             // EXIT POINT
             case "Leave":
                 firstTime = false;

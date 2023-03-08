@@ -1,27 +1,29 @@
-package org.sherwoodhs.situation.Separatist;
+package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Separatist.Kitchen.Kitchen;
+import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class WorkPlace implements Situation {
-    
+public class SodaMachine implements Situation {
+
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
     private static boolean firstTime = true;
-    private static Situation situation = new WorkPlace();
+    private static Situation situation = new SodaMachine();
 
     @Override
     public String getTitle() {
-        return "Food Court";
+        return "Burger Station";
     }
 
     @Override
     public String getDescription() {
         if (firstTime == true) {
-            return "You are in the Food Court. You wonder if you can get a job for some money...";
+            //update frame
+            //burger making thing
+            return "You are standing in front of the soda machine. Fill up cups with soda.";
         } else {
-            return "You need money. Go find a job";
+            return "Fill up cups with soda.";
         }
     }
 
@@ -30,7 +32,7 @@ public class WorkPlace implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Go to Kitchen", "Leave"}; // limit 6
+        String[] options = {"Back to Kitchen"}; // limit 6
         return options;
     }
 
@@ -39,16 +41,11 @@ public class WorkPlace implements Situation {
         switch (option){
 
             // MAIN BRANCH
-            case "Go to Kitchen":
+
+            // EXIT POINT
+            case "Back to Kitchen":
                 firstTime = false;
                 AdvGame.setSituation(Kitchen.getInstance());
-                break;
-
-                
-            // EXIT POINT
-            case "Leave":
-                firstTime = false;
-                AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }
     }
