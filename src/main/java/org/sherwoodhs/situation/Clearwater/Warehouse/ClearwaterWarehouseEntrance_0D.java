@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.Clearwater.Warehouse;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -54,8 +55,12 @@ public class ClearwaterWarehouseEntrance_0D implements Situation {
                         new String[]{"Enter ", "Leave"});
                 break;
             case "Enter ":
-                AdvGame.updateFrame("You step across the threshold and into the passageway. It’s poorly lit and has a greasy, mechanical look.",
-                        new String[]{"Continue", "[Hangil's room]"});
+                AdvGame.updateFrame("You step across the threshold and into the passageway. It’s poorly lit and has a greasy, mechanical look." +
+                        "\n\nThere is also a gray utility door off to your right.",
+                        new String[]{"Continue", "Go through door"});
+                break;
+            case "Go through door":
+                AdvGame.setSituation(BoilerRoom_0E.getInstance());
                 break;
             case "Continue":
                 AdvGame.setSituation(ClearwaterWarehouse_0D.getInstance());
