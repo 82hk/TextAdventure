@@ -9,6 +9,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class Tent_E implements Situation {
     private static Situation situation = new Tent_E();
     boolean clickedContinue = false;
+    private boolean inspectedWrappers = false;
     @Override
     public String getTitle() {
         return "???";
@@ -40,11 +41,26 @@ public class Tent_E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        return new String[]{"Read the journal", "Return to the lake"};
+        if (inventoryPanel.containsItem("A small journal")) {
+            if (inspectedWrappers) {
+                return new String[]{"Inspect the wrappers", "Return to the lake"};
+            }
+            return new String[]{"Return to the lake"};
+        }
+        if (inspectedWrappers) {
+            return new String[]{"Read the journal", "Return to the lake"}
+        }
+        return new String[]{"Read the journal", "Inspect the wrappers", "Return to the lake"};
     }
     @Override
     public void perform(String option) {
         switch (option) {
+            case "Inspect the wrappers":
+                inspectedWrappers = true;
+                AdvGame.updateFrame(
+                    "You try to pick up one of the wrappers, but they crumble into fine dust as you do so.",
+                    new String[]{"Continue"}
+                    );
             case "Read the journal":
                 AdvGame.clearFrameWithoutSpacing(
                         "You crack open the journal, and you notice that the paper is stiff. " +
@@ -57,7 +73,7 @@ public class Tent_E implements Situation {
             case "Read the first page":
                 AdvGame.clearFrameWithoutSpacing(
                         "I’ve found it. I’ve found what I’ve been searching for ten years. " +
-                                "There is indeed a secret settlement down in these caves. It was called Praffit. " +
+                                "There is indeed a secret settlement down in these caves... previously named Praffit.\n\n" +
                                 "After finding those hidden documents… reports of a sealed mine filled with mysterious ore… " +
                                 "discovering that there was some project that they were working on… I’ve done it.\n\n" +
                                 "Sadly, the remains of Praffit are now crumbling, making it difficult to truly explore what lies within it. " +
