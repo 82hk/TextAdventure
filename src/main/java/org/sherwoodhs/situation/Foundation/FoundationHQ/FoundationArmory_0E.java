@@ -33,7 +33,7 @@ public class FoundationArmory_0E implements Situation {
     @Override
     public String[] getOptions() {
         if (QuestPanel.questPanel.containsQuest(ScrapMetalRepeatable.getInstance())) {
-            String[] options = {"Talk to Blacksmith", "Go back to HQ", "Complete quest"};
+            String[] options = {"Talk to Blacksmith", "Go back to HQ", "Complete Scrap quest"};
             return options;
         } else {
             String[] options = {"Talk to Blacksmith", "Go back to HQ"};
@@ -52,7 +52,7 @@ public class FoundationArmory_0E implements Situation {
             case "Talk to Blacksmith":
                 AdvGame.setSituation(FoundationBlacksmith_0E.getInstance());
                 break;
-            case "Complete quest":
+            case "Complete Scrap quest":
                 AdvGame.removeQuest(ScrapMetalRepeatable.getInstance());
                 if(ScrapCollection.getUseless() == 10) {
                     AdvGame.updateFrame("You turn in the metal you collected from the scrap collection quest, but because you wasted more than "
