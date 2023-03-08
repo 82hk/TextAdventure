@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.Clearwater.Wharehouse;
+package org.sherwoodhs.situation.Clearwater.Warehouse;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;

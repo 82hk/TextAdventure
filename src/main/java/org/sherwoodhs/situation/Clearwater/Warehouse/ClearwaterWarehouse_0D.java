@@ -1,7 +1,6 @@
-package org.sherwoodhs.situation.Clearwater.Wharehouse;
+package org.sherwoodhs.situation.Clearwater.Warehouse;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Clearwater.KioskIntro.ClearwaterKiosk1_2D;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
