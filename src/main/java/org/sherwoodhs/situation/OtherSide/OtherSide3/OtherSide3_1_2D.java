@@ -31,7 +31,11 @@ public class OtherSide3_1_2D implements Situation {
 
     @Override
     public String getDescription() {
-        return (player.getName() + ": I can't hand this over to you right now. ");
+        return ("(-10 relationship with " + alchemist.getName() + ")\n\n" +
+                player.getName() + ": I can't hand this over to you right now. With what I understand is contained in this USB, " +
+                "I don't really know if anyone should have this. This... this can destroy everything.\n\n" +
+                alchemist.getName() + ": You know, I thought you would understand. You always had. But I guess that only was meant to be for so long. " +
+                "");
     }
 
     @Override

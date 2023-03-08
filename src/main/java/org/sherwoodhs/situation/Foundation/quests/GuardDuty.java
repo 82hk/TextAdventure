@@ -6,7 +6,6 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class GuardDuty implements Situation {
@@ -15,7 +14,7 @@ public class GuardDuty implements Situation {
 
     private int radioChannel(){
         Random random = new Random();
-        return random.nextInt(9);
+        return random.nextInt(9+1);
     }
 
     private void initArray(){
@@ -26,11 +25,10 @@ public class GuardDuty implements Situation {
         names.add("Cyrus");
         names.add("Tyler");
         names.add("Andi");
-        names.add("Connor");
+        names.add("Conner");
         names.add("Landon");
         names.add("Trenton");
         names.add("Dean");
-        Collections.shuffle(names);
     }
 
     private String unitName1(){
@@ -79,8 +77,7 @@ public class GuardDuty implements Situation {
 
         Random rand = new Random();
         int i = rand.nextInt(names.size());
-        String s = names.get(i);
-        names.remove(i);
+        String s = names.remove(i);
         return s;
     }
 
