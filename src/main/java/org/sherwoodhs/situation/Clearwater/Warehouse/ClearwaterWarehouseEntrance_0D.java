@@ -59,7 +59,7 @@ public class ClearwaterWarehouseEntrance_0D implements Situation {
                         "\n\nThere is a gray utility door off to your right with a small sign. The sign states, with red text, \"Boiler Room\".",
                         new String[]{"Continue", "Go into the boiler room"});
                 break;
-            case "Go through door":
+            case "Go into the boiler room":
                 AdvGame.setSituation(BoilerRoom_0E.getInstance());
                 break;
             case "Continue":
