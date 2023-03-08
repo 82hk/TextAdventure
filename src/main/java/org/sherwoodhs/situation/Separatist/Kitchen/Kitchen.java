@@ -21,7 +21,7 @@ public class Kitchen implements Situation {
         if (firstTime == true) {
             return "You walk into the kitchen and you see a lady.";
         } else {
-            return "You should probably work part time for some money.";
+            return "Go take orders/make food.";
         }
     }
 
@@ -30,7 +30,10 @@ public class Kitchen implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Talk to lady","Leave"}; // limit 6
+        String[] options = new String[]{"Talk to lady", "Leave"}; // limit 6;
+        if (!firstTime) {
+            options = new String[]{"Go to cash register", "Go to fryer", "Go to soda machine","Go to burger station","Back to Food Court"};
+        }
         return options;
     }
 
@@ -49,28 +52,34 @@ public class Kitchen implements Situation {
                 break;
 
             case "Go to Kitchen":
-                if (firstTime) {
                     AdvGame.updateFrame("You are in the kitchen as customers begin rolling into the food court. You hurriedly " +
                                     "put on your apron and get to work.",
-                            new String[]{"Go to fryer", "Go to soda machine","Go to burger station","Back to Food Court"});
-                } break;
+                            new String[]{"Go to cash register", "Go to fryer", "Go to soda machine","Go to burger station","Back to Food Court"});
+                break;
+
+            case "Go to cash register":
+                firstTime = false;
+                AdvGame.setSituation(CashRegister.getInstance());
+                break;
 
             case "Go to fryer":
+                firstTime = false;
                 AdvGame.setSituation(Fryer.getInstance());
                 break;
 
             case "Go to soda machine":
+                firstTime = false;
                 AdvGame.setSituation(SodaMachine.getInstance());
                 break;
 
             case "Go to burger station":
+                firstTime = false;
                 AdvGame.setSituation(BurgerStation.getInstance());
                 break;
 
 
             // EXIT POINT
-            case "Leave":
-                firstTime = false;
+            case "Back to Food Court":
                 AdvGame.setSituation(WorkPlace.getInstance());
                 break;
         }

@@ -18,13 +18,7 @@ public class SodaMachine implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
-            //update frame
-            //burger making thing
-            return "You are standing in front of the soda machine. Fill up cups with soda.";
-        } else {
-            return "Fill up cups with soda.";
-        }
+        return "You are standing in front of the soda machine. Fill up cups with soda.";
     }
 
     @Override

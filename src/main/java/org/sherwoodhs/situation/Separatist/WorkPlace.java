@@ -21,7 +21,7 @@ public class WorkPlace implements Situation {
         if (firstTime == true) {
             return "You are in the Food Court. You wonder if you can get a job for some money...";
         } else {
-            return "You need money. Go find a job";
+            return "You need money. Go find a job. Or leave.";
         }
     }
 
@@ -47,7 +47,6 @@ public class WorkPlace implements Situation {
                 
             // EXIT POINT
             case "Leave":
-                firstTime = false;
                 AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }

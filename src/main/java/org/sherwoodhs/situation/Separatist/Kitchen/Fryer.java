@@ -18,13 +18,7 @@ public class Fryer implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
-            //update frame
-            //burger making thing
-            return "You are standing by the fries fryer. Fry some fries.";
-        } else {
-            return "Make fries";
-        }
+        return "You are standing by the fries fryer. Fry some fries.";
     }
 
     @Override

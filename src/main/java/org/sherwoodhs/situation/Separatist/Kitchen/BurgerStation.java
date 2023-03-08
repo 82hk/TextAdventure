@@ -18,13 +18,7 @@ public class BurgerStation implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
-            //update frame
-            //burger making thing
-            return "You walk into the burger station. You will make burgers here.";
-        } else {
-            return "Make burgers";
-        }
+        return "You walk into the burger station. You will make burgers here.";
     }
 
     @Override
