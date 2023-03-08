@@ -3,9 +3,9 @@ package org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.quest.Foundation.BulletBuildingQuest;
 import org.sherwoodhs.quest.Foundation.GuardQuest;
 import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
-import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationBlacksmith_0E;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -154,6 +154,7 @@ public class FoundationQuestTent_0E implements Situation {
             case "Armed guard":
                 break;
             case "Bullet assembly":
+                bulletBuilding = true;
                 AdvGame.updateFrame(Player.getInstance().getName() + ": Tell me about the bullet assembly job. \n\n" +
                         "Assignment Manager: You will be sent to the blacksmith to help assemble bullets and other gear for Foundation members to use."  , new String[]{"Confirm", "Back"});
                 break;
@@ -177,7 +178,7 @@ public class FoundationQuestTent_0E implements Situation {
                     AdvGame.setSituation(FoundationHub_0E.getInstance());
                 }
                 if(bulletBuilding){
-                    //AdvGame.addQuest();
+                    AdvGame.addQuest(BulletBuildingQuest.getInstance());
                 }
                 break;
         }

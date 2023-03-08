@@ -1,13 +1,7 @@
-package org.sherwoodhs.situation.FoundationEnds;
+package org.sherwoodhs.situation.Foundation.FoundationEnds;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.World;
-import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
-import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
-import org.sherwoodhs.situation.Entrance.EntranceSituation_1E;
-import org.sherwoodhs.situation.FoundationEnds.Foundation_1E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
-import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

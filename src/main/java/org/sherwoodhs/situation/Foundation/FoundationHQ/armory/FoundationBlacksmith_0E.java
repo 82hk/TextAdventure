@@ -1,8 +1,9 @@
-package org.sherwoodhs.situation.Foundation.FoundationHQ;
+package org.sherwoodhs.situation.Foundation.FoundationHQ.armory;
 
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

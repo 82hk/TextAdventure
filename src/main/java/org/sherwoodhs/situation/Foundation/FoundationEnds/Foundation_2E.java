@@ -1,7 +1,6 @@
-package org.sherwoodhs.situation.FoundationEnds;
+package org.sherwoodhs.situation.Foundation.FoundationEnds;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
