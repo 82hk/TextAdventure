@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.PraffitSettlement.PraffitEntrance_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -24,7 +25,7 @@ public class Crevasse_1E implements Situation {
                     "You let out a gasp but you grab the ledge with your two hands. You prop yourself up, and sit dizzily on the ledge. You survived... but there is no way back now.\n\n" +
                     "You look around, and you see a pathway carved into the porous gray rock, leading to a large spire-like structure in the distance.";
         }
-        return "You look out towards the other side of the crevasse. The massive crevasse gapes, leading into an unfathomable darkness. You wish you would have been more careful crossing the rope bridge.\n\n" +
+        return "You look out towards the other side of the crevasse you crossed. The massive crevasse gapes, leading into an unfathomable darkness. You wish you would have been more careful crossing the rope bridge.\n\n" +
                 "You look around, and you see a pathway carved into the porous gray rock, leading to a large spire-like structure in the distance.";
     }
     @Override
@@ -39,10 +40,7 @@ public class Crevasse_1E implements Situation {
     public void perform(String option) {
         switch (option) {
             case "Walk on the pathway":
-                AdvGame.updateFrame(
-                        "While the crystal flecks do look pretty, there doesn’t seem to be much you can do with them.",
-                        new String[]{"Return to the lake"}
-                );
+                AdvGame.setSituation(PraffitEntrance_E.getInstance());
                 break;
         }
     }

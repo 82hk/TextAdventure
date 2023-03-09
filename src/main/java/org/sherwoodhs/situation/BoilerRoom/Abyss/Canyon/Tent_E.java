@@ -92,10 +92,10 @@ public class Tent_E implements Situation {
             case "Read the second page":
                 World.discoveredAbyssInfo = true;
                 AdvGame.clearFrameWithoutSpacing(
-                        "I’ve learned many things from my mini excursions into the ruins of Praffit. They’ve developed their own terminology for what this place is. I’ll just write this down for future reference:\n" +
+                        "I’ve learned many things from my mini excursions into the ruins of Praffit. They’ve developed their own terminology for what this place is. I’ll just write this down for future reference:\n\n" +
                                 "This massive cave system is the “abyss”. It is essentially one massive pit that is surrounded by smaller cave systems… and as far as I know, stretches down to the bottom of the earth.\n" +
                                 "They have designated distinct areas of the abyss as “layers”. Seemingly, the inhabitants of the settlement have discovered four distinct layers. \n" +
-                                "“They” is referring to the inhabitants of Praffit.",
+                                "“They” refers to the inhabitants of Praffit.",
                         new String[]{"Continue reading the second page"}
                 );
                 break;
@@ -116,19 +116,19 @@ public class Tent_E implements Situation {
                 );
                 break;
             case "Read the third page":
-                AdvGame.updateFrame(
+                AdvGame.clearFrameWithoutSpacing(
                         "There are some scribbles on the third page, but you can’t make out any letters. It doesn’t help that the ink on the page has bled over time.",
                         new String[]{"Read the first page", "Read the second page", "Read the fourth page", "Stop reading"}
                 );
                 break;
             case "Read the fourth page":
                 World.discoveredAbyssInfo = true;
-                AdvGame.updateFrame(
-                        "On the fourth page, you find a magnificent hand-drawn map of the abyss. The map looks shakily drawn, like it's been copied from something else... It's basically vertical, and massive.\n\n" + 
-                        "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n" +
-                        "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n" +
-                        "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n" +
-                        "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n" +
+                AdvGame.clearFrameWithoutSpacing(
+                        "On the fourth page, you find a magnificent hand-drawn map of the abyss. The map looks shakily drawn, like it's been copied from something else... The abyss is basically vertical, and massive.\n\n" +
+                        "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n\n" +
+                        "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n\n" +
+                        "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n\n" +
+                        "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n\n" +
                         "There is a large pit with completely vertical walls stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
                         new String[]{"Read the first page", "Read the second page", "Read the third page", "Stop reading"}
                 );
