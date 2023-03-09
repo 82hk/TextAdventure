@@ -193,8 +193,53 @@ public class PraffitEntrance_E implements Situation {
                         new String[]{"Inspect the lamp", "Inspect the bookshelf", "Inspect the table", "Go upstairs", "Return to the junction"}
                 );
                 break;
+                // fifth street
+            case "Leave:
+                AdvGame.clearFrameWithoutSpacing(
+                        "You exit the building. There is a small crumbling house to your left, and a building with no walls to your right, containing science equipment.",
+                        new String[]{"Inspect the house to the left", "Inspect the building to the right", "Return to the junction"}
+                );
+                break;
             case "Take the fifth street":
-                System.out.println("You've reached the end of the current explorable part of the abyss!");
+                AdvGame.clearFrameWithoutSpacing(
+                        "You walk down the fifth street. There is a small crumbling house to your left, and a building with no walls to your right. The building on the right has a couple of large tables set in a row, with what looks to be the remnants of science equipment on them.",
+                        new String[]{"Inspect the house to the left", "Inspect the building to the right", "Return to the junction"}
+                );
+                break;
+            case "Inspect the house to the left":
+                AdvGame.clearFrameWithoutSpacing(
+                        "You enter the house. A piece of scrap metal creaks under your shoe as you walk inside. There is not much left of the house, other than a small white envelope covered in dust, propped up next to the remnants of a bookshelf.",
+                        new String[]{"Open the envelope", "Leave"}
+                );
+                break;
+            case "Open the envelope":
+                AdvGame.clearFrameWithoutSpacing(
+                    "Inside the envelope, you find a small letter containing tiny but neat handwriting. It seems like it’s been forgotten by whoever was meant to read it.\n\n" + 
+                    "Dear Mom,\n" + 
+                    "Everyone is moving out of Praffit now. They’re all chanting about how they will become heroes and idols… but I don’t want to go. I’ve been enlisted to be one of the first groups to go under the blank and begin life in the city below, but I can’t. I’ve seen the city through photographs, and it truly is beautiful… but there’s something sinister I can sense about it. " +
+                    "It definitely feels like there’s something wrong with everyone who’s going… my friends are saying that I should come with them without thinking of the curse… The ascension curse is what I’m scared of. Once we live down there, we’ll die if we try to ascend up the blank again. " + 
+                    "And… I don’t want that to happen if something goes wrong down there.\n" + 
+                    "So please, come and run away with me. I know you want to explore the unknown… but nothing about this feels right to me. People being bribed to work in the mines at the beginning of this entire situation forty-nine years ago… some kind of daily quota for a project no one knows about… a prison that’s always full but no one knows the prisoners… " + 
+                    "Please. I know the way through the mines. We can survive in the forest or go to the IKEA. Who cares if the situation in the IKEA you mentioned got worse. All I’ve known in this world is the abyss… but you’ve been out there. And I say, anything but this.\n\n" + 
+                    "You squint your eyes at the name written underneath the letter, but it’s illegible. It seems that the hopes of the writer were forgotten forever… those hopes left to rot in a settlement that never again saw the light of day.",
+                    new String[]{"Leave"}
+                break;
+            case "Inspect the building to the right":
+                AdvGame.clearFrameWithoutSpacing(
+                        "You carefully step inside. Shattered test tubes crunch under your shoes as you reach one of the tables you saw. You find a textbook placed on top of one of the tables.",
+                        new String[]{"Open the textbook", "Leave"}
+                );
+                break;
+            case "Open the textbook":
+                AdvGame.clearFrameWithoutSpacing(
+                        "You flip through the book, but it’s just a science textbook. Then to your surprise, you find a small slip of paper that has writing on it, sandwiched between two pages covered with pictures of plants and flowers. It says:\n\n" + 
+                        "I’ve been doing some exploration on my own. I know everyone is excited about building and living in a city below the blank, but I’ve discovered something else even farther below… something that completely changes how we’ll live life in the IKEA. " + 
+                    "Who cares about that little project we’ve been working on with all of the ore quotas and things… in the end, that’s just a stopgap. " + 
+                    "It’s just meant to cover up something that went wrong. But this… this must be hidden at all costs. No one can know about this, or else it’ll be scooped up by some other organization… and disappear forever. " + 
+                    "Thankfully, it’s quite a journey to get there, not to mention the ascension curse (which hit me quite hard coming from the layer beneath the city), so hopefully no one discovers it and decides to taint it.\n\n" + 
+                    "The writing is extremely messy, like it’s been written in a rush. There’s some more writing afterwards, but it’s completely illegible. You wish you could read a bit more.",
+                        new String[]{"Leave"}
+                );
                 break;
             case "Return to the junction":
                 clickedContinue = true;
