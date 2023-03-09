@@ -3,9 +3,6 @@ package org.sherwoodhs.situation.Separatist;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.ui.InventoryPanel;
-
-import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 public class Casino implements Situation {
     
@@ -20,8 +17,7 @@ public class Casino implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
-            //moneyTime();
+        if (firstTime) {
             return "You have reached the Separatist Casino. This is where the supposed Sparkling Water" +
                     "is retrieved. Go play the Casino";
         } else {

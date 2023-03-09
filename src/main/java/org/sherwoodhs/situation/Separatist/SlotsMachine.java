@@ -1,7 +1,6 @@
 package org.sherwoodhs.situation.Separatist;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Separatist.Kitchen.CashRegister;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import java.util.Random;

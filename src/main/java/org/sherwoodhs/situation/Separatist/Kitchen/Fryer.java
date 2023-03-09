@@ -2,7 +2,6 @@ package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
-import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
@@ -11,7 +10,6 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class Fryer implements Situation {
 
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
-    private static boolean firstTime = true;
     private static Situation situation = new Fryer();
 
     @Override
@@ -52,7 +50,6 @@ public class Fryer implements Situation {
 
             // EXIT POINT
             case "Back to Kitchen":
-                firstTime = false;
                 AdvGame.setSituation(Kitchen.getInstance());
                 break;
         }

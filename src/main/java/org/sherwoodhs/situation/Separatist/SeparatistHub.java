@@ -1,7 +1,6 @@
 package org.sherwoodhs.situation.Separatist;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -19,7 +18,7 @@ public class SeparatistHub implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "You are in the central hub...";
         } else {
             return "temp";

@@ -43,7 +43,7 @@ public class CashRegister implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "You are at the cash register. You will take customer orders here.";
         } else {
             return "You are at the cash register. Customers are waiting.";
@@ -128,9 +128,7 @@ public class CashRegister implements Situation {
             }
         }
 
-        for(int i = 0; i < 3; i++) {
-            custOrder[0][i] = options[0][i];
-        }
+        System.arraycopy(options[0], 0, custOrder[0], 0, 3);
         custOrder[1][0] = options[1][1];
         custOrder[2][0] = options[2][1];
     }
@@ -155,10 +153,7 @@ public class CashRegister implements Situation {
                 }
             }
         }
-        if (match == 5) {
-            return true;
-        }
-        return false;
+        return match == 5;
     }
 
     public static void restartOrder() {
