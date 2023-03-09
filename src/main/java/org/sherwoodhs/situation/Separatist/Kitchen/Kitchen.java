@@ -23,7 +23,7 @@ public class Kitchen implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "You walk into the kitchen and you see a lady.";
         } else {
             return "Go take orders/make food.";

@@ -2,18 +2,14 @@ package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
-import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 import static org.sherwoodhs.situation.Separatist.Kitchen.Kitchen.burger;
 import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
-import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 public class BurgerStation implements Situation {
-    
-    // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
-    private static boolean firstTime = true;
+
     private static Situation situation = new BurgerStation();
 
     @Override
@@ -23,7 +19,8 @@ public class BurgerStation implements Situation {
 
     @Override
     public String getDescription() {
-        return "You walk into the burger station. You will make burgers here.";
+        return "You walk into the burger station. You will make burgers here. " +
+                "Empty buns sit patiently on the table.";
     }
 
     @Override
@@ -43,29 +40,24 @@ public class BurgerStation implements Situation {
             // MAIN BRANCH
 
             case "Add lettuce":
-                Kitchen.addItem(burger + "L ");
-                addToOrder("lettuce");
+                checkQuest("L ", "lettuce");
                 break;
             case "Add tomatoes":
-                Kitchen.addItem(burger + "T ");
-                addToOrder("tomatoes");
+                checkQuest("T ", "tomatoes");
                 break;
             case "Add cheese":
-                Kitchen.addItem(burger + "C ");
-                addToOrder("cheese");
+                checkQuest("C ", "cheese");
                 break;
             case "Add ketchup":
-                Kitchen.addItem(burger + "K ");
-                addToOrder("ketchup");
+                checkQuest("K ", "ketchup");
                 break;
             case "Add mayo":
-                Kitchen.addItem(burger + "M ");
-                addToOrder("mayo");
+                checkQuest("M ", "mayo");
                 break;
 
             // EXIT POINT
             case "Back to Kitchen":
-                firstTime = false;
+                // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
                 AdvGame.setSituation(Kitchen.getInstance());
                 break;
         }
@@ -82,6 +74,16 @@ public class BurgerStation implements Situation {
 
     public static Situation getInstance(){
         return situation;
+    }
+
+    public void checkQuest(String s, String g) {
+        if (FoodMakingQuest.inProgress()) {
+            Kitchen.addItem(burger + s);
+            addToOrder(g);
+        } else {
+            AdvGame.updateFrame("You have not taken an order yet. Please take an order first " +
+                    "at the cash register.");
+        }
     }
 
 }

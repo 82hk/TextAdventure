@@ -18,8 +18,8 @@ public class CashRegister implements Situation {
 
     private static final String[][] options = {
             {"cheese", "lettuce", "tomatoes", "mayo", "ketchup"},
-            {"sprite", "coke", "water", "fanta", "mountain dew"},
-            {"fries", "no fries"},
+            {"Sprite", "Coke", "Water", "Fanta", "Mountain Dew"},
+            {"Fries", "no fries"},
     };
 
     private static final String[][] custOrder = {
@@ -28,7 +28,9 @@ public class CashRegister implements Situation {
             {""},
     };
 
-    static final String[][] playerOrder = {
+    public static int money = 0;
+
+    public static String[][] playerOrder = {
             {"", "", ""},
             {""},
             {"no fries"},
@@ -41,7 +43,7 @@ public class CashRegister implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "You are at the cash register. You will take customer orders here.";
         } else {
             return "You are at the cash register. Customers are waiting.";
@@ -53,7 +55,13 @@ public class CashRegister implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Get Customer Order", "Back to Kitchen"}; // limit 6
+        String[] options;
+        if (!FoodMakingQuest.inProgress()) {
+            options = new String[]{"Get Customer Order", "Back to Kitchen"}; // limit 6
+        } else {
+            options = new String[]{"Check Current Order", "Trash Can (Restart Order)",
+                    "Back to Kitchen", "Give Order to Customer"};
+        }
         return options;
     }
 
@@ -64,29 +72,37 @@ public class CashRegister implements Situation {
             // MAIN BRANCH
 
             case "Get Customer Order":
-                if (firstTime) {
+                if (!FoodMakingQuest.inProgress()) {
                     randomizeOrder();
                     AdvGame.updateFrame(getOrder(), new String[]{"Back to Kitchen"});
                     AdvGame.addQuest(FoodMakingQuest.getInstance());
-                } else {
-                    if (FoodMakingQuest.getInstance().isCompleted()) {
-                        randomizeOrder();
-                        AdvGame.updateFrame(getOrder(), new String[]{"Back to Kitchen"});
-                        AdvGame.addQuest(FoodMakingQuest.getInstance());
-                    } else {
-                        AdvGame.updateFrame("You may only take one order at a time. " +
-                                "Please complete the current order.", new String[]{"Check Order", "Trash Can (Restart Order)", "Back to Kitchen"});
-                    }
+                    FoodMakingQuest.setProgress(true);
+                    FoodMakingQuest.getInstance().reset();
                 }
                 break;
 
-            case "Check Order":
-                AdvGame.clearFrame(getOrder());
+            case "Check Current Order":
+                AdvGame.clearFrameWithoutSpacing(getOrder());
                 break;
 
             case "Trash Can (Restart Order)":
-                inventoryPanel.removeFromInventory(burger);
-                inventoryPanel.removeFromInventory("fries");
+                restartOrder();
+                break;
+
+            case "Give Order to Customer":
+                if (checkOrder()) {
+                    restartOrder();
+                    FoodMakingQuest.setProgress(false);
+                    FoodMakingQuest.getInstance().complete();
+                    AdvGame.removeQuest(FoodMakingQuest.getInstance());
+                    AdvGame.clearFrameWithoutSpacing("You have successfully completed this order! As a result, " +
+                            "you have been awarded 2 money. You can take as many orders as you wish.",
+                            new String[]{"Get Customer Order", "Back to Kitchen"});
+                    addMoney(money+=2);
+                } else {
+                    AdvGame.clearFrameWithoutSpacing("Sorry, this is not what the customer wanted. Please try again.",
+                            new String[]{"Check Current Order", "Trash Can (Restart Order)", "Back to Kitchen"});
+                }
                 break;
 
             // EXIT POINT
@@ -112,9 +128,7 @@ public class CashRegister implements Situation {
             }
         }
 
-        for(int i = 0; i < 3; i++) {
-            custOrder[0][i] = options[0][i];
-        }
+        System.arraycopy(options[0], 0, custOrder[0], 0, 3);
         custOrder[1][0] = options[1][1];
         custOrder[2][0] = options[2][1];
     }
@@ -124,7 +138,40 @@ public class CashRegister implements Situation {
                     custOrder[0][0] + "\n" +
                     custOrder[0][1] + "\n" +
                     custOrder[0][2] + "\n" +
-                    "With a " + custOrder[1][0] + " and " +
-                    custOrder[2][0];
+                    "With a " + custOrder[1][0].toLowerCase() + " and " +
+                    custOrder[2][0].toLowerCase();
     }
+
+    public static boolean checkOrder() {
+        int match = 0;
+        for (int i = 0; i < playerOrder.length; i++) {
+            for (int j = 0; j < playerOrder[i].length; j++) {
+                for (int g = 0; g < playerOrder[i].length; g++) {
+                    if (custOrder[i][g].equals(playerOrder[i][j])) {
+                        match++;
+                    }
+                }
+            }
+        }
+        return match == 5;
+    }
+
+    public static void restartOrder() {
+        inventoryPanel.removeFromInventory(burger);
+        inventoryPanel.removeFromInventory("Fries");
+        inventoryPanel.removeFromInventory(SodaMachine.getDrink());
+        playerOrder[0][0] = "";
+        playerOrder[0][1] = "";
+        playerOrder[0][2] = "";
+        playerOrder[1][0] = "";
+        playerOrder[2][0] = "no fries";
+        burger = "Burger with: ";
+    }
+
+    public static void addMoney(int b) {
+            inventoryPanel.addToInventory("Money: " + b);
+            int a = b-2;
+            inventoryPanel.removeFromInventory("Money: " + a);
+    }
+
 }

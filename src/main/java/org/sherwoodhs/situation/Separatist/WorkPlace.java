@@ -18,7 +18,7 @@ public class WorkPlace implements Situation {
 
     @Override
     public String getDescription() {
-        if (firstTime == true) {
+        if (firstTime) {
             return "You are in the Food Court. You wonder if you can get a job for some money...";
         } else {
             return "You need money. Go find a job. Or leave.";

@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.Foundation.quests;
+package org.sherwoodhs.situation.foundation.quests;
 
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -14,7 +14,7 @@ public class FoundationBulletMaking implements Situation {
     public String getDescription() {
         return "As you work on the makeshift kiln, you add scrap pieces to the furnace, carefully watching as they melt down into liquid metal. " +
                 "With a pair of tongs, you remove the molten metal from the furnace and pour it into poorly made bullet molds. \n" +
-                "<i>Why is the foundation working with such poor equipment?</i> you think to yourself but suddenly you hear footsteps approaching behind you.";
+                "<i>Why is the foundation working with such poor equipment?</i> you think to yourself. Suddenly you hear footsteps approaching behind you.";
     }
 
     @Override

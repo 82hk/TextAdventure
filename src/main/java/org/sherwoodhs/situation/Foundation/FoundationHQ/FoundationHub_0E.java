@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
+
 import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.armory.FoundationArmory_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
@@ -9,6 +10,7 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.quests.GuardDuty;
 import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
+
 
 public class FoundationHub_0E implements Situation {
     private static Situation situation = new FoundationHub_0E();

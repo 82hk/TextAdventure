@@ -20,11 +20,11 @@ public class Clearing_E implements Situation {
     public String getDescription() {
         if (firstTime) {
             return "You slowly climb up the ladder. It shakes as you begin to climb… but you still have a long way to go. You try not to look down as you inch closer and closer to your destination. After a heart-wrenching climbing session, you catch your breath at the top of the ridge. " +
-                    "You look around, and you’re met with a breathtaking view. In front of you is a massive forest… it must have been hidden by the ridges towering over the cavern you were just in.\n" +
+                    "You look around, and you’re met with a breathtaking view. In front of you is a massive forest… it must have been hidden by the ridges towering over the cavern you were just in.\n\n" +
                     "The issue is, the forest is upside down. The tops of the trees are all that is visible from the rock you stand on; the forest is quite thick, so you can’t see what’s below the trees. Above the trees? " +
-                    "The forest on the ground is just as thick, but currently you’re in an expansive clearing. \n" +
+                    "The forest on the ground is just as thick, but currently you’re in an expansive clearing. \n\n" +
                     "You can see vines wrapping around many of the tree trunks, and what seems to be butterflies and birds flying around. " +
-                    "Seeing these animals makes you wonder if you'll ever be able to leave this IKEA…\n" +
+                    "Seeing these animals makes you wonder if you'll ever be able to leave this IKEA…\n\n" +
                     "Around you are stacks of what looks to be basic wooden furniture: chairs, tables, desks, nightstands… they seem to be returned products. " +
                     "They must have been up here for who knows long; many are quite moldy and are in various states of disrepair.";
         }
@@ -48,7 +48,7 @@ public class Clearing_E implements Situation {
         firstTime = false;
         switch (option) {
             case "Move forward":
-                System.out.println("This place isn't available yet.");
+                System.out.println("This place isn't available yet... try going down.");
                 break;
             case "Climb down the ladder":
                 AdvGame.setSituation(LanternRope_E.getInstance());

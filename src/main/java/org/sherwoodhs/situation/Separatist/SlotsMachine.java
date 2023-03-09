@@ -6,6 +6,7 @@ import org.sherwoodhs.situation.Situation;
 import java.util.Random;
 
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
+import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.money;
 
 public class SlotsMachine implements Situation {
     
@@ -54,7 +55,13 @@ public class SlotsMachine implements Situation {
 
             // MAIN BRANCH
             case "Play":
-                casinoGame();
+                if (!(money-3<0)) {
+                    addMoney(money-=3);
+                    casinoGame();
+                } else {
+                    AdvGame.clearFrameWithoutSpacing("Sorry, you do not have enough " +
+                            "money to play this game. Please come back when you are richer.");
+                }
                 break;
 
             case "Have a drink":
@@ -104,5 +111,11 @@ public class SlotsMachine implements Situation {
             AdvGame.updateFrame(game1 + "\n" + game2 + "\n" + game3);
         }
 
+    }
+
+    public static void addMoney(int b) {
+        inventoryPanel.addToInventory("Money: " + b);
+        int a = b+3;
+        inventoryPanel.removeFromInventory("Money: " + a);
     }
 }
