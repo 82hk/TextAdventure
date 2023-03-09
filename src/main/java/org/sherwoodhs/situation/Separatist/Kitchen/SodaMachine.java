@@ -18,7 +18,11 @@ public class SodaMachine implements Situation {
 
     @Override
     public String getDescription() {
-        return "You are standing in front of the soda machine. Fill up cups with soda.";
+        return "You are standing in front of the soda machine. Fill up cups with soda.\n" +
+                "_______________\n" +
+                "|S||C||W||F||M|\n" +
+                "|V  V  V  V  V|\n" +
+                "|_____________|";
     }
 
     @Override

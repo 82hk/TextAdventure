@@ -1,8 +1,12 @@
 package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+
+import static org.sherwoodhs.situation.Separatist.Kitchen.Kitchen.burger;
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 import java.util.Random;
 
@@ -14,11 +18,21 @@ public class CashRegister implements Situation {
 
     private static final String[][] options = {
             {"cheese", "lettuce", "tomatoes", "mayo", "ketchup"},
-            {"sprite", "coke", "water", "fanta", "mountain Dew"},
+            {"sprite", "coke", "water", "fanta", "mountain dew"},
             {"fries", "no fries"},
     };
 
-    private static final String[] order = new String[5];
+    private static final String[][] custOrder = {
+            {"", "", ""},
+            {""},
+            {""},
+    };
+
+    static final String[][] playerOrder = {
+            {"", "", ""},
+            {""},
+            {"no fries"},
+    };
 
     @Override
     public String getTitle() {
@@ -50,7 +64,29 @@ public class CashRegister implements Situation {
             // MAIN BRANCH
 
             case "Get Customer Order":
-                getOrder();
+                if (firstTime) {
+                    randomizeOrder();
+                    AdvGame.updateFrame(getOrder(), new String[]{"Back to Kitchen"});
+                    AdvGame.addQuest(FoodMakingQuest.getInstance());
+                } else {
+                    if (FoodMakingQuest.getInstance().isCompleted()) {
+                        randomizeOrder();
+                        AdvGame.updateFrame(getOrder(), new String[]{"Back to Kitchen"});
+                        AdvGame.addQuest(FoodMakingQuest.getInstance());
+                    } else {
+                        AdvGame.updateFrame("You may only take one order at a time. " +
+                                "Please complete the current order.", new String[]{"Check Order", "Trash Can (Restart Order)", "Back to Kitchen"});
+                    }
+                }
+                break;
+
+            case "Check Order":
+                AdvGame.clearFrame(getOrder());
+                break;
+
+            case "Trash Can (Restart Order)":
+                inventoryPanel.removeFromInventory(burger);
+                inventoryPanel.removeFromInventory("fries");
                 break;
 
             // EXIT POINT
@@ -76,16 +112,19 @@ public class CashRegister implements Situation {
             }
         }
 
-        for (int i = 0; i < 3; i++) {
-            order[i] = options[i][i];
+        for(int i = 0; i < 3; i++) {
+            custOrder[0][i] = options[0][i];
         }
-        order[3] = options[1][0];
-        order[4] = options[2][1];
+        custOrder[1][0] = options[1][1];
+        custOrder[2][0] = options[2][1];
     }
 
     public static String getOrder() {
-        randomizeOrder();
-            String temp = "I would like a burger with: ";
-            return "";
+            return "I would like a burger with: \n" +
+                    custOrder[0][0] + "\n" +
+                    custOrder[0][1] + "\n" +
+                    custOrder[0][2] + "\n" +
+                    "With a " + custOrder[1][0] + " and " +
+                    custOrder[2][0];
     }
 }

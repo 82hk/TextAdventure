@@ -5,11 +5,16 @@ import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
+import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
+
 public class Kitchen implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
     private static boolean firstTime = true;
     private static Situation situation = new Kitchen();
+
+    public static String burger = "Burger with: ";
 
     @Override
     public String getTitle() {
@@ -89,4 +94,15 @@ public class Kitchen implements Situation {
         return situation;
     }
 
+    public static void addItem(String b) {
+        if (playerOrder[0][2].equals("")) {
+            inventoryPanel.addToInventory(b);
+            dealWithOrder(b);
+        }
+    }
+
+    public static void dealWithOrder(String b) {
+        inventoryPanel.removeFromInventory(burger);
+        burger = b;
+    }
 }
