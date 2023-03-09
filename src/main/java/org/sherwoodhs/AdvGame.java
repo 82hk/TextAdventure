@@ -14,6 +14,7 @@ import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.EventQueue.*;
 
 import static org.sherwoodhs.ui.ActionPanel.actionPanel;
 import static org.sherwoodhs.ui.Frame.FRAME;
@@ -41,8 +42,20 @@ public class AdvGame {
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
         FRAME.setVisible(true);
+        System.out.println(Thread.currentThread());
+        /** putting this outside causes the initial text to be animated on-screen, but everything
+        else afterwards is "compiled" off-screen (visible in the console), then added to the text
+        panel all at once.
+
+        EventQueue seems to be the issue, but removing it breaks everything.
+        Cell Renderer currently is running as normal, but I can't tell if it's doing anything.
+
+        TextPanel's JList and textListModel were replaced with a single JTextArea that TextPanel
+        directly changes (not the one in Cell Renderer, but in TextPanel).
+        */
         setSituation(EntranceSituation_0E.getInstance());
         EventQueue.invokeLater(() -> {
+            System.out.println(Thread.currentThread());
             FRAME.setVisible(true);
         });
     }
@@ -95,6 +108,7 @@ public class AdvGame {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
         textPanel.addText(currentSituation.getDescription()); // Changes textfield description
+        textPanel.
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
         actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
     }

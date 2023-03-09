@@ -4,21 +4,24 @@ package org.sherwoodhs.ui;
 //import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 import static org.sherwoodhs.ui.Frame.FRAME;
 
-public class TextPanel extends JPanel implements Runnable {
+public class TextPanel extends Thread {
+
+    public static final JPanel panel = new JPanel();
     public static final TextPanel textPanel = new TextPanel();
     //private DefaultListModel<String> textListModel = new DefaultListModel<>();
     //private JList<String> textList;
     private JTextArea textArea = new JTextArea();
 
     private TextPanel() {
-        super(new BorderLayout());
-        setPreferredSize(new Dimension(600,550));
-        setBorder(new TitledBorder("Dialogue"));
+        panel.setLayout(new BorderLayout());
+        panel.setPreferredSize(new Dimension(600,550));
+        panel.setBorder(new TitledBorder("Dialogue"));
 
         //textList = new JList<>(textListModel);
         //textList.setSelectionModel(new DisabledItemSelectionModel());
@@ -27,7 +30,8 @@ public class TextPanel extends JPanel implements Runnable {
         textArea.setWrapStyleWord(true);
         textArea.setEditable(false);
         textArea.setText(" ");
-        add(textArea);
+
+        panel.add(textArea);
     }
     /**
      * Adds one element to textList without clearing its contents, can contain escape sequences
@@ -65,10 +69,5 @@ public class TextPanel extends JPanel implements Runnable {
      */
     public void clearAllText() {
         textArea.removeAll();
-    }
-
-    @Override
-    public void run() { // would having the TextPanel run (animate) separately work?
-
     }
 }
