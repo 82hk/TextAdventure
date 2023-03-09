@@ -144,19 +144,16 @@ public class Tent_E implements Situation {
                 if (!World.discoveredAbyssInfo) {
                     World.discoveredAbyssInfo = true;
                     AdvGame.clearFrameWithoutSpacing(
-                            "You look up from your reading session. As you do so, a page falls out of the journal. You quickly read it:\n\n" +
+                            "You look up from your reading session. As you do so, a couple of pages fall out of the journal. You quickly read it:\n\n" +
+                                    "I’ve found it. I’ve found what I’ve been searching for ten years. There is indeed a secret settlement down in these caves... previously named Praffit." +
+                                    "I would assume that the ruins are approximately five hundred years old, but they may be older...\n\n" +
                                     "This massive cave system is the “abyss”. It is essentially one massive pit that is surrounded by smaller cave systems… and as far as I know, stretches down to the bottom of the earth.\n\n" +
-                                    "The topmost layer is a forest, a forest that is both upside down and the right way up. It is covered with abandoned returns, likely from this IKEA. It seems that the inhabitants of Praffit went up often to get lumber, fruits, and vegetables, until they descended farther into the abyss.\n\n" +
-                                    "The next layer was known as “the surface”. I entered this layer by swimming through an underground river, and surfacing in a small lake… however there may be more entrances. I didn’t check. The surface is made up of light blue rock, and surrounded by massive sharp ridges and small lakes. " +
-                                    "The entrance to the abyss (at least, the massive pit), is located on this layer.\n\n" +
-                                    "As deemed the “Abyss Mines” in the past, this next layer is mostly the product of human intervention. However, the stone in this area does become much darker than the stone found on the surface. There is an abundance of a mysterious copper-like ore in this area, " +
-                                    "which seemed to have been used for the secret project the inhabitants of the settlement were creating.\n\n" +
-                                    "The layer where Praffit is located (and currently where I am) was known as the “Canyon of Ashes”, due to its abundance of volcanic rock formations, and ash. I believe that the settlement they built down here was meant to be temporary, and they moved onto what they stated was the “bottommost layer”.\n\n" +
-                                    "The bottommost layer is still a mystery to me… only accessible through a massive hole with completely vertical walls. It seems that they hosted excursions into the unknown but never created actual reports, like they were in a rush. " +
-                                    "There seemed to be some kind of reaction from ascending from this layer as well, according to my analysis of the reports found in the abandoned settlement. Due to this, it seemed that the inhabitants of Praffit moved down to this layer and stayed there, including their project. " +
-                                    "There must be more information down there.\n\n" +
-                                    "On that note, I don’t know if there are still people alive in the depths… how could they get food or water if they were unable to ascend? " +
-                                    "I assume whatever rations they had brought from the IKEA would have run out by then…",
+                                    "\nYou pick up the other page. It's a shakily-drawn map of the abyss.\n\n\n" +
+                                    "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n\n" +
+                                    "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n\n" +
+                                    "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n\n" +
+                                    "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n\n" +
+                                    "There is a large pit with completely vertical walls (named the blank) stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
                             new String[]{"Continue"}
                     );
                 } else {
