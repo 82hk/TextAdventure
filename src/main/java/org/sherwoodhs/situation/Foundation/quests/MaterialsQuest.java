@@ -9,7 +9,7 @@ import org.sherwoodhs.situation.Situation;
 import java.util.Random;
 
 public class MaterialsQuest implements Situation {
-    private static Situation situation = new org.sherwoodhs.situation.foundation.quests.ScrapCollection();
+    private static Situation situation = new MaterialsQuest();
     Player player = Player.getInstance();
     Random random = new Random();
     private int num = random.nextInt(15);
@@ -70,7 +70,7 @@ public class MaterialsQuest implements Situation {
                     AdvGame.updateFrame("you notice a wooden desk that could be useful" +
                             "You cautiously approach it, ready to grab it and go if anything goes wrong." +
                             "As you reach out the whole thing seems to be intact a rarity in the haven " +
-                            "as you pick apart the pieces you need you get lots of wood and screws", new String[]{"Move on", "Nap", "Look Around", " Take Apart the Desk"});
+                            "As you pick apart the pieces you need you get lots of wood and screws", new String[]{"Move on", "Nap", "Look Around", " Take Apart the Desk"});
                 } else if (num == 15) {
                     AdvGame.updateFrame("you notice a piece of furniture that could be useful" +
                             "You cautiously approach it, ready to grab it and go if anything goes wrong." +
@@ -106,11 +106,15 @@ public class MaterialsQuest implements Situation {
                 World.changeStateI("Time", 1);
                 break;
             case "Take Apart the Desk":
+                AdvGame.updateFrame("As you pick apart the pieces from the desk you need you get lots of wood and screws",
+                        new String[]{"Move on", "Nap", "Look Around"});
                 screws += 2;
                 wood += 2;
                 World.changeStateI("Time", 1);
                 break;
             case "Take Apart the Wardrobe":
+                AdvGame.updateFrame("As you pick apart the pieces from the wardrobe you need you get lots of wood and screws",
+                        new String[]{"Move on", "Nap", "Look Around"});
                 screws += 2;
                 wood += 2;
                 World.changeStateI("Time", 1);
