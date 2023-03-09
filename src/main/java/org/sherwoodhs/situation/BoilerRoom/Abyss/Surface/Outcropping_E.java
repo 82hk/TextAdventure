@@ -36,7 +36,7 @@ public class Outcropping_E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        return new String[]{"Move towards the ledge on the left", "Move towards the ledge on the right", "Return to the passage"};
+        return new String[]{"Move towards the ledge on the left", "Move towards the ledge on the right", "Jump into the pit", "Return to the passage"};
     }
     @Override
     public void perform(String option) {
@@ -47,6 +47,10 @@ public class Outcropping_E implements Situation {
                 break;
             case "Move towards the ledge on the right":
                 AdvGame.setSituation(LanternRope_E.getInstance());
+                break;
+            case "Jump into the pit":
+                AdvGame.updateFrame("You attempt to muster the courage to jump... but you can't. The unknown darkness scares you more than the fall itself.",
+                        new String[]{"Move towards the ledge on the left", "Move towards the ledge on the right", "Return to the passage"});
                 break;
             case "Return to the passage":
                 AdvGame.setSituation(Passage_E.getInstance());
