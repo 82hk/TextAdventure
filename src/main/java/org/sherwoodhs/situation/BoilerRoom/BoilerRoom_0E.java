@@ -4,6 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.location.BoilerRoom;
 import org.sherwoodhs.location.Location;
+import org.sherwoodhs.situation.Clearwater.Warehouse.ClearwaterWarehouseEntrance_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -53,7 +54,7 @@ public class BoilerRoom_0E implements Situation {
                 AdvGame.setSituation(InspectPipe_E.getInstance());
                 break;
             case "Leave":
-                // leave
+                AdvGame.setSituation(ClearwaterWarehouseEntrance_0D.getInstance());
                 break;
         }
     }

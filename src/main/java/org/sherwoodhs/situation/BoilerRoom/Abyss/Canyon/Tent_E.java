@@ -49,10 +49,16 @@ public class Tent_E implements Situation {
             if (inspectedWrappers) {
                 return new String[]{"Inspect the wrappers", "Return to the lake"};
             }
-            return new String[]{"Return to the lake"};
+            return new String[]{"Go towards the crevasse", "Return to the lake"};
         }
         if (inspectedWrappers) {
+            if (World.discoveredAbyssInfo) {
+                return new String[]{"Read the journal", "Go towards the crevasse you saw previously", "Return to the lake"};
+            }
             return new String[]{"Read the journal", "Return to the lake"};
+        }
+        if (World.discoveredAbyssInfo) {
+            return new String[]{"Read the journal", "Inspect the wrappers", "Go towards the crevasse you saw previously", "Return to the lake"};
         }
         return new String[]{"Read the journal", "Inspect the wrappers", "Return to the lake"};
     }
@@ -142,6 +148,11 @@ public class Tent_E implements Situation {
             case "Continue":
                 clickedContinue = true;
                 AdvGame.setSituation(getInstance());
+                break;
+            case "Go towards the crevasse":
+            case "Go towards the crevasse you saw previously":
+                inventoryPanel.addToInventory("A small journal");
+                AdvGame.setSituation(Crevasse_0E.getInstance());
                 break;
             case "Return to the lake":
                 inventoryPanel.addToInventory("A small journal");
