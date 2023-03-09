@@ -4,6 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.npc.Alchemist;
 import org.sherwoodhs.npc.NPC;
+import org.sherwoodhs.npc.OldMan;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*
@@ -42,7 +43,7 @@ public class OtherSide1_0D implements Situation {
                 "They spoke with a strange voice. It was feminine, but you couldn't figure out more than that. " +
                 "They were cloaked in a dark garment, but in the dim light, you couldn't determine what specific color it is.\n\n" +
                 "You paused for a second before answering slowly.\n\n" +
-                player.getName() + ": Calm down. I come in peace. An Old Man told me about this place. Said I could find a meaning.\n\n" +
+                player.getName() + ": Calm down. I come in peace. An Old Man named " + OldMan.getInstance().getName() + " told me about this place. Said I could find a meaning.\n\n" +
                 alchemist.getName() + " noticeably relaxed and sighed.\n\n" +
                 alchemist.getName() + ": I don't what my grandpa said to you, but he's wrong. You'll find nothing here but forsaken dreams " +
                 "and lost happiness. Let me give you a piece of advice. Leave this place. Get involved with one of those factions out there. " +

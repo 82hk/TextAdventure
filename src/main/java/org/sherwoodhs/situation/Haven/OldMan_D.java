@@ -45,10 +45,14 @@ public class OldMan_D implements Situation {
                     "He hands over a piece of paper. On it in is a little map.\n\n" +
                     player.getName() + ": If you go through the hallway over there, you can find this little place. Maybe your answers can be found there. " +
                     "Now if you'll excuse me, I need to grab some food. Have a nice day!\n\n" +
-                    "The old man walks away, leaving you alone with your thoughts.");
+                    "The old man starts walks away. But before he could leave, you yell out to him.\n\n" +
+                    player.getName() + ": Wait a minute Mister! I never got your name.\n\n" +
+                    oldMan.getName() + ": Me? The people close to me call me Ouranos.\n\n" +
+                    player.getName() + ": Well, thank you again Ouranos.\n\n" +
+                    "The old man smiled before turning around and leaving you alone with your thoughts.");
         } else {
             Random r = new Random();
-            int rand = r.nextInt(5);
+            int rand = r.nextInt(4);
             switch (rand){
                 case 0:
                     return (oldMan.getName() + ": Hello again. How are you doing today?\n\n" +
@@ -63,8 +67,15 @@ public class OldMan_D implements Situation {
                             "back and think about these things. They're always looking for more.\n\n" +
                             player.getName()+ ": O-kay?");
                 case 2:
-                    return ("You found the old man humming a song that sounded familiar. You listened closely, and you identified it to be... " +
-                            oldMan.getName() + ": ");
+                    return ("You found the old man humming a song that sounded familiar. You listened closely, and you identified the song to be... \"I Need a Hero\"? " + 
+                            "The old man had reached the end of the song when he noticed your presence.\n\n" +
+                            oldMan.getName() + ": Hello there, " + player.getName() +"! What are you up to today?\n\n" +
+                            player.getName() + ": Me? Nothing much planned today. Just thought I would drop by today.\n\n" +
+                            oldMan.getName() + ": I'll be honest, if you had nothing else better to do, you could've simply read a book, " +
+                            "explored the many secrets of this place, or maybe tried to escape here. That last one is possible, you know. " +
+                            "Anything is better off than uselessly walking around. Nothing changes if you do nothing. Make every choice deliberate. " +
+                            "So go out there - go enojy your youth.\n\n" +
+                            "With unexpected strength for an old man, he pushed you toward the middle of the square.");
                 case 3:
                     return (oldMan.getName() + ": You seem free today, talking to an inconsequential old man like me.\n\n" +
                             player.getName() + ": I wouldn't call you inconsequential. It's nice to talk to someone in this chaotic place.\n\n" +
@@ -75,8 +86,6 @@ public class OldMan_D implements Situation {
                             player.getName() + ": Come on, I'm not that arrogant.\n\n" +
                             "The old man just gave a knowing smile.\n\n" +
                             oldMan.getName() + ": You'll find out in good time...");
-                case 4:
-                    return ("");
             }
 
             return "";
@@ -95,6 +104,9 @@ public class OldMan_D implements Situation {
 
     @Override
     public void perform(String option) {
+        if (revealed) {
+            oldMan.setName("Ouranos");
+        }
         switch (option){
             case "Continue":
                 World.changeStateI("Time", 1);
