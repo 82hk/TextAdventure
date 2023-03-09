@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent;
+package org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
@@ -9,7 +9,7 @@ import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 
 public class FoundationQuestTent_0E implements Situation {
     private static Situation situation = new FoundationQuestTent_0E();

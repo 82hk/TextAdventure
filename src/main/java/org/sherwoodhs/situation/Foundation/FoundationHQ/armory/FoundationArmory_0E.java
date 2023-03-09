@@ -7,7 +7,7 @@ import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
-import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.ui.QuestPanel;
 
 

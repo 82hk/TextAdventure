@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.foundation.FoundationHQ.armory;
+package org.sherwoodhs.situation.Foundation.FoundationHQ.armory;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
@@ -6,7 +6,7 @@ import org.sherwoodhs.player.Player;
 
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 
 public class FoundationBlacksmith_1E implements Situation {
     private static Situation situation = new FoundationBlacksmith_1E();

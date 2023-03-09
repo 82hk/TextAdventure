@@ -3,6 +3,8 @@ package org.sherwoodhs.situation.Foundation.FoundationHQ;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
 
+import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
+import org.sherwoodhs.situation.Foundation.FoundationHQ.armory.FoundationArmory_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
