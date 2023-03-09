@@ -12,11 +12,11 @@ import org.sherwoodhs.situation.Situation;
 /*
    YOu
  */
-public class OtherSide3_1_2D implements Situation {
+public class OtherSide3_2_0E implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide3_1_2D();
-    private OtherSide3_1_2D(){
+    private static Situation situation = new OtherSide3_2_0E();
+    private OtherSide3_2_0E(){
 
     }
     public static Situation getInstance() {

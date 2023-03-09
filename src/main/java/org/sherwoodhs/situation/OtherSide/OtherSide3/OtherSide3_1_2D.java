@@ -8,7 +8,7 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.OtherSide.OtheSide3.OtherSide3_2_0E;
+import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSide3_2_0E;
 
 /*
    You refuse to hand over the USB, but you have enough Relationship with the Alchemist that you don't die.
@@ -38,7 +38,7 @@ public class OtherSide3_1_2D implements Situation {
                 alchemist.getName() + ": You know, I thought you would understand. You always had. But I guess that only was meant to be for so long.\n\n" +
                 "She stared at you with a disappointed look - both in you and the situation. But after a few seconds, you started to feel woozy. " +
                 "You looked around and saw a container leaking gas. You look back at " + alchemist.getName() + " to see that she now wore a gas mask. " +
-                alchemist.getName() ": You know. I never wanted it to be this way. I thought... it could finally work out. But, no. I'm cursed, aren't I? " +
+                alchemist.getName() + ": You know. I never wanted it to be this way. I thought... it could finally work out. But, no. I'm cursed, aren't I? " +
                 "Every single, bloody time. Well, I guess this is goodbye. You won't see me again. Let your heroic fallacies to glory or death. " +
                 "I won't be part of that. When you wake up, I'll be long gone. This place will be dissolved, to be left only in the history books." +
                 "Farewell, " + player.getName() + ". It was nice while it lasted...\n\n" + 
