@@ -113,8 +113,9 @@ public class PraffitEntrance_E implements Situation {
                     "You crack open the journal, and you see that the pages are warped, like they’ve been submerged in water a long time ago. You carefully flip through the pages of the journal, and you notice one page that captures your attention:\n\n" + 
                     "The construction workers I work with have been down there for so long, it’s no longer safe for them to come back up. People have already died from ascension; there was that one man who stayed down there for a month, came back up, then promptly died. So, why don’t we just stay down there? " + 
                     "The air quality is better down there than here in Praffit. There’s no ash or dust or whatever… really, the only danger down there is moving between layers, right? And, right now we call it the bottommost layer, but what if there are other layers beneath it? There’s no way to know unless we stay down there…\n" + 
-                    "I don’t think there’s any point in staying in Praffit at this point. This place is desolate and decrepit, and we’re all alone. It’s time for something new.",
-                        new String[]{"Return to the junction"}
+                    "I don’t think there’s any point in staying in Praffit at this point. This place is desolate and decrepit, and we’re all alone. It’s time for something new.\n\n" + 
+                    "You look up from your reading, and notice the street continues to go forwards, converging with another street.",
+                        new String[]{"Keep moving down the street", "Return to the junction"}
                 );
                 break;
                 // fourth street - residential area
@@ -202,8 +203,9 @@ public class PraffitEntrance_E implements Situation {
                 break;
             case "Take the fifth street":
                 AdvGame.clearFrameWithoutSpacing(
-                        "You walk down the fifth street. There is a small crumbling house to your left, and a building with no walls to your right. The building on the right has a couple of large tables set in a row, with what looks to be the remnants of science equipment on them.",
-                        new String[]{"Inspect the house to the left", "Inspect the building to the right", "Return to the junction"}
+                        "You walk down the fifth street. There is a small crumbling house to your left, and a building with no walls to your right. The building on the right has a couple of large tables set in a row, with what looks to be the remnants of science equipment on them.\n\n" + 
+                    "The street also begins to turn towards the left, as if it is converging with another street you saw at the junction.",
+                        new String[]{"Inspect the house to the left", "Inspect the building to the right", "Keep moving down the street", "Return to the junction"}
                 );
                 break;
             case "Inspect the house to the left":
@@ -241,6 +243,12 @@ public class PraffitEntrance_E implements Situation {
                         new String[]{"Leave"}
                 );
                 break;
+            case "Keep moving down the street":
+                    AdvGame.clearFrameWithoutSpacing(
+                        "You've reached the end of the explorable area of the abyss!",
+                        new String[]{""}
+                    );
+                    break;
             case "Return to the junction":
                 clickedContinue = true;
                 AdvGame.setSituation(getInstance());
