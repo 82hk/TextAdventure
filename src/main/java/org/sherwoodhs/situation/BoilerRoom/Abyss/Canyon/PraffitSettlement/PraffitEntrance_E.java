@@ -224,7 +224,7 @@ public class PraffitEntrance_E implements Situation {
                     "So please, come and run away with me. I know you want to explore the unknown… but nothing about this feels right to me. People being bribed to work in the mines at the beginning of this entire situation forty-nine years ago… some kind of daily quota for a project no one knows about… a prison that’s always full but no one knows the prisoners… " + 
                     "Please. I know the way through the mines. We can survive in the forest or go to the IKEA. Who cares if the situation in the IKEA you mentioned got worse. All I’ve known in this world is the abyss… but you’ve been out there. And I say, anything but this.\n\n" + 
                     "You squint your eyes at the name written underneath the letter, but it’s illegible. It seems that the hopes of the writer were forgotten forever… those hopes left to rot in a settlement that never again saw the light of day.",
-                    new String[]{"Leave"}
+                    new String[]{"Leave"});
                 break;
             case "Inspect the building to the right":
                 AdvGame.clearFrameWithoutSpacing(
