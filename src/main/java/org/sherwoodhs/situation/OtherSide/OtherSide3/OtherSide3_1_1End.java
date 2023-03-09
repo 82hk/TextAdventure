@@ -63,6 +63,7 @@ public class OtherSide3_1_1End implements Situation {
 
     @Override
     public void perform(String option) {
+        World.changeStateI("Deaths", 1);
         switch (option){
             case "Try Again?":
                 AdvGame.setSituation(EntranceSituation_0E.getInstance());
