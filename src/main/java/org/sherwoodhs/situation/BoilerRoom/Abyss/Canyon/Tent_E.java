@@ -10,7 +10,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class Tent_E implements Situation {
     private static Situation situation = new Tent_E();
     boolean clickedContinue = false;
-    private boolean inspectedWrappers = false;
+    private boolean inspectedWrappers = false, readJournal = false;
     @Override
     public String getTitle() {
         if (World.discoveredAbyssInfo) {
@@ -73,6 +73,7 @@ public class Tent_E implements Situation {
                 );
                 break;
             case "Read the journal":
+                readJournal = true;
                 AdvGame.clearFrameWithoutSpacing(
                         "You crack open the journal, and you notice that the paper is stiff. " +
                                 "It must have been a while since anyone has written anything in it. " +
@@ -155,7 +156,9 @@ public class Tent_E implements Situation {
                 AdvGame.setSituation(Crevasse_0E.getInstance());
                 break;
             case "Return to the lake":
-                inventoryPanel.addToInventory("A small journal");
+                if (readJournal) {
+                    inventoryPanel.addToInventory("A small journal");
+                }
                 AdvGame.setSituation(Aquifer_E.getInstance());
                 break;
         }
