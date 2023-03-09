@@ -93,7 +93,7 @@ public class PraffitEntrance_E implements Situation {
                 break;
             case "Inspect the document":
                 AdvGame.clearFrameWithoutSpacing(
-                        "Apothecary Report III\n\n" +
+                        "The document reads:\n\nApothecary Report III\n\n" +
                                 "Three men entered the bottommost layer of the abyss approximately five days ago, and recently ascended. Unlike the previous higher layers, there seems to be some kind of condition that afflicts humans when returning from the bottom of the abyss.Two of the men exhibited relatively minor symptoms. However, the other individual remained in the bottommost layer for the longest period of time, and exhibited more major symptoms. Seemingly, there is a correlation between time of exposure and the severity of symptoms exhibited.\n" + "\n" +
                                 "Minor symptoms:\n" +
                                 "Insomnia\n" + "Hypothermia\n" + "Minor hallucinations\n\n" +
@@ -246,9 +246,10 @@ public class PraffitEntrance_E implements Situation {
             case "Keep moving down the street":
                     AdvGame.clearFrameWithoutSpacing(
                         "You've reached the end of the explorable area of the abyss!",
-                        new String[]{""}
+                        new String[]{"temp"}
                     );
                     break;
+            case "temp":
             case "Return to the junction":
                 clickedContinue = true;
                 AdvGame.setSituation(getInstance());
