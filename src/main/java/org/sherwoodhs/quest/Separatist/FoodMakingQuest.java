@@ -7,6 +7,7 @@ public class FoodMakingQuest implements Quest {
 
     private String description;
     private boolean status;
+    private static boolean progress = false;
     public FoodMakingQuest() {
         description = "You need to complete a customer's order.";
         status = false;
@@ -35,6 +36,14 @@ public class FoodMakingQuest implements Quest {
     @Override
     public boolean isCompleted() {
         return status;
+    }
+
+    public static boolean inProgress() {
+        return progress;
+    }
+
+    public static void setProgress(boolean b) {
+        progress = b;
     }
 
     @Override

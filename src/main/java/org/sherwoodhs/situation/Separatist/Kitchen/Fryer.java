@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.Separatist.Kitchen;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
 import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
@@ -28,7 +29,7 @@ public class Fryer implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Get fries", "Back to Kitchen"}; // limit 6
+        String[] options = {"Get Fries", "Back to Kitchen"}; // limit 6
         return options;
     }
 
@@ -37,14 +38,19 @@ public class Fryer implements Situation {
         switch (option){
 
             // MAIN BRANCH
-            case "Get fries":
-                if (!playerOrder[2][0].equals("fries")) {
-                    inventoryPanel.addToInventory("fries");
+            case "Get Fries":
+                if (FoodMakingQuest.inProgress()) {
+                    if (!playerOrder[2][0].equals("Fries")) {
+                        inventoryPanel.addToInventory("Fries");
+                    }
+                    playerOrder[2][0] = "Fries";
+                } else {
+                    AdvGame.updateFrame("You have not taken an order yet. Please take an order first " +
+                            "at the cash register.");
                 }
-                playerOrder[2][0] = "fries";
                 break;
 
-                // EXIT POINT
+            // EXIT POINT
             case "Back to Kitchen":
                 firstTime = false;
                 AdvGame.setSituation(Kitchen.getInstance());
