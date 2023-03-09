@@ -40,6 +40,7 @@ public class AdvGame {
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
+        FRAME.setVisible(true);
         setSituation(EntranceSituation_0E.getInstance());
         EventQueue.invokeLater(() -> {
             FRAME.setVisible(true);
@@ -99,8 +100,8 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc, String[] options) {
-        updateFrame(newDesc);
         updateFrame(options);
+        updateFrame(newDesc);
     }
 
     public static void updateFrame(String[] options) {

@@ -1,16 +1,18 @@
 package org.sherwoodhs.ui;
 
 //import org.sherwoodhs.ui.util.CellRenderer;
-import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
+//import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
-public class TextPanel extends JPanel {
+import static org.sherwoodhs.ui.Frame.FRAME;
+
+public class TextPanel extends JPanel implements Runnable {
     public static final TextPanel textPanel = new TextPanel();
-    private DefaultListModel<String> textListModel = new DefaultListModel<>();
-    private JList<String> textList;
+    //private DefaultListModel<String> textListModel = new DefaultListModel<>();
+    //private JList<String> textList;
     private JTextArea textArea = new JTextArea();
 
     private TextPanel() {
@@ -18,8 +20,8 @@ public class TextPanel extends JPanel {
         setPreferredSize(new Dimension(600,550));
         setBorder(new TitledBorder("Dialogue"));
 
-        textList = new JList<>(textListModel);
-        textList.setSelectionModel(new DisabledItemSelectionModel());
+        //textList = new JList<>(textListModel);
+        //textList.setSelectionModel(new DisabledItemSelectionModel());
         //textList.setCellRenderer(new CellRenderer());
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
@@ -33,31 +35,21 @@ public class TextPanel extends JPanel {
      */
     public void addText(String... s) {
 
-
         for (String element : s) {
             String letter = " ";
-            int j = 0;
             for (int i = 0; i < element.length(); i++) {
 
                 letter =  String.valueOf(element.charAt(i));
-
-                if (letter.charAt(0) == ' ' && j >= 50) {
-                    letter += "\n";
-                    j = 0;
-                    continue;
-                }
 
                 textArea.append(letter);
                 System.out.print(letter);
 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(15);
                 } catch (Exception e) {
                     System.out.println("Error.");
                     textArea.append("Error.");
                 }
-
-                j++;
             }
 
         }
@@ -66,12 +58,17 @@ public class TextPanel extends JPanel {
      * Adds a blank line to textList, akin to two <br> tags in HTML
      */
     public void addBlank() {
-        textListModel.addElement("");
+        textArea.append("\n");
     }
     /**
      * Clears all content inside textList
      */
     public void clearAllText() {
-        textListModel.clear();
+        textArea.removeAll();
+    }
+
+    @Override
+    public void run() { // would having the TextPanel run (animate) separately work?
+
     }
 }
