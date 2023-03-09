@@ -10,7 +10,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class Tent_E implements Situation {
     private static Situation situation = new Tent_E();
     boolean clickedContinue = false;
-    private boolean inspectedWrappers = false;
+    private boolean inspectedWrappers = false, readJournal = false;
     @Override
     public String getTitle() {
         if (World.discoveredAbyssInfo) {
@@ -73,6 +73,7 @@ public class Tent_E implements Situation {
                 );
                 break;
             case "Read the journal":
+                readJournal = true;
                 AdvGame.clearFrameWithoutSpacing(
                         "You crack open the journal, and you notice that the paper is stiff. " +
                                 "It must have been a while since anyone has written anything in it. " +
@@ -135,15 +136,32 @@ public class Tent_E implements Situation {
                         "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n\n" +
                         "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n\n" +
                         "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n\n" +
-                        "There is a large pit with completely vertical walls stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
+                        "There is a large pit with completely vertical walls (named the blank) stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
                         new String[]{"Read the first page", "Read the second page", "Read the third page", "Stop reading"}
                 );
                 break;
             case "Stop reading":
-                AdvGame.clearFrameWithoutSpacing(
-                        "You look up from your reading session. You make a note to yourself. When you leave the tent, you'll take the journal with you.",
-                        new String[]{"Continue"}
-                );
+                if (!World.discoveredAbyssInfo) {
+                    World.discoveredAbyssInfo = true;
+                    AdvGame.clearFrameWithoutSpacing(
+                            "You look up from your reading session. As you do so, a couple of pages fall out of the journal. You quickly read it:\n\n" +
+                                    "I’ve found it. I’ve found what I’ve been searching for ten years. There is indeed a secret settlement down in these caves... previously named Praffit." +
+                                    "I would assume that the ruins are approximately five hundred years old, but they may be older...\n\n" +
+                                    "This massive cave system is the “abyss”. It is essentially one massive pit that is surrounded by smaller cave systems… and as far as I know, stretches down to the bottom of the earth.\n\n" +
+                                    "\nYou pick up the other page. It's a shakily-drawn map of the abyss.\n\n\n" +
+                                    "The highest layer of the abyss is a massive forest, which you see that is actually a gargantuan cavern, hence the upside down trees.\n\n" +
+                                    "The layer you entered the abyss in with the soft blue rocks and the ridges seems to be the surface. The massive pit you saw at the outcropping starts at the surface.\n\n" +
+                                    "The mines you explored before, you see was simply called the 'abyss mines'. The copper-like ore, according to the map, can be discovered anywhere on that layer.\n\n" +
+                                    "The current ashy layer you stand in was known as the 'Canyon of Ashes'. The owner of the journal circled a small spire to the right, which seems to be an old settlement.\n\n" +
+                                    "There is a large pit with completely vertical walls (named the blank) stretching down into the bottom layer, which is not completely mapped out. The bottom layer fades into an unknown black.",
+                            new String[]{"Continue"}
+                    );
+                } else {
+                    AdvGame.clearFrameWithoutSpacing(
+                            "You look up from your reading session. You make a note to yourself. When you leave the tent, you'll take the journal with you.",
+                            new String[]{"Continue"}
+                    );
+                }
                 break;
             case "Continue":
                 clickedContinue = true;
@@ -155,7 +173,9 @@ public class Tent_E implements Situation {
                 AdvGame.setSituation(Crevasse_0E.getInstance());
                 break;
             case "Return to the lake":
-                inventoryPanel.addToInventory("A small journal");
+                if (readJournal) {
+                    inventoryPanel.addToInventory("A small journal");
+                }
                 AdvGame.setSituation(Aquifer_E.getInstance());
                 break;
         }

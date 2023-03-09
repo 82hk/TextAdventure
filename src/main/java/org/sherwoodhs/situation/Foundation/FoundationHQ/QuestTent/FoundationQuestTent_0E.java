@@ -6,10 +6,9 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.Foundation.BulletBuildingQuest;
 import org.sherwoodhs.quest.Foundation.GuardQuest;
 import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
-
+import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 
 public class FoundationQuestTent_0E implements Situation {
     private static Situation situation = new FoundationQuestTent_0E();
@@ -108,42 +107,42 @@ public class FoundationQuestTent_0E implements Situation {
             case "...":
                 AdvGame.updateFrame(
                         "Assignment Manager: Now guarding posts is a bit more taxing than just collecting plain scrap, you will sent out into The Haven to maintain order, peace" +
-                                "and security... \n\nHe almost looks valiant saying that..\n\nAssignment Manager: ...and also to guard key Foundation interests." +
-                                "The third task you'll be able to do at this level is deliver messages, now that may sound mediocre but.. \n\nHis voices lowers " +
+                                ", and security... \n\nHe almost looks valiant saying that..\n\nAssignment Manager: ...and also to guard key Foundation interests." +
+                                " The third task you'll be able to do at this level is deliver messages, now that may sound mediocre but.. \n\nHis voices lowers " +
                                 "and you can barely hear him above the chatter of the rest of the tent.\n\n" +
                                 "Assignment Manager: Some of messages contain... sensitive.. information if you will. Now you're not permitted to read the messages, just deliver them" +
-                                "but we can't monitor every courier at once so we have to trust you to not read it.", new String[]{" ..."});
+                                ", but we can't monitor every courier at once so we have to trust you to not read it.", new String[]{" ..."});
                 break;
             case " ...":
                 firstTime = false;
                 AdvGame.clearFrameWithoutSpacing("He finishes by offering a reward for each completed quest, promising a warm bed, shelter, and even a promotion in the foundation.\n\n" +
                         "Assignment Manager: The Foundation looks after it's members and in return you'll need to have the back of you fellow recruits and remember," +
-                        "even if you don't like or prefer what we do, it's your duty to follow orders to the letter.. " +
+                        " even if you don't like or prefer what we do, it's your duty to follow orders to the letter.. " +
                         "So, what do you say? You looking' to make a living in this hellhole?", new String[]{"Level 1 Quests", "Leave"});
                 break;
 
             //QUESTS (lvl 1 <30 rep)
             case "Level 1 Quests":
-                AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey " + Player.getInstance().getName() + " you looking for a job to do?",new String[]{"Scrap Collection", "Guard Duty", "Courier", "Back"});
+                AdvGame.clearFrameWithoutSpacing("Assignment Manager: Hey, " + Player.getInstance().getName() + " you looking for a job to do?",new String[]{"Scrap Collection", "Guard Duty", "Courier", "Back"});
                 break;
             case "Scrap Collection":
                 scrapQuest = true;
                 AdvGame.updateFrame(Player.getInstance().getName() + ": Tell me about the scrap collecting job. \n\n" +
-                        "Assignment Manager: You've already done that but more scrap never hurt anyone " +
-                        "I need someone to head out into the labyrinth of shelves and bring back as much metal as they can carry. " +
+                        "Assignment Manager: You've already done that but more scrap never hurt anyone." +
+                        " I need someone to head out into the labyrinth of shelves and bring back as much metal as they can carry. " +
                         "Bring the metal to the armory when you are done." , new String[]{"Confirm", "Back"});
                 break;
             case "Guard Duty":
                 guardQuest = true;
                 AdvGame.updateFrame(Player.getInstance().getName() + ": Tell me about guard duty. \n\n" +
-                                "Assignment Manager: Guarding posts is a bit more taxing than just collecting plain scrap, you will sent out into The Haven to maintain order, peace" +
-                                ", and security... \n\nHe almost looks valiant saying that..\n\nAssignment Manager: ...and also to guard key Foundation interests.", new String[]{"Confirm", "Back"});
+                        "Assignment Manager: Guarding posts is a bit more taxing than just collecting plain scrap, you will sent out into The Haven to maintain order, peace" +
+                        ", and security... \n\nHe almost looks valiant saying that..\n\nAssignment Manager: ...and also to guard key Foundation interests.", new String[]{"Confirm", "Back"});
                 break;
             case "Courier":
                 messageQuest = true;
                 AdvGame.updateFrame(Player.getInstance().getName() + ": Tell me about the courier job. \n\n" +
                         "Assignment Manager: You'll deliver messages, now that may sound mediocre but.. \n\nHis voices lowers" +
-                        "and you can barely hear him above the chatter of the rest of the tent.\n\n" +
+                        " and you can barely hear him above the chatter of the rest of the tent.\n\n" +
                         "Assignment Manager: Some of messages contain... sensitive.. information if you will. Now you're not permitted to read the messages, just deliver them" +
                         ", but we can't monitor every courier at once so we have to trust you to not read it."  , new String[]{"Confirm", "Back"});
                 break;
