@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.foundation.FoundationHQ.armory;
+package org.sherwoodhs.situation.Foundation.FoundationHQ.armory;
 
 
 import org.sherwoodhs.AdvGame;
