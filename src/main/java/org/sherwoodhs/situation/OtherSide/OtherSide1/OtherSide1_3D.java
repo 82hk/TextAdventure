@@ -1,7 +1,7 @@
 package org.sherwoodhs.situation.OtherSide.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
@@ -32,7 +32,7 @@ public class OtherSide1_3D implements Situation {
     public String getDescription() {
         return (alchemist.getName() + ": So, have you gotten the USB yet?\n\n" +
                 player.getName() + ": Uhhh, not yet...\n\n" +
-                alchemist.getName() + ": Just a reminder, you need to get USB from Clearwater.\n\n" +
+                alchemist.getName() + ": Just a reminder, you need to get USB from the Clearwater Warehouse.\n\n" +
                 "You walk away, presumably to get the requested item.");
     }
 

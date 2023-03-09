@@ -2,7 +2,7 @@ package org.sherwoodhs.situation;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;

@@ -1,6 +1,6 @@
 package org.sherwoodhs.quest.Misc;
 
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.quest.Quest;
 
 public class OtherSideQuest implements Quest {

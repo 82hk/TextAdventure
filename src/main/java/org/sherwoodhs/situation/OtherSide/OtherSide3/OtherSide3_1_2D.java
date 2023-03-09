@@ -2,13 +2,13 @@ package org.sherwoodhs.situation.OtherSide.OtherSide3;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSide3_2_0E;
+
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 /*
    You refuse to hand over the USB, but you have enough Relationship with the Alchemist that you don't die.
@@ -60,6 +60,7 @@ public class OtherSide3_1_2D implements Situation {
                 World.destructEnd = true;
                 World.changeStateI("Time", 3);
                 World.alcoveAccessible = false;
+                inventoryPanel.removeFromInventory("USB");
                 AdvGame.setSituation(OtherSide3_2_0E.getInstance());
                 break;
         }

@@ -3,9 +3,8 @@ package org.sherwoodhs.situation.OtherSide;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.location.HiddenAlcove;
-import org.sherwoodhs.npc.Alchemist;
-import org.sherwoodhs.npc.NPC;
+import org.sherwoodhs.location.OtherSide.HiddenAlcove;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.player.Player;
 
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;

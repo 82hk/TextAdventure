@@ -1,8 +1,10 @@
 package org.sherwoodhs.situation.Clearwater.Warehouse;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.quest.Misc.OtherSideQuest;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
+import org.sherwoodhs.situation.OtherSide.OtherSide2.OtherSide2_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -55,12 +57,19 @@ public class ClearwaterWarehouseEntrance_0D implements Situation {
                         new String[]{"Enter ", "Leave"});
                 break;
             case "Enter ":
+                String[] string = new String[]{"Continue", "Go into the boiler room", ""};
+                if (OtherSideQuest.getProgress() == 1){
+                    string[2] = "Follow the Map to Crete";
+                }
                 AdvGame.updateFrame("You step across the threshold and into the passageway. It’s poorly lit and has a greasy, mechanical look." +
                         "\n\nThere is a gray utility door off to your right with a small sign. The sign states, with red text, \"Boiler Room\".",
-                        new String[]{"Continue", "Go into the boiler room"});
+                        string);
                 break;
             case "Go into the boiler room":
                 AdvGame.setSituation(BoilerRoom_0E.getInstance());
+                break;
+            case "Follow the Map to Crete" :
+                AdvGame.setSituation(OtherSide2_0E.getInstance());
                 break;
             case "Continue":
                 AdvGame.setSituation(ClearwaterWarehouse_0D.getInstance());

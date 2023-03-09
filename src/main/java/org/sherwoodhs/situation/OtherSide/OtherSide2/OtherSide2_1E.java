@@ -1,21 +1,20 @@
-package org.sherwoodhs.situation.OtherSide.OtherSide3;
+package org.sherwoodhs.situation.OtherSide.OtherSide2;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
-
 /*
-   You decide to hand over the USB to the alchemist, regardless of the rumors surrounding her.
+   You enter Crete
  */
-public class OtherSide3_1_0D implements Situation {
+public class OtherSide2_1E implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide3_1_0D();
-    private OtherSide3_1_0D(){
+    private static Situation situation = new OtherSide2_1E();
+    private OtherSide2_1E(){
 
     }
     public static Situation getInstance() {
@@ -24,28 +23,27 @@ public class OtherSide3_1_0D implements Situation {
 
     @Override
     public String getTitle() {
-        return "Wish Granted";
+        return "Crete";
     }
 
     @Override
     public String getDescription() {
-        inventoryPanel.removeFromInventory("USB");
-        return ("You hand over the USB to " + alchemist.getName());
+        return ("You enter the room. It's very dark and you can't see much. However, you can see the vague outline of a ");
     }
 
     @Override
-    public SitType getSitType() {return SitType.Dialogue;}
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Continue"};
+        return new String[]{"Talk to the Man"};
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Continue" :
-                
+            case "Talk to the Man" :
+                AdvGame.setSituation(OtherSide2_UndeclaredE.getInstance());
                 break;
         }
     }

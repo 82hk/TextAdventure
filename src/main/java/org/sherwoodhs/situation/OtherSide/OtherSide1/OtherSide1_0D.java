@@ -2,9 +2,9 @@ package org.sherwoodhs.situation.OtherSide.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
-import org.sherwoodhs.npc.OldMan;
+import org.sherwoodhs.npc.OtherSide.OldMan;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 /*

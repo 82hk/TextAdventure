@@ -3,9 +3,8 @@ package org.sherwoodhs.situation.Haven;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.npc.NPC;
-import org.sherwoodhs.npc.OldMan;
+import org.sherwoodhs.npc.OtherSide.OldMan;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import java.util.Random;
@@ -74,7 +73,7 @@ public class OldMan_D implements Situation {
                             oldMan.getName() + ": I'll be honest, if you had nothing else better to do, you could've simply read a book, " +
                             "explored the many secrets of this place, or maybe tried to escape here. That last one is possible, you know. " +
                             "Anything is better off than uselessly walking around. Nothing changes if you do nothing. Make every choice deliberate. " +
-                            "So go out there - go enojy your youth.\n\n" +
+                            "So go out there - go enjoy your youth.\n\n" +
                             "With unexpected strength for an old man, he pushed you toward the middle of the square.");
                 case 3:
                     return (oldMan.getName() + ": You seem free today, talking to an inconsequential old man like me.\n\n" +
