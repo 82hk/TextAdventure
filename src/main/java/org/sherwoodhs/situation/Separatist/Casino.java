@@ -63,15 +63,4 @@ public class Casino implements Situation {
     public static Situation getInstance(){
         return situation;
     }
-
-    /*public static void moneyTime() {
-        inventoryPanel.addToInventory("Money (x1)");
-        for (int i = 1; i < 100; i++) {
-            if (inventoryPanel.containsItem("Money (x" + i + ")")) {
-                inventoryPanel.removeFromInventory("Money (x" + i + ")");
-                int g = i+1;
-                inventoryPanel.addToInventory("Money (x" + g + ")");
-            }
-        }
-    }*/
 }

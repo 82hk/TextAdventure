@@ -22,12 +22,6 @@ public class CashRegister implements Situation {
             {"Fries", "no fries"},
     };
 
-    public static final String[][] resetOrder = {
-            {"", "", ""},
-            {""},
-            {"no fries"},
-    };
-
     private static final String[][] custOrder = {
             {"", "", ""},
             {""},
@@ -61,7 +55,7 @@ public class CashRegister implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = new String[0];
+        String[] options;
         if (!FoodMakingQuest.inProgress()) {
             options = new String[]{"Get Customer Order", "Back to Kitchen"}; // limit 6
         } else {
@@ -171,7 +165,11 @@ public class CashRegister implements Situation {
         inventoryPanel.removeFromInventory(burger);
         inventoryPanel.removeFromInventory("Fries");
         inventoryPanel.removeFromInventory(SodaMachine.getDrink());
-        playerOrder = resetOrder;
+        playerOrder[0][0] = "";
+        playerOrder[0][1] = "";
+        playerOrder[0][2] = "";
+        playerOrder[1][0] = "";
+        playerOrder[2][0] = "no fries";
         burger = "Burger with: ";
     }
 
