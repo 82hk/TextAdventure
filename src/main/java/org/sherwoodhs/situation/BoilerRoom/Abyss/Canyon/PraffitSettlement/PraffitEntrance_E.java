@@ -114,7 +114,7 @@ public class PraffitEntrance_E implements Situation {
                     "The construction workers I work with have been down there for so long, it’s no longer safe for them to come back up. People have already died from ascension; there was that one man who stayed down there for a month, came back up, then promptly died. So, why don’t we just stay down there? " + 
                     "The air quality is better down there than here in Praffit. There’s no ash or dust or whatever… really, the only danger down there is moving between layers, right? And, right now we call it the bottommost layer, but what if there are other layers beneath it? There’s no way to know unless we stay down there…\n" + 
                     "I don’t think there’s any point in staying in Praffit at this point. This place is desolate and decrepit, and we’re all alone. It’s time for something new.\n\n" + 
-                    "You look up from your reading, and notice the street continues to go forwards, converging with another street.",
+                    "You look up from your reading, and notice that the street continues to go forwards, converging with another street.",
                         new String[]{"Keep moving down the street", "Return to the junction"}
                 );
                 break;
@@ -195,7 +195,7 @@ public class PraffitEntrance_E implements Situation {
                 );
                 break;
                 // fifth street
-            case "Leave:
+            case "Leave":
                 AdvGame.clearFrameWithoutSpacing(
                         "You exit the building. There is a small crumbling house to your left, and a building with no walls to your right, containing science equipment.",
                         new String[]{"Inspect the house to the left", "Inspect the building to the right", "Return to the junction"}
