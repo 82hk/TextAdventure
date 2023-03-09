@@ -1,7 +1,7 @@
 package org.sherwoodhs.ui;
 
 import org.sherwoodhs.quest.Quest;
-import org.sherwoodhs.ui.util.CellRenderer;
+//import org.sherwoodhs.ui.util.CellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
 import javax.swing.*;
@@ -20,7 +20,7 @@ public class QuestPanel extends JPanel {
 
         questList = new JList<>(questListModel);
         questList.setSelectionModel(new DisabledItemSelectionModel());
-        questList.setCellRenderer(new CellRenderer());
+        //questList.setCellRenderer(new CellRenderer());
         add(questList);
     }
     /**
