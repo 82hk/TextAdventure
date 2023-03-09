@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.Foundation.FoundationHQ;
+package org.sherwoodhs.situation.foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;

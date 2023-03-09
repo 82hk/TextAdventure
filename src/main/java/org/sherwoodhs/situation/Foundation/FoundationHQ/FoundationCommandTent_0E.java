@@ -1,9 +1,10 @@
-package org.sherwoodhs.situation.Foundation.FoundationHQ;
+package org.sherwoodhs.situation.foundation.FoundationHQ;
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
+
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 
 public class FoundationCommandTent_0E implements Situation {
     private static Situation situation = new FoundationQuestTent_0E();

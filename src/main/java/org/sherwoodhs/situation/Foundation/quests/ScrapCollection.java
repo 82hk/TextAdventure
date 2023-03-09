@@ -1,11 +1,12 @@
-package org.sherwoodhs.situation.Foundation.quests;
+package org.sherwoodhs.situation.foundation.quests;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
-import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
+import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
+
 
 import java.util.Arrays;
 import java.util.Collections;

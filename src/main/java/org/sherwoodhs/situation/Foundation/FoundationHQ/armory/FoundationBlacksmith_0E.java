@@ -1,11 +1,12 @@
-package org.sherwoodhs.situation.Foundation.FoundationHQ.armory;
+package org.sherwoodhs.situation.foundation.FoundationHQ.armory;
 
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.player.Player;
-import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
+
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.situation.foundation.FoundationHQ.FoundationHub_0E;
 
 public class FoundationBlacksmith_0E implements Situation {
     private static Situation situation = new FoundationBlacksmith_0E();
@@ -46,7 +47,7 @@ public class FoundationBlacksmith_0E implements Situation {
                 break;
             case "Yes I want to forge weapons":
                 AdvGame.updateFrame( player.getName() + ": Yes I want to forge weapons. \n\n " +
-                        "Blacksmith: Well perfect we needed more trust worthy people like you working the kilns. We can get you started right away"
+                                "Blacksmith: Well perfect we needed more trust worthy people like you working the kilns. We can get you started right away"
                         , new String[]{"Walk over to the kiln"});
                 break;
             case "Walk over to the kiln":
