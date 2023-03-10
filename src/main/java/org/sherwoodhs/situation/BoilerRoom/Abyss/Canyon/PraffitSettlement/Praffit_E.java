@@ -6,8 +6,8 @@ import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.Crevasse_1E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-public class PraffitEntrance_E implements Situation {
-    private static Situation situation = new PraffitEntrance_E();
+public class Praffit_E implements Situation {
+    private static Situation situation = new Praffit_E();
     private boolean firstTime = true;
     private boolean clickedContinue = false;
     @Override
@@ -244,12 +244,9 @@ public class PraffitEntrance_E implements Situation {
                 );
                 break;
             case "Keep moving down the street":
-                    AdvGame.clearFrameWithoutSpacing(
-                        "You've reached the end of the explorable area of the abyss!",
-                        new String[]{"temp"}
-                    );
+                clickedContinue = true;
+                    AdvGame.setSituation(BlackwellEntrance_E.getInstance());
                     break;
-            case "temp":
             case "Return to the junction":
                 clickedContinue = true;
                 AdvGame.setSituation(getInstance());
