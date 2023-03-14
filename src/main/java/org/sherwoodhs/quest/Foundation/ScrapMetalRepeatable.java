@@ -61,10 +61,6 @@ public class ScrapMetalRepeatable implements Quest {
         description = "Collect scrap metal for the Foundation";
     }
 
-    public void resetQuest(){
-        tracker = 0;
-        completed = false;
-    }
 
     public static Quest getInstance(){
         return quest;

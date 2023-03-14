@@ -4,7 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Quest;
 
 public class GuardQuest implements Quest {
-    private static Quest quest = new ScrapMetalCollection();
+    private static Quest quest = new GuardQuest();
 
     private static int tracker = 0;
     String description;

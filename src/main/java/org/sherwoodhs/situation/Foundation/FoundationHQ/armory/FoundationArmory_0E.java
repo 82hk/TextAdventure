@@ -69,6 +69,7 @@ public class FoundationArmory_0E implements Situation {
                             " you gain 10 Foundation reputation.", new String[]{"Talk to Blacksmith", "Go back to HQ"});
                     World.changeStateI("Foundation Rep", 10);
                 }
+                ScrapMetalRepeatable.getInstance().reset();
         }
     }
     public static Situation getInstance(){
