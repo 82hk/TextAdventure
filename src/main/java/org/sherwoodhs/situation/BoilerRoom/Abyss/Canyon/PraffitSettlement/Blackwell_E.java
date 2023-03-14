@@ -84,12 +84,12 @@ public class Blackwell_E implements Situation {
                 );
                 break;
             case "Wait in the darkness":
-                if (inventoryPanel.containsItem("A small but heavy rock") {
+                if (inventoryPanel.containsItem("A small but heavy rock")) {
                     AdvGame.clearFrameWithoutSpacing(
                         "The clawing noise grows louder and louder. You cover your ears...\n\n" + 
                         "The eerie red light returns. The clawing noise has disappeared. You look around, and you notice a stone pillar that has appeared in the center of the room. Was that the source of the clawing noise?",
                         new String[]{"Inspect the pillar"});
-                } else if (inventoryPanel.containsItem("A rectangular metal piece") {
+                } else if (inventoryPanel.containsItem("A rectangular metal piece")) {
                     inventoryPanel.removeFromInventory("A rectangular metal piece");
                     AdvGame.clearFrameWithoutSpacing(
                         "The clawing noise grows louder and louder. You cover your ears and drop the piece of metal...\n\n" + 
