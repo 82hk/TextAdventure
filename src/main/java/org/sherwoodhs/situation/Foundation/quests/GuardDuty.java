@@ -9,17 +9,20 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class GuardDuty implements Situation {
     private static Situation situation = new GuardDuty();
+    private static boolean once = true;
     ArrayList<String> names = new ArrayList<>();
     Random r = new Random();
-
-    private int radioChannel(){
-        Random random = new Random();
-        return random.nextInt(9+1);
-    }
+    String unitName = unitName();
+    String npc1 = generateRandomNames();
+    String npc2 = generateRandomNames();
+    String npc3 = generateRandomNames();
+    String npc4 = generateRandomNames();
+    int radio = radioChannel();
 
     private void initArray(){
         names.add("Chris");
@@ -33,6 +36,12 @@ public class GuardDuty implements Situation {
         names.add("Landon");
         names.add("Trenton");
         names.add("Dean");
+        Collections.shuffle(names);
+    }
+
+    private int radioChannel(){
+        Random random = new Random();
+        return random.nextInt(9+1);
     }
 
     private String unitName1(){
@@ -78,7 +87,6 @@ public class GuardDuty implements Situation {
     }
 
     private String generateRandomNames() {
-
         Random rand = new Random();
         int i = rand.nextInt(names.size());
         String s = names.remove(i);
@@ -109,16 +117,13 @@ public class GuardDuty implements Situation {
         return options;
     }
 
+
     @Override
     public void perform(String option) {
-        initArray();
-        String unitName = unitName();
-        String npc1 = generateRandomNames();
-        String npc2 = generateRandomNames();
-        String npc3 = generateRandomNames();
-        String npc4 = generateRandomNames();
-        int radio = radioChannel();
-            switch (option) {
+        if(once){
+            initArray();
+        } else
+        switch (option) {
                 //START
                 case "Listen":
                     AdvGame.updateFrame("The Captain: Listen up men. Recently I've learned that Clearwater has been undermining Foundation control and is " +
@@ -154,7 +159,7 @@ public class GuardDuty implements Situation {
                         } else if (i == 7) {
                             AdvGame.clearFrameWithoutSpacing("Dog quest");
                         } else {
-                            AdvGame.clearFrameWithoutSpacing("You guard The Haven without incident, all is calm except you do get some disapproving looks some of the citizens. A call" +
+                            AdvGame.clearFrameWithoutSpacing("You guard The Haven without incident, all is calm except you do get some disapproving looks from some of the citizens. A call" +
                                     " comes over the radio. \n\n" +
                                     npc1 + ": Sector " + radio + ", report.\n\n" +
                                     npc2 + ": Clear.\n\n" +
@@ -162,13 +167,21 @@ public class GuardDuty implements Situation {
                                     npc4 + ": Clear.\n\n" +
                                     Player.getInstance().getName() + ": Clear.", new String[]{"Guard"});
                         }
-
                         break;
                     } else {
                         AdvGame.clearFrameWithoutSpacing("You finish up your shift and head back to the HQ.", new String[]{"Return to HQ"});
+                        break;
                     }
                 case "Return to HQ":
                     AdvGame.setSituation(FoundationHub_0E.getInstance());
+                    break;
+                case "Let them fight":
+                    AdvGame.updateFrame("You ignore the fighting and let them brawl it out. You hear the fight escalate from a distance.\n\n(-5 Foundation Reputation)",
+                            new String[]{"Guard"});
+                    break;
+                case "Stop them":
+                    AdvGame.updateFrame("You bring out your nightstick and break up the fight. They stop resisting once they see the foundation emblem on your uniform.", new String[]{"Guard"});
+                    break;
             }
         }
 
