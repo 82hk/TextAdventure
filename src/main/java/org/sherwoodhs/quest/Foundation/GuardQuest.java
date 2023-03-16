@@ -6,7 +6,7 @@ import org.sherwoodhs.quest.Quest;
 public class GuardQuest implements Quest {
     private static Quest quest = new GuardQuest();
 
-    private static int tracker = 0;
+    private static int tracker = 1;
     String description;
     private static boolean completed = false;
 
@@ -57,7 +57,7 @@ public class GuardQuest implements Quest {
     @Override
     public void reset() {
         completed = false;
-        tracker = 0;
+        tracker = 1;
         description = "Guard Foundation interests and \"secure\" The Haven.";
     }
 

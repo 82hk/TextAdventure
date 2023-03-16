@@ -1,6 +1,7 @@
 package org.sherwoodhs.situation.Foundation.quests;
 
 import org.sherwoodhs.AdvGame;
+import org.sherwoodhs.World;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.Foundation.GuardQuest;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
@@ -17,12 +18,12 @@ public class GuardDuty implements Situation {
     private static boolean once = true;
     ArrayList<String> names = new ArrayList<>();
     Random r = new Random();
-    String unitName = unitName();
-    String npc1 = generateRandomNames();
-    String npc2 = generateRandomNames();
-    String npc3 = generateRandomNames();
-    String npc4 = generateRandomNames();
-    int radio = radioChannel();
+    String unitName;
+    String npc1;
+    String npc2 ;
+    String npc3;
+    String npc4;
+    int radio;
 
     private void initArray(){
         names.add("Chris");
@@ -40,8 +41,7 @@ public class GuardDuty implements Situation {
     }
 
     private int radioChannel(){
-        Random random = new Random();
-        return random.nextInt(9+1);
+        return r.nextInt(9+1);
     }
 
     private String unitName1(){
@@ -76,7 +76,6 @@ public class GuardDuty implements Situation {
     }
 
     private String unitName(){
-        Random r = new Random();
         int t = r.nextInt(30);
         return unitName1() + "-" + unitName2() + " " +t;
     }
@@ -87,8 +86,7 @@ public class GuardDuty implements Situation {
     }
 
     private String generateRandomNames() {
-        Random rand = new Random();
-        int i = rand.nextInt(names.size());
+        int i = r.nextInt(names.size());
         String s = names.remove(i);
         return s;
     }
@@ -101,6 +99,13 @@ public class GuardDuty implements Situation {
     @Override
     public String getDescription() {
         InventoryPanel.inventoryPanel.addToInventory("Riot gear");
+        initArray();
+        npc1 = generateRandomNames();
+        npc2 = generateRandomNames();
+        npc3 = generateRandomNames();
+        npc4 = generateRandomNames();
+        unitName = unitName();
+        radio = radioChannel();
         return "You visit the armory to get your own locker. Inside you find a uniform, riot helmet, and a baton. You gear up and join the rest of teh guards getting" +
                 " ready for their shift. A gruff-looking man in a black and red uniform marches up to the front of the armory. From the other guards you learn that" +
                 " they call him The Captain.";
@@ -117,13 +122,10 @@ public class GuardDuty implements Situation {
         return options;
     }
 
-
     @Override
     public void perform(String option) {
-        if(once){
             initArray();
-        } else
-        switch (option) {
+            switch (option) {
                 //START
                 case "Listen":
                     AdvGame.updateFrame("The Captain: Listen up men. Recently I've learned that Clearwater has been undermining Foundation control and is " +
@@ -142,8 +144,9 @@ public class GuardDuty implements Situation {
 
                 //QUEST
                 case "Guard":
-                    if(GuardQuest.getTracker() < 6) {
+                    if (GuardQuest.getTracker() < 6) {
                         int i = r.nextInt(9);
+                        GuardQuest.advanceQuest();
                         if (i == 0) {
                             AdvGame.clearFrameWithoutSpacing("On the radio you hear from " + npc4 + " that there is a break in at the Clearwater warehouse.", new String[]{});
                         } else if (i == 3) {
@@ -157,7 +160,7 @@ public class GuardDuty implements Situation {
                                     "You hear the the argument escalate, and they start scuffling. You make your way to the voices. By the time you get there" +
                                     " they are on the ground scuffling.", new String[]{"Let them fight", "Stop them"});
                         } else if (i == 7) {
-                            AdvGame.clearFrameWithoutSpacing("Dog quest");
+                            AdvGame.clearFrameWithoutSpacing("Dog quest", new String[]{"Guard"});
                         } else {
                             AdvGame.clearFrameWithoutSpacing("You guard The Haven without incident, all is calm except you do get some disapproving looks from some of the citizens. A call" +
                                     " comes over the radio. \n\n" +
@@ -173,14 +176,18 @@ public class GuardDuty implements Situation {
                         break;
                     }
                 case "Return to HQ":
+                    GuardQuest.getInstance().complete();
                     AdvGame.setSituation(FoundationHub_0E.getInstance());
                     break;
                 case "Let them fight":
+                    World.changeStateI("Foundation Rep", -5);
                     AdvGame.updateFrame("You ignore the fighting and let them brawl it out. You hear the fight escalate from a distance.\n\n(-5 Foundation Reputation)",
                             new String[]{"Guard"});
                     break;
                 case "Stop them":
-                    AdvGame.updateFrame("You bring out your nightstick and break up the fight. They stop resisting once they see the foundation emblem on your uniform.", new String[]{"Guard"});
+                    World.changeStateI("Foundation Rep", 5);
+                    World.changeStateI("Haven Rep", -5);
+                    AdvGame.updateFrame("You bring out your nightstick and break up the fight. They stop resisting once they see the foundation emblem on your uniform.\n\n(+5 Foundation Reputation)\n\n(-5 Haven Reputation)", new String[]{"Guard"});
                     break;
             }
         }
