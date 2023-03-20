@@ -78,7 +78,7 @@ public class AdvGame {
 
     //Changes situation and updates frame
     public static void setSituation(Situation situation) {
-        if (World.destructEnd){
+        if (World.getState("Destruction End Counter") <= 0){
             currentSituation = OtherSideEndX1.getInstance();
         } else {
             currentSituation = situation;

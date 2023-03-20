@@ -1,4 +1,4 @@
-package org.sherwoodhs.situation.OtherSide.OtherSide3;
+package org.sherwoodhs.situation.OtherSide.OtherSide2;
 
 import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
@@ -6,16 +6,14 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
-import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
-
 /*
-   You decide to hand over the USB to the alchemist, regardless of the rumors surrounding her.
+   You found the door to Crete.
  */
-public class OtherSide3_1_0D implements Situation {
+public class OtherSide2_0E implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide3_1_0D();
-    private OtherSide3_1_0D(){
+    private static Situation situation = new OtherSide2_0E();
+    private OtherSide2_0E(){
 
     }
     public static Situation getInstance() {
@@ -24,28 +22,27 @@ public class OtherSide3_1_0D implements Situation {
 
     @Override
     public String getTitle() {
-        return "Wish Granted";
+        return "Crete Entrance";
     }
 
     @Override
     public String getDescription() {
-        inventoryPanel.removeFromInventory("USB");
-        return ("You hand over the USB to " + alchemist.getName());
+        return ("You followed the map to an out-of-way door. It appears that you have found the entrance to Crete.");
     }
 
     @Override
-    public SitType getSitType() {return SitType.Dialogue;}
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Continue"};
+        return new String[]{"Enter the Door"};
     }
 
     @Override
     public void perform(String option) {
         switch (option){
-            case "Continue" :
-                
+            case "Enter the Door" :
+
                 break;
         }
     }

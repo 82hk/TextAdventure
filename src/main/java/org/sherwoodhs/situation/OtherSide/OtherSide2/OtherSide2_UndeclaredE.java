@@ -1,21 +1,24 @@
-package org.sherwoodhs.situation.OtherSide.OtherSide3;
+package org.sherwoodhs.situation.OtherSide.OtherSide2;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.quest.Misc.OtherSideQuest;
+import org.sherwoodhs.situation.Clearwater.Warehouse.ClearwaterWarehouseEntrance_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 /*
-   You decide to hand over the USB to the alchemist, regardless of the rumors surrounding her.
+   You enter Crete
  */
-public class OtherSide3_1_0D implements Situation {
+public class OtherSide2_UndeclaredE implements Situation {
     private Player player = Player.getInstance();
     private NPC alchemist = Alchemist.getInstance();
-    private static Situation situation = new OtherSide3_1_0D();
-    private OtherSide3_1_0D(){
+    private static Situation situation = new OtherSide2_UndeclaredE();
+    private OtherSide2_UndeclaredE(){
 
     }
     public static Situation getInstance() {
@@ -24,17 +27,16 @@ public class OtherSide3_1_0D implements Situation {
 
     @Override
     public String getTitle() {
-        return "Wish Granted";
+        return "Obtained USB";
     }
 
     @Override
     public String getDescription() {
-        inventoryPanel.removeFromInventory("USB");
-        return ("You hand over the USB to " + alchemist.getName());
+        return ("This is a gap missing scenes. You obtained the USB");
     }
 
     @Override
-    public SitType getSitType() {return SitType.Dialogue;}
+    public SitType getSitType() {return SitType.Exploration;}
 
     @Override
     public String[] getOptions() {
@@ -43,9 +45,11 @@ public class OtherSide3_1_0D implements Situation {
 
     @Override
     public void perform(String option) {
+        OtherSideQuest.advanceQuest();
+        inventoryPanel.addToInventory("USB");
         switch (option){
             case "Continue" :
-                
+                AdvGame.setSituation(ClearwaterWarehouseEntrance_0D.getInstance());
                 break;
         }
     }

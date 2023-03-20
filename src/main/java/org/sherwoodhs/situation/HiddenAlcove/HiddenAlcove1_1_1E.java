@@ -2,9 +2,9 @@ package org.sherwoodhs.situation.HiddenAlcove;
 
 
 import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.location.HiddenAlcove;
+import org.sherwoodhs.location.OtherSide.HiddenAlcove;
 import org.sherwoodhs.location.Location;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 

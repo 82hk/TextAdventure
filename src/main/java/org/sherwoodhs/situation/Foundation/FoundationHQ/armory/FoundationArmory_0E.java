@@ -4,6 +4,7 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
 import org.sherwoodhs.quest.Foundation.ScrapMetalRepeatable;
 
+import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
@@ -69,6 +70,7 @@ public class FoundationArmory_0E implements Situation {
                             " you gain 10 Foundation reputation.", new String[]{"Talk to Blacksmith", "Go back to HQ"});
                     World.changeStateI("Foundation Rep", 10);
                 }
+                ScrapMetalRepeatable.getInstance().reset();
         }
     }
     public static Situation getInstance(){

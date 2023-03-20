@@ -9,6 +9,7 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 public class Crevasse_0E implements Situation {
     private boolean clickedReturn = false;
+    private boolean firstTime = true;
     private static Situation situation = new Crevasse_0E();
     @Override
     public String getTitle() {
@@ -23,13 +24,18 @@ public class Crevasse_0E implements Situation {
             clickedReturn = false;
             return "You look out towards the massive crevasse. The rope bridge swings slightly as you pace around. Should you cross?";
         }
-        if (inventoryPanel.containsItem("A small journal")) {
+        if (World.discoveredAbyssInfo) {
             return "You walk towards the massive crevasse. In the distance, you see an old rotting rope bridge you could probably cross.";
+        }
+        if (firstTime) {
+            return "You move towards the crevasse. It stretches widely into some unfathomable darkness. " +
+                    "In the distance, you see an old rotting rope bridge… you think to yourself. " +
+                    "You should probably cross it once you have more information. " +
+                    "Behind you, there is a mound of fabric you haven’t inspected yet.";
         }
         return "You move towards the crevasse. It stretches widely into some unfathomable darkness. " +
                 "In the distance, you see an old rotting rope bridge… you think to yourself. " +
-                "You should probably cross it once you have more information. " +
-                "Behind you, there is a mound of fabric you haven’t inspected yet.";
+                "You should probably cross it once you have more information.";
     }
     @Override
     public SitType getSitType() {
@@ -37,13 +43,14 @@ public class Crevasse_0E implements Situation {
     }
     @Override
     public String[] getOptions() {
-        if (inventoryPanel.containsItem("A small journal")) {
+        if (World.discoveredAbyssInfo) {
             return new String[]{"Inspect the tent behind you", "Cross the rope bridge", "Return to the lake"};
         }
         return new String[]{"Inspect the mound of fabric", "Return to the lake"};
     }
     @Override
     public void perform(String option) {
+        firstTime = false;
         switch (option) {
             case "Inspect the tent behind you":
             case "Inspect the mound of fabric":

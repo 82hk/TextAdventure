@@ -2,7 +2,7 @@ package org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.PraffitSettlement.PraffitEntrance_E;
+import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.PraffitSettlement.Praffit_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
@@ -40,7 +40,7 @@ public class Crevasse_1E implements Situation {
     public void perform(String option) {
         switch (option) {
             case "Walk on the pathway":
-                AdvGame.setSituation(PraffitEntrance_E.getInstance());
+                AdvGame.setSituation(Praffit_E.getInstance());
                 break;
         }
     }

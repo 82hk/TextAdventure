@@ -1,6 +1,8 @@
-package org.sherwoodhs.location;
+package org.sherwoodhs.location.OtherSide;
 
-public class HiddenAlcove extends Location{
+import org.sherwoodhs.location.Location;
+
+public class HiddenAlcove extends Location {
     private static HiddenAlcove location = new HiddenAlcove();
     private HiddenAlcove(){
         super("Hidden Alcove",0);

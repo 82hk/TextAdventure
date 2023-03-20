@@ -2,7 +2,7 @@ package org.sherwoodhs.situation.OtherSide.OtherSide1;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.Misc.OtherSideQuest;
@@ -34,8 +34,9 @@ public class OtherSide1_2D implements Situation {
     @Override
     public String getDescription() {
         AdvGame.addQuest(OtherSideQuest.getInstance());
+        OtherSideQuest.advanceQuest();
         return (alchemist.getName() + ": If you really want to help, there is something you can do...\n\n" +
-                "Can you grab me a USB from Clearwater's warehouse. There is an area in the back called Irolla where you can find a one-armed man named Janus." +
+                "Can you grab me a USB from Clearwater's warehouse. There is an area in the back called Crete where you can find a one-armed man named Janus." +
                 "You'll know when you meet him. No one stands out as much as he does.\n\n" +
                 "(Quest Log Updated!)");
     }

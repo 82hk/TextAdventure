@@ -47,29 +47,21 @@ public class World {
             case "Time" : //Adds value to current Time then undergoes modulus before updating
                 if (changed / 24 > 0)/* Integer Division to check if day is over */{
                     changed %= 24; // Current Day cycle of 24 hours
-                    states.replace("Day",states.get("Day") + 1); // Adds to the day counter
-                    situationPanel.setDayLabel(states.get("Day")); //Updates Day Label
+                    changeStateI("Day",1);
                     // Could add something to happen during Midnight
                 }
                 if (destructEnd) {
-                    int val = states.get("Destruction End Counter") - 1;
-                    states.replace("Destruction End Counter", val);
+                    changeStateI("Destruction End Counter", -1);
                 }
                 break;
             case "Foundation Rep":
-                temp = getState("Foundation Rep");
-                temp += value;
-                BarPanel.barPanel.getFoundationBar().setValue(temp);
-                break;
             case "Haven Rep":
-                temp = getState("Haven Rep");
-                temp += value;
-                BarPanel.barPanel.getHavenBar().setValue(temp);
-                break;
             case "Clearwater Rep":
-                temp = getState("Clearwater Rep");
-                temp += value;
-                BarPanel.barPanel.getClearWaterBar().setValue(temp);
+                if (changed > 100) /* Current Max of 100 */ {
+                    changed = 100;
+                } else if (changed < -100) /* Current Min of -100 */{
+                    changed = -100;
+                }
                 break;
             case "Renown" : // Simply Updates Renown by adding then checking if exceeding max or going under min
                 //Checks for out of limits values
@@ -80,18 +72,31 @@ public class World {
                     value = - Math.abs(changed-100);
                     changed = -100;
                 }
-                states.replace("Foundation Rep", states.get("Foundation Rep") + value);
-                states.replace("Clearwater Rep", states.get("Clearwater Rep") + value);
-                states.replace("Haven Rep", states.get("Haven Rep") + value);
-                BarPanel.barPanel.getFoundationBar().setValue(states.get("Foundation Rep"));
-                BarPanel.barPanel.getClearWaterBar().setValue(states.get("Clearwater Rep"));
-                BarPanel.barPanel.getHavenBar().setValue(states.get("Haven Rep"));
+                changeStateI("Foundation Rep", value);
+                changeStateI("Clearwater Rep", value);
+                changeStateI("Haven Rep", value);
                 break;
 
         }
         states.replace(key, changed);
-        if (key.equals("Time")){
-            situationPanel.setTimeLabel(states.get("Time") + ":00"); //Updates Time Label
+
+        //updates labels
+        switch (key){
+            case "Time":
+                situationPanel.setTimeLabel(states.get("Time") + ":00"); //Updates Time Label
+                break;
+            case "Day":
+                situationPanel.setDayLabel(value);
+                        break;
+            case "Foundation Rep":
+                BarPanel.barPanel.getFoundationBar().setValue(changed);
+                break;
+            case "Clearwater Rep":
+                BarPanel.barPanel.getClearWaterBar().setValue(changed);
+                break;
+            case "Haven Rep":
+                BarPanel.barPanel.getHavenBar().setValue(changed);
+                break;
         }
     }
 

@@ -3,7 +3,7 @@ package org.sherwoodhs.situation.OtherSide.OtherSide3;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.npc.Alchemist;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 
@@ -63,6 +63,7 @@ public class OtherSide3_1_1End implements Situation {
 
     @Override
     public void perform(String option) {
+        World.changeStateI("Deaths", 1);
         switch (option){
             case "Try Again?":
                 AdvGame.setSituation(EntranceSituation_0E.getInstance());

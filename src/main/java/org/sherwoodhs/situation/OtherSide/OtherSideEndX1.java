@@ -3,9 +3,8 @@ package org.sherwoodhs.situation.OtherSide;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
-import org.sherwoodhs.location.HiddenAlcove;
-import org.sherwoodhs.npc.Alchemist;
-import org.sherwoodhs.npc.NPC;
+import org.sherwoodhs.location.OtherSide.HiddenAlcove;
+import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.player.Player;
 
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
@@ -19,7 +18,6 @@ import org.sherwoodhs.situation.Situation;
  */
 public class OtherSideEndX1 implements Situation {
     private Player player = Player.getInstance();
-    private NPC alchemist = Alchemist.getInstance();
     private static Situation situation = new OtherSideEndX1();
     private OtherSideEndX1(){
 
@@ -50,7 +48,7 @@ public class OtherSideEndX1 implements Situation {
                 "As you watched, you were left thinking: \"What could've caused this chaos?\" " +
                 "You then realized that it was <b>you</b>, " + player.getName() + ", that brought this upon the IKEA.\n\n" +
                 "If only you hadn't turned the world against you. If only you hadn't entered the " + HiddenAlcove.getInstance().getName() + ". " +
-                "If only you hadn't given in to " + alchemist.getName() + "'s requests. If only... you had been a better person, a better friend.\n\n" +
+                "If only you hadn't given in to " + Alchemist.getInstance().getName() + "'s requests. If only... you had been a better person, a better friend.\n\n" +
                 "There were so many what ifs, but that didn't matter now. It was all going to end. Maybe in your next life, you could do something else...\n\n" +
                 "As the world finally began to corrupt to the point of complete incoherency, you let out one last sigh before it overtook you."
         );
@@ -66,6 +64,7 @@ public class OtherSideEndX1 implements Situation {
 
     @Override
     public void perform(String option) {
+        World.changeStateI("Deaths", 1);
         switch (option){
             case "Try Again?":
                 AdvGame.setSituation(EntranceSituation_0E.getInstance());
