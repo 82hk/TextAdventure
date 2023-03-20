@@ -2,6 +2,7 @@ package org.sherwoodhs.situation.Entrance;
 
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.World;
+import org.sherwoodhs.quest.Clearwater.BottleFetchQuest;
 import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.Aquifer_E;
 import org.sherwoodhs.situation.BoilerRoom.BoilerRoom_0E;
 import org.sherwoodhs.situation.Foundation.FoundationEnds.Foundation_0E;
@@ -40,6 +41,7 @@ public class EntranceSituation_0E implements Situation {
 
             // MAIN BRANCH
             case "Approach":
+                AdvGame.addQuest(BottleFetchQuest.getInstance());
                 AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
                         new String[] {"Enter","Go to Lowe's", "Test - Foundation endings"});
                 break;

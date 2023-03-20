@@ -53,6 +53,7 @@ public class FoodMakingQuest implements Quest {
 
     @Override
     public void reset() {
+        description = "You need to complete a customer's order.";
         status = false;
     }
 

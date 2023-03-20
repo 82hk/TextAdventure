@@ -12,6 +12,7 @@ public class QuestPanel extends JPanel {
     public static final QuestPanel questPanel = new QuestPanel();
     private DefaultListModel<String> questListModel = new DefaultListModel<>();
     private JList<String> questList;
+    private int index = 0;
 
     private QuestPanel() {
         super(new BorderLayout());
@@ -27,7 +28,25 @@ public class QuestPanel extends JPanel {
      * Adds one element to questList without clearing its contents after adding "> " to the beginning of the string
      * @param quest one element to be added to questList
      */
-    public void addQuest(Quest quest) { questListModel.addElement(setQuestConvention(quest.getName())); }
+    public void addQuest(Quest quest) { // iterator doesn't work currently.
+
+        String questName = "";
+        questListModel.add(index, questName);
+
+        for (int i = 0; i < questName.length(); i++) {
+            questName += String.valueOf(setQuestConvention(quest.getName()).charAt(i));
+            questListModel.set(index, questName);
+        }
+
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        index++;
+
+    }
     private String setQuestConvention(String s) {return "> " + s;}
     /**
      * Removes one element from questList without clearing its contents
@@ -36,6 +55,7 @@ public class QuestPanel extends JPanel {
     public void removeQuest(Quest quest) {
         String s = setQuestConvention(quest.getName());
         questListModel.removeElement(s);
+        index--;
     }
     /**
      * Checks questList for quest
@@ -52,6 +72,7 @@ public class QuestPanel extends JPanel {
 
     public void clearQuestList(){
         questListModel.clear();
+        index = 0;
     }
 
 }

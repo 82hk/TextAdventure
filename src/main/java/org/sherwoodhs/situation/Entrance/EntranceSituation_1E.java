@@ -54,7 +54,7 @@ public class EntranceSituation_1E implements Situation {
                 break;
 
             // EXIT POINT
-            case " Keep going ":
+            case " Ignore and keep going ":
                 AdvGame.updateFrame("---\n\nYou ignore the obvious hint and carry on wandering through the Ikea. You never find the exit, though you do eventually find the food court and live out the rest of your days on stale meatballs and bottled water.\n\nThe End.",
                         new String[] {"Restart","Exit"});
                 break;

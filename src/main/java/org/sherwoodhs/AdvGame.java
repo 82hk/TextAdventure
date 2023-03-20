@@ -41,23 +41,8 @@ public class AdvGame {
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
-        FRAME.setVisible(true);
-        System.out.println(Thread.currentThread());
-        /** putting this outside causes the initial text to be animated on-screen, but everything
-        else afterwards is "compiled" off-screen (visible in the console), then added to the text
-        panel all at once.
-
-        EventQueue seems to be the issue, but removing it breaks everything.
-        Cell Renderer currently is running as normal, but I can't tell if it's doing anything.
-
-        TextPanel's JList and textListModel were replaced with a single JTextArea that TextPanel
-        directly changes (not the one in Cell Renderer, but in TextPanel).
-        */
         setSituation(EntranceSituation_0E.getInstance());
-        EventQueue.invokeLater(() -> {
-            System.out.println(Thread.currentThread());
-            FRAME.setVisible(true);
-        });
+        FRAME.setVisible(true);
     }
 
     public void restartGame() {
@@ -82,6 +67,7 @@ public class AdvGame {
         StolenFurnQuest.getInstance().reset();
 
         SparklingWaterQuest.getInstance().reset(); // Separatist
+        FoodMakingQuest.getInstance().reset();
 
         questPanel.clearQuestList();
     }
@@ -107,10 +93,16 @@ public class AdvGame {
     public static void updateFrame() {
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
-        textPanel.addText(currentSituation.getDescription()); // Changes textfield description
-        textPanel.
+
+        Thread a = new Thread() {
+            public void run() {
+                textPanel.addText(currentSituation.getDescription()); // Changes textfield description
+            }
+        };
+        a.start();
+
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
-        actionPanel.initActions(currentSituation.getOptions()); //Changes buttons
+        actionPanel.initActions(currentSituation.getOptions());
     }
 
     public static void updateFrame(String newDesc, String[] options) {
@@ -123,7 +115,13 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc) {
-        textPanel.addText("\n" + newDesc);
+        Thread c = new Thread() {
+            public void run() {
+                textPanel.addText("\n" + newDesc);
+            }
+        };
+        c.start();
+
     }
     
     public static void updateFrameWithoutSpacing(String newDesc) {
@@ -144,7 +142,15 @@ public class AdvGame {
     
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
     
-    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+    public static void addQuest(Quest quest) {
+        Thread q = new Thread() {
+            public void run() {
+                questPanel.addQuest(quest);
+            }
+        };
+        q.start();
+
+    }
     
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 
