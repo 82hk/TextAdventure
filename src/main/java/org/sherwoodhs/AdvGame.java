@@ -2,6 +2,7 @@ package org.sherwoodhs;
 
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 
+import org.sherwoodhs.player.Player;
 import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.quest.Clearwater.*;
 import org.sherwoodhs.quest.Foundation.*;
@@ -24,6 +25,7 @@ import static org.sherwoodhs.ui.QuestPanel.questPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
+    private Player player;
     private AdvGame() {
         try {
             UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
@@ -83,6 +85,7 @@ public class AdvGame {
         } else {
             currentSituation = situation;
         }
+
         updateFrame();
     }
     public Situation getCurrentSituation (){
@@ -106,8 +109,10 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc, String[] options) {
-        updateFrame(options);
+
         updateFrame(newDesc);
+        updateFrame(options);
+
     }
 
     public static void updateFrame(String[] options) {
@@ -115,14 +120,17 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc) {
+
         Thread c = new Thread() {
             public void run() {
                 textPanel.addText("\n" + newDesc);
+
             }
         };
         c.start();
 
     }
+
     
     public static void updateFrameWithoutSpacing(String newDesc) {
         textPanel.addText(newDesc);

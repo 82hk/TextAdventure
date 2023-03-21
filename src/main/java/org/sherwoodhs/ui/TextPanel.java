@@ -37,14 +37,13 @@ public class TextPanel extends JPanel {
          textListModel.addElement(element);
          } */ // old implementation
 
-        textListModel.add(index,""); // adds text one character at a time
-        String visibleText = String.valueOf(textListModel.getElementAt(index));
+        textListModel.add(index,"");
 
         for (String element : s) {
-            for (int i = 0; i < element.length(); i ++) {
+            for (int i = 0; i < element.length()+1; i++) {
 
-                visibleText += String.valueOf(element.charAt(i));
-                textListModel.set(index, visibleText);
+                textListModel.set(index, element.substring(0,i));
+
                 try {
                     Thread.sleep(17);
                 } catch (InterruptedException e) {

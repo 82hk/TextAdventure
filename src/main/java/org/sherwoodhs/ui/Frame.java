@@ -13,7 +13,7 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
 
 public class Frame extends JFrame {
     public static final Frame FRAME = new Frame("Text Adventure");
-    private final int WIDTH = 1000, HEIGHT = 720;
+    private final int WIDTH = 1000, HEIGHT = 730;
 
     private Frame(String s) {
         super(s);
@@ -28,8 +28,8 @@ public class Frame extends JFrame {
         JPanel left = new JPanel();
         // contains MapPanel, InventoryPanel
         JPanel right = new JPanel();
-        left.setPreferredSize(new Dimension(750, 720));
-        right.setPreferredSize(new Dimension(250, 720));
+        left.setPreferredSize(new Dimension(750, 730));
+        right.setPreferredSize(new Dimension(250, 730));
         add(left, BorderLayout.WEST);
         add(right, BorderLayout.EAST);
 

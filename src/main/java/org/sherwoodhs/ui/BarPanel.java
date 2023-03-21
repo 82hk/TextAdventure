@@ -15,10 +15,19 @@ public class BarPanel extends JPanel {
     private BarPanel() {
         super(new FlowLayout(FlowLayout.CENTER));
         setPreferredSize(new Dimension(250, 170));
+        setBorder(new TitledBorder("???"));
+    }
+    public void showFoundationBar() {
+        setBorder(new TitledBorder("Reputation"));
+        add(foundationBar);
+    }
+    public void showClearwaterBar() {
+        setBorder(new TitledBorder("Reputation"));
+        add(clearWaterBar);
+    }
+    public void showHavenBar() {
         setBorder(new TitledBorder("Reputation"));
         add(havenBar);
-        add(clearWaterBar);
-        add(foundationBar);
     }
     public Bar getFoundationBar() {
         return foundationBar;

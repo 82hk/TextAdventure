@@ -10,6 +10,7 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.InventoryPanel;
 
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();
@@ -41,6 +42,7 @@ public class EntranceSituation_0E implements Situation {
 
             // MAIN BRANCH
             case "Approach":
+                InventoryPanel.inventoryPanel.addToInventory("> Sample item");
                 AdvGame.addQuest(BottleFetchQuest.getInstance());
                 AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
                         new String[] {"Enter","Go to Lowe's", "Test - Foundation endings"});

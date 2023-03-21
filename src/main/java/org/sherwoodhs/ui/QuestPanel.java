@@ -28,22 +28,20 @@ public class QuestPanel extends JPanel {
      * Adds one element to questList without clearing its contents after adding "> " to the beginning of the string
      * @param quest one element to be added to questList
      */
-    public void addQuest(Quest quest) { // iterator doesn't work currently.
+    public void addQuest(Quest quest) {
 
-        String questName = "";
-        questListModel.add(index, questName);
+        String questName = setQuestConvention(quest.getName());
+        questListModel.add(index,"");
 
         for (int i = 0; i < questName.length(); i++) {
-            questName += String.valueOf(setQuestConvention(quest.getName()).charAt(i));
-            questListModel.set(index, questName);
-        }
+            questListModel.set(index, questName.substring(0,i));
 
-        try {
-            Thread.sleep(50);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-
         index++;
 
     }

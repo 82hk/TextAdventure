@@ -6,10 +6,13 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
+import static org.sherwoodhs.ui.QuestPanel.questPanel;
+
 public class InventoryPanel extends JPanel {
     public static final InventoryPanel inventoryPanel = new InventoryPanel();
     private DefaultListModel<String> inventoryListModel = new DefaultListModel<>();
     private JList<String> inventoryList;
+    private int index = 0;
 
     private InventoryPanel() {
         super(new BorderLayout());
@@ -37,7 +40,25 @@ public class InventoryPanel extends JPanel {
      * @param item one element to be added to inventoryList
      */
     public void addToInventory(String item) {
-        inventoryListModel.addElement(item);
+
+        Thread e = new Thread() {
+            public void run() {
+
+                inventoryListModel.add(index, "");
+                for (int i = 0; i < item.length()+1; i++) {
+                    inventoryListModel.set(index, item.substring(0,i));
+
+                    try {
+                        Thread.sleep(40);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                }
+
+            }
+        };
+        e.start();
     }
     /**
      * Removes one element from inventoryList without clearing its contents

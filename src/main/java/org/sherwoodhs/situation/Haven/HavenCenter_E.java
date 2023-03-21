@@ -12,10 +12,12 @@ import org.sherwoodhs.situation.Foundation.FoundationIntroduction.FoundationIntr
 import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.BarPanel;
 
 public class HavenCenter_E implements Situation {
 
     private static Situation situation = new HavenCenter_E();
+    private BarPanel barPanel;
     private static boolean firstTime = true;
 
     public static boolean oldManGone = false;

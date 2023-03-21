@@ -19,6 +19,29 @@ public class ActionPanel extends JPanel {
         adv = AdvGame.getInstance();
     }
     /**
+     * Adds a 'skip' button while typing text which skips over the typing effect
+     */
+    public void addSkipButton() {
+
+        removeAllActions();
+        JButton skip = new JButton(getWrappedText("Skip"));
+        skip.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JButton b = (JButton) e.getSource();
+
+            }
+        });
+        add(skip);
+
+        for (int i = 0; i < 5; i++) {
+            JButton blank = new JButton();
+            blank.setEnabled(false);
+            add(blank);
+        }
+    }
+
+    /**
      * Adds # number of JButtons that represents the actions the player can take
      * @param texts represents the prompts the player will be given in each JButton, texts.length represents the amount of buttons added to the panel
      */
@@ -50,7 +73,9 @@ public class ActionPanel extends JPanel {
         }
         // adds empty space to non-existent cells
         for (int i = 0; i < 6 - (texts.length - blanks); i++) {
-            add(new JLabel());
+            JButton blank = new JButton();
+            blank.setEnabled(false);
+            add(blank);
         }
     }
     /**
@@ -103,6 +128,21 @@ public class ActionPanel extends JPanel {
             remove(element);
         }
     }
+
+    /**
+     * Disable all actions
+     */
+    public void disableAllActions() {
+        Component[] comp = getComponents();
+        for (Component element : comp) {
+            element.setEnabled(false);
+        }
+    }
+
+
+    /**
+     * Enable actions
+     */
     private String getWrappedText(String s) {
         s = "<html><center>" + s + "</center></html>";
         return s;

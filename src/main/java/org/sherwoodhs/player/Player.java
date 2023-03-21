@@ -12,15 +12,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Player {
-    int health;
-    int stamina;
-    String name;
+    private int health;
+    private int stamina;
+    private String name;
+
+    private boolean discoveredHaven;
+    private boolean discoveredFoundation;
+    private boolean discoveredClearwater;
     File savedName = new File("src/main/java/org/sherwoodhs/player/name.txt");
 
     private static Player player = new Player();
 
     private Player() {
-        //do
+        discoveredHaven = false;
+        discoveredFoundation = false;
+        discoveredClearwater = false;
+
+    }
+    public boolean isDiscoveredHaven() {
+        return player.discoveredHaven;
+    }
+    public boolean isDiscoveredFoundation() {
+        return player.discoveredFoundation;
+    }
+    public boolean isDiscoveredClearwater() {
+        return player.discoveredClearwater;
     }
 
     public String getName() {
