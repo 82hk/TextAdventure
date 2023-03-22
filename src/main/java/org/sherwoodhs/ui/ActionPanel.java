@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static org.sherwoodhs.ui.Frame.FRAME;
+
 public class ActionPanel extends JPanel {
     public static final ActionPanel actionPanel = new ActionPanel();
     private AdvGame adv;
@@ -56,9 +58,8 @@ public class ActionPanel extends JPanel {
             // if the element  cycling through is not blank
             if (!element.equals("")) {
                 JButton action = new JButton(getWrappedText(element));
-
                 action.setFont(new Font ("Lato",0,15)); // FONTS
-
+                action.setEnabled(false);
                 action.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -139,6 +140,17 @@ public class ActionPanel extends JPanel {
         Component[] comp = getComponents();
         for (Component element : comp) {
             element.setEnabled(false);
+        }
+    }
+
+    public void enableValidOptions() {
+        Component[] comp = getComponents();
+        for (Component element : comp) {
+            if (element instanceof JButton) {
+                if (((JButton) element).getText() != "") {
+                    element.setEnabled(true);
+                }
+            }
         }
     }
 

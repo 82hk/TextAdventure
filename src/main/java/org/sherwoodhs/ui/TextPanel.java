@@ -5,6 +5,7 @@ import org.sherwoodhs.ui.util.CellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
 import static org.sherwoodhs.ui.ActionPanel.actionPanel;
+import static org.sherwoodhs.ui.Frame.FRAME;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -40,7 +41,7 @@ public class TextPanel extends JPanel {
                 textListModel.set(index, (element.substring(0,i)+"|") ); // keeps the "|" in front
 
                 try { // pause for typing effect
-                    Thread.sleep(25);
+                    Thread.sleep(10);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -49,6 +50,7 @@ public class TextPanel extends JPanel {
             textListModel.set(index, element); // removes the "|"
         }
         index++; // new element after finish typing
+
     }
 
     /**

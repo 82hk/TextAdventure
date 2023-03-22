@@ -11,6 +11,7 @@ import org.sherwoodhs.quest.Separatist.*;
 import org.sherwoodhs.situation.OtherSide.OtherSideEndX1;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
+import org.sherwoodhs.ui.InventoryPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -22,10 +23,12 @@ import static org.sherwoodhs.ui.Frame.FRAME;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 import static org.sherwoodhs.ui.QuestPanel.questPanel;
+import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private Player player;
+    public static boolean actionUpdateReady = false;
     private AdvGame() {
         try {
             UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
@@ -43,6 +46,7 @@ public class AdvGame {
 
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
+        FRAME.setVisible(true);
         setSituation(EntranceSituation_0E.getInstance());
     }
 
@@ -50,7 +54,7 @@ public class AdvGame {
         setSituation(EntranceSituation_0E.getInstance());
         World.resetStates();
         resetQuestProgression();
-
+        inventoryPanel.clearInventory();
     }
 
     public void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
@@ -91,18 +95,31 @@ public class AdvGame {
 
     /* Updates the frame */
     public static void updateFrame() {
+        actionUpdateReady = false;
+        System.out.println(actionUpdateReady); // works on first time, but not second. Isn't being printed second time.
+
         situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
         textPanel.clearAllText(); // Empties the textfield
+        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
 
         Thread a = new Thread() {
             public void run() {
                 textPanel.addText(currentSituation.getDescription()); // Changes textfield description
+                actionUpdateReady = true; // WAITS FOR TYPING TO FINISH TO BE TRUE
+            }
+        };
+
+        Thread b = new Thread() {
+            public void run() {
+                actionPanel.initActions(currentSituation.getOptions());
+                while(!actionUpdateReady) { // WAITS FOR VARIABLE TO BE TRUE
+                    Thread.yield();
+                }
+                actionPanel.enableValidOptions();
             }
         };
         a.start();
-
-        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
-        actionPanel.initActions(currentSituation.getOptions());
+        b.start();
     }
 
     public static void updateFrame(String newDesc, String[] options) {
