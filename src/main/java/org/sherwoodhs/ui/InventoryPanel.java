@@ -39,22 +39,23 @@ public class InventoryPanel extends JPanel {
      * Adds one element to inventoryList without clearing its contents
      * @param item one element to be added to inventoryList
      */
-    public void addToInventory(String item) {
+    public void addToInventory(String item) { // identical method to TextPanel's "addText", but runs in its own thread
 
         Thread e = new Thread() {
             public void run() {
 
-                inventoryListModel.add(index, "");
+                inventoryListModel.add(index, "|");
                 for (int i = 0; i < item.length()+1; i++) {
-                    inventoryListModel.set(index, item.substring(0,i));
+                    inventoryListModel.set(index, (item.substring(0,i)+"|"));
 
                     try {
-                        Thread.sleep(40);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
 
                 }
+                inventoryListModel.set(index, item);
 
             }
         };

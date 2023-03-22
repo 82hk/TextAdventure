@@ -1,13 +1,14 @@
 package org.sherwoodhs;
 
 import org.sherwoodhs.player.Player;
+import org.sherwoodhs.ui.MenuPanel;
 
 public class Main {
     public static void main(String[] args) {
-        AdvGame e = AdvGame.getInstance();
+        MenuPanel m = MenuPanel.getInstance();
         Player p = Player.getInstance();
 
         p.setPlayerName();
-        e.startGame();
+        m.startMenu();
     }
 }

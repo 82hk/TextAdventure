@@ -14,7 +14,7 @@ public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
-    private int index = 0; // helper
+    private int index = 0; // tracks the index of the JList element being edited
     public TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600, 550));
@@ -27,32 +27,28 @@ public class TextPanel extends JPanel {
     }
 
     /**
-     * Adds one element to textList without clearing its contents, can contain escape sequences
-     *
+     * Adds one element to textList without clearing its contents, can contain escape sequences.
      * @param s one element to be added to TextList
      */
     public void addText(String... s) {
 
-        /**for (String element : s) {
-         textListModel.addElement(element);
-         } */ // old implementation
-
-        textListModel.add(index,"");
+        textListModel.add(index,"|"); // adds a "|" for typing effect
 
         for (String element : s) {
-            for (int i = 0; i < element.length()+1; i++) {
+            for (int i = 0; i < element.length(); i++) {
 
-                textListModel.set(index, element.substring(0,i));
+                textListModel.set(index, (element.substring(0,i)+"|") ); // keeps the "|" in front
 
-                try {
-                    Thread.sleep(17);
+                try { // pause for typing effect
+                    Thread.sleep(25);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
 
             }
+            textListModel.set(index, element); // removes the "|"
         }
-        index++;
+        index++; // new element after finish typing
     }
 
     /**

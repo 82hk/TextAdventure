@@ -57,7 +57,7 @@ public class ActionPanel extends JPanel {
             if (!element.equals("")) {
                 JButton action = new JButton(getWrappedText(element));
 
-                action.setFont(new Font ("Papyrus",1,15)); // FONTS
+                action.setFont(new Font ("Lato",0,15)); // FONTS
 
                 action.addActionListener(new ActionListener() {
                     @Override

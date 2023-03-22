@@ -35,7 +35,7 @@ public class AdvGame {
             UIManager.put("ProgressBar.foreground", new Color(69, 64, 92));
             UIManager.put("ProgressBar.selectionForeground", new Color(180, 180, 200));
             UIManager.put("ProgressBar.selectionBackground", new Color(180, 180, 200));
-            //UIManager.put("TextArea.background", new Color(44, 44, 59));
+            UIManager.put("TextArea.background", new Color(44, 44, 59)); // Comment out to add highlighting
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,7 +44,6 @@ public class AdvGame {
     //Starts game at TestConversation1_0D then makes frame visible
     public void startGame() {
         setSituation(EntranceSituation_0E.getInstance());
-        FRAME.setVisible(true);
     }
 
     public void restartGame() {
@@ -56,8 +55,6 @@ public class AdvGame {
 
     public void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
 
-
-        // reset quest progression
         BottleFetchQuest.getInstance().reset(); // Clearwater
 
         GuardQuest.getInstance().reset(); // Foundation
