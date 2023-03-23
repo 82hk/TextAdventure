@@ -22,9 +22,7 @@ public class Frame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
-
-         add(situationPanel, BorderLayout.NORTH);
+        add(situationPanel, BorderLayout.NORTH);
 
         // contains TextPanel + QuestPanel, ActionPanel
         JPanel left = new JPanel();
@@ -47,9 +45,9 @@ public class Frame extends JFrame {
         left.add(actionPanel, BorderLayout.SOUTH);
 
         partition.add(textPanel, BorderLayout.WEST);
-        partition.add(questPanel, BorderLayout.EAST);
+        partition.add(mapPanel, BorderLayout.EAST);
 
-        right.add(mapPanel, BorderLayout.NORTH);
+        right.add(questPanel, BorderLayout.NORTH);
         right.add(inventoryPanel, BorderLayout.CENTER);
         right.add(barPanel, BorderLayout.SOUTH);
 

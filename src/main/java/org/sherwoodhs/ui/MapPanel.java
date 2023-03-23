@@ -9,7 +9,7 @@ public class MapPanel extends JPanel {
 
     private MapPanel() {
         super();
-        setPreferredSize(new Dimension(250, 250));
+        setPreferredSize(new Dimension(150, 550));
         setBorder(new TitledBorder("Map"));
     }
 }
