@@ -95,42 +95,64 @@ public class AdvGame {
 
     /* Updates the frame */
     public static void updateFrame() {
-        actionUpdateReady = false;
-        System.out.println(actionUpdateReady); // works on first time, but not second. Isn't being printed second time.
 
-        situationPanel.setSituationLabel(currentSituation.getTitle()); // Changes Situation Title
-        textPanel.clearAllText(); // Empties the textfield
-        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString())); //setTitled border title
+        actionUpdateReady = false;
+        situationPanel.setSituationLabel(currentSituation.getTitle());
+        textPanel.clearAllText();
+        textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString()));
 
         Thread a = new Thread() {
             public void run() {
-                textPanel.addText(currentSituation.getDescription()); // Changes textfield description
-                actionUpdateReady = true; // WAITS FOR TYPING TO FINISH TO BE TRUE
+                textPanel.addText(currentSituation.getDescription());
+                actionUpdateReady = true;
             }
         };
 
         Thread b = new Thread() {
             public void run() {
+
                 actionPanel.initActions(currentSituation.getOptions());
-                while(!actionUpdateReady) { // WAITS FOR VARIABLE TO BE TRUE
+                actionPanel.disableAllActions();
+                while(!actionUpdateReady) {
                     Thread.yield();
                 }
-                actionPanel.enableValidOptions();
+                actionPanel.initActions(currentSituation.getOptions());
+                actionUpdateReady = false;
             }
         };
+
         a.start();
         b.start();
+
     }
 
     public static void updateFrame(String newDesc, String[] options) {
-
         updateFrame(newDesc);
         updateFrame(options);
-
     }
 
+    /**
+     *  PROBLEM -   Timing issue with initActions called on different Threads?
+     *              Buttons render wrongly at random (differing each time)
+     *
+     *  SOLUTION -  Track where actionPanel is being called
+     *              and on what thread.
+     */
+
     public static void updateFrame(String[] options) {
-        actionPanel.initActions(options);
+        Thread c = new Thread() {
+            public void run() {
+
+                actionPanel.disableAllActions();
+                while(!actionUpdateReady) {
+                    Thread.yield();
+                }
+                actionPanel.initActions(options);
+                actionUpdateReady = false;
+
+            }
+        };
+        c.start();
     }
 
     public static void updateFrame(String newDesc) {
@@ -138,7 +160,7 @@ public class AdvGame {
         Thread c = new Thread() {
             public void run() {
                 textPanel.addText("\n" + newDesc);
-
+                actionUpdateReady = true;
             }
         };
         c.start();
@@ -147,7 +169,13 @@ public class AdvGame {
 
     
     public static void updateFrameWithoutSpacing(String newDesc) {
-        textPanel.addText(newDesc);
+        Thread s = new Thread() {
+            public void run() {
+                textPanel.addText(newDesc);
+            }
+        };
+        s.start();
+
     }
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
         updateFrameWithoutSpacing(newDesc);

@@ -6,15 +6,16 @@ import java.awt.*;
 /**
  * Renders JList components as JTextAreas that can wrap lines
  */
-public class CellRenderer implements ListCellRenderer {
+public class InvPanelCellRenderer implements ListCellRenderer {
     private JPanel panel;
     private JTextArea textArea;
-    public CellRenderer() {
+    public InvPanelCellRenderer() {
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         textArea = new JTextArea();
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
+        textArea.setFont(new Font("Lato",0,15));
         panel.add(textArea, BorderLayout.CENTER);
     }
     @Override

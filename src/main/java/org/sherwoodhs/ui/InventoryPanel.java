@@ -1,12 +1,11 @@
 package org.sherwoodhs.ui;
 
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
+import org.sherwoodhs.ui.util.InvPanelCellRenderer;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-
-import static org.sherwoodhs.ui.QuestPanel.questPanel;
 
 public class InventoryPanel extends JPanel {
     public static final InventoryPanel inventoryPanel = new InventoryPanel();
@@ -21,6 +20,7 @@ public class InventoryPanel extends JPanel {
 
         inventoryList = new JList<>(inventoryListModel);
         inventoryList.setSelectionModel(new DisabledItemSelectionModel());
+        inventoryList.setCellRenderer(new InvPanelCellRenderer());
         add(inventoryList);
 
         initInventory(new String[]{});
@@ -47,7 +47,6 @@ public class InventoryPanel extends JPanel {
                 inventoryListModel.add(index, "|");
                 for (int i = 0; i < item.length()+1; i++) {
                     inventoryListModel.set(index, (item.substring(0,i)+"|"));
-
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {

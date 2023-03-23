@@ -1,11 +1,7 @@
 package org.sherwoodhs.ui;
 
-import org.sherwoodhs.AdvGame;
-import org.sherwoodhs.ui.util.CellRenderer;
+import org.sherwoodhs.ui.util.TextPanelCellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
-
-import static org.sherwoodhs.ui.ActionPanel.actionPanel;
-import static org.sherwoodhs.ui.Frame.FRAME;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -20,10 +16,11 @@ public class TextPanel extends JPanel {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600, 550));
         setBorder(new TitledBorder("Dialogue"));
+        setFont(new Font("Lato",2,13));
 
         textList = new JList<>(textListModel);
         textList.setSelectionModel(new DisabledItemSelectionModel());
-        textList.setCellRenderer(new CellRenderer());
+        textList.setCellRenderer(new TextPanelCellRenderer());
         add(textList);
     }
 
@@ -32,25 +29,19 @@ public class TextPanel extends JPanel {
      * @param s one element to be added to TextList
      */
     public void addText(String... s) {
-
-        textListModel.add(index,"|"); // adds a "|" for typing effect
-
+        textListModel.add(index,"|");
         for (String element : s) {
             for (int i = 0; i < element.length(); i++) {
 
-                textListModel.set(index, (element.substring(0,i)+"|") ); // keeps the "|" in front
-
-                try { // pause for typing effect
-                    Thread.sleep(10);
+                textListModel.set(index, (element.substring(0,i)+"|") );
+                try {
+                    Thread.sleep(5);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
 
-            }
-            textListModel.set(index, element); // removes the "|"
-        }
-        index++; // new element after finish typing
-
+            } textListModel.set(index, element);
+        } index++;
     }
 
     /**

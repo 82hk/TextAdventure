@@ -48,6 +48,7 @@ public class ActionPanel extends JPanel {
      * @param texts represents the prompts the player will be given in each JButton, texts.length represents the amount of buttons added to the panel
      */
     public void initActions(String[] texts) {
+        System.out.println("initActions :" + texts.length);
         if (texts.length == 0)
             return;
         if (texts.length > 6)
@@ -59,7 +60,6 @@ public class ActionPanel extends JPanel {
             if (!element.equals("")) {
                 JButton action = new JButton(getWrappedText(element));
                 action.setFont(new Font ("Lato",0,15)); // FONTS
-                action.setEnabled(false);
                 action.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
