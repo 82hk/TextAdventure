@@ -48,7 +48,7 @@ public class ActionPanel extends JPanel {
      * @param texts represents the prompts the player will be given in each JButton, texts.length represents the amount of buttons added to the panel
      */
     public void initActions(String[] texts) {
-        System.out.println("initActions :" + texts.length);
+        System.out.println("initActions : " + texts.length + " buttons");
         if (texts.length == 0)
             return;
         if (texts.length > 6)

@@ -6,11 +6,22 @@ import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
+    private TimerTask typingTask = new TimerTask() {
+        @Override
+        public void run() {
+            // make timerTask automate through a variable that holds the preloaded messages, then types them out
+
+            // textListModel.set(element, i)
+            // i++
+        }
+    };
     private int index = 0; // tracks the index of the JList element being edited
     public TextPanel() {
         super(new BorderLayout());
@@ -30,26 +41,31 @@ public class TextPanel extends JPanel {
      */
 
     public void addText(String... s) {
-        Thread t = new Thread() {
-            public void run() {
 
-                textListModel.add(index,"|");
-                for (String element : s) {
-                    for (int i = 0; i < element.length(); i++) {
-                        textListModel.set(index, (element.substring(0,i)+"|") );
-                        try {
-                            Thread.sleep(12);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
-                    } textListModel.set(index, element);
-                } index++;
+        /*
+        textListModel.add(index, "|");
+        timer.schedule(typing Task, delay 10);
 
-            }
-        };
-        t.start();
+         */
+
+
+        textListModel.add(index,"|");
+
+        for (String element : s) {
+            for (int i = 0; i < element.length(); i++) {
+
+                textListModel.set(index, (element.substring(0,i)+"|") );
+
+                try {
+                    Thread.sleep(12);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            } textListModel.set(index, element);
+        } index++;
+
     }
-
     /**
      * Adds a blank line to textList, akin to two <br> tags in HTML
      */
