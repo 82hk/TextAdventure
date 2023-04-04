@@ -4,6 +4,8 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class Foundation_2E implements Situation {
     private static Situation situation = new Foundation_2E();
 
@@ -46,6 +48,11 @@ public class Foundation_2E implements Situation {
                 break;
 
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance() {

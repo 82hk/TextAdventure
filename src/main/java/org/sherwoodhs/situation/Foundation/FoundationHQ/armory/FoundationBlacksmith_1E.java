@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 
+import javax.swing.*;
+
 public class FoundationBlacksmith_1E implements Situation {
     private static Situation situation = new FoundationBlacksmith_1E();
     Player player = Player.getInstance();
@@ -74,6 +76,12 @@ public class FoundationBlacksmith_1E implements Situation {
         }
 
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance(){
         return situation;
     }

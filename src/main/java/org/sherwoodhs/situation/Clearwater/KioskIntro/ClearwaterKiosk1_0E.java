@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class ClearwaterKiosk1_0E implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
@@ -68,6 +70,11 @@ public class ClearwaterKiosk1_0E implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

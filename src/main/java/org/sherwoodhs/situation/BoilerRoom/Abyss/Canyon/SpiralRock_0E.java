@@ -5,6 +5,8 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class SpiralRock_0E implements Situation {
     private static Situation situation = new SpiralRock_0E();
     @Override
@@ -39,6 +41,12 @@ public class SpiralRock_0E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

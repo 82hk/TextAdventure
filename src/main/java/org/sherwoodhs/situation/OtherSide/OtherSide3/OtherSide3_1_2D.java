@@ -8,6 +8,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 /*
@@ -64,5 +66,10 @@ public class OtherSide3_1_2D implements Situation {
                 AdvGame.setSituation(OtherSide3_2_0E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

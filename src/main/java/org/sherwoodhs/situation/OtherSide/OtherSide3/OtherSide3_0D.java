@@ -7,6 +7,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
  This event only occurs have fulfilled part II of the questline and return to the hidden alcove.
  You get to decide whether or not you give the USB to the alchemist.
@@ -77,5 +79,10 @@ public class OtherSide3_0D implements Situation {
                 }
         }
 
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

@@ -5,6 +5,8 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class BlackwellEntrance_E implements Situation {
     private static Situation situation = new BlackwellEntrance_E();
     @Override
@@ -44,6 +46,12 @@ public class BlackwellEntrance_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

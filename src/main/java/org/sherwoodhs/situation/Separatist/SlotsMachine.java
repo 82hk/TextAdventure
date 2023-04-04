@@ -3,6 +3,8 @@ package org.sherwoodhs.situation.Separatist;
 import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+
+import javax.swing.*;
 import java.util.Random;
 
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
@@ -74,6 +76,11 @@ public class SlotsMachine implements Situation {
                 AdvGame.setSituation(Casino.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

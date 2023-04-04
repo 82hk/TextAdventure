@@ -6,6 +6,8 @@ import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.PraffitSettlement.Praffi
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class Crevasse_1E implements Situation {
     private static Situation situation = new Crevasse_1E();
     private boolean firstTime = true;
@@ -44,6 +46,12 @@ public class Crevasse_1E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

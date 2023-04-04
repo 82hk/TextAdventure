@@ -3,6 +3,8 @@ package org.sherwoodhs.situation.foundation.quests;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class FoundationBulletMaking implements Situation {
     private static Situation situation = new FoundationBulletMaking();
     @Override
@@ -30,6 +32,11 @@ public class FoundationBulletMaking implements Situation {
     @Override
     public void perform(String option) {
 
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

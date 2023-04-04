@@ -16,7 +16,7 @@ public class QuestPanel extends JPanel {
 
     private QuestPanel() {
         super(new BorderLayout());
-        setPreferredSize(new Dimension(250,250));
+        setPreferredSize(new Dimension(150,550));
         setBorder(new TitledBorder("Current Quests"));
 
         questList = new JList<>(questListModel);

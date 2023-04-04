@@ -12,6 +12,7 @@ import org.sherwoodhs.situation.OtherSide.OtherSideEndX1;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 import org.sherwoodhs.ui.InventoryPanel;
+import org.sherwoodhs.ui.MapPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -96,6 +97,7 @@ public class AdvGame {
     /* Updates the frame */
     public static void updateFrame() {
 
+        MapPanel.mapPanel.updateImg();
         actionUpdateReady = false;
         situationPanel.setSituationLabel(currentSituation.getTitle());
         textPanel.clearAllText();

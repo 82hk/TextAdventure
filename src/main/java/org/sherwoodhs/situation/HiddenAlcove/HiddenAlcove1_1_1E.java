@@ -8,6 +8,8 @@ import org.sherwoodhs.npc.OtherSide.Alchemist;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
  * Basically a mini text snippet.
  */
@@ -45,6 +47,11 @@ public class HiddenAlcove1_1_1E implements Situation {
                 break;
 
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
 

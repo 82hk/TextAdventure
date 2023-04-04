@@ -7,6 +7,9 @@ import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.npc.OtherSide.OldMan;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+
+import javax.swing.*;
+
 /*
     This is where you first meet the mysterious Alchemist(At this point, known as ?????).
     This only happens on your first entrance of the Hidden Alcove.
@@ -22,6 +25,7 @@ public class OtherSide1_0D implements Situation {
     private OtherSide1_0D() {}
 
     private boolean questionOption = true; //Decides if option 0 get shown as an option
+
     private boolean awkwardOption = true; //Decides if option 4 gets shown as an option
     private boolean returned = false; //Boolean if this situation has been returned to by dialouge option
     @Override
@@ -89,6 +93,11 @@ public class OtherSide1_0D implements Situation {
                 AdvGame.setSituation(OtherSide1_1_3D.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
 

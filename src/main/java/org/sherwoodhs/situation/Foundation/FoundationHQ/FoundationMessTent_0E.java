@@ -4,6 +4,8 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class FoundationMessTent_0E implements Situation {
     private static Situation situation = new FoundationMessTent_0E();
 
@@ -34,6 +36,11 @@ public class FoundationMessTent_0E implements Situation {
             case "Leave":
                 AdvGame.setSituation(FoundationHub_0E.getInstance());
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

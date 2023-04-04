@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    YOu
  */
@@ -51,5 +53,10 @@ public class OtherSide3_2_0E implements Situation {
                 AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

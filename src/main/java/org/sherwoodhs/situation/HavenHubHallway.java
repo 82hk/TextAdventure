@@ -9,6 +9,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.Separatist.SeparatistHub;
 
+import javax.swing.*;
+
 /*
    This is a hallway between the Hall and the Haven Center.
  */
@@ -58,5 +60,10 @@ public class HavenHubHallway implements Situation {
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
             break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

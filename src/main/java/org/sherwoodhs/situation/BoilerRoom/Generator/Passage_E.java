@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.BoilerRoom.Abyss.Surface.Outcropping_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class Passage_E implements Situation {
     private boolean firstTime = true;
     private static Situation situation = new Passage_E();
@@ -45,6 +47,12 @@ public class Passage_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

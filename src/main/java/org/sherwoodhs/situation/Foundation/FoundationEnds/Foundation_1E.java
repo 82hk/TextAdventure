@@ -7,6 +7,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
+import javax.swing.*;
+
 public class Foundation_1E implements Situation {
     private static Situation situation = new Foundation_1E();
     private int eats = 0;
@@ -97,6 +99,11 @@ public class Foundation_1E implements Situation {
                         break;
                 }
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance() {

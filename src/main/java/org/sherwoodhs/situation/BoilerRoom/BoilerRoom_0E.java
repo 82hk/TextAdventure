@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.Clearwater.Warehouse.ClearwaterWarehouseEntrance
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class BoilerRoom_0E implements Situation {
     private boolean firstTime = true;
     private boolean inspectedPipe = false;
@@ -58,6 +60,12 @@ public class BoilerRoom_0E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

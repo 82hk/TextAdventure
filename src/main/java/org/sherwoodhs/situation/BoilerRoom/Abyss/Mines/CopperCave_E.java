@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.BoilerRoom.Abyss.Canyon.Aquifer_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class CopperCave_E implements Situation {
     private boolean firstTime = true;
     private boolean solvedPuzzle = false;
@@ -406,6 +408,12 @@ public class CopperCave_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     private boolean isSolved() {
         if (copper1 == 0 && copper2 == 5 && copper3 == 2 && copper4 == 3) {
             return true;

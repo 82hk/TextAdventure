@@ -5,6 +5,8 @@ import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.situation.Separatist.Kitchen.Kitchen.burger;
 import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
 
@@ -61,6 +63,11 @@ public class BurgerStation implements Situation {
                 AdvGame.setSituation(Kitchen.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static void addToOrder(String food) {

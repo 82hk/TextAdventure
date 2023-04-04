@@ -13,6 +13,8 @@ import org.sherwoodhs.situation.OtherSide.OtherSide3.OtherSide3_0D;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 
 public class HiddenAlcove1_0E implements Situation {
     Location location = HiddenAlcove.getInstance();
@@ -80,6 +82,11 @@ public class HiddenAlcove1_0E implements Situation {
             }
 
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
 

@@ -3,6 +3,7 @@ package org.sherwoodhs.situation.Foundation.quests;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
 
 
 public class CourierQuest implements Situation {
@@ -29,5 +30,10 @@ public class CourierQuest implements Situation {
     @Override
     public void perform(String option) {
 
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

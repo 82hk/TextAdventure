@@ -7,6 +7,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class ClearwaterKiosk1_2D implements Situation {
     NPC distributor = TheDistributor.getInstance();
     private static final Situation situation = new ClearwaterKiosk1_2D();
@@ -121,6 +123,11 @@ public class ClearwaterKiosk1_2D implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

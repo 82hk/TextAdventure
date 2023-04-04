@@ -5,6 +5,8 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 public class Crevasse_0E implements Situation {
@@ -74,6 +76,12 @@ public class Crevasse_0E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

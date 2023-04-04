@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class EntranceSituation_2E implements Situation {
     private static Situation situation = new EntranceSituation_2E();
 
@@ -51,6 +53,11 @@ public class EntranceSituation_2E implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

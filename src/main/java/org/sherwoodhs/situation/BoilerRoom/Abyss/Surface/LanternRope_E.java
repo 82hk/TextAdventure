@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.BoilerRoom.Generator.Passage_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class LanternRope_E implements Situation {
     private boolean firstTime = true;
     private boolean inspectedLantern = false;
@@ -69,6 +71,12 @@ public class LanternRope_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

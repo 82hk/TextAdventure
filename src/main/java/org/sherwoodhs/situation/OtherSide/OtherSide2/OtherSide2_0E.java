@@ -6,6 +6,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    You found the door to Crete.
  */
@@ -45,5 +47,10 @@ public class OtherSide2_0E implements Situation {
 
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

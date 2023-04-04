@@ -5,6 +5,8 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class SmallCavern_2E implements Situation {
     boolean firstTime = true;
     private boolean cameReverse = false;
@@ -55,6 +57,12 @@ public class SmallCavern_2E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

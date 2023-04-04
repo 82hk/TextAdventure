@@ -10,6 +10,8 @@ import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
  You, in some fashion, agree to help out with the alchemist.
  Displays information about a new quest when you first enter.
@@ -57,5 +59,10 @@ public class OtherSide1_2D implements Situation {
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }
