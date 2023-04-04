@@ -29,20 +29,25 @@ public class QuestPanel extends JPanel {
      * @param quest one element to be added to questList
      */
     public void addQuest(Quest quest) { // identical method to TextPanel's "addText"
+        Thread t = new Thread() {
+            public void run() {
 
-        String questName = setQuestConvention(quest.getName());
-        questListModel.add(index,"|");
+                String questName = setQuestConvention(quest.getName());
+                questListModel.add(index, "|");
 
-        for (int i = 0; i < questName.length(); i++) {
-            questListModel.set(index, (questName.substring(0,i)+"|") );
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                for (int i = 0; i < questName.length(); i++) {
+                    questListModel.set(index, (questName.substring(0, i) + "|"));
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                questListModel.set(index, questName);
+                index++;
             }
-        }
-        questListModel.set(index, questName);
-        index++;
+        };
+        t.start();
     }
     private String setQuestConvention(String s) {return "> " + s;}
     /**

@@ -28,20 +28,26 @@ public class TextPanel extends JPanel {
      * Adds one element to textList without clearing its contents, can contain escape sequences.
      * @param s one element to be added to TextList
      */
+
     public void addText(String... s) {
-        textListModel.add(index,"|");
-        for (String element : s) {
-            for (int i = 0; i < element.length(); i++) {
+        Thread t = new Thread() {
+            public void run() {
 
-                textListModel.set(index, (element.substring(0,i)+"|") );
-                try {
-                    Thread.sleep(5);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+                textListModel.add(index,"|");
+                for (String element : s) {
+                    for (int i = 0; i < element.length(); i++) {
+                        textListModel.set(index, (element.substring(0,i)+"|") );
+                        try {
+                            Thread.sleep(12);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    } textListModel.set(index, element);
+                } index++;
 
-            } textListModel.set(index, element);
-        } index++;
+            }
+        };
+        t.start();
     }
 
     /**
@@ -58,4 +64,5 @@ public class TextPanel extends JPanel {
         textListModel.clear();
         index = 0;
     }
+
 }
