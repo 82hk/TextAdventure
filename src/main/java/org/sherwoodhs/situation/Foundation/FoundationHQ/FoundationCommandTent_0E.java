@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.QuestTent.FoundationQuestTent_0E;
 import org.sherwoodhs.ui.InventoryPanel;
 
+import javax.swing.*;
+
 public class FoundationCommandTent_0E implements Situation {
     private static Situation situation = new FoundationCommandTent_0E();
     @Override
@@ -52,6 +54,11 @@ public class FoundationCommandTent_0E implements Situation {
                 GuardQuest.getInstance().complete();
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

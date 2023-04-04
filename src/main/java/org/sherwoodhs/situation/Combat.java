@@ -3,6 +3,8 @@ package org.sherwoodhs.situation;
 import org.sherwoodhs.npc.NPC;
 import org.sherwoodhs.player.Player;
 
+import javax.swing.*;
+
 public abstract class Combat implements Situation {
     //Calls in player singleton
     protected Player player = Player.getInstance();
@@ -15,5 +17,10 @@ public abstract class Combat implements Situation {
     }
 
     public SitType getSitType() {return SitType.Combat;}
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
 
 }

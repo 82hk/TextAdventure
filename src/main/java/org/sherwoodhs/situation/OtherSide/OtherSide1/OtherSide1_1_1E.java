@@ -6,6 +6,8 @@ import org.sherwoodhs.situation.HavenHubHallway;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
  When you select this situation, you leave the Hidden Alcove and are unable to come back.
  You permanently block this questline.
@@ -50,5 +52,10 @@ public class OtherSide1_1_1E implements Situation {
                 AdvGame.setSituation(HavenHubHallway.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

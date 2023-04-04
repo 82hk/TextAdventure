@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Separatist.WorkPlace;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
 
@@ -88,6 +90,11 @@ public class Kitchen implements Situation {
                 AdvGame.setSituation(WorkPlace.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

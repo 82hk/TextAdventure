@@ -12,6 +12,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
+import javax.swing.*;
+
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();
 
@@ -89,6 +91,11 @@ public class EntranceSituation_0E implements Situation {
                 break;
 
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return new ImageIcon("src/main/java/org/sherwoodhs/imgs/entrance/entrance.jpg");
     }
 
     public static Situation getInstance(){

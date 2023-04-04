@@ -2,6 +2,8 @@ package org.sherwoodhs.situation;
 
 //Singleton stuff will be done in each separate singleton
 
+import javax.swing.*;
+
 public interface Situation {
     //Returns options for input
 
@@ -12,6 +14,8 @@ public interface Situation {
     public abstract String[] getOptions();
 
     public abstract void perform(String option);
+
+    public abstract ImageIcon getImg();
 
 /*
 

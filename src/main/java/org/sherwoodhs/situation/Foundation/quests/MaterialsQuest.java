@@ -5,6 +5,7 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
 import java.util.Random;
 
 public class MaterialsQuest implements Situation {
@@ -136,5 +137,10 @@ public class MaterialsQuest implements Situation {
 
 
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

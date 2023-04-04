@@ -10,6 +10,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.QuestPanel;
 
+import javax.swing.*;
+
 public class FoundationIntro_0D implements Situation {
     private static Situation situation = new FoundationIntro_0D();
     NPC guard = FoundationGuard.getInstance();
@@ -86,5 +88,10 @@ public class FoundationIntro_0D implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

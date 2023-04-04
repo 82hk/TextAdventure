@@ -96,11 +96,33 @@ public class AdvGame {
     /* Updates the frame */
     public static void updateFrame() {
 
+        actionUpdateReady = false;
         situationPanel.setSituationLabel(currentSituation.getTitle());
         textPanel.clearAllText();
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString()));
-        textPanel.addText(currentSituation.getDescription());
-        actionPanel.initActions(currentSituation.getOptions());
+
+        Thread a = new Thread() {
+            public void run() {
+                textPanel.addText(currentSituation.getDescription());
+                actionUpdateReady = true;
+            }
+        };
+
+        Thread b = new Thread() {
+            public void run() {
+
+                actionPanel.initActions(currentSituation.getOptions());
+                actionPanel.disableAllActions();
+                while(!actionUpdateReady) {
+                    Thread.yield();
+                }
+                actionPanel.initActions(currentSituation.getOptions());
+                actionUpdateReady = false;
+            }
+        };
+
+        a.start();
+        b.start();
 
     }
 
@@ -118,16 +140,42 @@ public class AdvGame {
      */
 
     public static void updateFrame(String[] options) {
-        actionPanel.initActions(options);
+        Thread c = new Thread() {
+            public void run() {
+
+                actionPanel.disableAllActions();
+                while(!actionUpdateReady) {
+                    Thread.yield();
+                }
+                actionPanel.initActions(options);
+                actionUpdateReady = false;
+
+            }
+        };
+        c.start();
     }
 
     public static void updateFrame(String newDesc) {
-        textPanel.addText("\n" + newDesc);
+
+        Thread c = new Thread() {
+            public void run() {
+                textPanel.addText("\n" + newDesc);
+                actionUpdateReady = true;
+            }
+        };
+        c.start();
+
     }
 
     
     public static void updateFrameWithoutSpacing(String newDesc) {
-        textPanel.addText(newDesc);
+        Thread s = new Thread() {
+            public void run() {
+                textPanel.addText(newDesc);
+            }
+        };
+        s.start();
+
     }
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
         updateFrameWithoutSpacing(newDesc);
@@ -144,7 +192,15 @@ public class AdvGame {
     
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
     
-    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+    public static void addQuest(Quest quest) {
+        Thread q = new Thread() {
+            public void run() {
+                questPanel.addQuest(quest);
+            }
+        };
+        q.start();
+
+    }
     
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 

@@ -8,6 +8,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 import static org.sherwoodhs.ui.TextPanel.textPanel;
 
@@ -77,6 +79,11 @@ public class ExampleSituation implements Situation {
                     break;
             }
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     //and remember to add the getInstance method!

@@ -11,6 +11,8 @@ import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.ui.QuestPanel;
 
+import javax.swing.*;
+
 
 public class FoundationArmory_0E implements Situation {
 
@@ -73,6 +75,12 @@ public class FoundationArmory_0E implements Situation {
                 ScrapMetalRepeatable.getInstance().reset();
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance(){
         return situation;
     }

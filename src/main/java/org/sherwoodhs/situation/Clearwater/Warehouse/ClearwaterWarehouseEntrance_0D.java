@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.OtherSide.OtherSide2.OtherSide2_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class ClearwaterWarehouseEntrance_0D implements Situation {
     private static final Situation situation = new ClearwaterWarehouseEntrance_0D();
 
@@ -79,6 +81,12 @@ public class ClearwaterWarehouseEntrance_0D implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance(){
         return situation;
     }

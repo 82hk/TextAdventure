@@ -11,6 +11,8 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.quests.GuardDuty;
 import org.sherwoodhs.situation.Foundation.quests.ScrapCollection;
 
+import javax.swing.*;
+
 
 public class FoundationHub_0E implements Situation {
     private static Situation situation = new FoundationHub_0E();
@@ -116,6 +118,11 @@ public class FoundationHub_0E implements Situation {
                 //AdvGame.setSituation();
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
 

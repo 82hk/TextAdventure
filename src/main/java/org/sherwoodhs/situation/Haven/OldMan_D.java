@@ -7,6 +7,8 @@ import org.sherwoodhs.npc.OtherSide.OldMan;
 import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+
+import javax.swing.*;
 import java.util.Random;
 
 public class OldMan_D implements Situation {
@@ -113,6 +115,12 @@ public class OldMan_D implements Situation {
             break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance(){
         return situation;
     }

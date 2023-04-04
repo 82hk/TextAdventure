@@ -7,6 +7,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    You enter Crete
  */
@@ -46,5 +48,10 @@ public class OtherSide2_1E implements Situation {
                 AdvGame.setSituation(OtherSide2_UndeclaredE.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

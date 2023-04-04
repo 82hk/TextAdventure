@@ -4,6 +4,9 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Separatist.FoodMakingQuest;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+
+import javax.swing.*;
+
 import static org.sherwoodhs.situation.Separatist.Kitchen.CashRegister.playerOrder;
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
@@ -53,6 +56,11 @@ public class Fryer implements Situation {
                 AdvGame.setSituation(Kitchen.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

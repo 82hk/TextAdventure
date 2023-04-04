@@ -11,6 +11,8 @@ import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    One day has passed since the USB from the alchemist was forcefully taken from you after you refused to hand it over.
    The world collapses and you don't make it.
@@ -72,5 +74,10 @@ public class OtherSideEndX1 implements Situation {
             case "Exit":
                 System.exit(0);
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

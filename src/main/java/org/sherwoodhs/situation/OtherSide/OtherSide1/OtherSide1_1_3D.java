@@ -7,6 +7,8 @@ import org.sherwoodhs.player.Player;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
  You essentially ask a question to the Alchemist, get a vague answer and return back to Otherside1_0_0D
  Nothing much happens except for removing this option from OtherSide1_0_0D
@@ -51,5 +53,10 @@ public class OtherSide1_1_3D implements Situation {
                 AdvGame.setSituation(OtherSide1_0D.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

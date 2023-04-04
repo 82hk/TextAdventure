@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class Foundation_EAT_0E implements Situation {
     private static Situation situation = new Foundation_EAT_0E();
 
@@ -83,6 +85,11 @@ public class Foundation_EAT_0E implements Situation {
                         new String[]{"The end."});
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance() {

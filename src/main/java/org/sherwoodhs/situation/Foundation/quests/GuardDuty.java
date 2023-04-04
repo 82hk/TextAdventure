@@ -9,6 +9,7 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -191,6 +192,11 @@ public class GuardDuty implements Situation {
                     break;
             }
         }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
 
     public static Situation getInstance(){
         return situation;

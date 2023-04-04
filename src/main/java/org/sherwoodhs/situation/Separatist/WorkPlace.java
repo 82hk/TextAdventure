@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Separatist.Kitchen.Kitchen;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class WorkPlace implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
@@ -50,6 +52,11 @@ public class WorkPlace implements Situation {
                 AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

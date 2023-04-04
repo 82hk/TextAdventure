@@ -6,6 +6,8 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.npc.Separatist.SeparatistChief;
 import org.sherwoodhs.npc.NPC;
 
+import javax.swing.*;
+
 public class SeparatistBaseEntrance implements Situation {
     
     // REVERT EVERYTHING TO EXPLORATION TYPE, MAKE INDIVIDUAL CLASSES FOR EVERY OPTION (maybe with adding previous text in backwards).
@@ -78,6 +80,11 @@ public class SeparatistBaseEntrance implements Situation {
                 AdvGame.setSituation(SeparatistHub.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

@@ -14,6 +14,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.BarPanel;
 
+import javax.swing.*;
+
 public class HavenCenter_E implements Situation {
 
     private static Situation situation = new HavenCenter_E();
@@ -99,6 +101,12 @@ public class HavenCenter_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance(){
         return situation;
     }

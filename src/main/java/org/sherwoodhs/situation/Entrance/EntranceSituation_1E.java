@@ -5,6 +5,8 @@ import org.sherwoodhs.World;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class EntranceSituation_1E implements Situation {
     private static Situation situation = new EntranceSituation_1E();
 
@@ -64,6 +66,11 @@ public class EntranceSituation_1E implements Situation {
             case "Exit":
                 System.exit(0);
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return new ImageIcon("src/main/java/org/sherwoodhs/imgs/entrance/thebeyond.jpg");
     }
 
     public static Situation getInstance(){

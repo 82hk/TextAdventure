@@ -6,6 +6,8 @@ import org.sherwoodhs.situation.BoilerRoom.Abyss.Mines.CopperCave_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class Aquifer_E implements Situation {
     boolean firstTime = true;
     boolean wentBack = false;
@@ -112,6 +114,12 @@ public class Aquifer_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

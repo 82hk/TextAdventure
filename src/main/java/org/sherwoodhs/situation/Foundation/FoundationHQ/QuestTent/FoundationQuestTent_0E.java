@@ -10,6 +10,8 @@ import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class FoundationQuestTent_0E implements Situation {
     private static Situation situation = new FoundationQuestTent_0E();
     private static boolean firstTime = true;
@@ -182,6 +184,11 @@ public class FoundationQuestTent_0E implements Situation {
                 }
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static Situation getInstance(){

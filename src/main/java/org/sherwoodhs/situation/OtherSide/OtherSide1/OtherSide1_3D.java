@@ -8,6 +8,8 @@ import org.sherwoodhs.situation.HiddenAlcove.HiddenAlcove1_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    You talk to the Alchemist before you obtain the item required.
     It's just a little dialogue interaction
@@ -51,5 +53,10 @@ public class OtherSide1_3D implements Situation {
                 AdvGame.setSituation(HiddenAlcove1_0E.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

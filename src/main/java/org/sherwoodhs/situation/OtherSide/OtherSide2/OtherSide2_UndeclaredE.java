@@ -9,6 +9,8 @@ import org.sherwoodhs.situation.Clearwater.Warehouse.ClearwaterWarehouseEntrance
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 
 /*
@@ -52,5 +54,10 @@ public class OtherSide2_UndeclaredE implements Situation {
                 AdvGame.setSituation(ClearwaterWarehouseEntrance_0D.getInstance());
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }

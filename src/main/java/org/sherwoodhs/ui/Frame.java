@@ -45,9 +45,9 @@ public class Frame extends JFrame {
         left.add(actionPanel, BorderLayout.SOUTH);
 
         partition.add(textPanel, BorderLayout.WEST);
-        partition.add(mapPanel, BorderLayout.EAST);
+        partition.add(questPanel, BorderLayout.EAST);
 
-        right.add(questPanel, BorderLayout.NORTH);
+        right.add(mapPanel, BorderLayout.NORTH);
         right.add(inventoryPanel, BorderLayout.CENTER);
         right.add(barPanel, BorderLayout.SOUTH);
 

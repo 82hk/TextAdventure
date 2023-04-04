@@ -9,6 +9,8 @@ import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.ui.InventoryPanel;
 
+import javax.swing.*;
+
 public class FoundationIntro_3D implements Situation {
     private static Situation situation = new FoundationIntro_3D();
     public static Situation getInstance(){
@@ -65,6 +67,11 @@ public class FoundationIntro_3D implements Situation {
                         " Guard: Trust me, you'll fit right in, again, welcome to the Foundation!", new String[]{"Leave"});
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static boolean lock() {

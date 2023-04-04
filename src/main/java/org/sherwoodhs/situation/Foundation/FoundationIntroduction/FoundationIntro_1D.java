@@ -7,6 +7,8 @@ import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class FoundationIntro_1D implements Situation {
     private static Situation situation = new FoundationIntro_1D();
     Player player = Player.getInstance();
@@ -45,6 +47,11 @@ public class FoundationIntro_1D implements Situation {
             case "Go back to The Haven":
                 AdvGame.setSituation(HavenCenter_E.getInstance());
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
     public static boolean isUnlocked() {

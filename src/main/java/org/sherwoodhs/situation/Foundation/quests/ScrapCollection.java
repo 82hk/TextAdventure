@@ -9,6 +9,7 @@ import org.sherwoodhs.situation.Situation;
 import org.sherwoodhs.situation.Foundation.FoundationHQ.FoundationHub_0E;
 
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -97,6 +98,11 @@ public class ScrapCollection implements Situation {
                 World.changeStateI("Time", 1);
                 break;
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 
 

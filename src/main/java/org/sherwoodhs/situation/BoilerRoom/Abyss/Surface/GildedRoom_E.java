@@ -5,6 +5,8 @@ import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 public class GildedRoom_E implements Situation {
     boolean firstTime = true;
     private static Situation situation = new GildedRoom_E();
@@ -42,6 +44,12 @@ public class GildedRoom_E implements Situation {
                 break;
         }
     }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
+    }
+
     public static Situation getInstance() {
         return situation;
     }

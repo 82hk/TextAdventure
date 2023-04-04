@@ -11,6 +11,8 @@ import org.sherwoodhs.situation.Entrance.EntranceSituation_0E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
 
+import javax.swing.*;
+
 /*
    You refuse to hand over the USB and your relationship with her isn't high enough. You sentence yourself to death.
    You supposedly chose this option after hearing about the Alchemist's past from others.
@@ -71,5 +73,10 @@ public class OtherSide3_1_1End implements Situation {
             case "Exit":
                 System.exit(0);
         }
+    }
+
+    @Override
+    public ImageIcon getImg() {
+        return null;
     }
 }
