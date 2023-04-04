@@ -3,7 +3,6 @@ package org.sherwoodhs.ui;;
 import org.sherwoodhs.AdvGame;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class MapPanel extends JPanel {
@@ -12,13 +11,13 @@ public class MapPanel extends JPanel {
     ImageIcon placeholder = new ImageIcon("src/main/java/org/sherwoodhs/imgs/placeholder.png");
 
     ImageIcon img = new ImageIcon("src/main/java/org/sherwoodhs/imgs/entrance/entrance.jpg");
-    ImageIcon scaledImg = new ImageIcon(img.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
+    ImageIcon scaledImg = new ImageIcon(img.getImage().getScaledInstance(240, 240, Image.SCALE_DEFAULT));
     JLabel label = new JLabel(scaledImg, JLabel.CENTER);
 
     private MapPanel() {
         super();
         setPreferredSize(new Dimension(250, 250));
-        setBorder(new TitledBorder("Map"));
+        //setBorder(new TitledBorder("Map"));
 
         add(label);
     }
@@ -27,7 +26,7 @@ public class MapPanel extends JPanel {
     public void updateImg(){
         try {
             img = AdvGame.getInstance().getCurrentSituation().getImg();
-            scaledImg = new ImageIcon(img.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
+            scaledImg = new ImageIcon(img.getImage().getScaledInstance(240, 240, Image.SCALE_DEFAULT));
 
             scaledImg.getImage().flush();
             label.setIcon(scaledImg);
