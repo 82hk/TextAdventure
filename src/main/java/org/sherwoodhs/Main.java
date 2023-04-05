@@ -9,7 +9,7 @@ public class Main {
         AdvGame a = AdvGame.getInstance();
         Player p = Player.getInstance();
 
-        //t.start();
+        t.start();
         p.setPlayerName();
         a.startGame();
     }

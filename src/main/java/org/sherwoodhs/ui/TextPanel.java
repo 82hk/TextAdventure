@@ -13,16 +13,22 @@ public class TextPanel extends JPanel {
     public static final TextPanel textPanel = new TextPanel();
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
+    private Timer timer = new Timer();
     private TimerTask typingTask = new TimerTask() {
         @Override
         public void run() {
-            // make timerTask automate through a variable that holds the preloaded messages, then types them out
-
-            // textListModel.set(element, i)
-            // i++
+            System.out.println("Task No. " + i);
+            if (i < text.length()) {
+                i++;
+                textListModel.set(index, (text.substring(0,i)+"|") );
+            } else {
+                index++;
+            }
         }
     };
     private int index = 0; // tracks the index of the JList element being edited
+    private int i = 0; // character index for 'typingTask'
+    private String text; // holds elements passed into addText
     public TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600, 550));
@@ -42,28 +48,15 @@ public class TextPanel extends JPanel {
 
     public void addText(String... s) {
 
-        /*
-        textListModel.add(index, "|");
-        timer.schedule(typing Task, delay 10);
+        i = 0;
 
-         */
-
+        text = "";
+        for (String element : s) {
+            text += element;
+        }
 
         textListModel.add(index,"|");
-
-        for (String element : s) {
-            for (int i = 0; i < element.length(); i++) {
-
-                textListModel.set(index, (element.substring(0,i)+"|") );
-
-                try {
-                    Thread.sleep(12);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-
-            } textListModel.set(index, element);
-        } index++;
+        timer.scheduleAtFixedRate(typingTask, 0, 100*1);
 
     }
     /**

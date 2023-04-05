@@ -159,13 +159,8 @@ public class AdvGame {
 
     public static void updateFrame(String newDesc) {
 
-        Thread c = new Thread() {
-            public void run() {
-                textPanel.addText("\n" + newDesc);
-                actionUpdateReady = true;
-            }
-        };
-        c.start();
+        textPanel.addText("\n" + newDesc);
+        actionUpdateReady = true;
 
     }
 

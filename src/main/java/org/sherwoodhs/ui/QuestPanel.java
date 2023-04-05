@@ -29,7 +29,11 @@ public class QuestPanel extends JPanel {
      * @param quest one element to be added to questList
      */
     public void addQuest(Quest quest) { // identical method to TextPanel's "addText"
-        Thread t = new Thread() {
+
+        String questName = setQuestConvention(quest.getName());
+        questListModel.addElement(questName);
+
+        /** Thread t = new Thread() {
             public void run() {
 
                 String questName = setQuestConvention(quest.getName());
@@ -47,7 +51,7 @@ public class QuestPanel extends JPanel {
                 index++;
             }
         };
-        t.start();
+        t.start(); */
     }
     private String setQuestConvention(String s) {return "> " + s;}
     /**

@@ -41,7 +41,8 @@ public class InventoryPanel extends JPanel {
      */
     public void addToInventory(String item) { // identical method to TextPanel's "addText", but runs in its own thread
 
-        Thread t = new Thread() {
+        inventoryListModel.addElement(item);
+        /** Thread t = new Thread() {
             public void run() {
                 inventoryListModel.add(index, "|");
                 for (int i = 0; i < item.length()+1; i++) {
@@ -56,7 +57,7 @@ public class InventoryPanel extends JPanel {
                 inventoryListModel.set(index, item);
             }
         };
-        t.start();
+        t.start(); */
     }
     /**
      * Removes one element from inventoryList without clearing its contents
