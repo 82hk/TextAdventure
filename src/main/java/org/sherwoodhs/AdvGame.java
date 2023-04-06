@@ -26,6 +26,7 @@ import static org.sherwoodhs.ui.TextPanel.textPanel;
 import static org.sherwoodhs.ui.QuestPanel.questPanel;
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class AdvGame {
+    public static boolean isTyping = false;
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private static boolean actionUpdateReady;

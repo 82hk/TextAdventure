@@ -1,5 +1,6 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.ui.util.TextPanelCellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
@@ -45,6 +46,8 @@ public class TextPanel extends JPanel {
 
         textListModel.add(index,"|");
         System.out.println(index);
+
+        AdvGame.isTyping = true;
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -61,6 +64,7 @@ public class TextPanel extends JPanel {
                 }
             }
         }, 0, 10);
+        AdvGame.isTyping = false;
 
     }
     /**
