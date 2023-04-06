@@ -14,18 +14,6 @@ public class TextPanel extends JPanel {
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
     private Timer timer = new Timer();
-    private TimerTask typingTask = new TimerTask() {
-        @Override
-        public void run() {
-            System.out.println("Task No. " + i);
-            if (i < text.length()) {
-                i++;
-                textListModel.set(index, (text.substring(0,i)+"|") );
-            } else {
-                index++;
-            }
-        }
-    };
     private int index = 0; // tracks the index of the JList element being edited
     private int i = 0; // character index for 'typingTask'
     private String text; // holds elements passed into addText
@@ -56,7 +44,23 @@ public class TextPanel extends JPanel {
         }
 
         textListModel.add(index,"|");
-        timer.scheduleAtFixedRate(typingTask, 0, 100*1);
+        System.out.println(index);
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                // System.out.println("Task " + i + " / " + text.length());
+
+                if (i < text.length()) {
+                    i++;
+                    textListModel.set(index, (text.substring(0,i)+"|") );
+                } else {
+                    textListModel.set(index, text);
+                    index++;
+                    cancel();
+                }
+            }
+        }, 0, 10);
 
     }
     /**

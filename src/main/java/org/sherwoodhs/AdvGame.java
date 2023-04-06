@@ -28,8 +28,8 @@ import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class AdvGame {
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
+    private static boolean actionUpdateReady;
     private Player player;
-    public static boolean actionUpdateReady = false;
     private AdvGame() {
         try {
             UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
@@ -98,33 +98,13 @@ public class AdvGame {
     public static void updateFrame() {
 
         MapPanel.mapPanel.updateImg();
-        actionUpdateReady = false;
         situationPanel.setSituationLabel(currentSituation.getTitle());
+
         textPanel.clearAllText();
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString()));
+        textPanel.addText(currentSituation.getDescription());
 
-        Thread a = new Thread() {
-            public void run() {
-                textPanel.addText(currentSituation.getDescription());
-                actionUpdateReady = true;
-            }
-        };
-
-        Thread b = new Thread() {
-            public void run() {
-
-                actionPanel.initActions(currentSituation.getOptions());
-                actionPanel.disableAllActions();
-                while(!actionUpdateReady) {
-                    Thread.yield();
-                }
-                actionPanel.initActions(currentSituation.getOptions());
-                actionUpdateReady = false;
-            }
-        };
-
-        a.start();
-        b.start();
+        actionPanel.initActions(currentSituation.getOptions());
 
     }
 
@@ -133,45 +113,18 @@ public class AdvGame {
         updateFrame(options);
     }
 
-    /**
-     *  PROBLEM -   Timing issue with initActions called on different Threads?
-     *              Buttons render wrongly at random (differing each time)
-     *
-     *  SOLUTION -  Track where actionPanel is being called
-     *              and on what thread.
-     */
-
     public static void updateFrame(String[] options) {
-        Thread c = new Thread() {
-            public void run() {
-
-                actionPanel.disableAllActions();
-                while(!actionUpdateReady) {
-                    Thread.yield();
-                }
-                actionPanel.initActions(options);
-                actionUpdateReady = false;
-
-            }
-        };
-        c.start();
+        actionPanel.initActions(options);
     }
 
     public static void updateFrame(String newDesc) {
-
         textPanel.addText("\n" + newDesc);
-        actionUpdateReady = true;
-
+        System.out.println("done");
     }
 
     
     public static void updateFrameWithoutSpacing(String newDesc) {
-        Thread s = new Thread() {
-            public void run() {
-                textPanel.addText(newDesc);
-            }
-        };
-        s.start();
+        textPanel.addText(newDesc);
 
     }
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
@@ -189,15 +142,7 @@ public class AdvGame {
     
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
     
-    public static void addQuest(Quest quest) {
-        Thread q = new Thread() {
-            public void run() {
-                questPanel.addQuest(quest);
-            }
-        };
-        q.start();
-
-    }
+    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
     
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 
