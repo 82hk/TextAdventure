@@ -1,18 +1,24 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.quest.Quest;
 import org.sherwoodhs.ui.util.QuestPanelCellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.*;
 
 public class QuestPanel extends JPanel {
     public static final QuestPanel questPanel = new QuestPanel();
     private DefaultListModel<String> questListModel = new DefaultListModel<>();
     private JList<String> questList;
+    private Timer timer = new Timer(); // see TextPanel for explanation
     private int index = 0;
+    private int i = 0;
+    private String questName;
 
     private QuestPanel() {
         super(new BorderLayout());
@@ -30,28 +36,34 @@ public class QuestPanel extends JPanel {
      */
     public void addQuest(Quest quest) { // identical method to TextPanel's "addText"
 
-        String questName = setQuestConvention(quest.getName());
-        questListModel.addElement(questName);
+        i = 0;
 
-        /** Thread t = new Thread() {
+        questName = setQuestConvention(quest.getName());
+
+        questListModel.add(index, "");
+
+        AdvGame.isTyping = true;
+        timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
+            @Override
             public void run() {
 
-                String questName = setQuestConvention(quest.getName());
-                questListModel.add(index, "|");
-
-                for (int i = 0; i < questName.length(); i++) {
-                    questListModel.set(index, (questName.substring(0, i) + "|"));
-                    try {
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                while(AdvGame.isTyping) {
+                    Thread.yield();
                 }
-                questListModel.set(index, questName);
-                index++;
+
+                if (i < questName.length()) {
+                    i++;
+                    questListModel.set(index, (questName.substring(0,i)+"|") );
+                } else {
+                    questListModel.set(index, questName);
+                    AdvGame.isTyping = false;
+                    System.out.println("QuestPanel : addQuest() : timer : " + AdvGame.isTyping);
+                    index++;
+                    cancel();
+                }
             }
-        };
-        t.start(); */
+        }, 100, 30);
+
     }
     private String setQuestConvention(String s) {return "> " + s;}
     /**

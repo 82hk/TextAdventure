@@ -45,26 +45,24 @@ public class TextPanel extends JPanel {
         }
 
         textListModel.add(index,"|");
-        System.out.println(index);
 
         AdvGame.isTyping = true;
-        timer.schedule(new TimerTask() {
+        timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
             @Override
             public void run() {
-
-                // System.out.println("Task " + i + " / " + text.length());
 
                 if (i < text.length()) {
                     i++;
                     textListModel.set(index, (text.substring(0,i)+"|") );
                 } else {
                     textListModel.set(index, text);
+                    AdvGame.isTyping = false;
+                    System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
                     index++;
                     cancel();
                 }
             }
         }, 0, 10);
-        AdvGame.isTyping = false;
 
     }
     /**

@@ -29,7 +29,6 @@ public class AdvGame {
     public static boolean isTyping = false;
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
-    private static boolean actionUpdateReady;
     private Player player;
     private AdvGame() {
         try {
@@ -103,7 +102,10 @@ public class AdvGame {
 
         textPanel.clearAllText();
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString()));
+
+        System.out.println("AdvGame : updateFrame() : " + isTyping);
         textPanel.addText(currentSituation.getDescription());
+        System.out.println("AdvGame : updateFrame() : " + isTyping);
 
         actionPanel.initActions(currentSituation.getOptions());
 
@@ -120,7 +122,6 @@ public class AdvGame {
 
     public static void updateFrame(String newDesc) {
         textPanel.addText("\n" + newDesc);
-        System.out.println("done");
     }
 
     
@@ -143,7 +144,11 @@ public class AdvGame {
     
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
     
-    public static void addQuest(Quest quest) {questPanel.addQuest(quest);}
+    public static void addQuest(Quest quest) {
+        System.out.println("AdvGame : addQuest() : " + isTyping);
+        questPanel.addQuest(quest);
+        System.out.println("AdvGame : addQuest() : " + isTyping);
+    }
     
     public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
 

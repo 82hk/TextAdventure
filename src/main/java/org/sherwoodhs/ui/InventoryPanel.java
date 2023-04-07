@@ -1,17 +1,23 @@
 package org.sherwoodhs.ui;
 
+import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 import org.sherwoodhs.ui.util.InvPanelCellRenderer;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.*;
 
 public class InventoryPanel extends JPanel {
     public static final InventoryPanel inventoryPanel = new InventoryPanel();
     private DefaultListModel<String> inventoryListModel = new DefaultListModel<>();
     private JList<String> inventoryList;
+    private Timer timer = new Timer(); // see TextPanel for explanation
     private int index = 0;
+    private int i = 0;
+    private String itemName;
 
     private InventoryPanel() {
         super(new BorderLayout());
@@ -41,23 +47,34 @@ public class InventoryPanel extends JPanel {
      */
     public void addToInventory(String item) { // identical method to TextPanel's "addText", but runs in its own thread
 
-        inventoryListModel.addElement(item);
-        /** Thread t = new Thread() {
-            public void run() {
-                inventoryListModel.add(index, "|");
-                for (int i = 0; i < item.length()+1; i++) {
-                    inventoryListModel.set(index, (item.substring(0,i)+"|"));
-                    try {
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+        i = 0;
 
+        itemName = item;
+
+        inventoryListModel.add(index, "");
+
+        AdvGame.isTyping = true;
+
+        timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
+            @Override
+            public void run() {
+
+                while(AdvGame.isTyping) {
+                    Thread.yield();
                 }
-                inventoryListModel.set(index, item);
+
+                if (i < itemName.length()) {
+                    i++;
+                    inventoryListModel.set(index, (itemName.substring(0,i)+"|") );
+                } else {
+                    inventoryListModel.set(index, itemName);
+                    AdvGame.isTyping = false;
+                    System.out.println("InventoryPanel : addToInventory() : timer : " + AdvGame.isTyping);
+                    index++;
+                    cancel();
+                }
             }
-        };
-        t.start(); */
+        }, 200, 30);
     }
     /**
      * Removes one element from inventoryList without clearing its contents

@@ -5,11 +5,13 @@ import java.lang.Thread;
 
 public class Main {
     public static void main(String[] args) {
-        //Thread t = new Thread() { public void run() { while(true) { System.out.println(Thread.activeCount()); } } };
+        //Thread tCounter = new Thread() { public void run() { while(true) { System.out.println(Thread.activeCount()); } } };
+        //Thread bTyping = new Thread() { public void run() { while(true) { System.out.println(AdvGame.isTyping); } } };
         AdvGame a = AdvGame.getInstance();
         Player p = Player.getInstance();
 
-        //t.start();
+        //tCounter.start();
+        //bTyping.start();
         p.setPlayerName();
         a.startGame();
     }
