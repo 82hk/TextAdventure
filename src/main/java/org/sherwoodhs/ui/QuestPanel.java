@@ -16,9 +16,9 @@ public class QuestPanel extends JPanel {
     private DefaultListModel<String> questListModel = new DefaultListModel<>();
     private JList<String> questList;
     private Timer timer = new Timer(); // see TextPanel for explanation
-    private int index = 0;
-    private int i = 0;
-    private String questName;
+    private static int index = 0;
+    private static int i = 0;
+    private static String questName;
 
     private QuestPanel() {
         super(new BorderLayout());

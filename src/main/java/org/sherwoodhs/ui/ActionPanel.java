@@ -12,8 +12,8 @@ import static org.sherwoodhs.ui.Frame.FRAME;
 
 public class ActionPanel extends JPanel {
     public static final ActionPanel actionPanel = new ActionPanel();
+    public static boolean skipTyping = false;
     private AdvGame adv;
-
     private ActionPanel() {
         super(new GridLayout(2, 3));
         setPreferredSize(new Dimension(750, 170));
@@ -66,7 +66,7 @@ public class ActionPanel extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JButton b = (JButton) e.getSource();
-                        //
+                        skipTyping = true;
                         String s = b.getText()
                                 .replace("<html><center>", "")
                                 .replace("</center></html>", "");
@@ -84,6 +84,7 @@ public class ActionPanel extends JPanel {
             blank.setEnabled(false);
             add(blank);
         }
+        skipTyping = false;
     }
     /**
      * Changes the content and action of one button that is present in the panel

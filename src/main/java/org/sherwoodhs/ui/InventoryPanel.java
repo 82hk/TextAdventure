@@ -15,9 +15,9 @@ public class InventoryPanel extends JPanel {
     private DefaultListModel<String> inventoryListModel = new DefaultListModel<>();
     private JList<String> inventoryList;
     private Timer timer = new Timer(); // see TextPanel for explanation
-    private int index = 0;
-    private int i = 0;
-    private String itemName;
+    private static int index = 0;
+    private static int i = 0;
+    private static String itemName;
 
     private InventoryPanel() {
         super(new BorderLayout());

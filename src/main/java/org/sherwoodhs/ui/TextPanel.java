@@ -15,9 +15,9 @@ public class TextPanel extends JPanel {
     private DefaultListModel<String> textListModel = new DefaultListModel<>();
     private JList<String> textList;
     private Timer timer = new Timer();
-    private int index = 0; // tracks the index of the JList element being edited
-    private int i = 0; // character index for 'typingTask'
-    private String text; // holds elements passed into addText
+    private static int index = 0; // tracks the index of the JList element being edited
+    private static int i = 0; // character index for 'typingTask'
+    private static String text; // holds elements passed into addText
     public TextPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600, 550));
@@ -47,18 +47,23 @@ public class TextPanel extends JPanel {
         textListModel.add(index,"|");
 
         AdvGame.isTyping = true;
-        timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
-
-                if (i < text.length()) {
+                if (ActionPanel.skipTyping) { // this is broken. skipTyping is in ActionPanel, maybe not being reset?
+                    textListModel.set(index, text);
+                    AdvGame.isTyping = false;
+                    index++;
+                    System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
+                    cancel();
+                } else if (i < text.length()) {
                     i++;
                     textListModel.set(index, (text.substring(0,i)+"|") );
                 } else {
                     textListModel.set(index, text);
                     AdvGame.isTyping = false;
-                    System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
                     index++;
+                    System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
                     cancel();
                 }
             }
