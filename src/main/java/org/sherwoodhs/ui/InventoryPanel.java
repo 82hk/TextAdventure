@@ -54,7 +54,6 @@ public class InventoryPanel extends JPanel {
         inventoryListModel.add(index, "");
 
         AdvGame.isTyping = true;
-
         timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
             @Override
             public void run() {
@@ -68,13 +67,13 @@ public class InventoryPanel extends JPanel {
                     inventoryListModel.set(index, (itemName.substring(0,i)+"|") );
                 } else {
                     inventoryListModel.set(index, itemName);
+                    index++;
                     AdvGame.isTyping = false;
                     System.out.println("InventoryPanel : addToInventory() : timer : " + AdvGame.isTyping);
-                    index++;
                     cancel();
                 }
             }
-        }, 200, 30);
+        }, 0, 30);
     }
     /**
      * Removes one element from inventoryList without clearing its contents

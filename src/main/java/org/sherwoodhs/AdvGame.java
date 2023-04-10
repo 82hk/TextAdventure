@@ -27,6 +27,7 @@ import static org.sherwoodhs.ui.QuestPanel.questPanel;
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class AdvGame {
     public static boolean isTyping = false;
+    public static String[] optionsArr;
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private Player player;
@@ -56,6 +57,7 @@ public class AdvGame {
         World.resetStates();
         resetQuestProgression();
         inventoryPanel.clearInventory();
+        questPanel.clearQuestList();
     }
 
     public void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
@@ -73,7 +75,6 @@ public class AdvGame {
         SparklingWaterQuest.getInstance().reset(); // Separatist
         FoodMakingQuest.getInstance().reset();
 
-        questPanel.clearQuestList();
     }
 
     public static AdvGame getInstance() {
@@ -117,17 +118,20 @@ public class AdvGame {
     }
 
     public static void updateFrame(String[] options) {
-        actionPanel.initActions(options);
+        optionsArr = options;
     }
 
     public static void updateFrame(String newDesc) {
+        System.out.println("AdvGame : updateFrame() : " + isTyping);
         textPanel.addText("\n" + newDesc);
+        System.out.println("AdvGame : updateFrame() : " + isTyping);
     }
 
     
     public static void updateFrameWithoutSpacing(String newDesc) {
+        System.out.println("AdvGame : updateFrameWithoutSpacing() : " + isTyping);
         textPanel.addText(newDesc);
-
+        System.out.println("AdvGame : updateFrameWithoutSpacing() : " + isTyping);
     }
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
         updateFrameWithoutSpacing(newDesc);
@@ -138,9 +142,15 @@ public class AdvGame {
 
     public static void clearFrame(String newDesc) {clearFrame(); updateFrame(newDesc);}
 
-    public static void clearFrame(String newDesc, String[] options) {clearFrame(); updateFrame(newDesc, options);}
+    public static void clearFrame(String newDesc, String[] options) {
+        clearFrame();
+        updateFrame(newDesc, options);
+    }
     
-    public static void clearFrameWithoutSpacing(String newDesc) {clearFrame(); updateFrameWithoutSpacing(newDesc);}
+    public static void clearFrameWithoutSpacing(String newDesc) {
+        clearFrame();
+        updateFrameWithoutSpacing(newDesc);
+    }
     
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
     

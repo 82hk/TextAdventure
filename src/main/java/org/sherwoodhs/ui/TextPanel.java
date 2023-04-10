@@ -4,6 +4,8 @@ import org.sherwoodhs.AdvGame;
 import org.sherwoodhs.ui.util.TextPanelCellRenderer;
 import org.sherwoodhs.ui.util.DisabledItemSelectionModel;
 
+import static org.sherwoodhs.ui.ActionPanel.actionPanel;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -44,7 +46,7 @@ public class TextPanel extends JPanel {
             text += element;
         }
 
-        textListModel.add(index,"|");
+        textListModel.add(index,"");
 
         AdvGame.isTyping = true;
         timer.schedule(new TimerTask() { // maybe make this one typingTask in the class attributes? find way to repeatedly schedule.
@@ -56,14 +58,16 @@ public class TextPanel extends JPanel {
                     textListModel.set(index, (text.substring(0,i)+"|") );
                 } else {
                     textListModel.set(index, text);
+                    index++;
                     AdvGame.isTyping = false;
                     System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
-                    index++;
+
+                    actionPanel.initActions(AdvGame.optionsArr); // HERE
+
                     cancel();
                 }
             }
         }, 0, 10);
-
     }
     /**
      * Adds a blank line to textList, akin to two <br> tags in HTML

@@ -11,6 +11,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.*;
 
+import static org.sherwoodhs.ui.ActionPanel.actionPanel;
+
 public class QuestPanel extends JPanel {
     public static final QuestPanel questPanel = new QuestPanel();
     private DefaultListModel<String> questListModel = new DefaultListModel<>();
@@ -56,13 +58,14 @@ public class QuestPanel extends JPanel {
                     questListModel.set(index, (questName.substring(0,i)+"|") );
                 } else {
                     questListModel.set(index, questName);
-                    AdvGame.isTyping = false;
-                    System.out.println("QuestPanel : addQuest() : timer : " + AdvGame.isTyping);
                     index++;
+                    AdvGame.isTyping = false;
+
+                    System.out.println("QuestPanel : addQuest() : timer : " + AdvGame.isTyping);
                     cancel();
                 }
             }
-        }, 100, 30);
+        }, 0, 30);
 
     }
     private String setQuestConvention(String s) {return "> " + s;}

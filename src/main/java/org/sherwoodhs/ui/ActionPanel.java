@@ -66,7 +66,8 @@ public class ActionPanel extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JButton b = (JButton) e.getSource();
-                        //
+                        b.setBackground(new Color(50,5,70));
+                        //disableAllActions();
                         String s = b.getText()
                                 .replace("<html><center>", "")
                                 .replace("</center></html>", "");
