@@ -25,6 +25,7 @@ public class ActionPanel extends JPanel {
      */
     public void addSkipButton() {
 
+
         removeAllActions();
         JButton skip = new JButton(getWrappedText("Skip"));
         skip.addActionListener(new ActionListener() {
