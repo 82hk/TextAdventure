@@ -81,12 +81,14 @@ public class InventoryPanel extends JPanel {
      */
     public void removeFromInventory(String item) {
         inventoryListModel.removeElement(item);
+        index--;
     }
     /**
      * Clears all content inside inventoryList
      */
     public void clearInventory() {
         inventoryListModel.clear();
+        index = 0;
     }
     /**
      * Returns a boolean that determines whether an item is contained in the inventory

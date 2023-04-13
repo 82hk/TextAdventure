@@ -53,11 +53,14 @@ public class AdvGame {
     }
 
     public void restartGame() {
-        setSituation(EntranceSituation_0E.getInstance());
-        World.resetStates();
-        resetQuestProgression();
+        isTyping = false;
         inventoryPanel.clearInventory();
         questPanel.clearQuestList();
+
+        World.resetStates();
+        resetQuestProgression();
+
+        setSituation(EntranceSituation_0E.getInstance());
     }
 
     public void resetQuestProgression() { // add all quests here, both to reset and remove from panel. quests are organized by package
@@ -109,6 +112,7 @@ public class AdvGame {
         System.out.println("AdvGame : updateFrame() : " + isTyping);
 
         actionPanel.initActions(currentSituation.getOptions());
+        //updateFrame(currentSituation.getOptions());
 
     }
 
@@ -118,7 +122,8 @@ public class AdvGame {
     }
 
     public static void updateFrame(String[] options) {
-        optionsArr = options;
+        //optionsArr = options;
+        actionPanel.initActions(options);
     }
 
     public static void updateFrame(String newDesc) {

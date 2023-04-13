@@ -62,7 +62,7 @@ public class TextPanel extends JPanel {
                     AdvGame.isTyping = false;
                     System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
 
-                    actionPanel.initActions(AdvGame.optionsArr); // HERE
+                    // actionPanel.initActions(AdvGame.optionsArr); // HERE
 
                     cancel();
                 }
