@@ -12,6 +12,8 @@ import org.sherwoodhs.ui.QuestPanel;
 
 import javax.swing.*;
 
+import static org.sherwoodhs.ui.BarPanel.barPanel;
+
 public class FoundationIntro_0D implements Situation {
     private static Situation situation = new FoundationIntro_0D();
     NPC guard = FoundationGuard.getInstance();
@@ -74,6 +76,7 @@ public class FoundationIntro_0D implements Situation {
                 AdvGame.setSituation(HavenCenter_E.getInstance());
                 break;
             case "Yes":
+                barPanel.setVisible(barPanel.getFoundationBar(), true);
                 AdvGame.updateFrame(player.getName() + ": Yes. \n\n" + guard.getName() + ": Great! There's just some things you need to do for us first.", new String[]{"Continue"});
                 break;
             case "No":

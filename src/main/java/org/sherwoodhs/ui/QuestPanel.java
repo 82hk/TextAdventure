@@ -60,8 +60,6 @@ public class QuestPanel extends JPanel {
                     questListModel.set(index, questName);
                     index++;
                     AdvGame.isTyping = false;
-
-                    System.out.println("QuestPanel : addQuest() : timer : " + AdvGame.isTyping);
                     cancel();
                 }
             }

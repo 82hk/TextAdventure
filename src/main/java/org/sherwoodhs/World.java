@@ -4,6 +4,7 @@ import org.sherwoodhs.ui.BarPanel;
 
 import java.util.HashMap;
 
+import static org.sherwoodhs.ui.BarPanel.barPanel;
 import static org.sherwoodhs.ui.SituationPanel.situationPanel;
 
 public class World {
@@ -89,13 +90,13 @@ public class World {
                 situationPanel.setDayLabel(value);
                         break;
             case "Foundation Rep":
-                BarPanel.barPanel.getFoundationBar().setValue(changed);
+                barPanel.getFoundationBar().setValue(changed);
                 break;
             case "Clearwater Rep":
-                BarPanel.barPanel.getClearWaterBar().setValue(changed);
+                barPanel.getClearwaterBar().setValue(changed);
                 break;
             case "Haven Rep":
-                BarPanel.barPanel.getHavenBar().setValue(changed);
+                barPanel.getHavenBar().setValue(changed);
                 break;
         }
     }
@@ -108,5 +109,9 @@ public class World {
         states.replace("Haven Rep", 0);
         states.replace("Clearwater Rep", 0);
         states.replace("Destruction End Counter", 24); // 1 day counter
+
+        barPanel.setVisible(barPanel.getFoundationBar(), false);
+        barPanel.setVisible(barPanel.getClearwaterBar(), false);
+        barPanel.setVisible(barPanel.getHavenBar(), false);
     }
 }

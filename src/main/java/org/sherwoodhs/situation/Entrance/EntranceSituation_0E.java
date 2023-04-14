@@ -14,6 +14,9 @@ import org.sherwoodhs.ui.InventoryPanel;
 
 import javax.swing.*;
 
+import static org.sherwoodhs.World.*;
+import static org.sherwoodhs.ui.BarPanel.barPanel;
+
 public class EntranceSituation_0E implements Situation {
     private static Situation situation = new EntranceSituation_0E();
 
@@ -44,8 +47,11 @@ public class EntranceSituation_0E implements Situation {
 
             // MAIN BRANCH
             case "Approach":
-                InventoryPanel.inventoryPanel.addToInventory("> Sample item");
+                InventoryPanel.inventoryPanel.addToInventory("> Test item"); // remove all this after testing
                 AdvGame.addQuest(BottleFetchQuest.getInstance());
+                barPanel.setVisible(barPanel.getClearwaterBar(), true);
+                World.changeStateI("Clearwater Rep",50);
+
                 AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
                         new String[] {"Enter","Go to Lowe's", "Test - Foundation endings"});
                 break;

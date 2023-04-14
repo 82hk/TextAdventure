@@ -27,7 +27,6 @@ import static org.sherwoodhs.ui.QuestPanel.questPanel;
 import static org.sherwoodhs.ui.InventoryPanel.inventoryPanel;
 public class AdvGame {
     public static boolean isTyping = false;
-    public static String[] optionsArr;
     private static Situation currentSituation;
     private static AdvGame advGame = new AdvGame();
     private Player player;
@@ -107,13 +106,10 @@ public class AdvGame {
         textPanel.clearAllText();
         textPanel.setBorder(new TitledBorder(currentSituation.getSitType().toString()));
 
-        System.out.println("AdvGame : updateFrame() : " + isTyping);
         textPanel.addText(currentSituation.getDescription());
-        System.out.println("AdvGame : updateFrame() : " + isTyping);
 
         actionPanel.initActions(currentSituation.getOptions());
-        //updateFrame(currentSituation.getOptions());
-
+        actionPanel.disableAllActions();
     }
 
     public static void updateFrame(String newDesc, String[] options) {
@@ -122,30 +118,31 @@ public class AdvGame {
     }
 
     public static void updateFrame(String[] options) {
-        //optionsArr = options;
         actionPanel.initActions(options);
+        actionPanel.disableAllActions();
     }
 
     public static void updateFrame(String newDesc) {
-        System.out.println("AdvGame : updateFrame() : " + isTyping);
         textPanel.addText("\n" + newDesc);
-        System.out.println("AdvGame : updateFrame() : " + isTyping);
     }
 
-    
     public static void updateFrameWithoutSpacing(String newDesc) {
-        System.out.println("AdvGame : updateFrameWithoutSpacing() : " + isTyping);
         textPanel.addText(newDesc);
-        System.out.println("AdvGame : updateFrameWithoutSpacing() : " + isTyping);
     }
+
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
         updateFrameWithoutSpacing(newDesc);
         updateFrame(options);
     }
 
-    public static void clearFrame() {textPanel.clearAllText();}
+    public static void clearFrame() {
+        textPanel.clearAllText();
+    }
 
-    public static void clearFrame(String newDesc) {clearFrame(); updateFrame(newDesc);}
+    public static void clearFrame(String newDesc) {
+        clearFrame();
+        updateFrame(newDesc);
+    }
 
     public static void clearFrame(String newDesc, String[] options) {
         clearFrame();
@@ -156,15 +153,18 @@ public class AdvGame {
         clearFrame();
         updateFrameWithoutSpacing(newDesc);
     }
-    
-    public static void clearFrameWithoutSpacing(String newDesc, String[] options) {clearFrame(); updateFrameWithoutSpacing(newDesc, options);}
-    
-    public static void addQuest(Quest quest) {
-        System.out.println("AdvGame : addQuest() : " + isTyping);
-        questPanel.addQuest(quest);
-        System.out.println("AdvGame : addQuest() : " + isTyping);
+
+    public static void clearFrameWithoutSpacing(String newDesc, String[] options) {
+        clearFrame();
+        updateFrameWithoutSpacing(newDesc, options);
     }
     
-    public static void removeQuest(Quest quest){questPanel.removeQuest(quest);}
+    public static void addQuest(Quest quest) {
+        questPanel.addQuest(quest);
+    }
+    
+    public static void removeQuest(Quest quest){
+        questPanel.removeQuest(quest);
+    }
 
 }

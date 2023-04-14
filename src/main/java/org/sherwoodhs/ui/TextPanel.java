@@ -60,10 +60,7 @@ public class TextPanel extends JPanel {
                     textListModel.set(index, text);
                     index++;
                     AdvGame.isTyping = false;
-                    System.out.println("TextPanel : addText() : timer : " + AdvGame.isTyping);
-
-                    // actionPanel.initActions(AdvGame.optionsArr); // HERE
-
+                    actionPanel.enableValidOptions();
                     cancel();
                 }
             }

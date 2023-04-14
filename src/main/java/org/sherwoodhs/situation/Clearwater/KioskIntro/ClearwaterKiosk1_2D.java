@@ -6,8 +6,11 @@ import org.sherwoodhs.npc.TheDistributor;
 import org.sherwoodhs.situation.Haven.HavenCenter_E;
 import org.sherwoodhs.situation.SitType;
 import org.sherwoodhs.situation.Situation;
+import org.sherwoodhs.ui.BarPanel;
 
 import javax.swing.*;
+
+import static org.sherwoodhs.ui.BarPanel.barPanel;
 
 public class ClearwaterKiosk1_2D implements Situation {
     NPC distributor = TheDistributor.getInstance();
@@ -57,6 +60,7 @@ public class ClearwaterKiosk1_2D implements Situation {
                 break;
             case "... ":
                 AdvGame.clearFrame();
+                barPanel.setVisible(barPanel.getHavenBar(), true);
                 AdvGame.updateFrame(distributor.getName() + ": Right sorry. This is The Haven, our small island "+
                         "of safety in the middle of all that.\n\n" + distributor.getName() + ": Each of those halls "+
                         "you see stretches for about a mile and a half. Floors 2-7 are for residential living, "+
@@ -77,7 +81,7 @@ public class ClearwaterKiosk1_2D implements Situation {
                         "Police, government, and security, with a healthy dose of paranoid secrecy. They cut off all the "+
                         "entrance points to the Beyond—the rest of the Ikea—years ago, so if they find out about you...\n\n"+
                         distributor.getName() + ": Just stay away from them. And keep your mouth shut. As far as anyone here’s ,"+
-                        "concerned, you live in a modern, minimalist study room of some forgotten corner of the Haven, "+
+                        "concerned, you live in a cozy closet in some forgotten corner of the Haven, "+
                         "and you don’t mean to cause any trouble.\n\nHe gives you a look.\n\n" + distributor.getName() +
                         ": Now, any other questions?",
                         new String[]{"Water?", "Exit?"});
@@ -109,6 +113,7 @@ public class ClearwaterKiosk1_2D implements Situation {
                         new String[]{"Leave"});
                 break;
             case "Clearwater":
+                barPanel.setVisible(barPanel.getClearwaterBar(), true);
                 AdvGame.updateFrame(distributor.getName() + ": Wonderful!\n\nThe old man's eyes light up.\n\n" +
                         distributor.getName() + ": Head on over to the Warehouse—\n\nHe points to a large bay door on the " +
                         "far side of the plaza, partially hidden under the shadow of an overhanging floor balcony.\n\n" +

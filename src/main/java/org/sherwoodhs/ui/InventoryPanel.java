@@ -69,7 +69,6 @@ public class InventoryPanel extends JPanel {
                     inventoryListModel.set(index, itemName);
                     index++;
                     AdvGame.isTyping = false;
-                    System.out.println("InventoryPanel : addToInventory() : timer : " + AdvGame.isTyping);
                     cancel();
                 }
             }

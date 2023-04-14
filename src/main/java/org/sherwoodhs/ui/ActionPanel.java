@@ -50,8 +50,6 @@ public class ActionPanel extends JPanel {
      */
     public void initActions(String[] texts) {
 
-        // System.out.println("initActions : " + texts.length + " buttons");
-
         if (texts.length == 0)
             return;
         if (texts.length > 6)
