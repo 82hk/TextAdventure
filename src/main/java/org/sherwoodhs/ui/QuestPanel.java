@@ -25,7 +25,9 @@ public class QuestPanel extends JPanel {
     private QuestPanel() {
         super(new BorderLayout());
         setPreferredSize(new Dimension(150,550));
-        setBorder(new TitledBorder("Current Quests"));
+        setBorder(new TitledBorder("Quests"));
+
+
 
         questList = new JList<>(questListModel);
         questList.setSelectionModel(new DisabledItemSelectionModel());

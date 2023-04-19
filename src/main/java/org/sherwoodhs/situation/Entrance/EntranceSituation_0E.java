@@ -27,7 +27,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String getDescription() {
-        return "There it is—the Ikea furniture and home improvement store.\n\nThe blue and yellow of the concrete building stretches from end to end across "+
+        return "You stand in front of the Ikea furniture store.\n\nThe blue and yellow of the concrete building stretches from end to end across "+
             "the huge lot. Despite the size of the retail store, there’s not a single person in sight. The parking lot is similarly deserted, with nothing "+
             "but rows of empty spaces illuminated by the occasional streetlamp.";
     }
@@ -37,7 +37,7 @@ public class EntranceSituation_0E implements Situation {
 
     @Override
     public String[] getOptions() {
-        String[] options = {"Approach", "Test - Hidden Alcove", "Test - Haven", "Test - Boiler Room", "Test - Abyss"};
+        String[] options = {"Approach"};
         return options;
     }
 
@@ -47,20 +47,20 @@ public class EntranceSituation_0E implements Situation {
 
             // MAIN BRANCH
             case "Approach":
-                InventoryPanel.inventoryPanel.addToInventory("> Test item"); // remove all this after testing
-                AdvGame.addQuest(BottleFetchQuest.getInstance());
-                barPanel.setVisible(barPanel.getClearwaterBar(), true);
-                World.changeStateI("Clearwater Rep",50);
+                //InventoryPanel.inventoryPanel.addToInventory("> Test item"); // remove all this after testing
+                //AdvGame.addQuest(BottleFetchQuest.getInstance());
+                //barPanel.setVisible(barPanel.getClearwaterBar(), true);
+                //World.changeStateI("Clearwater Rep",50);
 
                 AdvGame.updateFrame("The massive ‘Ikea’ sign looms high above as the fluorescent glow of the interior lights floods through display windows near the entrance. Against the pitch black of the night sky, the light is nearly blinding.",
-                        new String[] {"Enter","Go to Lowe's", "Test - Foundation endings"});
+                        new String[] {"Enter","Go to Lowe's"});
                 break;
             case "Enter":
                 AdvGame.updateFrame("---\n\nOn cue, the automatic doors slide open. A warm breeze wafts out, mixing with the cool evening air.\n\nYou step into the store and survey your surroundings.\n\nSofas, recliners, ottomans, and every kind of furniture piece imaginable cover the floor in a carefully structured manner, flanked by an innumerable variety of mini-display rooms. Decorative light fixtures cast soft shadows from the low exposed ceiling above, while in the distance air conditioning fans hum quietly.\n\nThe only thing missing is people.",
                         new String[] {"Keep going","Go to Lowe's"});
                 break;
             case "Keep going":
-                AdvGame.updateFrame("---\n\nYou go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\nFood court.\n",
+                AdvGame.clearFrame("---\n\nYou go further into the Ikea.\n\nPast showrooms and home decorations; past kitchenware and tiled counters and cabinets galore. Past bedroom displays overflowing with pillows; past dining table chairs of every shape, color, and size. Past bathroom tiles and shower curtains; through the winding maze of the store’s floor plan you navigate until you reach the—\n\nFood court.\n",
                         new String[] {"Continue"});
                 break;
             case "Continue":
@@ -70,7 +70,7 @@ public class EntranceSituation_0E implements Situation {
 
             // EXIT POINT
             case "Go to Lowe's":
-                AdvGame.updateFrame("---\n\nUnnerved by the absence of any sign of life, you decide to try your luck at the nearby Lowe's instead.\n\nGetting back in your car, you pull out of the parking lot and drive away, leaving the Ikea—and the entire point of the game—behind you.\n\nThe End.",
+                AdvGame.clearFrame("---\n\nUnnerved by the absence of any sign of life, you decide to try your luck at the nearby Lowe's instead.\n\nGetting back in your car, you pull out of the parking lot and drive away, leaving the Ikea—and the entire point of the game—behind you.\n\nThe End.",
                         new String[] {"Restart","Exit"});
                 break;
             case "Restart":

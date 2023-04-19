@@ -15,7 +15,7 @@ public class QuestPanelCellRenderer implements ListCellRenderer {
         textArea = new JTextArea();
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        textArea.setFont(new Font("Lato",0,15));
+        textArea.setFont(new Font("Arvo",0,15));
         panel.add(textArea, BorderLayout.CENTER);
     }
     @Override

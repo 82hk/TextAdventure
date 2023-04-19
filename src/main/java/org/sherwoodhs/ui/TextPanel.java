@@ -24,7 +24,7 @@ public class TextPanel extends JPanel {
         super(new BorderLayout());
         setPreferredSize(new Dimension(600, 550));
         setBorder(new TitledBorder("Dialogue"));
-        setFont(new Font("Lato",2,13));
+        //setFont(new Font("Lato",2,13));
 
         textList = new JList<>(textListModel);
         textList.setSelectionModel(new DisabledItemSelectionModel());

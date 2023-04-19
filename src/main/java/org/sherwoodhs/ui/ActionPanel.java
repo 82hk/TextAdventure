@@ -60,7 +60,7 @@ public class ActionPanel extends JPanel {
             // if the element  cycling through is not blank
             if (!element.equals("")) {
                 JButton action = new JButton(getWrappedText(element));
-                action.setFont(new Font ("Lato",0,15)); // FONTS
+                action.setFont(new Font ("Arvo",0,16)); // FONTS
                 action.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
