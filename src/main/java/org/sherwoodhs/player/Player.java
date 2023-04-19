@@ -63,7 +63,13 @@ public class Player {
             do {
                 if(savedName.exists()){
                     name = readSavedName();
-                     b = false;
+                    if(name.isEmpty() || nameHasNums() || nameHasSpCh() || charCap()){
+                        System.out.println("Invalid name");
+                        System.exit(0);
+                    }else {
+                        name = readSavedName();
+                        b = false;
+                    }
                 } else {
                     name = JOptionPane.showInputDialog(null, "Enter your name: ", "Name", 3);
                     if (name.isEmpty() || nameHasNums() || nameHasSpCh() || charCap()) {

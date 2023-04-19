@@ -22,7 +22,7 @@ public class MapPanel extends JPanel {
         add(label);
     }
 
-    //use to update the image, there are a gazillion updateframe methods and im gonna figure out how which ones to put it in
+    //use to update the image, there are a gazillion updateframe methods and im not gonna figure out how which ones to put it in
     public void updateImg(){
 
         label.setIcon(img);
