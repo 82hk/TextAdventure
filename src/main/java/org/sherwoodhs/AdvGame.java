@@ -113,48 +113,66 @@ public class AdvGame {
     }
 
     public static void updateFrame(String newDesc, String[] options) {
+        MapPanel.mapPanel.updateImg();
         updateFrame(newDesc);
         updateFrame(options);
     }
 
     public static void updateFrame(String[] options) {
+        MapPanel.mapPanel.updateImg();
         actionPanel.initActions(options);
         actionPanel.disableAllActions();
     }
 
     public static void updateFrame(String newDesc) {
+        MapPanel.mapPanel.updateImg();
+
         textPanel.addText("\n" + newDesc);
     }
 
     public static void updateFrameWithoutSpacing(String newDesc) {
+        MapPanel.mapPanel.updateImg();
+
         textPanel.addText(newDesc);
     }
 
     public static void updateFrameWithoutSpacing(String newDesc, String[] options) {
+        MapPanel.mapPanel.updateImg();
+
         updateFrameWithoutSpacing(newDesc);
         updateFrame(options);
     }
 
     public static void clearFrame() {
+        MapPanel.mapPanel.updateImg();
+
         textPanel.clearAllText();
     }
 
     public static void clearFrame(String newDesc) {
+        MapPanel.mapPanel.updateImg();
+
         clearFrame();
         updateFrame(newDesc);
     }
 
     public static void clearFrame(String newDesc, String[] options) {
+        MapPanel.mapPanel.updateImg();
+
         clearFrame();
         updateFrame(newDesc, options);
     }
     
     public static void clearFrameWithoutSpacing(String newDesc) {
+        MapPanel.mapPanel.updateImg();
+
         clearFrame();
         updateFrameWithoutSpacing(newDesc);
     }
 
     public static void clearFrameWithoutSpacing(String newDesc, String[] options) {
+        MapPanel.mapPanel.updateImg();
+
         clearFrame();
         updateFrameWithoutSpacing(newDesc, options);
     }
