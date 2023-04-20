@@ -10,6 +10,7 @@ public class MapPanel extends JPanel {
 
     ImageIcon placeholder = new ImageIcon("src/main/java/org/sherwoodhs/imgs/placeholder.png");
     ImageIcon temp = new ImageIcon("src/main/java/org/sherwoodhs/imgs/entrance/entrance.jpg");
+    ImageIcon tempScaled = new ImageIcon(temp.getImage().getScaledInstance(240, 240, Image.SCALE_DEFAULT));
     ImageIcon img = new ImageIcon("src/main/java/org/sherwoodhs/imgs/entrance/entrance.jpg");
     ImageIcon scaledImg = new ImageIcon(img.getImage().getScaledInstance(240, 240, Image.SCALE_DEFAULT));
     JLabel label = new JLabel(scaledImg, JLabel.CENTER);
@@ -29,7 +30,7 @@ public class MapPanel extends JPanel {
             scaledImg.getImage().flush();
             label.setIcon(scaledImg);
         } catch (NullPointerException e){
-            label.setIcon(temp);
+            label.setIcon(tempScaled);
         }
     }
 }
